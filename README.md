@@ -1,2 +1,59 @@
-# lra-flashcards
-flashcards
+# LRA Flashcards
+
+Canonical flashcard source for the Learn Abstract Mathematics / Real Analysis study program.
+
+## Design
+
+GitHub is the source of truth for card content. RemNote is the live study system and stores spaced-repetition state.
+
+Three tracks are maintained:
+
+- `core/` — axioms, definitions, theorem statements, hypotheses, quantified forms, relationships, proof architecture.
+- `counterexamples/` — nonexamples, failed converses, missing-hypothesis failures, incomplete structures.
+- `computation/` — arithmetic, algebra, bounds, suprema/infima, limits, epsilon work, metric calculations.
+
+## RemNote convention
+
+Cards use RemNote text syntax:
+
+```
+Question >> Answer
+```
+
+Import approved batches rather than repeatedly re-importing the whole repository.
+
+## Curriculum
+
+1. Peano Systems
+2. Natural Numbers
+3. Well-Ordering and Induction
+4. Integers
+5. Rational Numbers
+6. Fields
+7. Ordered Fields
+8. Archimedean Property
+9. Density
+10. Dedekind Cuts
+11. Real Numbers
+12. Bounds
+13. Supremum and Infimum
+14. LUB / Order Completeness
+15. Sequences
+16. Sequence Limits
+17. Limit Properties
+18. Subsequences
+19. Cauchy Sequences
+20. Sequential Completeness
+21. Function Limits
+22. Limit Laws
+23. Continuity
+24. Metric Spaces
+25. Metric Convergence
+26. Complete Metric Spaces
+27. Metric Topology
+
+## Completeness convention
+
+Do not call an ordered field complete until the least-upper-bound property has been established.
+
+Order completeness and metric/sequential completeness are kept conceptually distinct and related only after both are defined.
