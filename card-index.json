@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "decks": [
+    {
+      "id": "01-peano-systems",
+      "title": "01 — Peano Systems",
+      "track": "core",
+      "file": "cards/core/01-peano-systems.json"
+    }
+  ]
+}
