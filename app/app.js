@@ -34,7 +34,7 @@ let currentDeck;
 
 function renderMathInto(element, text) {
   element.textContent = "";
-  const parts = text.split(/(\\\$[^$]+\\\$)/g);
+  const parts = text.split(/(\$[^$]+\$)/g);
   for (const part of parts) {
     if (part.startsWith("$") && part.endsWith("$") && window.katex) {
       const span = document.createElement("span");
