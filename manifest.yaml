@@ -1,0 +1,37 @@
+version: 1
+project: lra-flashcards
+source_of_truth: github
+study_system: remnote
+remnote_card_separator: ">>"
+tracks:
+  - core
+  - counterexamples
+  - computation
+curriculum:
+  - 01-peano-systems
+  - 02-natural-numbers
+  - 03-well-ordering
+  - 04-integers
+  - 05-rational-numbers
+  - 06-fields
+  - 07-ordered-fields
+  - 08-archimedean-property
+  - 09-density
+  - 10-dedekind-cuts
+  - 11-real-numbers
+  - 12-bounds
+  - 13-supremum-infimum
+  - 14-lub-completeness
+  - 15-sequences
+  - 16-sequence-limits
+  - 17-limit-properties
+  - 18-subsequences
+  - 19-cauchy-sequences
+  - 20-sequential-completeness
+  - 21-function-limits
+  - 22-limit-laws
+  - 23-continuity
+  - 24-metric-spaces
+  - 25-metric-convergence
+  - 26-complete-metric-spaces
+  - 27-metric-topology
