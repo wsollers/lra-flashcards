@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <title>LRA Flashcards</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>LRA Flashcards</h1>
+        <p id="deckTitle" class="muted">Loading…</p>
+      </div>
+      <button id="statsButton" class="secondary">Stats</button>
+    </header>
+
+    <section class="controls">
+      <label>
+        Deck
+        <select id="deckSelect"></select>
+      </label>
+      <button id="newSessionButton" class="secondary">New Session</button>
+    </section>
+
+    <section id="reviewPanel" class="card-panel" aria-live="polite">
+      <div class="session-row">
+        <span id="remaining">0 remaining</span>
+        <span id="sessionScore">0 pass / 0 fail</span>
+      </div>
+
+      <article id="flashcard" class="flashcard">
+        <div class="card-label">Question</div>
+        <div id="front" class="card-text"></div>
+
+        <div id="answerBlock" class="answer hidden">
+          <hr>
+          <div class="card-label">Answer</div>
+          <div id="back" class="card-text"></div>
+        </div>
+      </article>
+
+      <button id="showAnswerButton" class="primary wide">Show Answer</button>
+
+      <div id="gradeButtons" class="grade-buttons hidden">
+        <button id="failButton" class="fail">Fail</button>
+        <button id="passButton" class="pass">Pass</button>
+      </div>
+    </section>
+
+    <section id="completePanel" class="card-panel hidden">
+      <h2>Session complete</h2>
+      <p id="completeSummary"></p>
+      <button id="restartButton" class="primary">Review Again</button>
+    </section>
+
+    <dialog id="statsDialog">
+      <div class="dialog-head">
+        <h2>Local Stats</h2>
+        <button id="closeStatsButton" class="secondary">Close</button>
+      </div>
+      <div id="statsContent"></div>
+      <button id="resetStatsButton" class="danger">Reset All Stats</button>
+    </dialog>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
