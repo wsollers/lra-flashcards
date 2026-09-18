@@ -1,0 +1,344 @@
+[
+  {
+    "id": "peano-001",
+    "type": "definition",
+    "front": "What is a one-based Peano system?",
+    "back": "A structure $(P,1,S)$ satisfying the Peano axioms."
+  },
+  {
+    "id": "peano-002",
+    "type": "definition",
+    "front": "What primitive data does a one-based Peano system contain?",
+    "back": "A carrier $P$, distinguished $1\\\\in P$, and successor $S:P\\\\to P$."
+  },
+  {
+    "id": "peano-003",
+    "type": "definition",
+    "front": "What does the successor map do?",
+    "back": "It sends each $n\\\\in P$ to another element $S(n)\\\\in P$."
+  },
+  {
+    "id": "peano-004",
+    "type": "concept",
+    "front": "What does one-based mean?",
+    "back": "The distinguished initial element is $1$, not $0$."
+  },
+  {
+    "id": "peano-005",
+    "type": "example",
+    "front": "What is the intended concrete model?",
+    "back": "$\\\\{1,2,3,\\\\dots\\\\}$ with the usual successor."
+  },
+  {
+    "id": "peano-006",
+    "type": "axiom",
+    "front": "State the first-element axiom.",
+    "back": "$\\\\forall n\\\\in P,\\\\ S(n)\\\\ne 1$."
+  },
+  {
+    "id": "peano-007",
+    "type": "axiom",
+    "front": "State successor injectivity.",
+    "back": "$S(m)=S(n)\\\\Rightarrow m=n$."
+  },
+  {
+    "id": "peano-008",
+    "type": "concept",
+    "front": "What does successor injectivity forbid?",
+    "back": "Two distinct elements cannot have the same successor."
+  },
+  {
+    "id": "peano-009",
+    "type": "axiom",
+    "front": "State induction in subset form.",
+    "back": "If $1\\\\in A$ and $A$ is successor-closed, then $A=P$."
+  },
+  {
+    "id": "peano-010",
+    "type": "concept",
+    "front": "What are the two hypotheses in subset induction?",
+    "back": "Base: $1\\\\in A$. Step: $n\\\\in A\\\\Rightarrow S(n)\\\\in A$."
+  },
+  {
+    "id": "peano-011",
+    "type": "concept",
+    "front": "What is the conclusion of subset induction?",
+    "back": "$A=P$."
+  },
+  {
+    "id": "peano-012",
+    "type": "axiom",
+    "front": "State induction in predicate form.",
+    "back": "$Q(1)$ and $Q(n)\\\\Rightarrow Q(S(n))$ imply $\\\\forall n\\\\in P, Q(n)$."
+  },
+  {
+    "id": "peano-013",
+    "type": "proof",
+    "front": "What is the base case in one-based induction?",
+    "back": "Prove the property at $1$."
+  },
+  {
+    "id": "peano-014",
+    "type": "proof",
+    "front": "What is the induction step?",
+    "back": "Assume it at $n$ and prove it at $S(n)$."
+  },
+  {
+    "id": "peano-015",
+    "type": "concept",
+    "front": "Why is the induction hypothesis local?",
+    "back": "It assumes the property only at the current arbitrary $n$."
+  },
+  {
+    "id": "peano-016",
+    "type": "theorem",
+    "front": "How is every Peano element classified?",
+    "back": "It is either $1$ or the successor of another element."
+  },
+  {
+    "id": "peano-017",
+    "type": "theorem",
+    "front": "What is the predecessor property for noninitial elements?",
+    "back": "If $n\\\\ne1$, then $S(m)=n$ for some $m\\\\in P$."
+  },
+  {
+    "id": "peano-018",
+    "type": "proof",
+    "front": "Why is a predecessor unique when it exists?",
+    "back": "Because successor is injective."
+  },
+  {
+    "id": "peano-019",
+    "type": "concept",
+    "front": "Can $1$ have a predecessor?",
+    "back": "No. The first-element axiom forbids it."
+  },
+  {
+    "id": "peano-020",
+    "type": "concept",
+    "front": "Can an element have two distinct predecessors?",
+    "back": "No. Injectivity of successor forbids this."
+  },
+  {
+    "id": "peano-021",
+    "type": "theorem",
+    "front": "What rules out a disconnected successor chain?",
+    "back": "Induction: a successor-closed subset containing $1$ must be all of $P$."
+  },
+  {
+    "id": "peano-022",
+    "type": "definition",
+    "front": "What is iteration of successor?",
+    "back": "Repeated application of $S$ starting from an element."
+  },
+  {
+    "id": "peano-023",
+    "type": "definition",
+    "front": "What is $S^0(n)$?",
+    "back": "$n$."
+  },
+  {
+    "id": "peano-024",
+    "type": "definition",
+    "front": "What is $S^{k+1}(n)$?",
+    "back": "$S(S^k(n))$."
+  },
+  {
+    "id": "peano-025",
+    "type": "concept",
+    "front": "What does $S^k(1)$ represent?",
+    "back": "The element reached after applying successor $k$ times to $1$."
+  },
+  {
+    "id": "peano-026",
+    "type": "theorem",
+    "front": "What is the purpose of an iterator theorem?",
+    "back": "To justify repeated application of an operation by natural-number recursion."
+  },
+  {
+    "id": "peano-027",
+    "type": "concept",
+    "front": "What are the two defining clauses of an iterator?",
+    "back": "An initial value and a successor-step rule."
+  },
+  {
+    "id": "peano-028",
+    "type": "theorem",
+    "front": "What does uniqueness of iteration mean?",
+    "back": "Two functions obeying the same iterator clauses are equal."
+  },
+  {
+    "id": "peano-029",
+    "type": "theorem",
+    "front": "What does existence of iteration mean?",
+    "back": "A function satisfying the iterator clauses exists."
+  },
+  {
+    "id": "peano-030",
+    "type": "definition",
+    "front": "What is recursion on a Peano system used for?",
+    "back": "To define functions from a base value and successor rule."
+  },
+  {
+    "id": "peano-031",
+    "type": "definition",
+    "front": "What data define a recursive $f:P\\\\to X$?",
+    "back": "A value $f(1)$ and a rule determining $f(S(n))$ from $f(n)$."
+  },
+  {
+    "id": "peano-032",
+    "type": "theorem",
+    "front": "What does the recursion theorem guarantee?",
+    "back": "Existence and uniqueness of the recursively specified function."
+  },
+  {
+    "id": "peano-033",
+    "type": "concept",
+    "front": "Why is uniqueness essential for recursion?",
+    "back": "The clauses must determine one function, not several."
+  },
+  {
+    "id": "peano-034",
+    "type": "compare",
+    "front": "Induction versus recursion?",
+    "back": "Induction proves properties; recursion defines functions."
+  },
+  {
+    "id": "peano-035",
+    "type": "compare",
+    "front": "Recursion versus iteration?",
+    "back": "Iteration repeats one operation; recursion may use a general step rule."
+  },
+  {
+    "id": "peano-036",
+    "type": "definition",
+    "front": "How is addition naturally introduced?",
+    "back": "Recursively in one argument using successor."
+  },
+  {
+    "id": "peano-037",
+    "type": "concept",
+    "front": "What should the addition step clause express?",
+    "back": "Adding a successor gives the successor of the previous sum."
+  },
+  {
+    "id": "peano-038",
+    "type": "theorem",
+    "front": "What justifies recursively defined addition?",
+    "back": "The recursion theorem."
+  },
+  {
+    "id": "peano-039",
+    "type": "concept",
+    "front": "Why are arithmetic laws not primitive by default?",
+    "back": "They should be derived from recursive definitions and Peano structure."
+  },
+  {
+    "id": "peano-040",
+    "type": "definition",
+    "front": "How is multiplication introduced after addition?",
+    "back": "Recursively, with the step clause expressed using addition."
+  },
+  {
+    "id": "peano-041",
+    "type": "dependency",
+    "front": "What is the dependency for multiplication?",
+    "back": "Successor/recursion $\\\\to$ addition $\\\\to$ multiplication."
+  },
+  {
+    "id": "peano-042",
+    "type": "definition",
+    "front": "What is strong induction?",
+    "back": "Assume the property for all earlier cases to prove the current case."
+  },
+  {
+    "id": "peano-043",
+    "type": "definition",
+    "front": "What is the least-counterexample principle?",
+    "back": "If a property fails, there is a least element where it fails."
+  },
+  {
+    "id": "peano-044",
+    "type": "relation",
+    "front": "How is strong induction related to ordinary induction?",
+    "back": "They are equivalent over the standard naturals."
+  },
+  {
+    "id": "peano-045",
+    "type": "relation",
+    "front": "How is least-counterexample reasoning related to well-ordering?",
+    "back": "It uses existence of a least element in every nonempty subset."
+  },
+  {
+    "id": "peano-046",
+    "type": "definition",
+    "front": "What properties define a partial order?",
+    "back": "Reflexivity, antisymmetry, and transitivity."
+  },
+  {
+    "id": "peano-047",
+    "type": "definition",
+    "front": "What extra property makes a partial order linear?",
+    "back": "Comparability of every pair."
+  },
+  {
+    "id": "peano-048",
+    "type": "definition",
+    "front": "What does reflexivity mean?",
+    "back": "$x\\\\le x$ for every $x$."
+  },
+  {
+    "id": "peano-049",
+    "type": "definition",
+    "front": "What does antisymmetry mean?",
+    "back": "$x\\\\le y$ and $y\\\\le x$ imply $x=y$."
+  },
+  {
+    "id": "peano-050",
+    "type": "definition",
+    "front": "What does transitivity mean?",
+    "back": "$x\\\\le y$ and $y\\\\le z$ imply $x\\\\le z$."
+  },
+  {
+    "id": "peano-051",
+    "type": "definition",
+    "front": "What does comparability mean?",
+    "back": "For any $x,y$, either $x\\\\le y$ or $y\\\\le x$."
+  },
+  {
+    "id": "peano-052",
+    "type": "definition",
+    "front": "How is strict order obtained from $\\\\le$?",
+    "back": "$x<y$ means $x\\\\le y$ and $x\\\\ne y$."
+  },
+  {
+    "id": "peano-053",
+    "type": "dependency",
+    "front": "What comes before addition?",
+    "back": "Successor and recursion."
+  },
+  {
+    "id": "peano-054",
+    "type": "dependency",
+    "front": "What comes before multiplication?",
+    "back": "Addition."
+  },
+  {
+    "id": "peano-055",
+    "type": "dependency",
+    "front": "What comes before well-ordering proofs?",
+    "back": "A defined order on the natural numbers."
+  },
+  {
+    "id": "peano-056",
+    "type": "scope",
+    "front": "What should not be introduced in this module yet?",
+    "back": "Integers, rationals, fields, completeness, sequences, or metric spaces."
+  },
+  {
+    "id": "peano-057",
+    "type": "goal",
+    "front": "What is the main goal of this module?",
+    "back": "Understand how naturals grow from $1$, successor, induction, and recursion."
+  }
+]
