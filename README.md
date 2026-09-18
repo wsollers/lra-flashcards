@@ -57,3 +57,48 @@ Import approved batches rather than repeatedly re-importing the whole repository
 Do not call an ordered field complete until the least-upper-bound property has been established.
 
 Order completeness and metric/sequential completeness are kept conceptually distinct and related only after both are defined.
+
+
+## App v0.1
+
+The repository includes a small browser/PWA review app in `app/`.
+
+Features:
+- bundled card data from this repository;
+- randomized session queue;
+- Show Answer;
+- Pass removes the card from the session;
+- Fail reinserts the card a few positions later;
+- session ends only when every selected card has passed;
+- per-card pass/fail statistics stored in browser localStorage;
+- deck-level statistics;
+- inline LaTeX rendering with KaTeX;
+- installable PWA shell.
+
+### Run locally
+
+From the repository root, serve the repository over HTTP. For example:
+
+```bash
+python -m http.server 8000
+```
+
+Then open:
+
+```
+http://localhost:8000/app/
+```
+
+Do not open `index.html` directly with a `file://` URL because the app loads JSON card files with `fetch()`.
+
+### Card data
+
+The app reads `card-index.json`, which points to JSON deck files under `cards/`.
+
+The first bundled deck is:
+
+```
+cards/core/01-peano-systems.json
+```
+
+Review statistics are device-local and are not committed to GitHub.
