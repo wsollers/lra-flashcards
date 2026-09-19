@@ -151,7 +151,9 @@ async function init() {
   await loadDeck(manifest.decks[0].id);
 
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js").catch(() => {});
+    navigator.serviceWorker.register("./sw.js")
+      .then(registration => registration.update())
+      .catch(() => {});
   }
 }
 
