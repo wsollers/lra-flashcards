@@ -7,12 +7,12 @@ When should a Lean definition return `Type` or data rather than `Prop`?	"<p>Retu
 def preimage (f : α → β) (t : Set β) : Set α := fun x =&gt; f x ∈ t</code></pre>"	lean core modeling type
 What is the usual shape of a Lean theorem header?	"<pre><code>theorem Name
     {Carrier : Type u}          -- the carrier/type of objects
-    [Instance? Carrier]         -- optional structure Lean should find
+    [Structure Carrier]         -- optional background structure Lean should find
     {Given : Carrier}           -- implicit given object(s)
     (given : Carrier)           -- explicit given object(s)
     (hypothesis : SomeProp given) :
     BodyToProve given := by
-  ...</code></pre><p>Read the header in slots:</p><p>1. <code>theorem Name</code><br>2. type/carrier variables: <code>{Carrier : Type u}</code><br>3. optional typeclass/instance assumptions: <code>[Instance? Carrier]</code><br>4. given mathematical objects: <code>{Given : Carrier}</code> or <code>(given : Carrier)</code><br>5. named assumptions/hypotheses: <code>(hypothesis : SomeProp given)</code><br>6. body/claim after the final colon: <code>BodyToProve given</code><br>7. proof script after <code>:= by</code></p>"	lean core declarations theorem
+  ...</code></pre><p>Read the header in slots:</p><p>1. <code>theorem Name</code><br>2. type/carrier variables: <code>{Carrier : Type u}</code><br>3. optional background structure/typeclass assumptions: <code>[Structure Carrier]</code><br>4. given mathematical objects: <code>{Given : Carrier}</code> or <code>(given : Carrier)</code><br>5. named assumptions/hypotheses: <code>(hypothesis : SomeProp given)</code><br>6. body/claim after the final colon: <code>BodyToProve given</code><br>7. proof script after <code>:= by</code></p><p><code>Structure</code> is a placeholder here. In real Lean, replace it with something specific like <code>Preorder</code>, <code>Ring</code>, <code>Field</code>, <code>TopologicalSpace</code>, or <code>MetricSpace</code>.</p>"	lean core declarations theorem
 What is a concrete example of that theorem-header shape?	"<pre><code>theorem UpperBoundMono
     {Carrier : Type u}
     [Preorder Carrier]

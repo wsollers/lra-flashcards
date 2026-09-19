@@ -43,7 +43,7 @@ Tags: lean core declarations theorem
 ```lean
 theorem Name
     {Carrier : Type u}          -- the carrier/type of objects
-    [Instance? Carrier]         -- optional structure Lean should find
+    [Structure Carrier]         -- optional background structure Lean should find
     {Given : Carrier}           -- implicit given object(s)
     (given : Carrier)           -- explicit given object(s)
     (hypothesis : SomeProp given) :
@@ -55,11 +55,13 @@ Read the header in slots:
 
 1. `theorem Name`
 2. type/carrier variables: `{Carrier : Type u}`
-3. optional typeclass/instance assumptions: `[Instance? Carrier]`
+3. optional background structure/typeclass assumptions: `[Structure Carrier]`
 4. given mathematical objects: `{Given : Carrier}` or `(given : Carrier)`
 5. named assumptions/hypotheses: `(hypothesis : SomeProp given)`
 6. body/claim after the final colon: `BodyToProve given`
 7. proof script after `:= by`
+
+`Structure` is a placeholder here. In real Lean, replace it with something specific like `Preorder`, `Ring`, `Field`, `TopologicalSpace`, or `MetricSpace`.
 ---
 
 ## What is a concrete example of that theorem-header shape?
