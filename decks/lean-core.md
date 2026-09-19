@@ -43,12 +43,11 @@ Tags: lean core declarations theorem
 ```lean
 theorem Name
     {Carrier : Type u}          -- the carrier/type of objects
-    [Preorder Carrier]          -- ambient structure/typeclass instance
-    {s : Set Carrier}           -- implicit parameters Lean can infer
-    {a b : Carrier}             -- more implicit parameters
-    (ha : IsUpperBound a s)     -- named hypothesis
-    (hab : a ≤ b) :             -- named hypothesis
-    IsUpperBound b s := by      -- goal after the colon
+    [Instance? Carrier]         -- optional structure Lean should find
+    {Given : Carrier}           -- implicit given object(s)
+    (given : Carrier)           -- explicit given object(s)
+    (hypothesis : SomeProp given) :
+    BodyToProve given := by
   ...
 ```
 
@@ -56,11 +55,35 @@ Read the header in slots:
 
 1. `theorem Name`
 2. type/carrier variables: `{Carrier : Type u}`
-3. structure Lean should find: `[Preorder Carrier]`
-4. mathematical objects: `{s : Set Carrier} {a b : Carrier}`
-5. assumptions/hypotheses: `(ha : ...) (hab : ...)`
-6. final claim after `:`
-7. proof after `:= by`
+3. optional typeclass/instance assumptions: `[Instance? Carrier]`
+4. given mathematical objects: `{Given : Carrier}` or `(given : Carrier)`
+5. named assumptions/hypotheses: `(hypothesis : SomeProp given)`
+6. body/claim after the final colon: `BodyToProve given`
+7. proof script after `:= by`
+---
+
+## What is a concrete example of that theorem-header shape?
+Tags: lean core beginner theorem-header example
+
+```lean
+theorem UpperBoundMono
+    {Carrier : Type u}
+    [Preorder Carrier]
+    {s : Set Carrier}
+    {a b : Carrier}
+    (ha : IsUpperBound a s)
+    (hab : a ≤ b) :
+    IsUpperBound b s := by
+  ...
+```
+
+Here:
+
+1. `Carrier` is the type.
+2. `[Preorder Carrier]` is the instance/structure needed for `≤`.
+3. `s`, `a`, and `b` are the given objects.
+4. `ha` and `hab` are hypotheses.
+5. `IsUpperBound b s` is the body to prove.
 ---
 
 ## How do you specify the carrier type in a theorem?

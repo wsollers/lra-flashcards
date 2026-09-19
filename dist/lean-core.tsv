@@ -7,13 +7,21 @@ When should a Lean definition return `Type` or data rather than `Prop`?	"<p>Retu
 def preimage (f : α → β) (t : Set β) : Set α := fun x =&gt; f x ∈ t</code></pre>"	lean core modeling type
 What is the usual shape of a Lean theorem header?	"<pre><code>theorem Name
     {Carrier : Type u}          -- the carrier/type of objects
-    [Preorder Carrier]          -- ambient structure/typeclass instance
-    {s : Set Carrier}           -- implicit parameters Lean can infer
-    {a b : Carrier}             -- more implicit parameters
-    (ha : IsUpperBound a s)     -- named hypothesis
-    (hab : a ≤ b) :             -- named hypothesis
-    IsUpperBound b s := by      -- goal after the colon
-  ...</code></pre><p>Read the header in slots:</p><p>1. <code>theorem Name</code><br>2. type/carrier variables: <code>{Carrier : Type u}</code><br>3. structure Lean should find: <code>[Preorder Carrier]</code><br>4. mathematical objects: <code>{s : Set Carrier} {a b : Carrier}</code><br>5. assumptions/hypotheses: <code>(ha : ...) (hab : ...)</code><br>6. final claim after <code>:</code><br>7. proof after <code>:= by</code></p>"	lean core declarations theorem
+    [Instance? Carrier]         -- optional structure Lean should find
+    {Given : Carrier}           -- implicit given object(s)
+    (given : Carrier)           -- explicit given object(s)
+    (hypothesis : SomeProp given) :
+    BodyToProve given := by
+  ...</code></pre><p>Read the header in slots:</p><p>1. <code>theorem Name</code><br>2. type/carrier variables: <code>{Carrier : Type u}</code><br>3. optional typeclass/instance assumptions: <code>[Instance? Carrier]</code><br>4. given mathematical objects: <code>{Given : Carrier}</code> or <code>(given : Carrier)</code><br>5. named assumptions/hypotheses: <code>(hypothesis : SomeProp given)</code><br>6. body/claim after the final colon: <code>BodyToProve given</code><br>7. proof script after <code>:= by</code></p>"	lean core declarations theorem
+What is a concrete example of that theorem-header shape?	"<pre><code>theorem UpperBoundMono
+    {Carrier : Type u}
+    [Preorder Carrier]
+    {s : Set Carrier}
+    {a b : Carrier}
+    (ha : IsUpperBound a s)
+    (hab : a ≤ b) :
+    IsUpperBound b s := by
+  ...</code></pre><p>Here:</p><p>1. <code>Carrier</code> is the type.<br>2. <code>[Preorder Carrier]</code> is the instance/structure needed for <code>≤</code>.<br>3. <code>s</code>, <code>a</code>, and <code>b</code> are the given objects.<br>4. <code>ha</code> and <code>hab</code> are hypotheses.<br>5. <code>IsUpperBound b s</code> is the body to prove.</p>"	lean core beginner theorem-header example
 How do you specify the carrier type in a theorem?	"<p>Put the carrier before the objects that use it.</p><pre><code>theorem MyTheorem
     {Carrier : Type u}
     ...</code></pre><p>If you do not care about universe polymorphism yet, this beginner version is often enough:</p><pre><code>theorem MyTheorem

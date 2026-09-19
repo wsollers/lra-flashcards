@@ -1,4 +1,4 @@
-const CACHE = "lra-flashcards-v4";
+const CACHE = "lra-flashcards-v5";
 const SHELL = [
   "./",
   "./index.html",

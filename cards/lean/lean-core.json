@@ -21,832 +21,838 @@
     "id": "lean-core-004",
     "type": "declarations",
     "front": "What is the usual shape of a Lean theorem header?",
-    "back": "theorem Name\n    {Carrier : Type u}          -- the carrier/type of objects\n    [Preorder Carrier]          -- ambient structure/typeclass instance\n    {s : Set Carrier}           -- implicit parameters Lean can infer\n    {a b : Carrier}             -- more implicit parameters\n    (ha : IsUpperBound a s)     -- named hypothesis\n    (hab : a ≤ b) :             -- named hypothesis\n    IsUpperBound b s := by      -- goal after the colon\n  ...\n\nRead the header in slots:\n\n1. `theorem Name`\n2. type/carrier variables: `{Carrier : Type u}`\n3. structure Lean should find: `[Preorder Carrier]`\n4. mathematical objects: `{s : Set Carrier} {a b : Carrier}`\n5. assumptions/hypotheses: `(ha : ...) (hab : ...)`\n6. final claim after `:`\n7. proof after `:= by`"
+    "back": "theorem Name\n    {Carrier : Type u}          -- the carrier/type of objects\n    [Instance? Carrier]         -- optional structure Lean should find\n    {Given : Carrier}           -- implicit given object(s)\n    (given : Carrier)           -- explicit given object(s)\n    (hypothesis : SomeProp given) :\n    BodyToProve given := by\n  ...\n\nRead the header in slots:\n\n1. `theorem Name`\n2. type/carrier variables: `{Carrier : Type u}`\n3. optional typeclass/instance assumptions: `[Instance? Carrier]`\n4. given mathematical objects: `{Given : Carrier}` or `(given : Carrier)`\n5. named assumptions/hypotheses: `(hypothesis : SomeProp given)`\n6. body/claim after the final colon: `BodyToProve given`\n7. proof script after `:= by`"
   },
   {
     "id": "lean-core-005",
+    "type": "example",
+    "front": "What is a concrete example of that theorem-header shape?",
+    "back": "theorem UpperBoundMono\n    {Carrier : Type u}\n    [Preorder Carrier]\n    {s : Set Carrier}\n    {a b : Carrier}\n    (ha : IsUpperBound a s)\n    (hab : a ≤ b) :\n    IsUpperBound b s := by\n  ...\n\nHere:\n\n1. `Carrier` is the type.\n2. `[Preorder Carrier]` is the instance/structure needed for `≤`.\n3. `s`, `a`, and `b` are the given objects.\n4. `ha` and `hab` are hypotheses.\n5. `IsUpperBound b s` is the body to prove."
+  },
+  {
+    "id": "lean-core-006",
     "type": "concept",
     "front": "How do you specify the carrier type in a theorem?",
     "back": "Put the carrier before the objects that use it.\n\ntheorem MyTheorem\n    {Carrier : Type u}\n    ...\n\nIf you do not care about universe polymorphism yet, this beginner version is often enough:\n\ntheorem MyTheorem\n    {Carrier : Type}\n    ..."
   },
   {
-    "id": "lean-core-006",
+    "id": "lean-core-007",
     "type": "concept",
     "front": "How do you specify order, ring, field, or topology structure in a theorem?",
     "back": "Put typeclass assumptions in square brackets after the carrier.\n\ntheorem OrderedFact\n    {Carrier : Type u}\n    [Preorder Carrier]\n    ...\n\nCommon examples:\n\n[Preorder α]\n[PartialOrder α]\n[LinearOrder α]\n[Ring R]\n[Field K]\n[TopologicalSpace X]\n\nSquare brackets mean: \"Lean, find this structure by typeclass search.\""
   },
   {
-    "id": "lean-core-007",
+    "id": "lean-core-008",
     "type": "concept",
     "front": "How do you specify ordinary mathematical objects in a theorem header?",
     "back": "Put each object with its type.\n\n(x : α)\n(s : Set α)\n(f : α → β)\n(R : α → α → Prop)\n\nUse parentheses when the caller should supply the object explicitly. Use braces when Lean can usually infer it from later arguments."
   },
   {
-    "id": "lean-core-008",
+    "id": "lean-core-009",
     "type": "concept",
     "front": "What is the difference between `(x : α)` and `{x : α}` in theorem headers?",
     "back": "(x : α)   -- explicit argument\n{x : α}   -- implicit argument\n\nExplicit arguments are visible when calling the theorem. Implicit arguments are inferred from context.\n\nBeginner rule: use `(x : α)` while learning; switch to `{x : α}` when the value is usually obvious from other arguments."
   },
   {
-    "id": "lean-core-009",
+    "id": "lean-core-010",
     "type": "concept",
     "front": "How do you specify a hypothesis in a theorem header?",
     "back": "Use a parenthesized name, colon, and proposition.\n\n(hx : x ∈ s)\n(hxy : x ≤ y)\n(hP : P x)\n(hUpper : IsUpperBound a s)\n\nAfter `intro` or inside the proof, these names become usable facts."
   },
   {
-    "id": "lean-core-010",
+    "id": "lean-core-011",
     "type": "concept",
     "front": "How do you specify several hypotheses with the same shape?",
     "back": "You can write them separately:\n\n(hx : x ∈ s) (hy : y ∈ s)\n\nor group variables with the same type:\n\n(x y z : α)\n(hx : x ∈ s) (hy : y ∈ s)\n\nDo not group hypotheses unless they really have the same proposition shape."
   },
   {
-    "id": "lean-core-011",
+    "id": "lean-core-012",
     "type": "concept",
     "front": "Where does the theorem's actual claim go?",
     "back": "The claim goes after the final colon and before `:= by`.\n\ntheorem Name\n    (h1 : P)\n    (h2 : P → Q) :\n    Q := by\n  exact h2 h1\n\nEverything before the colon is context. Everything after the colon is what you must prove."
   },
   {
-    "id": "lean-core-012",
+    "id": "lean-core-013",
     "type": "concept",
     "front": "How do you start a proof of an implication?",
     "back": "If the goal is:\n\n⊢ P → Q\n\ntype:\n\nintro hP\n\nNow `hP : P` is available, and the new goal is `Q`."
   },
   {
-    "id": "lean-core-013",
+    "id": "lean-core-014",
     "type": "concept",
     "front": "How do you start a proof of a universal statement?",
     "back": "If the goal is:\n\n⊢ ∀ x, P x\n\ntype:\n\nintro x\n\nNow `x` is arbitrary, and the new goal is `P x`."
   },
   {
-    "id": "lean-core-014",
+    "id": "lean-core-015",
     "type": "concept",
     "front": "How do you introduce both an object and its membership hypothesis?",
     "back": "For a goal like:\n\n⊢ ∀ x, x ∈ s → x ≤ a\n\nuse:\n\nintro x hx\n\nThen Lean gives you `x : α`, `hx : x ∈ s`, and the goal `x ≤ a`."
   },
   {
-    "id": "lean-core-015",
+    "id": "lean-core-016",
     "type": "concept",
     "front": "How do you use a hypothesis that is a function or implication?",
     "back": "If you have:\n\nh : P → Q\nhp : P\n\nthen:\n\nhave hq : Q := h hp\n\nFor a bound hypothesis:\n\nha : ∀ x, x ∈ s → x ≤ a\nhx : x ∈ s\n\nuse:\n\nhave hxa : x ≤ a := ha x hx"
   },
   {
-    "id": "lean-core-016",
+    "id": "lean-core-017",
     "type": "concept",
     "front": "How do you make a new hypothesis from old hypotheses?",
     "back": "Use `have`.\n\nhave hxa : x ≤ a := ha x hx\n\nIf the proof takes more than one line:\n\nhave hxc : x ≤ c := by\n  exact le_trans hxa hac\n\nThink: `have name : statement := proof`."
   },
   {
-    "id": "lean-core-017",
+    "id": "lean-core-018",
     "type": "concept",
     "front": "How do you chain two `≤` hypotheses?",
     "back": "If you have:\n\nhab : a ≤ b\nhbc : b ≤ c\n\nthen:\n\nexact le_trans hab hbc\n\nor:\n\nhave hac : a ≤ c := le_trans hab hbc"
   },
   {
-    "id": "lean-core-018",
+    "id": "lean-core-019",
     "type": "concept",
     "front": "How do you chain `<` and `≤` hypotheses?",
     "back": "Common order combinators:\n\nlt_trans       -- a < b, b < c gives a < c\nlt_of_lt_of_le -- a < b, b ≤ c gives a < c\nlt_of_le_of_lt -- a ≤ b, b < c gives a < c\nle_trans       -- a ≤ b, b ≤ c gives a ≤ c\n\nThe order of arguments follows the chain from left to right."
   },
   {
-    "id": "lean-core-019",
+    "id": "lean-core-020",
     "type": "concept",
     "front": "How do you write a `calc` block for inequalities?",
     "back": "calc\n  a ≤ b := hab\n  _ ≤ c := hbc\n  _ ≤ d := hcd\n\nThe underscore `_` means \"continue from the previous line's right-hand side.\""
   },
   {
-    "id": "lean-core-020",
+    "id": "lean-core-021",
     "type": "concept",
     "front": "How do you write a `calc` block for equalities?",
     "back": "calc\n  a = b := h_ab\n  _ = c := h_bc\n  _ = d := h_cd\n\nFor algebraic equalities, each line can also be proved by `ring`, `simp`, or another theorem."
   },
   {
-    "id": "lean-core-021",
+    "id": "lean-core-022",
     "type": "concept",
     "front": "When should you use `constructor`?",
     "back": "Use `constructor` when the goal asks you to build something with two main pieces.\n\nCommon goals:\n\n⊢ P ∧ Q\n⊢ P ↔ Q\n⊢ ∃ x, P x      -- after choosing a witness, often leaves an And goal\n⊢ SomeStructure\n\nAfter `constructor`, Lean creates one goal for each required piece."
   },
   {
-    "id": "lean-core-022",
+    "id": "lean-core-023",
     "type": "concept",
     "front": "How do you prove an `And` goal step by step?",
     "back": "If the goal is:\n\n⊢ P ∧ Q\n\nwrite:\n\nconstructor\n· exact hp\n· exact hq\n\nThe first bullet proves `P`; the second proves `Q`."
   },
   {
-    "id": "lean-core-023",
+    "id": "lean-core-024",
     "type": "concept",
     "front": "How do you prove an `Iff` goal step by step?",
     "back": "If the goal is:\n\n⊢ P ↔ Q\n\nwrite:\n\nconstructor\n· intro hp\n  -- prove Q\n· intro hq\n  -- prove P\n\nAn iff is two implications."
   },
   {
-    "id": "lean-core-024",
+    "id": "lean-core-025",
     "type": "concept",
     "front": "When should you use `cases`?",
     "back": "Use `cases` when you want to split a hypothesis or object by its constructors.\n\nFor a disjunction:\n\nh : P ∨ Q\ncases h with\n| inl hp => ...\n| inr hq => ...\n\nFor natural numbers:\n\ncases n with\n| zero => ...\n| succ k => ..."
   },
   {
-    "id": "lean-core-025",
+    "id": "lean-core-026",
     "type": "concept",
     "front": "When should you use `rcases`?",
     "back": "Use `rcases` when a hypothesis packages data you want to unpack immediately.\n\nrcases h with ⟨hp, hq⟩\nrcases h with ⟨w, hw⟩\nrcases h with hleft | hright\n\nBeginner rule: `rcases` is great for `And`, `Exists`, and `Or` hypotheses."
   },
   {
-    "id": "lean-core-026",
+    "id": "lean-core-027",
     "type": "concept",
     "front": "How do you unpack a conjunction hypothesis?",
     "back": "If you have:\n\nh : P ∧ Q\n\nwrite:\n\nrcases h with ⟨hp, hq⟩\n\nNow `hp : P` and `hq : Q`."
   },
   {
-    "id": "lean-core-027",
+    "id": "lean-core-028",
     "type": "concept",
     "front": "How do you unpack an existential hypothesis?",
     "back": "If you have:\n\nh : ∃ x, P x\n\nwrite:\n\nrcases h with ⟨x, hx⟩\n\nNow `x` is the witness and `hx : P x` is the proof it works."
   },
   {
-    "id": "lean-core-028",
+    "id": "lean-core-029",
     "type": "concept",
     "front": "How do you prove an existential goal?",
     "back": "If the goal is:\n\n⊢ ∃ x, P x\n\nchoose the witness:\n\nuse candidate\n\nThen Lean asks you to prove `P candidate`."
   },
   {
-    "id": "lean-core-029",
+    "id": "lean-core-030",
     "type": "concept",
     "front": "When should you use `unfold`?",
     "back": "Use `unfold Name` when the goal or a hypothesis is hiding behind a definition and you need to see its body.\n\nunfold IsUpperBound\n\nBeginner warning: unfolding too much makes goals noisy. Prefer unfolding one relevant definition at a time."
   },
   {
-    "id": "lean-core-030",
+    "id": "lean-core-031",
     "type": "concept",
     "front": "How do you unfold a definition inside a hypothesis?",
     "back": "Use `unfold Name at h`.\n\nh : IsUpperBound a s\nunfold IsUpperBound at h\n\nAfterward, `h` may become something like:\n\nh : ∀ x, x ∈ s → x ≤ a"
   },
   {
-    "id": "lean-core-031",
+    "id": "lean-core-032",
     "type": "concept",
     "front": "When should you use `simp [DefinitionName]` instead of `unfold`?",
     "back": "Use:\n\nsimp [DefinitionName]\n\nwhen unfolding the definition should be followed by routine cleanup.\n\nUse:\n\nsimp [DefinitionName] at h\n\nto simplify a hypothesis."
   },
   {
-    "id": "lean-core-032",
+    "id": "lean-core-033",
     "type": "concept",
     "front": "How do you rewrite the goal with an equality hypothesis?",
     "back": "If you have:\n\nh : a = b\n\nthen:\n\nrw [h]\n\nreplaces `a` by `b` in the goal. Use `rw [← h]` to rewrite backward."
   },
   {
-    "id": "lean-core-033",
+    "id": "lean-core-034",
     "type": "concept",
     "front": "How do you rewrite inside a hypothesis?",
     "back": "Use `at`.\n\nrw [h] at hx\n\nThis rewrites inside hypothesis `hx` instead of the goal.\n\nUse:\n\nrw [h] at *\n\nto rewrite in the goal and all hypotheses, but use this carefully."
   },
   {
-    "id": "lean-core-034",
+    "id": "lean-core-035",
     "type": "concept",
     "front": "What does `exact` mean in beginner terms?",
     "back": "`exact h` says: \"the thing named `h` is exactly a proof of the current goal.\"\n\nExample:\n\nh : P\n⊢ P\nexact h"
   },
   {
-    "id": "lean-core-035",
+    "id": "lean-core-036",
     "type": "concept",
     "front": "What does `apply` mean in beginner terms?",
     "back": "`apply h` says: \"use theorem or hypothesis `h`; now prove whatever inputs `h` still needs.\"\n\nExample:\n\nh : P → Q\n⊢ Q\napply h\n-- new goal: P"
   },
   {
-    "id": "lean-core-036",
+    "id": "lean-core-037",
     "type": "concept",
     "front": "How do you prove a bound statement from an upper-bound hypothesis?",
     "back": "If:\n\nha : IsUpperBound a s\nhx : x ∈ s\n\nand `IsUpperBound a s` unfolds to `∀ x, x ∈ s → x ≤ a`, then:\n\nhave hxa : x ≤ a := ha x hx\n\nIf Lean does not see the unfolded shape, try:\n\nunfold IsUpperBound at ha"
   },
   {
-    "id": "lean-core-037",
+    "id": "lean-core-038",
     "type": "declarations",
     "front": "How do `theorem`, `lemma`, and `example` differ?",
     "back": "`theorem` and `lemma` both create named declarations. Use `theorem` for central public results and `lemma` for supporting facts. `example` checks a proposition without adding a reusable name to the environment."
   },
   {
-    "id": "lean-core-038",
+    "id": "lean-core-039",
     "type": "declarations",
     "front": "What is an axiom in Lean?",
     "back": "axiom excludedMiddleLike (p : Prop) : p ∨ ¬ p\n\nAn `axiom` adds an unproved constant to the logical environment. It is powerful and dangerous: in ordinary project work, prefer definitions, theorem statements with proofs or explicit `sorry`, or imported existing axioms."
   },
   {
-    "id": "lean-core-039",
+    "id": "lean-core-040",
     "type": "concept",
     "front": "What does `sorry` mean?",
     "back": "`sorry` is a placeholder proof accepted by Lean with a warning. It lets the typecheck continue, but the declaration is not fully proved. Treat it as proof debt, never as a completed theorem."
   },
   {
-    "id": "lean-core-040",
+    "id": "lean-core-041",
     "type": "concept",
     "front": "What are explicit, implicit, and instance arguments?",
     "back": "(x : α)      -- explicit: caller usually supplies it\n{x : α}      -- implicit: Lean infers it\n[C α]        -- instance implicit: typeclass search finds it\n\nExplicit arguments model mathematical inputs. Implicit arguments reduce clutter. Instance arguments request canonical structure such as `Preorder α`, `Ring R`, or `TopologicalSpace X`."
   },
   {
-    "id": "lean-core-041",
+    "id": "lean-core-042",
     "type": "types",
     "front": "What does `{α : Type u}` mean?",
     "back": "It introduces an implicit type parameter `α` living in universe level `u`. The universe prevents paradoxes and lets definitions work uniformly over small and large types."
   },
   {
-    "id": "lean-core-042",
+    "id": "lean-core-043",
     "type": "universes",
     "front": "When do you write `universe u v`?",
     "back": "Write it near the top of a file or section when declarations quantify over universe-polymorphic types.\n\nuniverse u v\ndef Rel (α : Type u) (β : Type v) := α → β → Prop"
   },
   {
-    "id": "lean-core-043",
+    "id": "lean-core-044",
     "type": "types",
     "front": "What is the difference between `Prop`, `Type`, and `Sort`?",
     "back": "`Prop` is the universe of propositions. `Type u` is the universe of data types at level `u`. `Sort u` generalizes both: `Prop` is `Sort 0`, while `Type u` is essentially `Sort (u+1)`."
   },
   {
-    "id": "lean-core-044",
+    "id": "lean-core-045",
     "type": "types",
     "front": "How do you read `α → β → Prop`?",
     "back": "As a curried binary relation: given `a : α` and `b : β`, it returns a proposition. Read `R a b` as \"`a` is related to `b`.\""
   },
   {
-    "id": "lean-core-045",
+    "id": "lean-core-046",
     "type": "modeling",
     "front": "How is a set represented in Lean?",
     "back": "In Mathlib, `Set α` is a predicate `α → Prop`. Membership `x ∈ s` means `s x`.\n\nThis is why set extensionality often reduces to proving membership equivalence for an arbitrary element."
   },
   {
-    "id": "lean-core-046",
+    "id": "lean-core-047",
     "type": "modeling",
     "front": "What is the modeling choice between `Set (α × β)` and `α → β → Prop`?",
     "back": "`Set (α × β)` models a relation as a set of ordered pairs. `α → β → Prop` models it as a curried predicate. They are mathematically equivalent, but the curried form is usually easier for Lean proofs."
   },
   {
-    "id": "lean-core-047",
+    "id": "lean-core-048",
     "type": "concept",
     "front": "What does `fun x => ...` create?",
     "back": "It creates an anonymous function. Example:\n\nfun x => x + 1\n\nFor predicates, `fun x => x ∈ s ∧ P x` creates a set-like condition."
   },
   {
-    "id": "lean-core-048",
+    "id": "lean-core-049",
     "type": "tactics",
     "front": "What does `by` introduce?",
     "back": "`by` switches from term mode to tactic mode. After `by`, tactics transform the proof goal until it is solved."
   },
   {
-    "id": "lean-core-049",
+    "id": "lean-core-050",
     "type": "tactics",
     "front": "What is a proof state?",
     "back": "A proof state is Lean's current list of goals plus local hypotheses. Tactics read and transform this state. The main workflow is: inspect the target, introduce assumptions, decompose structure, rewrite or apply known facts, and close goals."
   },
   {
-    "id": "lean-core-050",
+    "id": "lean-core-051",
     "type": "tactics",
     "front": "What does `intro` do?",
     "back": "`intro x` handles a goal beginning with `∀ x, ...` or `A → B` by moving the variable or assumption into the local context.\n\n⊢ ∀ x, P x\nintro x\n-- x : ...\n-- ⊢ P x"
   },
   {
-    "id": "lean-core-051",
+    "id": "lean-core-052",
     "type": "tactics",
     "front": "What does `rintro` do?",
     "back": "`rintro` combines introduction with pattern matching.\n\nrintro x ⟨hx, hy⟩\n\nThis introduces `x` and immediately splits a conjunction hypothesis into `hx` and `hy`."
   },
   {
-    "id": "lean-core-052",
+    "id": "lean-core-053",
     "type": "tactics",
     "front": "What does `exact` do?",
     "back": "`exact h` closes the current goal when `h` has exactly the required type.\n\nUse it when you already have the proof term or theorem Lean needs."
   },
   {
-    "id": "lean-core-053",
+    "id": "lean-core-054",
     "type": "tactics",
     "front": "What does `apply` do?",
     "back": "`apply theoremName` uses a theorem whose conclusion matches the current goal, then creates new goals for the theorem's hypotheses.\n\nIt is backward reasoning: \"to prove this goal, it is enough to prove these premises.\""
   },
   {
-    "id": "lean-core-054",
+    "id": "lean-core-055",
     "type": "tactics",
     "front": "What does `refine` do?",
     "back": "`refine` is like `exact` or `apply`, but allows holes `_` for subgoals.\n\nrefine ⟨?_, ?_⟩\n\nIt is useful when building structured proofs with visible placeholders."
   },
   {
-    "id": "lean-core-055",
+    "id": "lean-core-056",
     "type": "tactics",
     "front": "What does `constructor` do?",
     "back": "`constructor` splits a goal whose target has one constructor, such as conjunction, iff, existential packages, or many structures.\n\nFor `P ∧ Q`, it creates goals `P` and `Q`."
   },
   {
-    "id": "lean-core-056",
+    "id": "lean-core-057",
     "type": "concept",
     "front": "How do you prove an `And` goal?",
     "back": "Use `constructor`, or provide a pair:\n\nconstructor\n· exact hp\n· exact hq\n\nexact ⟨hp, hq⟩"
   },
   {
-    "id": "lean-core-057",
+    "id": "lean-core-058",
     "type": "concept",
     "front": "How do you use an `And` hypothesis?",
     "back": "Destructure it:\n\nrcases h with ⟨hp, hq⟩\n\nor use projections:\n\nexact h.left\nexact h.right"
   },
   {
-    "id": "lean-core-058",
+    "id": "lean-core-059",
     "type": "concept",
     "front": "How do you prove an `Iff` goal?",
     "back": "Use `constructor`; Lean creates the forward and reverse implication goals.\n\nconstructor\n· intro h\n  ...\n· intro h\n  ..."
   },
   {
-    "id": "lean-core-059",
+    "id": "lean-core-060",
     "type": "concept",
     "front": "How do you use an `Iff` hypothesis?",
     "back": "If `h : P ↔ Q`, then `h.mp : P → Q` and `h.mpr : Q → P`.\n\nYou can also rewrite with it using `rw [h]` when appropriate."
   },
   {
-    "id": "lean-core-060",
+    "id": "lean-core-061",
     "type": "concept",
     "front": "How do you prove an existential statement?",
     "back": "Use `use witness`, then prove the witness satisfies the remaining property.\n\nuse a\nconstructor\n· exact ha_mem\n· exact ha_bound"
   },
   {
-    "id": "lean-core-061",
+    "id": "lean-core-062",
     "type": "concept",
     "front": "How do you use an existential hypothesis?",
     "back": "Destructure it with `rcases`.\n\nrcases h with ⟨w, hw⟩\n\nNow `w` is the witness and `hw` is its proof."
   },
   {
-    "id": "lean-core-062",
+    "id": "lean-core-063",
     "type": "tactics",
     "front": "What does `cases h with` do?",
     "back": "It performs case analysis on data or proof constructors. For a disjunction `h : P ∨ Q`, it creates one branch with `P` and one branch with `Q`."
   },
   {
-    "id": "lean-core-063",
+    "id": "lean-core-064",
     "type": "tactics",
     "front": "What does `simp` do?",
     "back": "`simp` rewrites using simplification lemmas until the goal is in a normal form. It unfolds reducible definitions marked or supplied for simplification, simplifies projections, evaluates basic computation, and uses lemmas tagged `[simp]`."
   },
   {
-    "id": "lean-core-064",
+    "id": "lean-core-065",
     "type": "tactics",
     "front": "When should you use `simp [DefinitionName]`?",
     "back": "Use it when a goal is blocked because a local definition must be unfolded.\n\nsimp [IsUpperBound]\n\nThis is common for predicate definitions whose logical body is hidden behind a name."
   },
   {
-    "id": "lean-core-065",
+    "id": "lean-core-066",
     "type": "tactics",
     "front": "What does `rw [h]` do?",
     "back": "It rewrites the target using equality or iff lemma `h` from left to right.\n\n`rw [← h]` rewrites from right to left."
   },
   {
-    "id": "lean-core-066",
+    "id": "lean-core-067",
     "type": "tactics",
     "front": "What is the difference between `rw` and `simp`?",
     "back": "`rw` applies specified rewrites in a directed, local way. `simp` searches a simplification set and repeatedly rewrites until stable. Use `rw` for controlled algebraic or definitional changes; use `simp` for routine cleanup."
   },
   {
-    "id": "lean-core-067",
+    "id": "lean-core-068",
     "type": "tactics",
     "front": "What does `simpa using h` do?",
     "back": "It asks Lean to simplify both the target and the type of `h`, then use `h` to close the goal.\n\nThis is a compact way to bridge minor definitional, projection, or notation differences."
   },
   {
-    "id": "lean-core-068",
+    "id": "lean-core-069",
     "type": "tactics",
     "front": "What does `have h : P := by ...` do?",
     "back": "It creates a named intermediate proof.\n\nhave hbound : x ≤ a := by\n  exact ha x hx\n\nUse meaningful names when the proof reads like mathematics."
   },
   {
-    "id": "lean-core-069",
+    "id": "lean-core-070",
     "type": "tactics",
     "front": "What does `let x := ...` do in a proof?",
     "back": "It introduces a local abbreviation for data. Use `let` for objects you will refer to repeatedly; use `have` for propositions or proofs."
   },
   {
-    "id": "lean-core-070",
+    "id": "lean-core-071",
     "type": "tactics",
     "front": "What does `calc` provide?",
     "back": "`calc` writes chained equality or order reasoning.\n\ncalc\n  a ≤ b := hab\n  _ ≤ c := hbc\n\nIt is ideal when the human proof is a visible chain."
   },
   {
-    "id": "lean-core-071",
+    "id": "lean-core-072",
     "type": "tactics",
     "front": "What does `omega` solve?",
     "back": "`omega` solves many linear arithmetic goals over natural numbers and integers. It is not a general algebra solver and generally does not handle nonlinear multiplication."
   },
   {
-    "id": "lean-core-072",
+    "id": "lean-core-073",
     "type": "tactics",
     "front": "What does `linarith` solve?",
     "back": "`linarith` solves linear arithmetic over ordered semirings/rings/fields when the needed hypotheses are in context. It is useful for inequalities involving addition, subtraction, scalar multiplication by numerals, and order."
   },
   {
-    "id": "lean-core-073",
+    "id": "lean-core-074",
     "type": "tactics",
     "front": "What does `ring` solve?",
     "back": "`ring` normalizes and proves polynomial identities in semirings and rings.\n\nIt proves goals like `(x + y)^2 = x^2 + 2*x*y + y^2`, assuming the right algebraic typeclass instances are available."
   },
   {
-    "id": "lean-core-074",
+    "id": "lean-core-075",
     "type": "tactics",
     "front": "What does `field_simp` do?",
     "back": "`field_simp` clears denominators in field-like expressions, usually creating or using nonzero side conditions. It is often followed by `ring` or `linarith`."
   },
   {
-    "id": "lean-core-075",
+    "id": "lean-core-076",
     "type": "tactics",
     "front": "What does `ext` do?",
     "back": "`ext x` applies an extensionality theorem, usually reducing equality of sets, functions, or structures to equality at an arbitrary element or field.\n\nFor sets, it typically turns `s = t` into `∀ x, x ∈ s ↔ x ∈ t`."
   },
   {
-    "id": "lean-core-076",
+    "id": "lean-core-077",
     "type": "tactics",
     "front": "What does `unfold Name` do?",
     "back": "It replaces `Name` by its definition in the target or hypotheses. Prefer `simp [Name]` when simplification should also clean up the result."
   },
   {
-    "id": "lean-core-077",
+    "id": "lean-core-078",
     "type": "tactics",
     "front": "What does `change NewTarget` do?",
     "back": "It replaces the current target by a definitionally equal target. Use it when Lean's target is technically equivalent to the shape you want, but not displayed in a useful way."
   },
   {
-    "id": "lean-core-078",
+    "id": "lean-core-079",
     "type": "tactics",
     "front": "What does `show P` do?",
     "back": "`show P` states the goal shape you intend to prove. It is useful for documentation and for forcing Lean to elaborate the target as a particular proposition."
   },
   {
-    "id": "lean-core-079",
+    "id": "lean-core-080",
     "type": "concept",
     "front": "How do you inspect a term's type while learning?",
     "back": "Use:\n\n#check term\n#check theoremName\n#print declarationName\n\nKeep these in scratch or learning files, not production proofs unless the repo intentionally allows diagnostic commands."
   },
   {
-    "id": "lean-core-080",
+    "id": "lean-core-081",
     "type": "structures",
     "front": "What is a structure in Lean?",
     "back": "A `structure` is a bundled record of fields.\n\nstructure MetricDefinition (X : Type u) where\n  dist : X → X → Real\n  nonneg : ∀ x y, 0 ≤ dist x y\n\nAn instance of the structure contains data and proofs for every field."
   },
   {
-    "id": "lean-core-081",
+    "id": "lean-core-082",
     "type": "structures",
     "front": "How do you construct a structure value?",
     "back": "Use record syntax:\n\n{ dist := d\n  nonneg := hnonneg\n  symmetric := hsymm }\n\nLean checks that every required field is supplied."
   },
   {
-    "id": "lean-core-082",
+    "id": "lean-core-083",
     "type": "structures",
     "front": "How do you access a structure field?",
     "back": "Use dot projection:\n\nmetric.dist x y\nmetric.symmetric x y\n\nProjection works when Lean can infer the structure containing the field."
   },
   {
-    "id": "lean-core-083",
+    "id": "lean-core-084",
     "type": "structures",
     "front": "What does `extends` mean in a structure?",
     "back": "structure GroupDefinition (G : Type u) extends MonoidDefinition G where\n  inv : G → G\n\nThe new structure includes all fields of the parent structure plus additional fields."
   },
   {
-    "id": "lean-core-084",
+    "id": "lean-core-085",
     "type": "classes",
     "front": "What is a class in Lean?",
     "back": "A `class` is a structure whose values can be found by typeclass search.\n\nUse classes for ambient reusable structure, like `Preorder α` or `Ring R`. Use ordinary structures when you want explicit model values and local control."
   },
   {
-    "id": "lean-core-085",
+    "id": "lean-core-086",
     "type": "classes",
     "front": "What does `[Preorder α]` ask Lean to do?",
     "back": "It asks typeclass search to find an available preorder structure on `α`. Once found, notation and theorems using `≤` become available."
   },
   {
-    "id": "lean-core-086",
+    "id": "lean-core-087",
     "type": "modeling",
     "front": "When should modeling use explicit structure parameters instead of typeclasses?",
     "back": "Use explicit structures when multiple competing structures may exist on the same carrier, when the construction is local, or when you want proofs to mention the selected model directly.\n\nUse typeclasses for canonical, ambient, widely shared structure."
   },
   {
-    "id": "lean-core-087",
+    "id": "lean-core-088",
     "type": "concept",
     "front": "What is a namespace for?",
     "back": "Namespaces organize names and prevent collisions.\n\nnamespace LRA.VolumeI.Identity\n...\nend LRA.VolumeI.Identity\n\nInside the namespace, declarations get fully qualified names like `LRA.VolumeI.Identity.Name`."
   },
   {
-    "id": "lean-core-088",
+    "id": "lean-core-089",
     "type": "concept",
     "front": "What does `open Namespace` do?",
     "back": "It makes names from a namespace available without full qualification in the current scope.\n\nPrefer local `open` usage when broad imports would make names ambiguous."
   },
   {
-    "id": "lean-core-089",
+    "id": "lean-core-090",
     "type": "concept",
     "front": "What does `section ... end` do?",
     "back": "A section groups variables, local instances, and declarations. Variables introduced inside a section are available to declarations in that section but do not leak afterward."
   },
   {
-    "id": "lean-core-090",
+    "id": "lean-core-091",
     "type": "concept",
     "front": "What does `variable` do?",
     "back": "It declares reusable parameters for following declarations in the current namespace or section.\n\nvariable {α : Type u} [Preorder α]\n\nUse it to avoid repeating common parameters in a group of nearby definitions or theorems."
   },
   {
-    "id": "lean-core-091",
+    "id": "lean-core-092",
     "type": "declarations",
     "front": "How do you decide what parameters belong before the colon?",
     "back": "Put all objects, structures, and hypotheses needed to state the result before the colon. The proposition or result type after the colon should read as the main mathematical claim."
   },
   {
-    "id": "lean-core-092",
+    "id": "lean-core-093",
     "type": "concept",
     "front": "What should theorem hypothesis names communicate?",
     "back": "Names should describe mathematical content:\n\n(upperA : IsUpperBound a s)\n(a_le_b : a ≤ b)\n\nAvoid throwaway names in public or long proofs when the names carry the proof narrative."
   },
   {
-    "id": "lean-core-093",
+    "id": "lean-core-094",
     "type": "declarations",
     "front": "What is the difference between parameters in parentheses and section variables?",
     "back": "Parenthesized parameters belong explicitly to one declaration. Section variables are automatically inserted into each declaration that uses them. Prefer explicit parameters when the declaration should be understandable in isolation."
   },
   {
-    "id": "lean-core-094",
+    "id": "lean-core-095",
     "type": "declarations",
     "front": "What does `noncomputable def` mean?",
     "back": "It defines an object that may rely on classical choice, existence proofs, quotients, or other non-executable principles. The definition is mathematically valid but not intended as executable code."
   },
   {
-    "id": "lean-core-095",
+    "id": "lean-core-096",
     "type": "classical",
     "front": "What does `open Classical` or `classical` enable?",
     "back": "It enables classical reasoning such as choice and decidability of propositions. Use it deliberately, especially in constructive or foundational areas."
   },
   {
-    "id": "lean-core-096",
+    "id": "lean-core-097",
     "type": "types",
     "front": "What is a coercion?",
     "back": "A coercion is an automatic conversion Lean inserts between compatible types, such as a subtype element to its underlying value. Coercions are convenient but can obscure what type a term actually has."
   },
   {
-    "id": "lean-core-097",
+    "id": "lean-core-098",
     "type": "types",
     "front": "What is a subtype?",
     "back": "{x : α // P x}\n\nA subtype value contains data `x : α` plus a proof that `P x`. Access the data with `.val` and the proof with `.property`."
   },
   {
-    "id": "lean-core-098",
+    "id": "lean-core-099",
     "type": "modeling",
     "front": "How do you model \"an element with a property\"?",
     "back": "Use a subtype when the property should travel with the element:\n\n{x : α // x ∈ s}\n\nUse a separate variable and hypothesis when the property should remain a local assumption:\n\n(x : α) (hx : x ∈ s)"
   },
   {
-    "id": "lean-core-099",
+    "id": "lean-core-100",
     "type": "modeling",
     "front": "What is quotient modeling for?",
     "back": "Use quotients when objects are equivalence classes of representatives, such as rationals as integer pairs or reals as Cauchy sequences. The core proof burden is showing operations respect the equivalence relation."
   },
   {
-    "id": "lean-core-100",
+    "id": "lean-core-101",
     "type": "modeling",
     "front": "What is a well-definedness theorem?",
     "back": "It proves that a definition does not depend on arbitrary choices of representative.\n\nFor quotients, the usual shape is: if representatives are equivalent, then applying the operation to them gives equivalent results."
   },
   {
-    "id": "lean-core-101",
+    "id": "lean-core-102",
     "type": "modeling",
     "front": "What is a satisfaction theorem?",
     "back": "It proves that a construction realizes a specified interface or law package.\n\nExample shape: a concrete construction satisfies semigroup, ring, field, order, or completeness laws."
   },
   {
-    "id": "lean-core-102",
+    "id": "lean-core-103",
     "type": "modeling",
     "front": "What is a bridge or adapter theorem?",
     "back": "It connects two representations without globally merging them.\n\nExample: an LRA construction maps to Mathlib's `Int` and agrees with Mathlib operations through explicit conversion functions."
   },
   {
-    "id": "lean-core-103",
+    "id": "lean-core-104",
     "type": "proof-design",
     "front": "When should you create a helper lemma?",
     "back": "Create a helper lemma when a sub-argument is reused, has a clear mathematical name, or would make the main proof too dense. Avoid helper lemmas that are only tactic scaffolding unless local proof readability improves."
   },
   {
-    "id": "lean-core-104",
+    "id": "lean-core-105",
     "type": "proof-state",
     "front": "How do you read a goal `⊢ A → B`?",
     "back": "Lean is asking for a function from proofs of `A` to proofs of `B`. The usual first move is:\n\nintro hA"
   },
   {
-    "id": "lean-core-105",
+    "id": "lean-core-106",
     "type": "proof-state",
     "front": "How do you read a goal `⊢ ∀ x, P x`?",
     "back": "Lean is asking for a proof for an arbitrary `x`. The usual first move is:\n\nintro x"
   },
   {
-    "id": "lean-core-106",
+    "id": "lean-core-107",
     "type": "proof-state",
     "front": "How do you read a goal `⊢ ∃ x, P x`?",
     "back": "Lean is asking for a witness and a proof that it works. Usually:\n\nuse candidate"
   },
   {
-    "id": "lean-core-107",
+    "id": "lean-core-108",
     "type": "proof-state",
     "front": "How do you read a goal `⊢ P ∧ Q`?",
     "back": "Lean is asking for both proofs. Usually:\n\nconstructor"
   },
   {
-    "id": "lean-core-108",
+    "id": "lean-core-109",
     "type": "proof-state",
     "front": "How do you read a goal `⊢ P ↔ Q`?",
     "back": "Lean is asking for both directions. Usually:\n\nconstructor\n· intro hp\n  ...\n· intro hq\n  ..."
   },
   {
-    "id": "lean-core-109",
+    "id": "lean-core-110",
     "type": "elaboration",
     "front": "What should you try when Lean cannot infer a type?",
     "back": "Add type annotations near the ambiguity:\n\n(x : α)\n(s : Set α)\nshow P from ...\nhave h : P := ...\n\nLean errors often improve once the intended type is explicit."
   },
   {
-    "id": "lean-core-110",
+    "id": "lean-core-111",
     "type": "elaboration",
     "front": "What should you try when typeclass search fails?",
     "back": "Check whether the needed instance is in scope, whether imports expose it, and whether the carrier type is the one with the instance.\n\nSometimes an explicit argument, local instance, or adapter theorem is better than forcing global typeclass search."
   },
   {
-    "id": "lean-core-111",
+    "id": "lean-core-112",
     "type": "concept",
     "front": "Why prefer readable proofs over tactic golf?",
     "back": "Readable proofs preserve the mathematical argument, make later repair easier, and help theorem statements stay aligned with the intended source. Compact tactic scripts can hide fragile dependencies."
   },
   {
-    "id": "lean-core-112",
+    "id": "lean-core-113",
     "type": "concept",
     "front": "What belongs in a Lean doc comment for a public mathematical declaration?",
     "back": "State the object or theorem in ordinary mathematical language, mention important dependencies or proof status, and expose the formal logical shape when the project expects searchable hover text."
   },
   {
-    "id": "lean-core-113",
+    "id": "lean-core-114",
     "type": "concept",
     "front": "How should a definition doc comment describe a predicate?",
     "back": "Name the predicate and describe its membership, evaluation, or field condition.\n\nExample: \"`a` is an upper bound for `s` when every member of `s` is less than or equal to `a`.\""
   },
   {
-    "id": "lean-core-114",
+    "id": "lean-core-115",
     "type": "concept",
     "front": "How should a theorem doc comment describe a two-direction proof?",
     "back": "State the theorem in its displayed Lean direction, then add an \"equivalently\" or \"memberwise\" sentence describing the elementwise or bidirectional proof shape."
   },
   {
-    "id": "lean-core-115",
+    "id": "lean-core-116",
     "type": "workflow",
     "front": "What is the safest way to model a theorem before proving it?",
     "back": "First make the statement typecheck. Check that parameters, typeclasses, namespaces, and notation mean exactly what the mathematics intends. Only then start proof search."
   },
   {
-    "id": "lean-core-116",
+    "id": "lean-core-117",
     "type": "modeling",
     "front": "What is the danger of adding global instances?",
     "back": "Global instances affect typeclass search everywhere downstream. They can introduce ambiguity, slow search, or make notation resolve unexpectedly. Prefer local instances or explicit adapters until a canonical structure is clear."
   },
   {
-    "id": "lean-core-117",
+    "id": "lean-core-118",
     "type": "modeling",
     "front": "What is the difference between reducible definitions and theorem APIs?",
     "back": "A reducible definition can be unfolded by proof automation. A theorem API gives named facts without exposing representation. Prefer theorem APIs when callers should not depend on the internal representation."
   },
   {
-    "id": "lean-core-118",
+    "id": "lean-core-119",
     "type": "modeling",
     "front": "How do you keep representation details local?",
     "back": "Expose constructors, projections, and theorems that state the intended behavior. Keep low-level encodings behind namespaces, private helpers, or construction-specific modules."
   },
   {
-    "id": "lean-core-119",
+    "id": "lean-core-120",
     "type": "concept",
     "front": "What is an import aggregator?",
     "back": "An aggregator module imports a curated collection of modules so users can import one stable name. It should not add new mathematical content unless the project explicitly uses it that way."
   },
   {
-    "id": "lean-core-120",
+    "id": "lean-core-121",
     "type": "concept",
     "front": "How do you avoid circular imports?",
     "back": "Place definitions in the earliest common dependency layer, move shared lemmas upward, and keep examples/tests from importing back into core theory."
   },
   {
-    "id": "lean-core-121",
+    "id": "lean-core-122",
     "type": "concept",
     "front": "What is the first question when choosing where a theorem belongs?",
     "back": "Ask: \"At what level is this theorem true?\" Place it at the highest general layer where the assumptions are sufficient, rather than duplicating it in a specific construction."
   },
   {
-    "id": "lean-core-122",
+    "id": "lean-core-123",
     "type": "concept",
     "front": "What does \"source-facing PascalCase\" mean in this project?",
     "back": "Public declarations that mirror mathematical source content use descriptive PascalCase names, such as `IsUpperBound` or `MaximumIsSupremum`. Local proof helpers may use snake_case when they are genuinely internal."
   },
   {
-    "id": "lean-core-123",
+    "id": "lean-core-124",
     "type": "workflow",
     "front": "What is a good Lean workflow for a new concept?",
     "back": "1. Decide the carrier types and structures.\n2. Write predicate or data definitions.\n3. Write theorem statements that expose the intended API.\n4. Prove small reusable lemmas.\n5. Add examples or tests only after the core shape is stable."
   },
   {
-    "id": "lean-core-124",
+    "id": "lean-core-125",
     "type": "workflow",
     "front": "What is a good Lean workflow for a stuck proof?",
     "back": "1. Read the target and hypotheses.\n2. Unfold only the definitions relevant to the goal.\n3. Introduce variables and decompose conjunctions/existentials.\n4. Search for theorem APIs before doing representation work.\n5. Use `have` claims to make the mathematical path visible."
   },
   {
-    "id": "lean-core-125",
+    "id": "lean-core-126",
     "type": "proof-patterns",
     "front": "What is a common proof pattern for monotonic upper bounds?",
     "back": "To prove `b` is an upper bound from `a` being an upper bound and `a ≤ b`:\n\nintro x hx\nexact le_trans (ha x hx) hab\n\nThe pattern is: introduce an arbitrary member, get the old bound, compose inequalities."
   },
   {
-    "id": "lean-core-126",
+    "id": "lean-core-127",
     "type": "proof-patterns",
     "front": "What is a common proof pattern for set equality?",
     "back": "Use extensionality and prove membership equivalence:\n\next x\nconstructor\n· intro hx\n  ...\n· intro hx\n  ..."
   },
   {
-    "id": "lean-core-127",
+    "id": "lean-core-128",
     "type": "proof-patterns",
     "front": "What is a common proof pattern for function equality?",
     "back": "Use function extensionality:\n\nfunext x\n\nThen prove the two functions give equal values at arbitrary `x`."
   },
   {
-    "id": "lean-core-128",
+    "id": "lean-core-129",
     "type": "proof-patterns",
     "front": "What is a common proof pattern for structure equality?",
     "back": "Use extensionality if an ext theorem exists, or prove each field equal. Often the better design is to prove fieldwise behavior rather than relying on record equality."
   },
   {
-    "id": "lean-core-129",
+    "id": "lean-core-130",
     "type": "proof-patterns",
     "front": "What is a common proof pattern for a bundled algebraic law?",
     "back": "Open the structure value, use its named law fields, and avoid reproving laws from raw operation definitions unless the construction-specific theorem is exactly about those definitions."
   },
   {
-    "id": "lean-core-130",
+    "id": "lean-core-131",
     "type": "proof-patterns",
     "front": "What is a common proof pattern for \"operation respects equivalence\"?",
     "back": "Assume equivalent inputs, unfold the operation on representatives, and prove the outputs are equivalent. This theorem is usually needed before defining an operation on a quotient."
   },
   {
-    "id": "lean-core-131",
+    "id": "lean-core-132",
     "type": "proof-patterns",
     "front": "What is a common proof pattern for classical choice definitions?",
     "back": "First prove existence and uniqueness or sufficient existence. Then define the chosen object with `Classical.choose` or a noncomputable construction, and prove a correctness theorem about the chosen object."
   },
   {
-    "id": "lean-core-132",
+    "id": "lean-core-133",
     "type": "headers",
     "front": "What does a good theorem header do for future proof work?",
     "back": "It exposes exactly the assumptions the proof needs, avoids hidden representation commitments, and leaves the conclusion in the vocabulary callers want to use."
   },
   {
-    "id": "lean-core-133",
+    "id": "lean-core-134",
     "type": "headers",
     "front": "What does a good definition header do for future theorem work?",
     "back": "It orders parameters from general structure to specific objects, keeps inferable type parameters implicit, and returns the mathematical object or proposition that downstream theorems should cite."
   },
   {
-    "id": "lean-core-134",
+    "id": "lean-core-135",
     "type": "workflow",
     "front": "What should you do before changing a theorem statement to make a proof easier?",
     "back": "Check whether the new statement still says the intended mathematics. If the proof is hard because the abstraction boundary is wrong, add or use a supporting lemma instead of weakening the theorem accidentally."
   },
   {
-    "id": "lean-core-135",
+    "id": "lean-core-136",
     "type": "concept",
     "front": "What is \"term mode\" in Lean?",
     "back": "Term mode writes the proof or object directly as an expression:\n\nfun x hx => le_trans (ha x hx) hab\n\nIt is concise for simple functions and direct proof terms."
   },
   {
-    "id": "lean-core-136",
+    "id": "lean-core-137",
     "type": "concept",
     "front": "What is \"tactic mode\" in Lean?",
     "back": "Tactic mode writes a script after `by` that incrementally transforms goals. It is clearer for proofs with branching, decomposition, or several intermediate claims."
   },
   {
-    "id": "lean-core-137",
+    "id": "lean-core-138",
     "type": "tactics",
     "front": "When is `aesop` appropriate?",
     "back": "`aesop` can solve routine logical goals using registered rules. Use it for local automation after the statement is clear; avoid relying on it when it hides the main mathematical argument of a public theorem."
   },
   {
-    "id": "lean-core-138",
+    "id": "lean-core-139",
     "type": "tactics",
     "front": "What does `all_goals` do?",
     "back": "It applies a tactic to every remaining goal.\n\nall_goals simp\n\nUse it when every branch has the same routine cleanup."
   },
   {
-    "id": "lean-core-139",
+    "id": "lean-core-140",
     "type": "proof-design",
     "front": "What is the danger of proving by repeated unfolding?",
     "back": "Repeated unfolding couples proofs to representation details. Prefer named theorem APIs once a concept has stable behavior, especially across modules."
   },
   {
-    "id": "lean-core-140",
+    "id": "lean-core-141",
     "type": "workflow",
     "front": "What is the role of tests and examples in Lean projects?",
     "back": "Examples show intended use and compile-check behavior. Tests catch regressions. They should not become the primary source of reusable theory; central facts belong in named declarations."
   },
   {
-    "id": "lean-core-141",
+    "id": "lean-core-142",
     "type": "elaboration",
     "front": "What does it mean for Lean to elaborate a declaration?",
     "back": "Elaboration resolves implicit arguments, typeclasses, overloaded notation, coercions, universe levels, and expected types until the declaration has a fully checked core expression."
   },
   {
-    "id": "lean-core-142",
+    "id": "lean-core-143",
     "type": "workflow",
     "front": "What is a useful mental model for Lean errors?",
     "back": "Lean errors usually mean one of three things: the target is not what you thought, a hypothesis has a different type than expected, or an instance/import/notation is missing. Inspect types before changing mathematics."
