@@ -10,10 +10,22 @@ export function shuffle(items) {
 export function createSession(cards) {
   return {
     queue: shuffle(cards.map(card => card.id)),
+    retryQueue: [],
     passed: 0,
     failed: 0,
-    seen: 0
+    seen: 0,
+    round: 1
   };
+}
+
+export function prepareNextCard(session) {
+  if (session.queue.length > 0) return true;
+  if (session.retryQueue.length === 0) return false;
+
+  session.queue = shuffle(session.retryQueue);
+  session.retryQueue = [];
+  session.round += 1;
+  return true;
 }
 
 export function passCurrent(session) {
@@ -24,8 +36,7 @@ export function passCurrent(session) {
 
 export function failCurrent(session) {
   const failed = session.queue.shift();
-  const insertAt = Math.min(3, session.queue.length);
-  session.queue.splice(insertAt, 0, failed);
+  session.retryQueue.push(failed);
   session.failed += 1;
   session.seen += 1;
 }

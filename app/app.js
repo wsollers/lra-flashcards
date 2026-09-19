@@ -1,4 +1,4 @@
-import { createSession, passCurrent, failCurrent } from "./review.js";
+import { createSession, passCurrent, failCurrent, prepareNextCard } from "./review.js";
 import { loadStats, recordResult, resetStats } from "./storage.js";
 
 const els = {
@@ -76,7 +76,7 @@ function currentCard() {
 }
 
 function showCurrent() {
-  if (session.queue.length === 0) {
+  if (!prepareNextCard(session)) {
     finishSession();
     return;
   }
@@ -88,7 +88,10 @@ function showCurrent() {
   els.answerBlock.classList.add("hidden");
   els.gradeButtons.classList.add("hidden");
   els.showAnswerButton.classList.remove("hidden");
-  els.remaining.textContent = session.queue.length + " remaining";
+  const waiting = session.retryQueue.length;
+  els.remaining.textContent =
+    session.queue.length + " remaining" +
+    (waiting ? " / " + waiting + " retry later" : "");
   els.sessionScore.textContent = session.passed + " pass / " + session.failed + " fail";
 }
 
