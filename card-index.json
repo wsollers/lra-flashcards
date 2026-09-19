@@ -8,6 +8,36 @@
       "file": "cards/core/01-peano-systems.json"
     },
     {
+      "id": "28-iece-identity-equality",
+      "title": "28 — IECE: Identity, Equality, Congruence, Equivalence",
+      "track": "core",
+      "file": "cards/core/28-iece-identity-equality.json"
+    },
+    {
+      "id": "29-logic-natural-deduction",
+      "title": "29 — Logic: Orders, Quantifiers, Natural Deduction",
+      "track": "core",
+      "file": "cards/core/29-logic-natural-deduction.json"
+    },
+    {
+      "id": "30-zfc-set-theory",
+      "title": "30 — ZFC Set Theory",
+      "track": "core",
+      "file": "cards/core/30-zfc-set-theory.json"
+    },
+    {
+      "id": "31-relations-functions-order",
+      "title": "31 — Relations, Functions, Order, Well-Ordering",
+      "track": "core",
+      "file": "cards/core/31-relations-functions-order.json"
+    },
+    {
+      "id": "32-well-founded-well-defined",
+      "title": "32 — Well-Founded And Well-Defined",
+      "track": "core",
+      "file": "cards/core/32-well-founded-well-defined.json"
+    },
+    {
       "id": "lean-core",
       "title": "Lean Core — Declarations, Types, Tactics, Modeling",
       "track": "lean",

@@ -1,0 +1,278 @@
+[
+  {
+    "id": "zfc-set-theory-001",
+    "type": "definition",
+    "front": "What is membership?",
+    "back": "`x ∈ A` means `x` is an element of the set `A`."
+  },
+  {
+    "id": "zfc-set-theory-002",
+    "type": "definition",
+    "front": "What is subset inclusion?",
+    "back": "`A ⊆ B` means every element of `A` is an element of `B`."
+  },
+  {
+    "id": "zfc-set-theory-003",
+    "type": "proof",
+    "front": "What is set extensionality?",
+    "back": "Sets are equal when they have exactly the same elements."
+  },
+  {
+    "id": "zfc-set-theory-004",
+    "type": "proof",
+    "front": "What is the proof shape for set equality?",
+    "back": "Prove both inclusions, or prove `∀ x, x ∈ A ↔ x ∈ B`."
+  },
+  {
+    "id": "zfc-set-theory-005",
+    "type": "proof",
+    "front": "How do you prove subset inclusion?",
+    "back": "Introduce an arbitrary `x` and a hypothesis `hx : x ∈ A`, then prove `x ∈ B`."
+  },
+  {
+    "id": "zfc-set-theory-006",
+    "type": "definition",
+    "front": "What is the empty set?",
+    "back": "The set with no elements."
+  },
+  {
+    "id": "zfc-set-theory-007",
+    "type": "proof",
+    "front": "What is a singleton?",
+    "back": "A set with exactly one element, usually `{a}`."
+  },
+  {
+    "id": "zfc-set-theory-008",
+    "type": "definition",
+    "front": "What is an unordered pair?",
+    "back": "`{a,b}`, the set whose only elements are `a` and `b`."
+  },
+  {
+    "id": "zfc-set-theory-009",
+    "type": "definition",
+    "front": "What is union?",
+    "back": "`⋃ A` or `A ∪ B`, collecting elements that belong to at least one set."
+  },
+  {
+    "id": "zfc-set-theory-010",
+    "type": "definition",
+    "front": "What is intersection?",
+    "back": "`A ∩ B`, collecting elements that belong to both sets."
+  },
+  {
+    "id": "zfc-set-theory-011",
+    "type": "definition",
+    "front": "What is set difference?",
+    "back": "`A \\ B`, elements of `A` that are not elements of `B`."
+  },
+  {
+    "id": "zfc-set-theory-012",
+    "type": "definition",
+    "front": "What is complement relative to a universe?",
+    "back": "Elements in the ambient universe that are not in the set."
+  },
+  {
+    "id": "zfc-set-theory-013",
+    "type": "definition",
+    "front": "What is the power set of `A`?",
+    "back": "The set of all subsets of `A`."
+  },
+  {
+    "id": "zfc-set-theory-014",
+    "type": "definition",
+    "front": "What is the Cartesian product `A × B`?",
+    "back": "The set of ordered pairs `(a,b)` with `a ∈ A` and `b ∈ B`."
+  },
+  {
+    "id": "zfc-set-theory-015",
+    "type": "concept",
+    "front": "What does Extensionality say?",
+    "back": "Sets with the same elements are equal."
+  },
+  {
+    "id": "zfc-set-theory-016",
+    "type": "concept",
+    "front": "What does Empty Set say?",
+    "back": "There exists a set with no elements."
+  },
+  {
+    "id": "zfc-set-theory-017",
+    "type": "proof",
+    "front": "What does Pairing say?",
+    "back": "For any `a` and `b`, there is a set whose elements are exactly `a` and `b`."
+  },
+  {
+    "id": "zfc-set-theory-018",
+    "type": "proof",
+    "front": "What does Union say?",
+    "back": "For any set of sets, there is a set containing exactly the elements of members of that set."
+  },
+  {
+    "id": "zfc-set-theory-019",
+    "type": "proof",
+    "front": "What does Power Set say?",
+    "back": "For any set `A`, there is a set whose elements are exactly the subsets of `A`."
+  },
+  {
+    "id": "zfc-set-theory-020",
+    "type": "concept",
+    "front": "What does Infinity say?",
+    "back": "There exists an infinite inductive set, enough to construct natural numbers."
+  },
+  {
+    "id": "zfc-set-theory-021",
+    "type": "concept",
+    "front": "What does Separation say?",
+    "back": "A definable subclass of an existing set is a set."
+  },
+  {
+    "id": "zfc-set-theory-022",
+    "type": "concept",
+    "front": "Why is Separation restricted to subsets of an existing set?",
+    "back": "It prevents unrestricted comprehension paradoxes like Russell's paradox."
+  },
+  {
+    "id": "zfc-set-theory-023",
+    "type": "concept",
+    "front": "What does Replacement say?",
+    "back": "The image of a set under a definable functional relation is a set."
+  },
+  {
+    "id": "zfc-set-theory-024",
+    "type": "concept",
+    "front": "What does Foundation say?",
+    "back": "Every nonempty set has an ∈-minimal element; membership has no infinite descending chains."
+  },
+  {
+    "id": "zfc-set-theory-025",
+    "type": "concept",
+    "front": "What does Choice say?",
+    "back": "For a family of nonempty sets, there exists a choice function selecting one element from each."
+  },
+  {
+    "id": "zfc-set-theory-026",
+    "type": "theorem",
+    "front": "What is the Well-Ordering Theorem?",
+    "back": "Every set can be well-ordered."
+  },
+  {
+    "id": "zfc-set-theory-027",
+    "type": "theorem",
+    "front": "How is the Well-Ordering Theorem related to Choice?",
+    "back": "It is equivalent to the Axiom of Choice over standard ZF."
+  },
+  {
+    "id": "zfc-set-theory-028",
+    "type": "concept",
+    "front": "What does union membership look like for binary union?",
+    "back": "`x ∈ A ∪ B ↔ x ∈ A ∨ x ∈ B`."
+  },
+  {
+    "id": "zfc-set-theory-029",
+    "type": "concept",
+    "front": "What does intersection membership look like?",
+    "back": "`x ∈ A ∩ B ↔ x ∈ A ∧ x ∈ B`."
+  },
+  {
+    "id": "zfc-set-theory-030",
+    "type": "compare",
+    "front": "What does difference membership look like?",
+    "back": "`x ∈ A \\ B ↔ x ∈ A ∧ x ∉ B`."
+  },
+  {
+    "id": "zfc-set-theory-031",
+    "type": "concept",
+    "front": "What does subset antisymmetry say?",
+    "back": "If `A ⊆ B` and `B ⊆ A`, then `A = B`."
+  },
+  {
+    "id": "zfc-set-theory-032",
+    "type": "proof",
+    "front": "How do you prove `A ⊆ A`?",
+    "back": "Introduce `x hx`; exact `hx`."
+  },
+  {
+    "id": "zfc-set-theory-033",
+    "type": "concept",
+    "front": "What does transitivity of subset say?",
+    "back": "If `A ⊆ B` and `B ⊆ C`, then `A ⊆ C`."
+  },
+  {
+    "id": "zfc-set-theory-034",
+    "type": "proof",
+    "front": "What is the proof pattern for subset transitivity?",
+    "back": "Given `x ∈ A`, apply the first inclusion to get `x ∈ B`, then the second to get `x ∈ C`."
+  },
+  {
+    "id": "zfc-set-theory-035",
+    "type": "definition",
+    "front": "What is Russell's paradox a warning against?",
+    "back": "Unrestricted set comprehension."
+  },
+  {
+    "id": "zfc-set-theory-036",
+    "type": "definition",
+    "front": "What is a class in set-theoretic language?",
+    "back": "A definable collection that may be too large to be a set."
+  },
+  {
+    "id": "zfc-set-theory-037",
+    "type": "definition",
+    "front": "What is a proper class?",
+    "back": "A class that is not a set."
+  },
+  {
+    "id": "zfc-set-theory-038",
+    "type": "concept",
+    "front": "Why is \"the set of all sets\" not a ZFC set?",
+    "back": "It would conflict with separation/Russell-style arguments."
+  },
+  {
+    "id": "zfc-set-theory-039",
+    "type": "concept",
+    "front": "How are ordered pairs often encoded in set theory?",
+    "back": "By a set-theoretic coding such as Kuratowski pair `{{a},{a,b}}`."
+  },
+  {
+    "id": "zfc-set-theory-040",
+    "type": "theorem",
+    "front": "Why must ordered-pair coding satisfy a theorem?",
+    "back": "It must prove `(a,b) = (c,d)` iff `a = c` and `b = d`."
+  },
+  {
+    "id": "zfc-set-theory-041",
+    "type": "definition",
+    "front": "What is a relation as a set?",
+    "back": "A set of ordered pairs."
+  },
+  {
+    "id": "zfc-set-theory-042",
+    "type": "proof",
+    "front": "What is a function as a set?",
+    "back": "A relation where each input has exactly one output."
+  },
+  {
+    "id": "zfc-set-theory-043",
+    "type": "definition",
+    "front": "What is the domain of a relation?",
+    "back": "Inputs that appear as first components of related pairs."
+  },
+  {
+    "id": "zfc-set-theory-044",
+    "type": "definition",
+    "front": "What is the range/image of a relation?",
+    "back": "Outputs that appear as second components."
+  },
+  {
+    "id": "zfc-set-theory-045",
+    "type": "definition",
+    "front": "What is an indexed family in set theory?",
+    "back": "A function from an index set into a collection of sets."
+  },
+  {
+    "id": "zfc-set-theory-046",
+    "type": "definition",
+    "front": "What is a choice function?",
+    "back": "A function selecting one element from each set in a family of nonempty sets."
+  }
+]

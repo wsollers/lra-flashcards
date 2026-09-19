@@ -1,0 +1,272 @@
+[
+  {
+    "id": "iece-identity-equality-001",
+    "type": "definition",
+    "front": "What is identity?",
+    "back": "Identity is sameness of object: `x` and `y` are identical when they are one and the same object."
+  },
+  {
+    "id": "iece-identity-equality-002",
+    "type": "definition",
+    "front": "What is equality in formal systems?",
+    "back": "Equality is the formal relation, usually written `=`, used to express identity or equality-like sameness inside the language."
+  },
+  {
+    "id": "iece-identity-equality-003",
+    "type": "definition",
+    "front": "What is the basic introduction rule for equality?",
+    "back": "Reflexivity: from any term `a`, infer `a = a`."
+  },
+  {
+    "id": "iece-identity-equality-004",
+    "type": "definition",
+    "front": "What is equality elimination?",
+    "back": "Substitution: from `a = b` and a statement true of `a`, infer the corresponding statement true of `b`."
+  },
+  {
+    "id": "iece-identity-equality-005",
+    "type": "definition",
+    "front": "What is Leibniz equality?",
+    "back": "`a = b` when every predicate true of `a` is true of `b`."
+  },
+  {
+    "id": "iece-identity-equality-006",
+    "type": "proof",
+    "front": "What is the Lean proof term for reflexive equality?",
+    "back": "`rfl`, when both sides are definitionally the same."
+  },
+  {
+    "id": "iece-identity-equality-007",
+    "type": "concept",
+    "front": "When does `rfl` work?",
+    "back": "When Lean can reduce both sides to the same expression by computation or definitional equality."
+  },
+  {
+    "id": "iece-identity-equality-008",
+    "type": "definition",
+    "front": "What is symmetry of equality?",
+    "back": "If `a = b`, then `b = a`."
+  },
+  {
+    "id": "iece-identity-equality-009",
+    "type": "concept",
+    "front": "How do you use equality symmetry in Lean?",
+    "back": "If `h : a = b`, then `h.symm : b = a`."
+  },
+  {
+    "id": "iece-identity-equality-010",
+    "type": "definition",
+    "front": "What is transitivity of equality?",
+    "back": "If `a = b` and `b = c`, then `a = c`."
+  },
+  {
+    "id": "iece-identity-equality-011",
+    "type": "concept",
+    "front": "How do you chain equalities in Lean?",
+    "back": "Use `Eq.trans h_ab h_bc` or a `calc` block."
+  },
+  {
+    "id": "iece-identity-equality-012",
+    "type": "proof",
+    "front": "What does `rw [h]` do with equality?",
+    "back": "It rewrites using equality `h` from left to right."
+  },
+  {
+    "id": "iece-identity-equality-013",
+    "type": "proof",
+    "front": "What does `rw [← h]` do?",
+    "back": "It rewrites using equality `h` from right to left."
+  },
+  {
+    "id": "iece-identity-equality-014",
+    "type": "definition",
+    "front": "What is a useful equality `calc` shape?",
+    "back": "`calc a = b := h_ab; _ = c := h_bc`."
+  },
+  {
+    "id": "iece-identity-equality-015",
+    "type": "proof",
+    "front": "What is the difference between propositional equality and definitional equality?",
+    "back": "Propositional equality is a proof object `a = b`; definitional equality is automatic convertibility Lean can see without a proof."
+  },
+  {
+    "id": "iece-identity-equality-016",
+    "type": "definition",
+    "front": "What is congruence?",
+    "back": "Congruence says an operation, function, relation, or context respects an equivalence or equality."
+  },
+  {
+    "id": "iece-identity-equality-017",
+    "type": "definition",
+    "front": "What is function congruence for equality?",
+    "back": "If `a = b`, then `f a = f b`."
+  },
+  {
+    "id": "iece-identity-equality-018",
+    "type": "definition",
+    "front": "What is binary-operation congruence?",
+    "back": "If `a₁ = a₂` and `b₁ = b₂`, then `op a₁ b₁ = op a₂ b₂`."
+  },
+  {
+    "id": "iece-identity-equality-019",
+    "type": "definition",
+    "front": "What does it mean for a relation to respect equality?",
+    "back": "Replacing equal inputs preserves whether the relation holds."
+  },
+  {
+    "id": "iece-identity-equality-020",
+    "type": "proof",
+    "front": "What is the proof pattern for congruence?",
+    "back": "Introduce equalities, rewrite with them, then close by reflexivity or the original hypothesis."
+  },
+  {
+    "id": "iece-identity-equality-021",
+    "type": "proof",
+    "front": "How can `rw` prove many congruence goals?",
+    "back": "Rewrite the variables on one side until the target matches a known fact."
+  },
+  {
+    "id": "iece-identity-equality-022",
+    "type": "definition",
+    "front": "What is a congruence relation on an algebraic structure?",
+    "back": "An equivalence relation compatible with the structure's operations."
+  },
+  {
+    "id": "iece-identity-equality-023",
+    "type": "concept",
+    "front": "Why does quotient construction need congruence?",
+    "back": "Operations on equivalence classes are well-defined only if equivalent representatives give equivalent outputs."
+  },
+  {
+    "id": "iece-identity-equality-024",
+    "type": "theorem",
+    "front": "What is the key well-definedness theorem for quotient operations?",
+    "back": "If inputs are equivalent, then applying the operation to them gives equivalent results."
+  },
+  {
+    "id": "iece-identity-equality-025",
+    "type": "definition",
+    "front": "What is substitution as a congruence principle?",
+    "back": "Equal terms may be substituted into any valid context without changing truth."
+  },
+  {
+    "id": "iece-identity-equality-026",
+    "type": "definition",
+    "front": "What is an equivalence relation?",
+    "back": "A relation that is reflexive, symmetric, and transitive."
+  },
+  {
+    "id": "iece-identity-equality-027",
+    "type": "definition",
+    "front": "What is reflexivity?",
+    "back": "Every object is related to itself: `R x x`."
+  },
+  {
+    "id": "iece-identity-equality-028",
+    "type": "definition",
+    "front": "What is symmetry?",
+    "back": "If `R x y`, then `R y x`."
+  },
+  {
+    "id": "iece-identity-equality-029",
+    "type": "definition",
+    "front": "What is transitivity?",
+    "back": "If `R x y` and `R y z`, then `R x z`."
+  },
+  {
+    "id": "iece-identity-equality-030",
+    "type": "definition",
+    "front": "What is an equivalence class?",
+    "back": "The collection of all elements equivalent to a chosen representative."
+  },
+  {
+    "id": "iece-identity-equality-031",
+    "type": "proof",
+    "front": "What does it mean for equivalence classes to partition a set?",
+    "back": "Every element lies in exactly one equivalence class, and classes are either equal or disjoint."
+  },
+  {
+    "id": "iece-identity-equality-032",
+    "type": "concept",
+    "front": "When are two equivalence classes equal?",
+    "back": "When their representatives are equivalent."
+  },
+  {
+    "id": "iece-identity-equality-033",
+    "type": "definition",
+    "front": "What is the quotient by an equivalence relation?",
+    "back": "The collection/type of equivalence classes under that relation."
+  },
+  {
+    "id": "iece-identity-equality-034",
+    "type": "concept",
+    "front": "Why are representatives dangerous?",
+    "back": "Different representatives may name the same equivalence class, so definitions must not depend on arbitrary representative choices."
+  },
+  {
+    "id": "iece-identity-equality-035",
+    "type": "proof",
+    "front": "How do you prove a relation is an equivalence relation?",
+    "back": "Prove reflexivity, symmetry, and transitivity separately."
+  },
+  {
+    "id": "iece-identity-equality-036",
+    "type": "proof",
+    "front": "What Lean proof move often starts an equivalence-structure proof?",
+    "back": "`constructor`, often repeatedly, to split the required fields."
+  },
+  {
+    "id": "iece-identity-equality-037",
+    "type": "theorem",
+    "front": "What is the shape of an equivalence theorem header?",
+    "back": "`theorem Name {α : Type u} (R : α → α → Prop) : Equivalence R := by ...`"
+  },
+  {
+    "id": "iece-identity-equality-038",
+    "type": "concept",
+    "front": "What does IECE stand for here?",
+    "back": "Identity, Equality, Congruence, and Equivalence."
+  },
+  {
+    "id": "iece-identity-equality-039",
+    "type": "concept",
+    "front": "Why group identity, equality, congruence, and equivalence together?",
+    "back": "They are all sameness principles, but they operate at different strengths and abstraction levels."
+  },
+  {
+    "id": "iece-identity-equality-040",
+    "type": "concept",
+    "front": "How is equality stronger than an arbitrary equivalence relation?",
+    "back": "Equality identifies objects themselves; an equivalence relation may identify objects only for a chosen purpose."
+  },
+  {
+    "id": "iece-identity-equality-041",
+    "type": "concept",
+    "front": "How is congruence stronger than equivalence alone?",
+    "back": "Congruence adds compatibility with operations, relations, or contexts."
+  },
+  {
+    "id": "iece-identity-equality-042",
+    "type": "proof",
+    "front": "What should you ask before quotienting by an equivalence?",
+    "back": "Which operations must descend to the quotient, and have we proved congruence for each?"
+  },
+  {
+    "id": "iece-identity-equality-043",
+    "type": "definition",
+    "front": "What does \"respect the equivalence\" mean?",
+    "back": "The construction gives equivalent outputs whenever given equivalent inputs."
+  },
+  {
+    "id": "iece-identity-equality-044",
+    "type": "definition",
+    "front": "What is a common IECE failure mode?",
+    "back": "Defining a quotient operation before proving it is independent of representative choice."
+  },
+  {
+    "id": "iece-identity-equality-045",
+    "type": "proof",
+    "front": "What is the safe workflow for quotient-style IECE work?",
+    "back": "Define equivalence, prove it is equivalence, prove congruence/well-definedness, then define quotient operations."
+  }
+]

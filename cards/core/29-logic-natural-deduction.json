@@ -1,0 +1,284 @@
+[
+  {
+    "id": "logic-natural-deduction-001",
+    "type": "definition",
+    "front": "What is first-order logic?",
+    "back": "Logic where quantifiers range over individuals/objects, not over predicates, sets, or functions."
+  },
+  {
+    "id": "logic-natural-deduction-002",
+    "type": "definition",
+    "front": "What is a first-order universal quantifier?",
+    "back": "`∀ x, P x`, read \"for every object `x`, `P x` holds.\""
+  },
+  {
+    "id": "logic-natural-deduction-003",
+    "type": "definition",
+    "front": "What is a first-order existential quantifier?",
+    "back": "`∃ x, P x`, read \"there exists an object `x` such that `P x` holds.\""
+  },
+  {
+    "id": "logic-natural-deduction-004",
+    "type": "definition",
+    "front": "What is second-order logic?",
+    "back": "Logic where quantifiers may range over predicates, relations, sets, or functions on individuals."
+  },
+  {
+    "id": "logic-natural-deduction-005",
+    "type": "definition",
+    "front": "What is a second-order example?",
+    "back": "`∀ P : α → Prop, P a → P b`."
+  },
+  {
+    "id": "logic-natural-deduction-006",
+    "type": "definition",
+    "front": "What is third-order logic?",
+    "back": "Logic where quantifiers may range over collections of second-order objects, such as predicates of predicates."
+  },
+  {
+    "id": "logic-natural-deduction-007",
+    "type": "concept",
+    "front": "Why keep second- and third-order cards introductory?",
+    "back": "The main beginner skill is recognizing what the quantifiers range over."
+  },
+  {
+    "id": "logic-natural-deduction-008",
+    "type": "definition",
+    "front": "How do you identify the order of a quantified statement?",
+    "back": "Ask what kind of thing the bound variable is: individual, predicate/relation/function, or higher-level collection."
+  },
+  {
+    "id": "logic-natural-deduction-009",
+    "type": "definition",
+    "front": "What is universal instantiation (UI)?",
+    "back": "From `∀ x, P x`, infer `P a` for a particular `a`."
+  },
+  {
+    "id": "logic-natural-deduction-010",
+    "type": "concept",
+    "front": "How do you use UI in Lean?",
+    "back": "If `h : ∀ x, P x`, then `h a : P a`."
+  },
+  {
+    "id": "logic-natural-deduction-011",
+    "type": "proof",
+    "front": "What is universal generalization (UG)?",
+    "back": "To prove `∀ x, P x`, prove `P x` for an arbitrary `x`."
+  },
+  {
+    "id": "logic-natural-deduction-012",
+    "type": "proof",
+    "front": "How do you perform UG in Lean tactic mode?",
+    "back": "Use `intro x`; Lean gives an arbitrary `x` and asks for `P x`."
+  },
+  {
+    "id": "logic-natural-deduction-013",
+    "type": "definition",
+    "front": "What is the side condition for UG?",
+    "back": "The chosen `x` must be arbitrary, not dependent on a special assumption that should not generalize."
+  },
+  {
+    "id": "logic-natural-deduction-014",
+    "type": "proof",
+    "front": "What is a common beginner mistake with UG?",
+    "back": "Proving the statement for one special object and treating it as proof for all objects."
+  },
+  {
+    "id": "logic-natural-deduction-015",
+    "type": "proof",
+    "front": "What is the proof shape for `∀ x, P x → Q x`?",
+    "back": "`intro x hx`, then prove `Q x`."
+  },
+  {
+    "id": "logic-natural-deduction-016",
+    "type": "concept",
+    "front": "What does `intro x hx` do?",
+    "back": "It introduces the arbitrary object `x` and the hypothesis `hx : P x`."
+  },
+  {
+    "id": "logic-natural-deduction-017",
+    "type": "proof",
+    "front": "What is existential introduction?",
+    "back": "To prove `∃ x, P x`, provide a witness `a` and prove `P a`."
+  },
+  {
+    "id": "logic-natural-deduction-018",
+    "type": "theorem",
+    "front": "How do you prove an existential in Lean?",
+    "back": "Use `use a`, then prove the remaining property."
+  },
+  {
+    "id": "logic-natural-deduction-019",
+    "type": "definition",
+    "front": "What is existential elimination?",
+    "back": "From `∃ x, P x`, reason with an arbitrary witness `w` satisfying `P w`."
+  },
+  {
+    "id": "logic-natural-deduction-020",
+    "type": "proof",
+    "front": "How do you unpack an existential in Lean?",
+    "back": "`rcases h with ⟨w, hw⟩`."
+  },
+  {
+    "id": "logic-natural-deduction-021",
+    "type": "proof",
+    "front": "After unpacking `h : ∃ x, P x`, what do you get?",
+    "back": "A witness `w` and a proof `hw : P w`."
+  },
+  {
+    "id": "logic-natural-deduction-022",
+    "type": "definition",
+    "front": "What is the side condition for existential elimination?",
+    "back": "The final conclusion must not depend on the particular witness name except through the existential information."
+  },
+  {
+    "id": "logic-natural-deduction-023",
+    "type": "proof",
+    "front": "What is a common beginner mistake with existentials?",
+    "back": "Treating a witness from `∃ x, P x` as canonical or unique without proof."
+  },
+  {
+    "id": "logic-natural-deduction-024",
+    "type": "proof",
+    "front": "What is implication introduction?",
+    "back": "To prove `P → Q`, assume `P` and prove `Q`."
+  },
+  {
+    "id": "logic-natural-deduction-025",
+    "type": "concept",
+    "front": "How do you do implication introduction in Lean?",
+    "back": "`intro hp`."
+  },
+  {
+    "id": "logic-natural-deduction-026",
+    "type": "definition",
+    "front": "What is implication elimination?",
+    "back": "Modus ponens: from `P → Q` and `P`, infer `Q`."
+  },
+  {
+    "id": "logic-natural-deduction-027",
+    "type": "concept",
+    "front": "How do you use implication elimination in Lean?",
+    "back": "If `h : P → Q` and `hp : P`, then `h hp : Q`."
+  },
+  {
+    "id": "logic-natural-deduction-028",
+    "type": "proof",
+    "front": "What is conjunction introduction?",
+    "back": "To prove `P ∧ Q`, prove `P` and prove `Q`."
+  },
+  {
+    "id": "logic-natural-deduction-029",
+    "type": "proof",
+    "front": "How do you prove conjunction in Lean?",
+    "back": "`constructor`, then solve the two goals."
+  },
+  {
+    "id": "logic-natural-deduction-030",
+    "type": "definition",
+    "front": "What is conjunction elimination?",
+    "back": "From `P ∧ Q`, infer `P`; from `P ∧ Q`, infer `Q`."
+  },
+  {
+    "id": "logic-natural-deduction-031",
+    "type": "proof",
+    "front": "How do you unpack conjunction in Lean?",
+    "back": "`rcases h with ⟨hp, hq⟩`, or use `h.left` and `h.right`."
+  },
+  {
+    "id": "logic-natural-deduction-032",
+    "type": "proof",
+    "front": "What is disjunction introduction?",
+    "back": "To prove `P ∨ Q`, prove one side."
+  },
+  {
+    "id": "logic-natural-deduction-033",
+    "type": "proof",
+    "front": "How do you prove the left side of an `Or` in Lean?",
+    "back": "Use `left`, then prove `P`."
+  },
+  {
+    "id": "logic-natural-deduction-034",
+    "type": "proof",
+    "front": "How do you prove the right side of an `Or` in Lean?",
+    "back": "Use `right`, then prove `Q`."
+  },
+  {
+    "id": "logic-natural-deduction-035",
+    "type": "proof",
+    "front": "What is disjunction elimination?",
+    "back": "From `P ∨ Q`, prove the desired conclusion from each case."
+  },
+  {
+    "id": "logic-natural-deduction-036",
+    "type": "proof",
+    "front": "How do you split an `Or` hypothesis in Lean?",
+    "back": "`cases h with | inl hp => ... | inr hq => ...`."
+  },
+  {
+    "id": "logic-natural-deduction-037",
+    "type": "definition",
+    "front": "What is negation in natural deduction?",
+    "back": "`¬ P` means `P → False`."
+  },
+  {
+    "id": "logic-natural-deduction-038",
+    "type": "proof",
+    "front": "How do you prove negation in Lean?",
+    "back": "`intro hp`, then derive contradiction."
+  },
+  {
+    "id": "logic-natural-deduction-039",
+    "type": "proof",
+    "front": "What is proof by contradiction?",
+    "back": "Assume the negation of the goal and derive `False`."
+  },
+  {
+    "id": "logic-natural-deduction-040",
+    "type": "definition",
+    "front": "For implication `P → Q`, what is the converse?",
+    "back": "`Q → P`."
+  },
+  {
+    "id": "logic-natural-deduction-041",
+    "type": "definition",
+    "front": "For implication `P → Q`, what is the inverse?",
+    "back": "`¬ P → ¬ Q`."
+  },
+  {
+    "id": "logic-natural-deduction-042",
+    "type": "definition",
+    "front": "For implication `P → Q`, what is the contrapositive?",
+    "back": "`¬ Q → ¬ P`."
+  },
+  {
+    "id": "logic-natural-deduction-043",
+    "type": "concept",
+    "front": "Which form is logically equivalent to the original implication classically?",
+    "back": "The contrapositive."
+  },
+  {
+    "id": "logic-natural-deduction-044",
+    "type": "proof",
+    "front": "Is the converse generally equivalent to the original?",
+    "back": "No. It needs separate proof."
+  },
+  {
+    "id": "logic-natural-deduction-045",
+    "type": "concept",
+    "front": "Is the inverse generally equivalent to the original?",
+    "back": "No. It is equivalent to the converse, not the original."
+  },
+  {
+    "id": "logic-natural-deduction-046",
+    "type": "proof",
+    "front": "What is the Lean proof pattern for contrapositive reasoning?",
+    "back": "Assume `hnq : ¬ Q`; to prove `¬ P`, introduce `hp : P`, get `hq : Q`, then contradiction."
+  },
+  {
+    "id": "logic-natural-deduction-047",
+    "type": "definition",
+    "front": "What is a common flashcard trap with converse and inverse?",
+    "back": "Confusing \"related statement\" with \"logically equivalent statement.\""
+  }
+]

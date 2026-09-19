@@ -1,0 +1,296 @@
+[
+  {
+    "id": "relations-functions-order-001",
+    "type": "definition",
+    "front": "What is a binary relation from `A` to `B`?",
+    "back": "A predicate on pairs, or a subset of `A × B`."
+  },
+  {
+    "id": "relations-functions-order-002",
+    "type": "definition",
+    "front": "What is a relation in Lean's curried style?",
+    "back": "`R : α → β → Prop`."
+  },
+  {
+    "id": "relations-functions-order-003",
+    "type": "concept",
+    "front": "How do you read `R a b`?",
+    "back": "\"`a` is related to `b`.\""
+  },
+  {
+    "id": "relations-functions-order-004",
+    "type": "definition",
+    "front": "What is a relation on one type?",
+    "back": "`R : α → α → Prop`."
+  },
+  {
+    "id": "relations-functions-order-005",
+    "type": "definition",
+    "front": "What is reflexivity?",
+    "back": "`∀ x, R x x`."
+  },
+  {
+    "id": "relations-functions-order-006",
+    "type": "definition",
+    "front": "What is irreflexivity?",
+    "back": "`∀ x, ¬ R x x`."
+  },
+  {
+    "id": "relations-functions-order-007",
+    "type": "definition",
+    "front": "What is symmetry?",
+    "back": "`∀ x y, R x y → R y x`."
+  },
+  {
+    "id": "relations-functions-order-008",
+    "type": "definition",
+    "front": "What is antisymmetry?",
+    "back": "`∀ x y, R x y → R y x → x = y`."
+  },
+  {
+    "id": "relations-functions-order-009",
+    "type": "definition",
+    "front": "What is asymmetry?",
+    "back": "`∀ x y, R x y → ¬ R y x`."
+  },
+  {
+    "id": "relations-functions-order-010",
+    "type": "definition",
+    "front": "What is transitivity?",
+    "back": "`∀ x y z, R x y → R y z → R x z`."
+  },
+  {
+    "id": "relations-functions-order-011",
+    "type": "definition",
+    "front": "What is totality or comparability?",
+    "back": "For all `x y`, either `R x y` or `R y x`."
+  },
+  {
+    "id": "relations-functions-order-012",
+    "type": "definition",
+    "front": "What is the converse of a relation?",
+    "back": "The relation reversing arguments: `Rᵒᵖ x y` holds when `R y x` holds."
+  },
+  {
+    "id": "relations-functions-order-013",
+    "type": "definition",
+    "front": "What is relation composition?",
+    "back": "`S ∘ R` relates `x` to `z` when there exists `y` with `R x y` and `S y z`."
+  },
+  {
+    "id": "relations-functions-order-014",
+    "type": "definition",
+    "front": "What is the identity relation?",
+    "back": "The relation `x = y`."
+  },
+  {
+    "id": "relations-functions-order-015",
+    "type": "proof",
+    "front": "What is a function?",
+    "back": "A relation assigning each input exactly one output."
+  },
+  {
+    "id": "relations-functions-order-016",
+    "type": "definition",
+    "front": "What is totality for a function relation?",
+    "back": "Every input has at least one output."
+  },
+  {
+    "id": "relations-functions-order-017",
+    "type": "definition",
+    "front": "What is uniqueness for a function relation?",
+    "back": "Each input has at most one output."
+  },
+  {
+    "id": "relations-functions-order-018",
+    "type": "definition",
+    "front": "What is the Lean type of a function from `α` to `β`?",
+    "back": "`α → β`."
+  },
+  {
+    "id": "relations-functions-order-019",
+    "type": "definition",
+    "front": "What is injectivity?",
+    "back": "`f x = f y` implies `x = y`."
+  },
+  {
+    "id": "relations-functions-order-020",
+    "type": "definition",
+    "front": "What is surjectivity?",
+    "back": "Every codomain element is hit by some input."
+  },
+  {
+    "id": "relations-functions-order-021",
+    "type": "definition",
+    "front": "What is bijectivity?",
+    "back": "Both injective and surjective."
+  },
+  {
+    "id": "relations-functions-order-022",
+    "type": "proof",
+    "front": "What is function composition?",
+    "back": "Applying one function after another: `(g ∘ f) x = g (f x)`."
+  },
+  {
+    "id": "relations-functions-order-023",
+    "type": "definition",
+    "front": "What is the identity function?",
+    "back": "The function sending every input to itself."
+  },
+  {
+    "id": "relations-functions-order-024",
+    "type": "definition",
+    "front": "What is a left inverse?",
+    "back": "`g` is a left inverse of `f` if `g (f x) = x`."
+  },
+  {
+    "id": "relations-functions-order-025",
+    "type": "definition",
+    "front": "What is a right inverse?",
+    "back": "`g` is a right inverse of `f` if `f (g y) = y`."
+  },
+  {
+    "id": "relations-functions-order-026",
+    "type": "concept",
+    "front": "How does a left inverse relate to injectivity?",
+    "back": "Existence of a left inverse implies injectivity."
+  },
+  {
+    "id": "relations-functions-order-027",
+    "type": "concept",
+    "front": "How does a right inverse relate to surjectivity?",
+    "back": "Existence of a right inverse implies surjectivity."
+  },
+  {
+    "id": "relations-functions-order-028",
+    "type": "definition",
+    "front": "What is a preorder?",
+    "back": "A reflexive and transitive relation."
+  },
+  {
+    "id": "relations-functions-order-029",
+    "type": "definition",
+    "front": "What is a partial order?",
+    "back": "A preorder that is also antisymmetric."
+  },
+  {
+    "id": "relations-functions-order-030",
+    "type": "definition",
+    "front": "What is a linear order?",
+    "back": "A partial order where every pair is comparable."
+  },
+  {
+    "id": "relations-functions-order-031",
+    "type": "definition",
+    "front": "What is a strict order?",
+    "back": "Usually an irreflexive and transitive relation."
+  },
+  {
+    "id": "relations-functions-order-032",
+    "type": "definition",
+    "front": "What is a least element of a set?",
+    "back": "An element of the set that is below every element of the set."
+  },
+  {
+    "id": "relations-functions-order-033",
+    "type": "definition",
+    "front": "What is a greatest element of a set?",
+    "back": "An element of the set that is above every element of the set."
+  },
+  {
+    "id": "relations-functions-order-034",
+    "type": "definition",
+    "front": "What is a minimal element?",
+    "back": "An element with no strictly smaller element in the set."
+  },
+  {
+    "id": "relations-functions-order-035",
+    "type": "definition",
+    "front": "What is a maximal element?",
+    "back": "An element with no strictly larger element in the set."
+  },
+  {
+    "id": "relations-functions-order-036",
+    "type": "theorem",
+    "front": "How does least differ from minimal?",
+    "back": "Least compares below every element; minimal only rules out smaller elements."
+  },
+  {
+    "id": "relations-functions-order-037",
+    "type": "theorem",
+    "front": "How does greatest differ from maximal?",
+    "back": "Greatest compares above every element; maximal only rules out larger elements."
+  },
+  {
+    "id": "relations-functions-order-038",
+    "type": "definition",
+    "front": "What is an upper bound of a set?",
+    "back": "An element above every element of the set."
+  },
+  {
+    "id": "relations-functions-order-039",
+    "type": "definition",
+    "front": "What is a lower bound of a set?",
+    "back": "An element below every element of the set."
+  },
+  {
+    "id": "relations-functions-order-040",
+    "type": "definition",
+    "front": "What is a supremum?",
+    "back": "The least upper bound."
+  },
+  {
+    "id": "relations-functions-order-041",
+    "type": "definition",
+    "front": "What is an infimum?",
+    "back": "The greatest lower bound."
+  },
+  {
+    "id": "relations-functions-order-042",
+    "type": "definition",
+    "front": "What is a well-order?",
+    "back": "A linear order where every nonempty subset has a least element."
+  },
+  {
+    "id": "relations-functions-order-043",
+    "type": "definition",
+    "front": "What is the well-ordering principle for naturals?",
+    "back": "Every nonempty subset of natural numbers has a least element."
+  },
+  {
+    "id": "relations-functions-order-044",
+    "type": "theorem",
+    "front": "What is the Well-Ordering Theorem?",
+    "back": "Every set can be equipped with some well-order."
+  },
+  {
+    "id": "relations-functions-order-045",
+    "type": "theorem",
+    "front": "How is the Well-Ordering Theorem related to Choice?",
+    "back": "It is equivalent to the Axiom of Choice over ZF."
+  },
+  {
+    "id": "relations-functions-order-046",
+    "type": "proof",
+    "front": "What proof method does well-ordering support?",
+    "back": "Least-counterexample arguments."
+  },
+  {
+    "id": "relations-functions-order-047",
+    "type": "proof",
+    "front": "What is a least-counterexample proof?",
+    "back": "Assume a counterexample exists, choose the least one, then derive a contradiction."
+  },
+  {
+    "id": "relations-functions-order-048",
+    "type": "theorem",
+    "front": "What is the difference between well-order and well-founded relation?",
+    "back": "A well-order is linear and every nonempty subset has least element; well-foundedness only rules out infinite descending chains or guarantees minimal elements."
+  },
+  {
+    "id": "relations-functions-order-049",
+    "type": "concept",
+    "front": "Why are well-orders useful for recursion?",
+    "back": "They support definitions by transfinite or well-founded recursion."
+  }
+]

@@ -1,4 +1,4 @@
-const CACHE = "lra-flashcards-v8";
+const CACHE = "lra-flashcards-v9";
 const SHELL = [
   "./",
   "./index.html",
@@ -10,6 +10,11 @@ const SHELL = [
   "./icon.svg",
   "../card-index.json",
   "../cards/core/01-peano-systems.json",
+  "../cards/core/28-iece-identity-equality.json",
+  "../cards/core/29-logic-natural-deduction.json",
+  "../cards/core/30-zfc-set-theory.json",
+  "../cards/core/31-relations-functions-order.json",
+  "../cards/core/32-well-founded-well-defined.json",
   "../cards/lean/lean-core.json",
   "../cards/lean/mathlib-analysis-algebra.json"
 ];

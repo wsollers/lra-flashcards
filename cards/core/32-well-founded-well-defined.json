@@ -1,0 +1,230 @@
+[
+  {
+    "id": "well-founded-well-defined-001",
+    "type": "definition",
+    "front": "What does well-founded mean?",
+    "back": "There are no infinite descending chains, or equivalently every nonempty set has a minimal element under the relation."
+  },
+  {
+    "id": "well-founded-well-defined-002",
+    "type": "definition",
+    "front": "What is a well-founded relation used for?",
+    "back": "Induction and recursion over structures more general than natural numbers."
+  },
+  {
+    "id": "well-founded-well-defined-003",
+    "type": "theorem",
+    "front": "What is well-founded induction?",
+    "back": "To prove a property for `x`, assume it for all smaller predecessors of `x`, then prove it for `x`."
+  },
+  {
+    "id": "well-founded-well-defined-004",
+    "type": "proof",
+    "front": "What is the proof shape of well-founded induction?",
+    "back": "`∀ x, (∀ y, y ≺ x → P y) → P x` implies `∀ x, P x`."
+  },
+  {
+    "id": "well-founded-well-defined-005",
+    "type": "concept",
+    "front": "How does well-founded induction differ from ordinary induction?",
+    "back": "The induction step may use all smaller/predecessor cases, not only one immediate predecessor."
+  },
+  {
+    "id": "well-founded-well-defined-006",
+    "type": "definition",
+    "front": "What is a descending chain?",
+    "back": "A sequence `x₀, x₁, x₂, ...` where each next element is strictly smaller than the previous one."
+  },
+  {
+    "id": "well-founded-well-defined-007",
+    "type": "concept",
+    "front": "Why does an infinite descending chain violate well-foundedness?",
+    "back": "It prevents reaching a minimal base case."
+  },
+  {
+    "id": "well-founded-well-defined-008",
+    "type": "definition",
+    "front": "What is a minimal element?",
+    "back": "An element with no strictly smaller element in the set."
+  },
+  {
+    "id": "well-founded-well-defined-009",
+    "type": "definition",
+    "front": "What is accessibility?",
+    "back": "An element is accessible if all its predecessors are accessible; well-foundedness says every element is accessible."
+  },
+  {
+    "id": "well-founded-well-defined-010",
+    "type": "definition",
+    "front": "What is structural recursion?",
+    "back": "Recursion justified because recursive calls are made on structurally smaller data."
+  },
+  {
+    "id": "well-founded-well-defined-011",
+    "type": "definition",
+    "front": "What is measure-based recursion?",
+    "back": "Recursion justified by mapping data to a well-founded measure, often natural numbers."
+  },
+  {
+    "id": "well-founded-well-defined-012",
+    "type": "definition",
+    "front": "What does well-defined mean?",
+    "back": "A definition gives a unique, unambiguous value independent of presentation or choices."
+  },
+  {
+    "id": "well-founded-well-defined-013",
+    "type": "concept",
+    "front": "When is well-definedness an issue?",
+    "back": "When objects have multiple names, representatives, witnesses, or construction choices."
+  },
+  {
+    "id": "well-founded-well-defined-014",
+    "type": "proof",
+    "front": "Why do quotient constructions require well-definedness proofs?",
+    "back": "The output must not depend on which representative of an equivalence class is chosen."
+  },
+  {
+    "id": "well-founded-well-defined-015",
+    "type": "definition",
+    "front": "What is the standard quotient-operation well-definedness shape?",
+    "back": "If `a ~ a'` and `b ~ b'`, then `op a b ~ op a' b'`."
+  },
+  {
+    "id": "well-founded-well-defined-016",
+    "type": "definition",
+    "front": "What is a representative?",
+    "back": "A chosen object standing for an equivalence class."
+  },
+  {
+    "id": "well-founded-well-defined-017",
+    "type": "concept",
+    "front": "Why are representatives dangerous?",
+    "back": "Different representatives can denote the same equivalence class."
+  },
+  {
+    "id": "well-founded-well-defined-018",
+    "type": "definition",
+    "front": "What does it mean for a function on representatives to descend to a quotient?",
+    "back": "Equivalent representatives are sent to equivalent outputs."
+  },
+  {
+    "id": "well-founded-well-defined-019",
+    "type": "definition",
+    "front": "What is the difference between existence and well-definedness?",
+    "back": "Existence says some object/value is available; well-definedness says the result is unique or independent of choices."
+  },
+  {
+    "id": "well-founded-well-defined-020",
+    "type": "proof",
+    "front": "What is the difference between uniqueness and well-definedness?",
+    "back": "Uniqueness often proves there is only one possible value; well-definedness often proves all choices produce the same value or equivalent values."
+  },
+  {
+    "id": "well-founded-well-defined-021",
+    "type": "proof",
+    "front": "What is the proof pattern for well-definedness?",
+    "back": "Assume two valid choices or equivalent representatives, then prove their outputs agree."
+  },
+  {
+    "id": "well-founded-well-defined-022",
+    "type": "concept",
+    "front": "Why is rational addition by pairs a well-definedness problem?",
+    "back": "The same rational can be represented by many integer pairs, so addition must respect the equivalence relation."
+  },
+  {
+    "id": "well-founded-well-defined-023",
+    "type": "concept",
+    "front": "Why is defining a function by \"choose an element\" risky?",
+    "back": "Without uniqueness or choice data, different choices may produce different outputs."
+  },
+  {
+    "id": "well-founded-well-defined-024",
+    "type": "concept",
+    "front": "Why is inverse construction often noncomputable?",
+    "back": "It may rely on existence/uniqueness or choice rather than an explicit algorithm."
+  },
+  {
+    "id": "well-founded-well-defined-025",
+    "type": "theorem",
+    "front": "What theorem usually follows a noncomputable choice definition?",
+    "back": "A correctness theorem showing the chosen object satisfies the desired property."
+  },
+  {
+    "id": "well-founded-well-defined-026",
+    "type": "theorem",
+    "front": "What is a \"respects equivalence\" theorem?",
+    "back": "A theorem saying equivalent inputs produce equivalent outputs."
+  },
+  {
+    "id": "well-founded-well-defined-027",
+    "type": "theorem",
+    "front": "How does congruence relate to well-definedness?",
+    "back": "Congruence is the compatibility property that often proves quotient definitions are well-defined."
+  },
+  {
+    "id": "well-founded-well-defined-028",
+    "type": "definition",
+    "front": "What is a failure mode for well-definedness?",
+    "back": "Giving a formula on representatives but not proving it respects the equivalence relation."
+  },
+  {
+    "id": "well-founded-well-defined-029",
+    "type": "definition",
+    "front": "What is a failure mode for well-foundedness?",
+    "back": "Defining recursion where recursive calls are not demonstrably smaller."
+  },
+  {
+    "id": "well-founded-well-defined-030",
+    "type": "proof",
+    "front": "What Lean tactic often starts a well-definedness proof?",
+    "back": "`intro` or `rintro` to bring representatives and equivalence hypotheses into context."
+  },
+  {
+    "id": "well-founded-well-defined-031",
+    "type": "proof",
+    "front": "What Lean tactic often unpacks representative data?",
+    "back": "`rcases`."
+  },
+  {
+    "id": "well-founded-well-defined-032",
+    "type": "concept",
+    "front": "What Lean tool helps with chains of equality or equivalence?",
+    "back": "`calc`."
+  },
+  {
+    "id": "well-founded-well-defined-033",
+    "type": "concept",
+    "front": "What Lean command names an intermediate compatibility fact?",
+    "back": "`have`."
+  },
+  {
+    "id": "well-founded-well-defined-034",
+    "type": "proof",
+    "front": "When should you unfold in well-definedness proofs?",
+    "back": "When the equivalence relation or operation definition must be exposed to prove compatibility."
+  },
+  {
+    "id": "well-founded-well-defined-035",
+    "type": "proof",
+    "front": "When should you avoid unfolding?",
+    "back": "When named lemmas already state the needed compatibility or equivalence behavior."
+  },
+  {
+    "id": "well-founded-well-defined-036",
+    "type": "theorem",
+    "front": "What should a well-definedness theorem name communicate?",
+    "back": "Which operation or construction is independent of which choices."
+  },
+  {
+    "id": "well-founded-well-defined-037",
+    "type": "theorem",
+    "front": "What should a well-foundedness theorem name communicate?",
+    "back": "Which relation or measure justifies induction/recursion."
+  },
+  {
+    "id": "well-founded-well-defined-038",
+    "type": "proof",
+    "front": "What is the safe construction workflow?",
+    "back": "Define relation, prove equivalence/well-foundedness as needed, prove compatibility/well-definedness, then expose the final operation."
+  }
+]

@@ -52,6 +52,11 @@ Import approved batches rather than repeatedly re-importing the whole repository
 25. Metric Convergence
 26. Complete Metric Spaces
 27. Metric Topology
+28. IECE: Identity, Equality, Congruence, Equivalence
+29. Logic: Orders, Quantifiers, Natural Deduction
+30. ZFC Set Theory
+31. Relations, Functions, Order, Well-Ordering
+32. Well-Founded and Well-Defined
 
 ## Completeness convention
 
