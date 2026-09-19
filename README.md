@@ -11,6 +11,7 @@ Three tracks are maintained:
 - `core/` — axioms, definitions, theorem statements, hypotheses, quantified forms, relationships, proof architecture.
 - `counterexamples/` — nonexamples, failed converses, missing-hypothesis failures, incomplete structures.
 - `computation/` — arithmetic, algebra, bounds, suprema/infima, limits, epsilon work, metric calculations.
+- `decks/` / `cards/lean/` — Lean and Mathlib study cards, with Anki TSV export.
 
 ## RemNote convention
 
@@ -63,6 +64,12 @@ Order completeness and metric/sequential completeness are kept conceptually dist
 
 The repository includes a small browser/PWA review app in `app/`.
 
+GitHub Pages URL after deployment:
+
+```
+https://wsollers.github.io/lra-flashcards/
+```
+
 Features:
 - bundled card data from this repository;
 - randomized session queue;
@@ -91,6 +98,13 @@ http://localhost:8000/app/
 
 Do not open `index.html` directly with a `file://` URL because the app loads JSON card files with `fetch()`.
 
+### Deploy on GitHub Pages
+
+The repository includes `.github/workflows/pages.yml`, which deploys the static
+site from `main` to GitHub Pages. In the GitHub repository settings, set Pages
+to use **GitHub Actions** as the source. After the next push to `main`, the root
+Pages URL redirects to `app/`.
+
 ### Card data
 
 The app reads `card-index.json`, which points to JSON deck files under `cards/`.
@@ -102,3 +116,15 @@ cards/core/01-peano-systems.json
 ```
 
 Review statistics are device-local and are not committed to GitHub.
+
+## Anki export
+
+Lean/Mathlib source cards live in `decks/*.md`. Regenerate Anki TSV files in
+`dist/` and app JSON files in `cards/lean/` with:
+
+```bash
+python scripts/export_tsv.py
+```
+
+Import the generated TSV files into Anki with fields mapped as `Front`, `Back`,
+and `Tags`, with HTML enabled for the answer field.

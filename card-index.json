@@ -6,6 +6,18 @@
       "title": "01 — Peano Systems",
       "track": "core",
       "file": "cards/core/01-peano-systems.json"
+    },
+    {
+      "id": "lean-core",
+      "title": "Lean Core — Declarations, Types, Tactics, Modeling",
+      "track": "lean",
+      "file": "cards/lean/lean-core.json"
+    },
+    {
+      "id": "mathlib-analysis-algebra",
+      "title": "Mathlib — Bounds, Sequences, Rings, Fields, Limits",
+      "track": "lean",
+      "file": "cards/lean/mathlib-analysis-algebra.json"
     }
   ]
 }

@@ -1,0 +1,59 @@
+Front	Back	Tags
+What typeclass usually supplies `≤`?	<p><code>LE α</code> supplies the notation, but theorems about order usually require richer classes such as <code>Preorder α</code>, <code>PartialOrder α</code>, <code>LinearOrder α</code>, or lattice classes.</p>	mathlib order typeclasses
+What is the usual shape of an upper bound predicate?	<pre><code>∀ x, x ∈ s → x ≤ a</code></pre><p>In Mathlib vocabulary this often appears through <code>BddAbove s</code>, <code>upperBounds s</code>, or custom predicates like <code>IsUpperBound a s</code>.</p>	mathlib bounds order
+What is the usual shape of a lower bound predicate?	<pre><code>∀ x, x ∈ s → a ≤ x</code></pre><p>The direction of <code>≤</code> is the main thing to watch.</p>	mathlib bounds order
+What does `BddAbove s` mean?	<p>It means the set <code>s</code> has at least one upper bound.</p><p>Conceptually:</p><pre><code>∃ a, ∀ x, x ∈ s → x ≤ a</code></pre>	mathlib bounds bddabove
+What does `BddBelow s` mean?	<p>It means the set <code>s</code> has at least one lower bound.</p><p>Conceptually:</p><pre><code>∃ a, ∀ x, x ∈ s → a ≤ x</code></pre>	mathlib bounds bddbelow
+What does `IsLUB s a` mean?	<p><code>a</code> is a least upper bound of <code>s</code>: it is an upper bound, and every other upper bound is above it.</p><p>Conceptually:</p><pre><code>(∀ x, x ∈ s → x ≤ a) ∧ ∀ b, (∀ x, x ∈ s → x ≤ b) → a ≤ b</code></pre>	mathlib bounds supremum
+What does `IsGLB s a` mean?	<p><code>a</code> is a greatest lower bound of <code>s</code>: it is a lower bound, and every other lower bound is below it.</p><p>Conceptually:</p><pre><code>(∀ x, x ∈ s → a ≤ x) ∧ ∀ b, (∀ x, x ∈ s → b ≤ x) → b ≤ a</code></pre>	mathlib bounds infimum
+What is `sSup s`?	<p><code>sSup s</code> is the supremum of a set in a type with enough order structure, often a complete lattice or conditionally complete lattice. It is notation-backed by <code>Sup</code>.</p>	mathlib bounds supremum complete-lattice
+What is `sInf s`?	<p><code>sInf s</code> is the infimum of a set in a type with enough order structure, often a complete lattice or conditionally complete lattice. It is notation-backed by <code>Inf</code>.</p>	mathlib bounds infimum complete-lattice
+What is the proof pattern for `IsLUB`?	"<p>Split the conjunction:</p><pre><code>constructor
+· intro x hx
+  -- prove x ≤ a
+· intro b hb
+  -- prove a ≤ b</code></pre>"	mathlib bounds proof-patterns
+What is the proof pattern for `IsGLB`?	"<p>Split the conjunction:</p><pre><code>constructor
+· intro x hx
+  -- prove a ≤ x
+· intro b hb
+  -- prove b ≤ a</code></pre>"	mathlib bounds proof-patterns
+What is a sequence in Lean?	<p>A sequence of values in <code>α</code> is usually a function:</p><pre><code>u : ℕ → α</code></pre><p>Then <code>u n</code> is the <code>n</code>th term.</p>	mathlib sequences functions
+How do you state eventual behavior of a sequence?	<p>Use filters:</p><pre><code>∀ᶠ n in atTop, P (u n)</code></pre><p>This means <code>P (u n)</code> holds for all sufficiently large <code>n</code>.</p>	mathlib sequences filters eventually
+What is `Filter.Tendsto u atTop (𝓝 a)`?	<p>It states that the sequence/function <code>u</code> tends to <code>a</code> along <code>atTop</code>. For sequences, read it as <code>u n → a</code> as <code>n → ∞</code>.</p>	mathlib sequences limits filters
+What is `𝓝 a`?	<p><code>𝓝 a</code> is the neighborhood filter of <code>a</code>. A statement tending to <code>𝓝 a</code> says values eventually fall inside every neighborhood of <code>a</code>.</p>	mathlib topology filters limits
+What is `atTop`?	<p><code>atTop</code> is the filter for &quot;eventually for sufficiently large values&quot; on an ordered type such as <code>ℕ</code>, <code>ℤ</code>, or <code>ℝ</code>.</p>	mathlib filters sequences
+What is the epsilon proof shape for a real sequence limit?	<p>Conceptually, <code>u n → a</code> means:</p><pre><code>∀ ε &gt; 0, ∃ N, ∀ n ≥ N, |u n - a| &lt; ε</code></pre><p>Mathlib often expresses this through filters, but epsilon lemmas bridge the two views.</p>	mathlib sequences limits epsilon
+What does `tendsto_const_nhds` prove?	<p>It proves that a constant function tends to that constant:</p><pre><code>Tendsto (fun _ =&gt; a) l (𝓝 a)</code></pre>	mathlib limits sequences theorems
+What does `h.add h'` often do for limits?	<p>If <code>h : Tendsto f l (𝓝 a)</code> and <code>h&#x27; : Tendsto g l (𝓝 b)</code>, then <code>h.add h&#x27;</code> proves <code>Tendsto (fun x =&gt; f x + g x) l (𝓝 (a + b))</code>, assuming the needed topological algebra structure.</p>	mathlib limits algebra
+What does `h.mul h'` often do for limits?	<p>If <code>f → a</code> and <code>g → b</code>, then <code>f * g → a * b</code>, provided the relevant topological multiplication structure is available.</p>	mathlib limits algebra
+What is a common typeclass stack for real limit algebra?	<p>For concrete real sequences, <code>ℝ</code> already has the needed instances. For abstract types, limit algebra may require classes like <code>TopologicalSpace α</code>, <code>AddGroup α</code>, <code>ContinuousAdd α</code>, <code>Mul α</code>, or <code>ContinuousMul α</code>.</p>	mathlib limits typeclasses
+What is `Ring R`?	<p><code>Ring R</code> is a typeclass bundling addition, multiplication, additive inverses, zero, one, and ring laws on <code>R</code>.</p>	mathlib algebra rings typeclasses
+What is `CommRing R`?	<p><code>CommRing R</code> is a ring whose multiplication is commutative. Many polynomial and field-adjacent lemmas require commutative multiplication.</p>	mathlib algebra rings typeclasses
+What is `Field K`?	<p><code>Field K</code> is a commutative division ring with zero and one distinct. It supports division and inverse operations with field laws.</p>	mathlib algebra fields typeclasses
+What is `LinearOrderedField K`?	<p>It is a field with a compatible linear order, such as <code>ℚ</code> or <code>ℝ</code>. It supports ordered field reasoning used by <code>linarith</code>, positivity lemmas, and analysis inequalities.</p>	mathlib algebra fields order
+What is the difference between `/` and `⁻¹`?	<p><code>a / b</code> is usually notation for <code>a * b⁻¹</code>. Division often creates side conditions about <code>b ≠ 0</code>, depending on the theorem.</p>	mathlib algebra fields inverse division
+What does `zero_ne_one` provide?	<p>It proves <code>0 ≠ 1</code> in a type where the relevant nontrivial algebraic structure is available, such as a field.</p>	mathlib algebra fields nontrivial
+What does `by positivity` do?	<p>The <code>positivity</code> tactic proves many goals of the form <code>0 ≤ expr</code> or <code>0 &lt; expr</code> from known positivity of parts of <code>expr</code>.</p>	mathlib tactics positivity inequalities
+What is a common proof pattern for nonzero denominators?	"<p>Name the nonzero proof, then use it with field simplification or inverse lemmas:</p><pre><code>have hb : b ≠ 0 := by ...
+field_simp [hb]</code></pre>"	mathlib fields proof-patterns
+What is the usual proof sequence for rational function identities?	<p>1. Prove denominator nonzero side conditions.<br>2. Run <code>field_simp</code> to clear denominators.<br>3. Use <code>ring</code> for the resulting polynomial identity.</p>	mathlib fields tactics
+What is `norm_num` good for?	<p><code>norm_num</code> proves goals involving concrete numerals, arithmetic normalization, and simple inequalities.</p><p>It is often the right first tool for goals like <code>0 &lt; (3 : ℝ)</code>.</p>	mathlib tactics numerals
+What is `nlinarith` good for?	<p><code>nlinarith</code> extends linear arithmetic with some nonlinear polynomial reasoning. It can solve inequalities involving products and squares when the necessary hypotheses are present.</p>	mathlib tactics inequalities
+What is a semiring?	<p>A semiring has addition, multiplication, zero, one, distributivity, and no required additive inverses. Natural numbers are the guiding example.</p>	mathlib algebra semiring
+What is an additive group?	<p>An additive group has <code>+</code>, <code>0</code>, unary negation, subtraction, and additive group laws. Rings and fields include additive group structure.</p>	mathlib algebra groups
+Why do theorem names often include `.mono`, `.trans`, or `.antisymm`?	<p>These suffixes signal common mathematical roles: monotonicity, transitivity, and antisymmetry. Search for them when order reasoning has a standard shape.</p>	mathlib naming order
+What does `le_trans h1 h2` prove?	<p>Given <code>h1 : a ≤ b</code> and <code>h2 : b ≤ c</code>, it proves <code>a ≤ c</code>.</p>	mathlib order inequalities
+What does `lt_of_lt_of_le h1 h2` prove?	<p>Given <code>h1 : a &lt; b</code> and <code>h2 : b ≤ c</code>, it proves <code>a &lt; c</code>.</p>	mathlib order inequalities
+What does `lt_of_le_of_lt h1 h2` prove?	<p>Given <code>h1 : a ≤ b</code> and <code>h2 : b &lt; c</code>, it proves <code>a &lt; c</code>.</p>	mathlib order inequalities
+What does `abs_lt` usually help with?	<p>It converts an absolute-value inequality into two inequalities:</p><pre><code>|x| &lt; ε ↔ -ε &lt; x ∧ x &lt; ε</code></pre><p>The exact theorem shape depends on the ordered additive group/ring context.</p>	mathlib analysis abs inequalities
+What does `dist` measure?	<p><code>dist x y</code> is the distance between two points in a pseudo metric or metric space. The notation and theorems require a metric-space typeclass.</p>	mathlib topology metric
+What is `Metric.ball x r`?	<p>It is the open ball centered at <code>x</code> with radius <code>r</code>:</p><pre><code>{y | dist y x &lt; r}</code></pre><p>Membership is often simplified using <code>Metric.mem_ball</code>.</p>	mathlib topology metric balls
+What does `Metric.mem_ball` rewrite?	<p>It rewrites membership in a metric ball into a distance inequality, typically:</p><pre><code>y ∈ Metric.ball x r ↔ dist y x &lt; r</code></pre>	mathlib topology metric balls rewrite
+What does `dist_comm x y` say?	<p>Distance is symmetric:</p><pre><code>dist x y = dist y x</code></pre><p>It is often used before or after rewriting ball membership.</p>	mathlib topology metric distance
+What theorem shape proves one set is a subset of another?	"<p>To prove <code>s ⊆ t</code>, introduce an arbitrary member of <code>s</code> and prove it belongs to <code>t</code>:</p><pre><code>intro x hx
+-- prove x ∈ t</code></pre>"	mathlib sets subsets proof-patterns
+How do boundedness and sequence convergence interact conceptually?	<p>Convergent real sequences are bounded. In Lean, expect a theorem to require a <code>Tendsto</code> hypothesis and produce an eventual bound or <code>BddAbove</code>/<code>BddBelow</code> statement, depending on the formulation.</p>	mathlib bounds sequences limits
+How should you search for Mathlib theorem names?	<p>Use <code>#check</code>, local imports, docs search, and name fragments from the mathematical role: <code>tendsto</code>, <code>bddAbove</code>, <code>isLUB</code>, <code>sSup</code>, <code>map</code>, <code>mono</code>, <code>abs</code>, <code>dist</code>, <code>ring</code>, or <code>field</code>.</p>	mathlib workflow search
+What is the best first move when a Mathlib theorem almost matches?	<p>Inspect the theorem&#x27;s exact type with <code>#check</code>, then adapt your goal with <code>change</code>, <code>simpa</code>, rewriting, or a small helper <code>have</code> rather than rewriting the theorem statement from memory.</p>	mathlib workflow theorem-use
+What is the risk of guessing Mathlib names?	<p>Names and typeclass assumptions are precise. Guessing can waste time or pull the proof into the wrong abstraction. Confirm with <code>#check</code>, search, or a local example.</p>	mathlib workflow names

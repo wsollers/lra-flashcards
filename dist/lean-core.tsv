@@ -1,0 +1,165 @@
+Front	Back	Tags
+What is the usual shape of a Lean `def`?	"<pre><code>def name (explicitArg : α) {implicitArg : β} [inst : C γ] : ResultType :=
+  body</code></pre><p>The header names the object and its parameters; the type after <code>:</code> is the promised result; the body after <code>:=</code> constructs that result.</p>"	lean core declarations def
+When should a Lean definition return `Prop`?	"<p>Use <code>Prop</code> when you are defining a predicate, property, relation, law, or theorem-shaped condition.</p><pre><code>def IsUpperBound (a : α) (s : Set α) : Prop :=
+  ∀ x, x ∈ s → x ≤ a</code></pre><p>A <code>Prop</code> definition is something to prove, not computational data to evaluate.</p>"	lean core modeling prop
+When should a Lean definition return `Type` or data rather than `Prop`?	"<p>Return data when the definition constructs an object, function, record, set, number, map, or witness-bearing structure.</p><pre><code>def square (n : Nat) : Nat := n * n
+def preimage (f : α → β) (t : Set β) : Set α := fun x =&gt; f x ∈ t</code></pre>"	lean core modeling type
+What is the usual shape of a Lean theorem header?	"<pre><code>theorem Name
+    {α : Type u} [Preorder α]
+    {s : Set α} {a b : α}
+    (ha : IsUpperBound a s)
+    (hab : a ≤ b) :
+    IsUpperBound b s := by
+  ...</code></pre><p>Parameters and assumptions come before the colon; the proposition to prove comes after the colon.</p>"	lean core declarations theorem
+How do `theorem`, `lemma`, and `example` differ?	<p><code>theorem</code> and <code>lemma</code> both create named declarations. Use <code>theorem</code> for central public results and <code>lemma</code> for supporting facts. <code>example</code> checks a proposition without adding a reusable name to the environment.</p>	lean core declarations theorem lemma example
+What is an axiom in Lean?	<pre><code>axiom excludedMiddleLike (p : Prop) : p ∨ ¬ p</code></pre><p>An <code>axiom</code> adds an unproved constant to the logical environment. It is powerful and dangerous: in ordinary project work, prefer definitions, theorem statements with proofs or explicit <code>sorry</code>, or imported existing axioms.</p>	lean core declarations axiom
+What does `sorry` mean?	<p><code>sorry</code> is a placeholder proof accepted by Lean with a warning. It lets the typecheck continue, but the declaration is not fully proved. Treat it as proof debt, never as a completed theorem.</p>	lean core proof-status sorry
+What are explicit, implicit, and instance arguments?	"<pre><code>(x : α)      -- explicit: caller usually supplies it
+{x : α}      -- implicit: Lean infers it
+[C α]        -- instance implicit: typeclass search finds it</code></pre><p>Explicit arguments model mathematical inputs. Implicit arguments reduce clutter. Instance arguments request canonical structure such as <code>Preorder α</code>, <code>Ring R</code>, or <code>TopologicalSpace X</code>.</p>"	lean core syntax arguments typeclasses
+What does `{α : Type u}` mean?	<p>It introduces an implicit type parameter <code>α</code> living in universe level <code>u</code>. The universe prevents paradoxes and lets definitions work uniformly over small and large types.</p>	lean core types universes
+When do you write `universe u v`?	"<p>Write it near the top of a file or section when declarations quantify over universe-polymorphic types.</p><pre><code>universe u v
+def Rel (α : Type u) (β : Type v) := α → β → Prop</code></pre>"	lean core universes
+What is the difference between `Prop`, `Type`, and `Sort`?	<p><code>Prop</code> is the universe of propositions. <code>Type u</code> is the universe of data types at level <code>u</code>. <code>Sort u</code> generalizes both: <code>Prop</code> is <code>Sort 0</code>, while <code>Type u</code> is essentially <code>Sort (u+1)</code>.</p>	lean core types prop sort
+How do you read `α → β → Prop`?	<p>As a curried binary relation: given <code>a : α</code> and <code>b : β</code>, it returns a proposition. Read <code>R a b</code> as &quot;<code>a</code> is related to <code>b</code>.&quot;</p>	lean core types relations
+How is a set represented in Lean?	<p>In Mathlib, <code>Set α</code> is a predicate <code>α → Prop</code>. Membership <code>x ∈ s</code> means <code>s x</code>.</p><p>This is why set extensionality often reduces to proving membership equivalence for an arbitrary element.</p>	lean core sets modeling
+What is the modeling choice between `Set (α × β)` and `α → β → Prop`?	<p><code>Set (α × β)</code> models a relation as a set of ordered pairs. <code>α → β → Prop</code> models it as a curried predicate. They are mathematically equivalent, but the curried form is usually easier for Lean proofs.</p>	lean core relations modeling
+What does `fun x => ...` create?	<p>It creates an anonymous function. Example:</p><pre><code>fun x =&gt; x + 1</code></pre><p>For predicates, <code>fun x =&gt; x ∈ s ∧ P x</code> creates a set-like condition.</p>	lean core functions lambda
+What does `by` introduce?	<p><code>by</code> switches from term mode to tactic mode. After <code>by</code>, tactics transform the proof goal until it is solved.</p>	lean core tactics by
+What is a proof state?	<p>A proof state is Lean&#x27;s current list of goals plus local hypotheses. Tactics read and transform this state. The main workflow is: inspect the target, introduce assumptions, decompose structure, rewrite or apply known facts, and close goals.</p>	lean core tactics proof-state
+What does `intro` do?	"<p><code>intro x</code> handles a goal beginning with <code>∀ x, ...</code> or <code>A → B</code> by moving the variable or assumption into the local context.</p><pre><code>⊢ ∀ x, P x
+intro x
+-- x : ...
+-- ⊢ P x</code></pre>"	lean core tactics intro
+What does `rintro` do?	<p><code>rintro</code> combines introduction with pattern matching.</p><pre><code>rintro x ⟨hx, hy⟩</code></pre><p>This introduces <code>x</code> and immediately splits a conjunction hypothesis into <code>hx</code> and <code>hy</code>.</p>	lean core tactics intro patterns
+What does `exact` do?	<p><code>exact h</code> closes the current goal when <code>h</code> has exactly the required type.</p><p>Use it when you already have the proof term or theorem Lean needs.</p>	lean core tactics exact
+What does `apply` do?	<p><code>apply theoremName</code> uses a theorem whose conclusion matches the current goal, then creates new goals for the theorem&#x27;s hypotheses.</p><p>It is backward reasoning: &quot;to prove this goal, it is enough to prove these premises.&quot;</p>	lean core tactics apply
+What does `refine` do?	<p><code>refine</code> is like <code>exact</code> or <code>apply</code>, but allows holes <code>_</code> for subgoals.</p><pre><code>refine ⟨?_, ?_⟩</code></pre><p>It is useful when building structured proofs with visible placeholders.</p>	lean core tactics refine
+What does `constructor` do?	<p><code>constructor</code> splits a goal whose target has one constructor, such as conjunction, iff, existential packages, or many structures.</p><p>For <code>P ∧ Q</code>, it creates goals <code>P</code> and <code>Q</code>.</p>	lean core tactics constructor
+How do you prove an `And` goal?	"<p>Use <code>constructor</code>, or provide a pair:</p><pre><code>constructor
+· exact hp
+· exact hq
+
+exact ⟨hp, hq⟩</code></pre>"	lean core logic and
+How do you use an `And` hypothesis?	"<p>Destructure it:</p><pre><code>rcases h with ⟨hp, hq⟩</code></pre><p>or use projections:</p><pre><code>exact h.left
+exact h.right</code></pre>"	lean core logic and cases
+How do you prove an `Iff` goal?	"<p>Use <code>constructor</code>; Lean creates the forward and reverse implication goals.</p><pre><code>constructor
+· intro h
+  ...
+· intro h
+  ...</code></pre>"	lean core logic iff
+How do you use an `Iff` hypothesis?	<p>If <code>h : P ↔ Q</code>, then <code>h.mp : P → Q</code> and <code>h.mpr : Q → P</code>.</p><p>You can also rewrite with it using <code>rw [h]</code> when appropriate.</p>	lean core logic iff
+How do you prove an existential statement?	"<p>Use <code>use witness</code>, then prove the witness satisfies the remaining property.</p><pre><code>use a
+constructor
+· exact ha_mem
+· exact ha_bound</code></pre>"	lean core logic exists
+How do you use an existential hypothesis?	<p>Destructure it with <code>rcases</code>.</p><pre><code>rcases h with ⟨w, hw⟩</code></pre><p>Now <code>w</code> is the witness and <code>hw</code> is its proof.</p>	lean core logic exists rcases
+What does `cases h with` do?	<p>It performs case analysis on data or proof constructors. For a disjunction <code>h : P ∨ Q</code>, it creates one branch with <code>P</code> and one branch with <code>Q</code>.</p>	lean core tactics cases
+What does `simp` do?	<p><code>simp</code> rewrites using simplification lemmas until the goal is in a normal form. It unfolds reducible definitions marked or supplied for simplification, simplifies projections, evaluates basic computation, and uses lemmas tagged <code>[simp]</code>.</p>	lean core tactics simp
+When should you use `simp [DefinitionName]`?	<p>Use it when a goal is blocked because a local definition must be unfolded.</p><pre><code>simp [IsUpperBound]</code></pre><p>This is common for predicate definitions whose logical body is hidden behind a name.</p>	lean core tactics simp unfold
+What does `rw [h]` do?	<p>It rewrites the target using equality or iff lemma <code>h</code> from left to right.</p><p><code>rw [← h]</code> rewrites from right to left.</p>	lean core tactics rewrite
+What is the difference between `rw` and `simp`?	<p><code>rw</code> applies specified rewrites in a directed, local way. <code>simp</code> searches a simplification set and repeatedly rewrites until stable. Use <code>rw</code> for controlled algebraic or definitional changes; use <code>simp</code> for routine cleanup.</p>	lean core tactics rewrite simp
+What does `simpa using h` do?	<p>It asks Lean to simplify both the target and the type of <code>h</code>, then use <code>h</code> to close the goal.</p><p>This is a compact way to bridge minor definitional, projection, or notation differences.</p>	lean core tactics simpa
+What does `have h : P := by ...` do?	"<p>It creates a named intermediate proof.</p><pre><code>have hbound : x ≤ a := by
+  exact ha x hx</code></pre><p>Use meaningful names when the proof reads like mathematics.</p>"	lean core tactics have
+What does `let x := ...` do in a proof?	<p>It introduces a local abbreviation for data. Use <code>let</code> for objects you will refer to repeatedly; use <code>have</code> for propositions or proofs.</p>	lean core tactics let
+What does `calc` provide?	"<p><code>calc</code> writes chained equality or order reasoning.</p><pre><code>calc
+  a ≤ b := hab
+  _ ≤ c := hbc</code></pre><p>It is ideal when the human proof is a visible chain.</p>"	lean core tactics calc
+What does `omega` solve?	<p><code>omega</code> solves many linear arithmetic goals over natural numbers and integers. It is not a general algebra solver and generally does not handle nonlinear multiplication.</p>	lean core tactics omega arithmetic
+What does `linarith` solve?	<p><code>linarith</code> solves linear arithmetic over ordered semirings/rings/fields when the needed hypotheses are in context. It is useful for inequalities involving addition, subtraction, scalar multiplication by numerals, and order.</p>	lean core tactics linarith arithmetic
+What does `ring` solve?	<p><code>ring</code> normalizes and proves polynomial identities in semirings and rings.</p><p>It proves goals like <code>(x + y)^2 = x^2 + 2*x*y + y^2</code>, assuming the right algebraic typeclass instances are available.</p>	lean core tactics ring algebra
+What does `field_simp` do?	<p><code>field_simp</code> clears denominators in field-like expressions, usually creating or using nonzero side conditions. It is often followed by <code>ring</code> or <code>linarith</code>.</p>	lean core tactics field algebra
+What does `ext` do?	<p><code>ext x</code> applies an extensionality theorem, usually reducing equality of sets, functions, or structures to equality at an arbitrary element or field.</p><p>For sets, it typically turns <code>s = t</code> into <code>∀ x, x ∈ s ↔ x ∈ t</code>.</p>	lean core tactics ext extensionality
+What does `unfold Name` do?	<p>It replaces <code>Name</code> by its definition in the target or hypotheses. Prefer <code>simp [Name]</code> when simplification should also clean up the result.</p>	lean core tactics unfold
+What does `change NewTarget` do?	<p>It replaces the current target by a definitionally equal target. Use it when Lean&#x27;s target is technically equivalent to the shape you want, but not displayed in a useful way.</p>	lean core tactics change
+What does `show P` do?	<p><code>show P</code> states the goal shape you intend to prove. It is useful for documentation and for forcing Lean to elaborate the target as a particular proposition.</p>	lean core tactics show
+How do you inspect a term's type while learning?	"<p>Use:</p><pre><code>#check term
+#check theoremName
+#print declarationName</code></pre><p>Keep these in scratch or learning files, not production proofs unless the repo intentionally allows diagnostic commands.</p>"	lean core commands inspect
+What is a structure in Lean?	"<p>A <code>structure</code> is a bundled record of fields.</p><pre><code>structure MetricDefinition (X : Type u) where
+  dist : X → X → Real
+  nonneg : ∀ x y, 0 ≤ dist x y</code></pre><p>An instance of the structure contains data and proofs for every field.</p>"	lean core structures
+How do you construct a structure value?	"<p>Use record syntax:</p><pre><code>{ dist := d
+  nonneg := hnonneg
+  symmetric := hsymm }</code></pre><p>Lean checks that every required field is supplied.</p>"	lean core structures constructor
+How do you access a structure field?	"<p>Use dot projection:</p><pre><code>metric.dist x y
+metric.symmetric x y</code></pre><p>Projection works when Lean can infer the structure containing the field.</p>"	lean core structures projection
+What does `extends` mean in a structure?	"<pre><code>structure GroupDefinition (G : Type u) extends MonoidDefinition G where
+  inv : G → G</code></pre><p>The new structure includes all fields of the parent structure plus additional fields.</p>"	lean core structures extends
+What is a class in Lean?	<p>A <code>class</code> is a structure whose values can be found by typeclass search.</p><p>Use classes for ambient reusable structure, like <code>Preorder α</code> or <code>Ring R</code>. Use ordinary structures when you want explicit model values and local control.</p>	lean core classes typeclasses
+What does `[Preorder α]` ask Lean to do?	<p>It asks typeclass search to find an available preorder structure on <code>α</code>. Once found, notation and theorems using <code>≤</code> become available.</p>	lean core classes typeclasses
+When should modeling use explicit structure parameters instead of typeclasses?	<p>Use explicit structures when multiple competing structures may exist on the same carrier, when the construction is local, or when you want proofs to mention the selected model directly.</p><p>Use typeclasses for canonical, ambient, widely shared structure.</p>	lean core modeling typeclasses
+What is a namespace for?	"<p>Namespaces organize names and prevent collisions.</p><pre><code>namespace LRA.VolumeI.Identity
+...
+end LRA.VolumeI.Identity</code></pre><p>Inside the namespace, declarations get fully qualified names like <code>LRA.VolumeI.Identity.Name</code>.</p>"	lean core namespaces
+What does `open Namespace` do?	<p>It makes names from a namespace available without full qualification in the current scope.</p><p>Prefer local <code>open</code> usage when broad imports would make names ambiguous.</p>	lean core namespaces open
+What does `section ... end` do?	<p>A section groups variables, local instances, and declarations. Variables introduced inside a section are available to declarations in that section but do not leak afterward.</p>	lean core sections variables
+What does `variable` do?	<p>It declares reusable parameters for following declarations in the current namespace or section.</p><pre><code>variable {α : Type u} [Preorder α]</code></pre><p>Use it to avoid repeating common parameters in a group of nearby definitions or theorems.</p>	lean core variables
+How do you decide what parameters belong before the colon?	<p>Put all objects, structures, and hypotheses needed to state the result before the colon. The proposition or result type after the colon should read as the main mathematical claim.</p>	lean core declarations headers
+What should theorem hypothesis names communicate?	"<p>Names should describe mathematical content:</p><pre><code>(upperA : IsUpperBound a s)
+(a_le_b : a ≤ b)</code></pre><p>Avoid throwaway names in public or long proofs when the names carry the proof narrative.</p>"	lean core style hypotheses
+What is the difference between parameters in parentheses and section variables?	<p>Parenthesized parameters belong explicitly to one declaration. Section variables are automatically inserted into each declaration that uses them. Prefer explicit parameters when the declaration should be understandable in isolation.</p>	lean core declarations variables
+What does `noncomputable def` mean?	<p>It defines an object that may rely on classical choice, existence proofs, quotients, or other non-executable principles. The definition is mathematically valid but not intended as executable code.</p>	lean core declarations noncomputable
+What does `open Classical` or `classical` enable?	<p>It enables classical reasoning such as choice and decidability of propositions. Use it deliberately, especially in constructive or foundational areas.</p>	lean core classical
+What is a coercion?	<p>A coercion is an automatic conversion Lean inserts between compatible types, such as a subtype element to its underlying value. Coercions are convenient but can obscure what type a term actually has.</p>	lean core types coercions
+What is a subtype?	<pre><code>{x : α // P x}</code></pre><p>A subtype value contains data <code>x : α</code> plus a proof that <code>P x</code>. Access the data with <code>.val</code> and the proof with <code>.property</code>.</p>	lean core types subtype
+"How do you model ""an element with a property""?"	<p>Use a subtype when the property should travel with the element:</p><pre><code>{x : α // x ∈ s}</code></pre><p>Use a separate variable and hypothesis when the property should remain a local assumption:</p><pre><code>(x : α) (hx : x ∈ s)</code></pre>	lean core modeling subtype
+What is quotient modeling for?	<p>Use quotients when objects are equivalence classes of representatives, such as rationals as integer pairs or reals as Cauchy sequences. The core proof burden is showing operations respect the equivalence relation.</p>	lean core modeling quotient
+What is a well-definedness theorem?	<p>It proves that a definition does not depend on arbitrary choices of representative.</p><p>For quotients, the usual shape is: if representatives are equivalent, then applying the operation to them gives equivalent results.</p>	lean core modeling quotient well-definedness
+What is a satisfaction theorem?	<p>It proves that a construction realizes a specified interface or law package.</p><p>Example shape: a concrete construction satisfies semigroup, ring, field, order, or completeness laws.</p>	lean core modeling structures
+What is a bridge or adapter theorem?	<p>It connects two representations without globally merging them.</p><p>Example: an LRA construction maps to Mathlib&#x27;s <code>Int</code> and agrees with Mathlib operations through explicit conversion functions.</p>	lean core modeling interop
+When should you create a helper lemma?	<p>Create a helper lemma when a sub-argument is reused, has a clear mathematical name, or would make the main proof too dense. Avoid helper lemmas that are only tactic scaffolding unless local proof readability improves.</p>	lean core proof-design lemmas
+How do you read a goal `⊢ A → B`?	<p>Lean is asking for a function from proofs of <code>A</code> to proofs of <code>B</code>. The usual first move is:</p><pre><code>intro hA</code></pre>	lean core proof-state implication
+How do you read a goal `⊢ ∀ x, P x`?	<p>Lean is asking for a proof for an arbitrary <code>x</code>. The usual first move is:</p><pre><code>intro x</code></pre>	lean core proof-state forall
+How do you read a goal `⊢ ∃ x, P x`?	<p>Lean is asking for a witness and a proof that it works. Usually:</p><pre><code>use candidate</code></pre>	lean core proof-state exists
+How do you read a goal `⊢ P ∧ Q`?	<p>Lean is asking for both proofs. Usually:</p><pre><code>constructor</code></pre>	lean core proof-state and
+How do you read a goal `⊢ P ↔ Q`?	"<p>Lean is asking for both directions. Usually:</p><pre><code>constructor
+· intro hp
+  ...
+· intro hq
+  ...</code></pre>"	lean core proof-state iff
+What should you try when Lean cannot infer a type?	"<p>Add type annotations near the ambiguity:</p><pre><code>(x : α)
+(s : Set α)
+show P from ...
+have h : P := ...</code></pre><p>Lean errors often improve once the intended type is explicit.</p>"	lean core elaboration types
+What should you try when typeclass search fails?	<p>Check whether the needed instance is in scope, whether imports expose it, and whether the carrier type is the one with the instance.</p><p>Sometimes an explicit argument, local instance, or adapter theorem is better than forcing global typeclass search.</p>	lean core elaboration typeclasses
+Why prefer readable proofs over tactic golf?	<p>Readable proofs preserve the mathematical argument, make later repair easier, and help theorem statements stay aligned with the intended source. Compact tactic scripts can hide fragile dependencies.</p>	lean core style proofs
+What belongs in a Lean doc comment for a public mathematical declaration?	<p>State the object or theorem in ordinary mathematical language, mention important dependencies or proof status, and expose the formal logical shape when the project expects searchable hover text.</p>	lean core style doc-comments
+How should a definition doc comment describe a predicate?	<p>Name the predicate and describe its membership, evaluation, or field condition.</p><p>Example: &quot;<code>a</code> is an upper bound for <code>s</code> when every member of <code>s</code> is less than or equal to <code>a</code>.&quot;</p>	lean core style doc-comments prop
+How should a theorem doc comment describe a two-direction proof?	<p>State the theorem in its displayed Lean direction, then add an &quot;equivalently&quot; or &quot;memberwise&quot; sentence describing the elementwise or bidirectional proof shape.</p>	lean core style doc-comments iff
+What is the safest way to model a theorem before proving it?	<p>First make the statement typecheck. Check that parameters, typeclasses, namespaces, and notation mean exactly what the mathematics intends. Only then start proof search.</p>	lean core workflow theorem-design
+What is the danger of adding global instances?	<p>Global instances affect typeclass search everywhere downstream. They can introduce ambiguity, slow search, or make notation resolve unexpectedly. Prefer local instances or explicit adapters until a canonical structure is clear.</p>	lean core modeling instances
+What is the difference between reducible definitions and theorem APIs?	<p>A reducible definition can be unfolded by proof automation. A theorem API gives named facts without exposing representation. Prefer theorem APIs when callers should not depend on the internal representation.</p>	lean core modeling api
+How do you keep representation details local?	<p>Expose constructors, projections, and theorems that state the intended behavior. Keep low-level encodings behind namespaces, private helpers, or construction-specific modules.</p>	lean core modeling abstraction
+What is an import aggregator?	<p>An aggregator module imports a curated collection of modules so users can import one stable name. It should not add new mathematical content unless the project explicitly uses it that way.</p>	lean core modules imports
+How do you avoid circular imports?	<p>Place definitions in the earliest common dependency layer, move shared lemmas upward, and keep examples/tests from importing back into core theory.</p>	lean core modules imports
+What is the first question when choosing where a theorem belongs?	<p>Ask: &quot;At what level is this theorem true?&quot; Place it at the highest general layer where the assumptions are sufficient, rather than duplicating it in a specific construction.</p>	lean core modules placement
+"What does ""source-facing PascalCase"" mean in this project?"	<p>Public declarations that mirror mathematical source content use descriptive PascalCase names, such as <code>IsUpperBound</code> or <code>MaximumIsSupremum</code>. Local proof helpers may use snake_case when they are genuinely internal.</p>	lean core lra naming
+What is a good Lean workflow for a new concept?	<p>1. Decide the carrier types and structures.<br>2. Write predicate or data definitions.<br>3. Write theorem statements that expose the intended API.<br>4. Prove small reusable lemmas.<br>5. Add examples or tests only after the core shape is stable.</p>	lean core workflow modeling
+What is a good Lean workflow for a stuck proof?	<p>1. Read the target and hypotheses.<br>2. Unfold only the definitions relevant to the goal.<br>3. Introduce variables and decompose conjunctions/existentials.<br>4. Search for theorem APIs before doing representation work.<br>5. Use <code>have</code> claims to make the mathematical path visible.</p>	lean core workflow tactics
+What is a common proof pattern for monotonic upper bounds?	"<p>To prove <code>b</code> is an upper bound from <code>a</code> being an upper bound and <code>a ≤ b</code>:</p><pre><code>intro x hx
+exact le_trans (ha x hx) hab</code></pre><p>The pattern is: introduce an arbitrary member, get the old bound, compose inequalities.</p>"	lean core proof-patterns bounds
+What is a common proof pattern for set equality?	"<p>Use extensionality and prove membership equivalence:</p><pre><code>ext x
+constructor
+· intro hx
+  ...
+· intro hx
+  ...</code></pre>"	lean core proof-patterns sets ext
+What is a common proof pattern for function equality?	<p>Use function extensionality:</p><pre><code>funext x</code></pre><p>Then prove the two functions give equal values at arbitrary <code>x</code>.</p>	lean core proof-patterns functions ext
+What is a common proof pattern for structure equality?	<p>Use extensionality if an ext theorem exists, or prove each field equal. Often the better design is to prove fieldwise behavior rather than relying on record equality.</p>	lean core proof-patterns structures ext
+What is a common proof pattern for a bundled algebraic law?	<p>Open the structure value, use its named law fields, and avoid reproving laws from raw operation definitions unless the construction-specific theorem is exactly about those definitions.</p>	lean core proof-patterns algebra structures
+"What is a common proof pattern for ""operation respects equivalence""?"	<p>Assume equivalent inputs, unfold the operation on representatives, and prove the outputs are equivalent. This theorem is usually needed before defining an operation on a quotient.</p>	lean core proof-patterns quotient
+What is a common proof pattern for classical choice definitions?	<p>First prove existence and uniqueness or sufficient existence. Then define the chosen object with <code>Classical.choose</code> or a noncomputable construction, and prove a correctness theorem about the chosen object.</p>	lean core proof-patterns classical
+What does a good theorem header do for future proof work?	<p>It exposes exactly the assumptions the proof needs, avoids hidden representation commitments, and leaves the conclusion in the vocabulary callers want to use.</p>	lean core headers theorem-design
+What does a good definition header do for future theorem work?	<p>It orders parameters from general structure to specific objects, keeps inferable type parameters implicit, and returns the mathematical object or proposition that downstream theorems should cite.</p>	lean core headers def-design
+What should you do before changing a theorem statement to make a proof easier?	<p>Check whether the new statement still says the intended mathematics. If the proof is hard because the abstraction boundary is wrong, add or use a supporting lemma instead of weakening the theorem accidentally.</p>	lean core workflow theorem-design
+"What is ""term mode"" in Lean?"	<p>Term mode writes the proof or object directly as an expression:</p><pre><code>fun x hx =&gt; le_trans (ha x hx) hab</code></pre><p>It is concise for simple functions and direct proof terms.</p>	lean core term-mode
+"What is ""tactic mode"" in Lean?"	<p>Tactic mode writes a script after <code>by</code> that incrementally transforms goals. It is clearer for proofs with branching, decomposition, or several intermediate claims.</p>	lean core tactic-mode
+When is `aesop` appropriate?	<p><code>aesop</code> can solve routine logical goals using registered rules. Use it for local automation after the statement is clear; avoid relying on it when it hides the main mathematical argument of a public theorem.</p>	lean core tactics aesop
+What does `all_goals` do?	<p>It applies a tactic to every remaining goal.</p><pre><code>all_goals simp</code></pre><p>Use it when every branch has the same routine cleanup.</p>	lean core tactics all-goals
+What is the danger of proving by repeated unfolding?	<p>Repeated unfolding couples proofs to representation details. Prefer named theorem APIs once a concept has stable behavior, especially across modules.</p>	lean core proof-design unfolding
+What is the role of tests and examples in Lean projects?	<p>Examples show intended use and compile-check behavior. Tests catch regressions. They should not become the primary source of reusable theory; central facts belong in named declarations.</p>	lean core workflow tests examples
+What does it mean for Lean to elaborate a declaration?	<p>Elaboration resolves implicit arguments, typeclasses, overloaded notation, coercions, universe levels, and expected types until the declaration has a fully checked core expression.</p>	lean core elaboration
+What is a useful mental model for Lean errors?	<p>Lean errors usually mean one of three things: the target is not what you thought, a hypothesis has a different type than expected, or an instance/import/notation is missing. Inspect types before changing mathematics.</p>	lean core workflow errors

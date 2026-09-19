@@ -1,0 +1,290 @@
+[
+  {
+    "id": "mathlib-analysis-algebra-001",
+    "type": "concept",
+    "front": "What typeclass usually supplies `≤`?",
+    "back": "`LE α` supplies the notation, but theorems about order usually require richer classes such as `Preorder α`, `PartialOrder α`, `LinearOrder α`, or lattice classes."
+  },
+  {
+    "id": "mathlib-analysis-algebra-002",
+    "type": "concept",
+    "front": "What is the usual shape of an upper bound predicate?",
+    "back": "∀ x, x ∈ s → x ≤ a\n\nIn Mathlib vocabulary this often appears through `BddAbove s`, `upperBounds s`, or custom predicates like `IsUpperBound a s`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-003",
+    "type": "concept",
+    "front": "What is the usual shape of a lower bound predicate?",
+    "back": "∀ x, x ∈ s → a ≤ x\n\nThe direction of `≤` is the main thing to watch."
+  },
+  {
+    "id": "mathlib-analysis-algebra-004",
+    "type": "concept",
+    "front": "What does `BddAbove s` mean?",
+    "back": "It means the set `s` has at least one upper bound.\n\nConceptually:\n\n∃ a, ∀ x, x ∈ s → x ≤ a"
+  },
+  {
+    "id": "mathlib-analysis-algebra-005",
+    "type": "concept",
+    "front": "What does `BddBelow s` mean?",
+    "back": "It means the set `s` has at least one lower bound.\n\nConceptually:\n\n∃ a, ∀ x, x ∈ s → a ≤ x"
+  },
+  {
+    "id": "mathlib-analysis-algebra-006",
+    "type": "concept",
+    "front": "What does `IsLUB s a` mean?",
+    "back": "`a` is a least upper bound of `s`: it is an upper bound, and every other upper bound is above it.\n\nConceptually:\n\n(∀ x, x ∈ s → x ≤ a) ∧ ∀ b, (∀ x, x ∈ s → x ≤ b) → a ≤ b"
+  },
+  {
+    "id": "mathlib-analysis-algebra-007",
+    "type": "concept",
+    "front": "What does `IsGLB s a` mean?",
+    "back": "`a` is a greatest lower bound of `s`: it is a lower bound, and every other lower bound is below it.\n\nConceptually:\n\n(∀ x, x ∈ s → a ≤ x) ∧ ∀ b, (∀ x, x ∈ s → b ≤ x) → b ≤ a"
+  },
+  {
+    "id": "mathlib-analysis-algebra-008",
+    "type": "concept",
+    "front": "What is `sSup s`?",
+    "back": "`sSup s` is the supremum of a set in a type with enough order structure, often a complete lattice or conditionally complete lattice. It is notation-backed by `Sup`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-009",
+    "type": "concept",
+    "front": "What is `sInf s`?",
+    "back": "`sInf s` is the infimum of a set in a type with enough order structure, often a complete lattice or conditionally complete lattice. It is notation-backed by `Inf`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-010",
+    "type": "proof-patterns",
+    "front": "What is the proof pattern for `IsLUB`?",
+    "back": "Split the conjunction:\n\nconstructor\n· intro x hx\n  -- prove x ≤ a\n· intro b hb\n  -- prove a ≤ b"
+  },
+  {
+    "id": "mathlib-analysis-algebra-011",
+    "type": "proof-patterns",
+    "front": "What is the proof pattern for `IsGLB`?",
+    "back": "Split the conjunction:\n\nconstructor\n· intro x hx\n  -- prove a ≤ x\n· intro b hb\n  -- prove b ≤ a"
+  },
+  {
+    "id": "mathlib-analysis-algebra-012",
+    "type": "concept",
+    "front": "What is a sequence in Lean?",
+    "back": "A sequence of values in `α` is usually a function:\n\nu : ℕ → α\n\nThen `u n` is the `n`th term."
+  },
+  {
+    "id": "mathlib-analysis-algebra-013",
+    "type": "concept",
+    "front": "How do you state eventual behavior of a sequence?",
+    "back": "Use filters:\n\n∀ᶠ n in atTop, P (u n)\n\nThis means `P (u n)` holds for all sufficiently large `n`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-014",
+    "type": "limits",
+    "front": "What is `Filter.Tendsto u atTop (𝓝 a)`?",
+    "back": "It states that the sequence/function `u` tends to `a` along `atTop`. For sequences, read it as `u n → a` as `n → ∞`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-015",
+    "type": "limits",
+    "front": "What is `𝓝 a`?",
+    "back": "`𝓝 a` is the neighborhood filter of `a`. A statement tending to `𝓝 a` says values eventually fall inside every neighborhood of `a`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-016",
+    "type": "concept",
+    "front": "What is `atTop`?",
+    "back": "`atTop` is the filter for \"eventually for sufficiently large values\" on an ordered type such as `ℕ`, `ℤ`, or `ℝ`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-017",
+    "type": "limits",
+    "front": "What is the epsilon proof shape for a real sequence limit?",
+    "back": "Conceptually, `u n → a` means:\n\n∀ ε > 0, ∃ N, ∀ n ≥ N, |u n - a| < ε\n\nMathlib often expresses this through filters, but epsilon lemmas bridge the two views."
+  },
+  {
+    "id": "mathlib-analysis-algebra-018",
+    "type": "limits",
+    "front": "What does `tendsto_const_nhds` prove?",
+    "back": "It proves that a constant function tends to that constant:\n\nTendsto (fun _ => a) l (𝓝 a)"
+  },
+  {
+    "id": "mathlib-analysis-algebra-019",
+    "type": "limits",
+    "front": "What does `h.add h'` often do for limits?",
+    "back": "If `h : Tendsto f l (𝓝 a)` and `h' : Tendsto g l (𝓝 b)`, then `h.add h'` proves `Tendsto (fun x => f x + g x) l (𝓝 (a + b))`, assuming the needed topological algebra structure."
+  },
+  {
+    "id": "mathlib-analysis-algebra-020",
+    "type": "limits",
+    "front": "What does `h.mul h'` often do for limits?",
+    "back": "If `f → a` and `g → b`, then `f * g → a * b`, provided the relevant topological multiplication structure is available."
+  },
+  {
+    "id": "mathlib-analysis-algebra-021",
+    "type": "limits",
+    "front": "What is a common typeclass stack for real limit algebra?",
+    "back": "For concrete real sequences, `ℝ` already has the needed instances. For abstract types, limit algebra may require classes like `TopologicalSpace α`, `AddGroup α`, `ContinuousAdd α`, `Mul α`, or `ContinuousMul α`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-022",
+    "type": "rings",
+    "front": "What is `Ring R`?",
+    "back": "`Ring R` is a typeclass bundling addition, multiplication, additive inverses, zero, one, and ring laws on `R`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-023",
+    "type": "rings",
+    "front": "What is `CommRing R`?",
+    "back": "`CommRing R` is a ring whose multiplication is commutative. Many polynomial and field-adjacent lemmas require commutative multiplication."
+  },
+  {
+    "id": "mathlib-analysis-algebra-024",
+    "type": "fields",
+    "front": "What is `Field K`?",
+    "back": "`Field K` is a commutative division ring with zero and one distinct. It supports division and inverse operations with field laws."
+  },
+  {
+    "id": "mathlib-analysis-algebra-025",
+    "type": "fields",
+    "front": "What is `LinearOrderedField K`?",
+    "back": "It is a field with a compatible linear order, such as `ℚ` or `ℝ`. It supports ordered field reasoning used by `linarith`, positivity lemmas, and analysis inequalities."
+  },
+  {
+    "id": "mathlib-analysis-algebra-026",
+    "type": "fields",
+    "front": "What is the difference between `/` and `⁻¹`?",
+    "back": "`a / b` is usually notation for `a * b⁻¹`. Division often creates side conditions about `b ≠ 0`, depending on the theorem."
+  },
+  {
+    "id": "mathlib-analysis-algebra-027",
+    "type": "fields",
+    "front": "What does `zero_ne_one` provide?",
+    "back": "It proves `0 ≠ 1` in a type where the relevant nontrivial algebraic structure is available, such as a field."
+  },
+  {
+    "id": "mathlib-analysis-algebra-028",
+    "type": "tactics",
+    "front": "What does `by positivity` do?",
+    "back": "The `positivity` tactic proves many goals of the form `0 ≤ expr` or `0 < expr` from known positivity of parts of `expr`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-029",
+    "type": "fields",
+    "front": "What is a common proof pattern for nonzero denominators?",
+    "back": "Name the nonzero proof, then use it with field simplification or inverse lemmas:\n\nhave hb : b ≠ 0 := by ...\nfield_simp [hb]"
+  },
+  {
+    "id": "mathlib-analysis-algebra-030",
+    "type": "fields",
+    "front": "What is the usual proof sequence for rational function identities?",
+    "back": "1. Prove denominator nonzero side conditions.\n2. Run `field_simp` to clear denominators.\n3. Use `ring` for the resulting polynomial identity."
+  },
+  {
+    "id": "mathlib-analysis-algebra-031",
+    "type": "tactics",
+    "front": "What is `norm_num` good for?",
+    "back": "`norm_num` proves goals involving concrete numerals, arithmetic normalization, and simple inequalities.\n\nIt is often the right first tool for goals like `0 < (3 : ℝ)`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-032",
+    "type": "tactics",
+    "front": "What is `nlinarith` good for?",
+    "back": "`nlinarith` extends linear arithmetic with some nonlinear polynomial reasoning. It can solve inequalities involving products and squares when the necessary hypotheses are present."
+  },
+  {
+    "id": "mathlib-analysis-algebra-033",
+    "type": "concept",
+    "front": "What is a semiring?",
+    "back": "A semiring has addition, multiplication, zero, one, distributivity, and no required additive inverses. Natural numbers are the guiding example."
+  },
+  {
+    "id": "mathlib-analysis-algebra-034",
+    "type": "concept",
+    "front": "What is an additive group?",
+    "back": "An additive group has `+`, `0`, unary negation, subtraction, and additive group laws. Rings and fields include additive group structure."
+  },
+  {
+    "id": "mathlib-analysis-algebra-035",
+    "type": "concept",
+    "front": "Why do theorem names often include `.mono`, `.trans`, or `.antisymm`?",
+    "back": "These suffixes signal common mathematical roles: monotonicity, transitivity, and antisymmetry. Search for them when order reasoning has a standard shape."
+  },
+  {
+    "id": "mathlib-analysis-algebra-036",
+    "type": "concept",
+    "front": "What does `le_trans h1 h2` prove?",
+    "back": "Given `h1 : a ≤ b` and `h2 : b ≤ c`, it proves `a ≤ c`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-037",
+    "type": "concept",
+    "front": "What does `lt_of_lt_of_le h1 h2` prove?",
+    "back": "Given `h1 : a < b` and `h2 : b ≤ c`, it proves `a < c`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-038",
+    "type": "concept",
+    "front": "What does `lt_of_le_of_lt h1 h2` prove?",
+    "back": "Given `h1 : a ≤ b` and `h2 : b < c`, it proves `a < c`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-039",
+    "type": "concept",
+    "front": "What does `abs_lt` usually help with?",
+    "back": "It converts an absolute-value inequality into two inequalities:\n\n|x| < ε ↔ -ε < x ∧ x < ε\n\nThe exact theorem shape depends on the ordered additive group/ring context."
+  },
+  {
+    "id": "mathlib-analysis-algebra-040",
+    "type": "concept",
+    "front": "What does `dist` measure?",
+    "back": "`dist x y` is the distance between two points in a pseudo metric or metric space. The notation and theorems require a metric-space typeclass."
+  },
+  {
+    "id": "mathlib-analysis-algebra-041",
+    "type": "concept",
+    "front": "What is `Metric.ball x r`?",
+    "back": "It is the open ball centered at `x` with radius `r`:\n\n{y | dist y x < r}\n\nMembership is often simplified using `Metric.mem_ball`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-042",
+    "type": "concept",
+    "front": "What does `Metric.mem_ball` rewrite?",
+    "back": "It rewrites membership in a metric ball into a distance inequality, typically:\n\ny ∈ Metric.ball x r ↔ dist y x < r"
+  },
+  {
+    "id": "mathlib-analysis-algebra-043",
+    "type": "concept",
+    "front": "What does `dist_comm x y` say?",
+    "back": "Distance is symmetric:\n\ndist x y = dist y x\n\nIt is often used before or after rewriting ball membership."
+  },
+  {
+    "id": "mathlib-analysis-algebra-044",
+    "type": "proof-patterns",
+    "front": "What theorem shape proves one set is a subset of another?",
+    "back": "To prove `s ⊆ t`, introduce an arbitrary member of `s` and prove it belongs to `t`:\n\nintro x hx\n-- prove x ∈ t"
+  },
+  {
+    "id": "mathlib-analysis-algebra-045",
+    "type": "limits",
+    "front": "How do boundedness and sequence convergence interact conceptually?",
+    "back": "Convergent real sequences are bounded. In Lean, expect a theorem to require a `Tendsto` hypothesis and produce an eventual bound or `BddAbove`/`BddBelow` statement, depending on the formulation."
+  },
+  {
+    "id": "mathlib-analysis-algebra-046",
+    "type": "workflow",
+    "front": "How should you search for Mathlib theorem names?",
+    "back": "Use `#check`, local imports, docs search, and name fragments from the mathematical role: `tendsto`, `bddAbove`, `isLUB`, `sSup`, `map`, `mono`, `abs`, `dist`, `ring`, or `field`."
+  },
+  {
+    "id": "mathlib-analysis-algebra-047",
+    "type": "workflow",
+    "front": "What is the best first move when a Mathlib theorem almost matches?",
+    "back": "Inspect the theorem's exact type with `#check`, then adapt your goal with `change`, `simpa`, rewriting, or a small helper `have` rather than rewriting the theorem statement from memory."
+  },
+  {
+    "id": "mathlib-analysis-algebra-048",
+    "type": "workflow",
+    "front": "What is the risk of guessing Mathlib names?",
+    "back": "Names and typeclass assumptions are precise. Guessing can waste time or pull the proof into the wrong abstraction. Confirm with `#check`, search, or a local example."
+  }
+]

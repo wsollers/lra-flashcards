@@ -1,4 +1,4 @@
-const CACHE = "lra-flashcards-v1";
+const CACHE = "lra-flashcards-v2";
 const SHELL = [
   "./",
   "./index.html",
@@ -9,7 +9,9 @@ const SHELL = [
   "./manifest.webmanifest",
   "./icon.svg",
   "../card-index.json",
-  "../cards/core/01-peano-systems.json"
+  "../cards/core/01-peano-systems.json",
+  "../cards/lean/lean-core.json",
+  "../cards/lean/mathlib-analysis-algebra.json"
 ];
 
 self.addEventListener("install", event => {
