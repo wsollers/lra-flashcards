@@ -6,12 +6,106 @@ When should a Lean definition return `Prop`?	"<p>Use <code>Prop</code> when you 
 When should a Lean definition return `Type` or data rather than `Prop`?	"<p>Return data when the definition constructs an object, function, record, set, number, map, or witness-bearing structure.</p><pre><code>def square (n : Nat) : Nat := n * n
 def preimage (f : α → β) (t : Set β) : Set α := fun x =&gt; f x ∈ t</code></pre>"	lean core modeling type
 What is the usual shape of a Lean theorem header?	"<pre><code>theorem Name
-    {α : Type u} [Preorder α]
-    {s : Set α} {a b : α}
-    (ha : IsUpperBound a s)
-    (hab : a ≤ b) :
-    IsUpperBound b s := by
-  ...</code></pre><p>Parameters and assumptions come before the colon; the proposition to prove comes after the colon.</p>"	lean core declarations theorem
+    {Carrier : Type u}          -- the carrier/type of objects
+    [Preorder Carrier]          -- ambient structure/typeclass instance
+    {s : Set Carrier}           -- implicit parameters Lean can infer
+    {a b : Carrier}             -- more implicit parameters
+    (ha : IsUpperBound a s)     -- named hypothesis
+    (hab : a ≤ b) :             -- named hypothesis
+    IsUpperBound b s := by      -- goal after the colon
+  ...</code></pre><p>Read the header in slots:</p><p>1. <code>theorem Name</code><br>2. type/carrier variables: <code>{Carrier : Type u}</code><br>3. structure Lean should find: <code>[Preorder Carrier]</code><br>4. mathematical objects: <code>{s : Set Carrier} {a b : Carrier}</code><br>5. assumptions/hypotheses: <code>(ha : ...) (hab : ...)</code><br>6. final claim after <code>:</code><br>7. proof after <code>:= by</code></p>"	lean core declarations theorem
+How do you specify the carrier type in a theorem?	"<p>Put the carrier before the objects that use it.</p><pre><code>theorem MyTheorem
+    {Carrier : Type u}
+    ...</code></pre><p>If you do not care about universe polymorphism yet, this beginner version is often enough:</p><pre><code>theorem MyTheorem
+    {Carrier : Type}
+    ...</code></pre>"	lean core beginner theorem-header carrier
+How do you specify order, ring, field, or topology structure in a theorem?	"<p>Put typeclass assumptions in square brackets after the carrier.</p><pre><code>theorem OrderedFact
+    {Carrier : Type u}
+    [Preorder Carrier]
+    ...</code></pre><p>Common examples:</p><pre><code>[Preorder α]
+[PartialOrder α]
+[LinearOrder α]
+[Ring R]
+[Field K]
+[TopologicalSpace X]</code></pre><p>Square brackets mean: &quot;Lean, find this structure by typeclass search.&quot;</p>"	lean core beginner theorem-header typeclasses
+How do you specify ordinary mathematical objects in a theorem header?	"<p>Put each object with its type.</p><pre><code>(x : α)
+(s : Set α)
+(f : α → β)
+(R : α → α → Prop)</code></pre><p>Use parentheses when the caller should supply the object explicitly. Use braces when Lean can usually infer it from later arguments.</p>"	lean core beginner theorem-header parameters
+What is the difference between `(x : α)` and `{x : α}` in theorem headers?	"<pre><code>(x : α)   -- explicit argument
+{x : α}   -- implicit argument</code></pre><p>Explicit arguments are visible when calling the theorem. Implicit arguments are inferred from context.</p><p>Beginner rule: use <code>(x : α)</code> while learning; switch to <code>{x : α}</code> when the value is usually obvious from other arguments.</p>"	lean core beginner theorem-header implicit
+How do you specify a hypothesis in a theorem header?	"<p>Use a parenthesized name, colon, and proposition.</p><pre><code>(hx : x ∈ s)
+(hxy : x ≤ y)
+(hP : P x)
+(hUpper : IsUpperBound a s)</code></pre><p>After <code>intro</code> or inside the proof, these names become usable facts.</p>"	lean core beginner theorem-header hypotheses
+How do you specify several hypotheses with the same shape?	"<p>You can write them separately:</p><pre><code>(hx : x ∈ s) (hy : y ∈ s)</code></pre><p>or group variables with the same type:</p><pre><code>(x y z : α)
+(hx : x ∈ s) (hy : y ∈ s)</code></pre><p>Do not group hypotheses unless they really have the same proposition shape.</p>"	lean core beginner theorem-header hypotheses
+Where does the theorem's actual claim go?	"<p>The claim goes after the final colon and before <code>:= by</code>.</p><pre><code>theorem Name
+    (h1 : P)
+    (h2 : P → Q) :
+    Q := by
+  exact h2 h1</code></pre><p>Everything before the colon is context. Everything after the colon is what you must prove.</p>"	lean core beginner theorem-header goal
+How do you start a proof of an implication?	<p>If the goal is:</p><pre><code>⊢ P → Q</code></pre><p>type:</p><pre><code>intro hP</code></pre><p>Now <code>hP : P</code> is available, and the new goal is <code>Q</code>.</p>	lean core beginner intro implication
+How do you start a proof of a universal statement?	<p>If the goal is:</p><pre><code>⊢ ∀ x, P x</code></pre><p>type:</p><pre><code>intro x</code></pre><p>Now <code>x</code> is arbitrary, and the new goal is <code>P x</code>.</p>	lean core beginner intro forall
+How do you introduce both an object and its membership hypothesis?	<p>For a goal like:</p><pre><code>⊢ ∀ x, x ∈ s → x ≤ a</code></pre><p>use:</p><pre><code>intro x hx</code></pre><p>Then Lean gives you <code>x : α</code>, <code>hx : x ∈ s</code>, and the goal <code>x ≤ a</code>.</p>	lean core beginner intro membership
+How do you use a hypothesis that is a function or implication?	"<p>If you have:</p><pre><code>h : P → Q
+hp : P</code></pre><p>then:</p><pre><code>have hq : Q := h hp</code></pre><p>For a bound hypothesis:</p><pre><code>ha : ∀ x, x ∈ s → x ≤ a
+hx : x ∈ s</code></pre><p>use:</p><pre><code>have hxa : x ≤ a := ha x hx</code></pre>"	lean core beginner hypotheses apply
+How do you make a new hypothesis from old hypotheses?	"<p>Use <code>have</code>.</p><pre><code>have hxa : x ≤ a := ha x hx</code></pre><p>If the proof takes more than one line:</p><pre><code>have hxc : x ≤ c := by
+  exact le_trans hxa hac</code></pre><p>Think: <code>have name : statement := proof</code>.</p>"	lean core beginner have hypotheses
+How do you chain two `≤` hypotheses?	"<p>If you have:</p><pre><code>hab : a ≤ b
+hbc : b ≤ c</code></pre><p>then:</p><pre><code>exact le_trans hab hbc</code></pre><p>or:</p><pre><code>have hac : a ≤ c := le_trans hab hbc</code></pre>"	lean core beginner inequalities transitivity
+How do you chain `<` and `≤` hypotheses?	"<p>Common order combinators:</p><pre><code>lt_trans       -- a &lt; b, b &lt; c gives a &lt; c
+lt_of_lt_of_le -- a &lt; b, b ≤ c gives a &lt; c
+lt_of_le_of_lt -- a ≤ b, b &lt; c gives a &lt; c
+le_trans       -- a ≤ b, b ≤ c gives a ≤ c</code></pre><p>The order of arguments follows the chain from left to right.</p>"	lean core beginner inequalities transitivity
+How do you write a `calc` block for inequalities?	"<pre><code>calc
+  a ≤ b := hab
+  _ ≤ c := hbc
+  _ ≤ d := hcd</code></pre><p>The underscore <code>_</code> means &quot;continue from the previous line&#x27;s right-hand side.&quot;</p>"	lean core beginner calc inequalities
+How do you write a `calc` block for equalities?	"<pre><code>calc
+  a = b := h_ab
+  _ = c := h_bc
+  _ = d := h_cd</code></pre><p>For algebraic equalities, each line can also be proved by <code>ring</code>, <code>simp</code>, or another theorem.</p>"	lean core beginner calc equalities
+When should you use `constructor`?	"<p>Use <code>constructor</code> when the goal asks you to build something with two main pieces.</p><p>Common goals:</p><pre><code>⊢ P ∧ Q
+⊢ P ↔ Q
+⊢ ∃ x, P x      -- after choosing a witness, often leaves an And goal
+⊢ SomeStructure</code></pre><p>After <code>constructor</code>, Lean creates one goal for each required piece.</p>"	lean core beginner constructor
+How do you prove an `And` goal step by step?	"<p>If the goal is:</p><pre><code>⊢ P ∧ Q</code></pre><p>write:</p><pre><code>constructor
+· exact hp
+· exact hq</code></pre><p>The first bullet proves <code>P</code>; the second proves <code>Q</code>.</p>"	lean core beginner constructor and
+How do you prove an `Iff` goal step by step?	"<p>If the goal is:</p><pre><code>⊢ P ↔ Q</code></pre><p>write:</p><pre><code>constructor
+· intro hp
+  -- prove Q
+· intro hq
+  -- prove P</code></pre><p>An iff is two implications.</p>"	lean core beginner constructor iff
+When should you use `cases`?	"<p>Use <code>cases</code> when you want to split a hypothesis or object by its constructors.</p><p>For a disjunction:</p><pre><code>h : P ∨ Q
+cases h with
+| inl hp =&gt; ...
+| inr hq =&gt; ...</code></pre><p>For natural numbers:</p><pre><code>cases n with
+| zero =&gt; ...
+| succ k =&gt; ...</code></pre>"	lean core beginner cases
+When should you use `rcases`?	"<p>Use <code>rcases</code> when a hypothesis packages data you want to unpack immediately.</p><pre><code>rcases h with ⟨hp, hq⟩
+rcases h with ⟨w, hw⟩
+rcases h with hleft | hright</code></pre><p>Beginner rule: <code>rcases</code> is great for <code>And</code>, <code>Exists</code>, and <code>Or</code> hypotheses.</p>"	lean core beginner rcases
+How do you unpack a conjunction hypothesis?	<p>If you have:</p><pre><code>h : P ∧ Q</code></pre><p>write:</p><pre><code>rcases h with ⟨hp, hq⟩</code></pre><p>Now <code>hp : P</code> and <code>hq : Q</code>.</p>	lean core beginner rcases and
+How do you unpack an existential hypothesis?	<p>If you have:</p><pre><code>h : ∃ x, P x</code></pre><p>write:</p><pre><code>rcases h with ⟨x, hx⟩</code></pre><p>Now <code>x</code> is the witness and <code>hx : P x</code> is the proof it works.</p>	lean core beginner rcases exists
+How do you prove an existential goal?	<p>If the goal is:</p><pre><code>⊢ ∃ x, P x</code></pre><p>choose the witness:</p><pre><code>use candidate</code></pre><p>Then Lean asks you to prove <code>P candidate</code>.</p>	lean core beginner exists use
+When should you use `unfold`?	<p>Use <code>unfold Name</code> when the goal or a hypothesis is hiding behind a definition and you need to see its body.</p><pre><code>unfold IsUpperBound</code></pre><p>Beginner warning: unfolding too much makes goals noisy. Prefer unfolding one relevant definition at a time.</p>	lean core beginner unfold
+How do you unfold a definition inside a hypothesis?	"<p>Use <code>unfold Name at h</code>.</p><pre><code>h : IsUpperBound a s
+unfold IsUpperBound at h</code></pre><p>Afterward, <code>h</code> may become something like:</p><pre><code>h : ∀ x, x ∈ s → x ≤ a</code></pre>"	lean core beginner unfold hypotheses
+When should you use `simp [DefinitionName]` instead of `unfold`?	<p>Use:</p><pre><code>simp [DefinitionName]</code></pre><p>when unfolding the definition should be followed by routine cleanup.</p><p>Use:</p><pre><code>simp [DefinitionName] at h</code></pre><p>to simplify a hypothesis.</p>	lean core beginner simp unfold
+How do you rewrite the goal with an equality hypothesis?	<p>If you have:</p><pre><code>h : a = b</code></pre><p>then:</p><pre><code>rw [h]</code></pre><p>replaces <code>a</code> by <code>b</code> in the goal. Use <code>rw [← h]</code> to rewrite backward.</p>	lean core beginner rewrite
+How do you rewrite inside a hypothesis?	<p>Use <code>at</code>.</p><pre><code>rw [h] at hx</code></pre><p>This rewrites inside hypothesis <code>hx</code> instead of the goal.</p><p>Use:</p><pre><code>rw [h] at *</code></pre><p>to rewrite in the goal and all hypotheses, but use this carefully.</p>	lean core beginner rewrite hypotheses
+What does `exact` mean in beginner terms?	"<p><code>exact h</code> says: &quot;the thing named <code>h</code> is exactly a proof of the current goal.&quot;</p><p>Example:</p><pre><code>h : P
+⊢ P
+exact h</code></pre>"	lean core beginner exact
+What does `apply` mean in beginner terms?	"<p><code>apply h</code> says: &quot;use theorem or hypothesis <code>h</code>; now prove whatever inputs <code>h</code> still needs.&quot;</p><p>Example:</p><pre><code>h : P → Q
+⊢ Q
+apply h
+-- new goal: P</code></pre>"	lean core beginner apply
+How do you prove a bound statement from an upper-bound hypothesis?	"<p>If:</p><pre><code>ha : IsUpperBound a s
+hx : x ∈ s</code></pre><p>and <code>IsUpperBound a s</code> unfolds to <code>∀ x, x ∈ s → x ≤ a</code>, then:</p><pre><code>have hxa : x ≤ a := ha x hx</code></pre><p>If Lean does not see the unfolded shape, try:</p><pre><code>unfold IsUpperBound at ha</code></pre>"	lean core beginner bounds hypotheses
 How do `theorem`, `lemma`, and `example` differ?	<p><code>theorem</code> and <code>lemma</code> both create named declarations. Use <code>theorem</code> for central public results and <code>lemma</code> for supporting facts. <code>example</code> checks a proposition without adding a reusable name to the environment.</p>	lean core declarations theorem lemma example
 What is an axiom in Lean?	<pre><code>axiom excludedMiddleLike (p : Prop) : p ∨ ¬ p</code></pre><p>An <code>axiom</code> adds an unproved constant to the logical environment. It is powerful and dangerous: in ordinary project work, prefer definitions, theorem statements with proofs or explicit <code>sorry</code>, or imported existing axioms.</p>	lean core declarations axiom
 What does `sorry` mean?	<p><code>sorry</code> is a placeholder proof accepted by Lean with a warning. It lets the typecheck continue, but the declaration is not fully proved. Treat it as proof debt, never as a completed theorem.</p>	lean core proof-status sorry

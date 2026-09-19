@@ -42,15 +42,605 @@ Tags: lean core declarations theorem
 
 ```lean
 theorem Name
-    {α : Type u} [Preorder α]
-    {s : Set α} {a b : α}
-    (ha : IsUpperBound a s)
-    (hab : a ≤ b) :
-    IsUpperBound b s := by
+    {Carrier : Type u}          -- the carrier/type of objects
+    [Preorder Carrier]          -- ambient structure/typeclass instance
+    {s : Set Carrier}           -- implicit parameters Lean can infer
+    {a b : Carrier}             -- more implicit parameters
+    (ha : IsUpperBound a s)     -- named hypothesis
+    (hab : a ≤ b) :             -- named hypothesis
+    IsUpperBound b s := by      -- goal after the colon
   ...
 ```
 
-Parameters and assumptions come before the colon; the proposition to prove comes after the colon.
+Read the header in slots:
+
+1. `theorem Name`
+2. type/carrier variables: `{Carrier : Type u}`
+3. structure Lean should find: `[Preorder Carrier]`
+4. mathematical objects: `{s : Set Carrier} {a b : Carrier}`
+5. assumptions/hypotheses: `(ha : ...) (hab : ...)`
+6. final claim after `:`
+7. proof after `:= by`
+---
+
+## How do you specify the carrier type in a theorem?
+Tags: lean core beginner theorem-header carrier
+
+Put the carrier before the objects that use it.
+
+```lean
+theorem MyTheorem
+    {Carrier : Type u}
+    ...
+```
+
+If you do not care about universe polymorphism yet, this beginner version is often enough:
+
+```lean
+theorem MyTheorem
+    {Carrier : Type}
+    ...
+```
+---
+
+## How do you specify order, ring, field, or topology structure in a theorem?
+Tags: lean core beginner theorem-header typeclasses
+
+Put typeclass assumptions in square brackets after the carrier.
+
+```lean
+theorem OrderedFact
+    {Carrier : Type u}
+    [Preorder Carrier]
+    ...
+```
+
+Common examples:
+
+```lean
+[Preorder α]
+[PartialOrder α]
+[LinearOrder α]
+[Ring R]
+[Field K]
+[TopologicalSpace X]
+```
+
+Square brackets mean: "Lean, find this structure by typeclass search."
+---
+
+## How do you specify ordinary mathematical objects in a theorem header?
+Tags: lean core beginner theorem-header parameters
+
+Put each object with its type.
+
+```lean
+(x : α)
+(s : Set α)
+(f : α → β)
+(R : α → α → Prop)
+```
+
+Use parentheses when the caller should supply the object explicitly. Use braces when Lean can usually infer it from later arguments.
+---
+
+## What is the difference between `(x : α)` and `{x : α}` in theorem headers?
+Tags: lean core beginner theorem-header implicit
+
+```lean
+(x : α)   -- explicit argument
+{x : α}   -- implicit argument
+```
+
+Explicit arguments are visible when calling the theorem. Implicit arguments are inferred from context.
+
+Beginner rule: use `(x : α)` while learning; switch to `{x : α}` when the value is usually obvious from other arguments.
+---
+
+## How do you specify a hypothesis in a theorem header?
+Tags: lean core beginner theorem-header hypotheses
+
+Use a parenthesized name, colon, and proposition.
+
+```lean
+(hx : x ∈ s)
+(hxy : x ≤ y)
+(hP : P x)
+(hUpper : IsUpperBound a s)
+```
+
+After `intro` or inside the proof, these names become usable facts.
+---
+
+## How do you specify several hypotheses with the same shape?
+Tags: lean core beginner theorem-header hypotheses
+
+You can write them separately:
+
+```lean
+(hx : x ∈ s) (hy : y ∈ s)
+```
+
+or group variables with the same type:
+
+```lean
+(x y z : α)
+(hx : x ∈ s) (hy : y ∈ s)
+```
+
+Do not group hypotheses unless they really have the same proposition shape.
+---
+
+## Where does the theorem's actual claim go?
+Tags: lean core beginner theorem-header goal
+
+The claim goes after the final colon and before `:= by`.
+
+```lean
+theorem Name
+    (h1 : P)
+    (h2 : P → Q) :
+    Q := by
+  exact h2 h1
+```
+
+Everything before the colon is context. Everything after the colon is what you must prove.
+---
+
+## How do you start a proof of an implication?
+Tags: lean core beginner intro implication
+
+If the goal is:
+
+```lean
+⊢ P → Q
+```
+
+type:
+
+```lean
+intro hP
+```
+
+Now `hP : P` is available, and the new goal is `Q`.
+---
+
+## How do you start a proof of a universal statement?
+Tags: lean core beginner intro forall
+
+If the goal is:
+
+```lean
+⊢ ∀ x, P x
+```
+
+type:
+
+```lean
+intro x
+```
+
+Now `x` is arbitrary, and the new goal is `P x`.
+---
+
+## How do you introduce both an object and its membership hypothesis?
+Tags: lean core beginner intro membership
+
+For a goal like:
+
+```lean
+⊢ ∀ x, x ∈ s → x ≤ a
+```
+
+use:
+
+```lean
+intro x hx
+```
+
+Then Lean gives you `x : α`, `hx : x ∈ s`, and the goal `x ≤ a`.
+---
+
+## How do you use a hypothesis that is a function or implication?
+Tags: lean core beginner hypotheses apply
+
+If you have:
+
+```lean
+h : P → Q
+hp : P
+```
+
+then:
+
+```lean
+have hq : Q := h hp
+```
+
+For a bound hypothesis:
+
+```lean
+ha : ∀ x, x ∈ s → x ≤ a
+hx : x ∈ s
+```
+
+use:
+
+```lean
+have hxa : x ≤ a := ha x hx
+```
+---
+
+## How do you make a new hypothesis from old hypotheses?
+Tags: lean core beginner have hypotheses
+
+Use `have`.
+
+```lean
+have hxa : x ≤ a := ha x hx
+```
+
+If the proof takes more than one line:
+
+```lean
+have hxc : x ≤ c := by
+  exact le_trans hxa hac
+```
+
+Think: `have name : statement := proof`.
+---
+
+## How do you chain two `≤` hypotheses?
+Tags: lean core beginner inequalities transitivity
+
+If you have:
+
+```lean
+hab : a ≤ b
+hbc : b ≤ c
+```
+
+then:
+
+```lean
+exact le_trans hab hbc
+```
+
+or:
+
+```lean
+have hac : a ≤ c := le_trans hab hbc
+```
+---
+
+## How do you chain `<` and `≤` hypotheses?
+Tags: lean core beginner inequalities transitivity
+
+Common order combinators:
+
+```lean
+lt_trans       -- a < b, b < c gives a < c
+lt_of_lt_of_le -- a < b, b ≤ c gives a < c
+lt_of_le_of_lt -- a ≤ b, b < c gives a < c
+le_trans       -- a ≤ b, b ≤ c gives a ≤ c
+```
+
+The order of arguments follows the chain from left to right.
+---
+
+## How do you write a `calc` block for inequalities?
+Tags: lean core beginner calc inequalities
+
+```lean
+calc
+  a ≤ b := hab
+  _ ≤ c := hbc
+  _ ≤ d := hcd
+```
+
+The underscore `_` means "continue from the previous line's right-hand side."
+---
+
+## How do you write a `calc` block for equalities?
+Tags: lean core beginner calc equalities
+
+```lean
+calc
+  a = b := h_ab
+  _ = c := h_bc
+  _ = d := h_cd
+```
+
+For algebraic equalities, each line can also be proved by `ring`, `simp`, or another theorem.
+---
+
+## When should you use `constructor`?
+Tags: lean core beginner constructor
+
+Use `constructor` when the goal asks you to build something with two main pieces.
+
+Common goals:
+
+```lean
+⊢ P ∧ Q
+⊢ P ↔ Q
+⊢ ∃ x, P x      -- after choosing a witness, often leaves an And goal
+⊢ SomeStructure
+```
+
+After `constructor`, Lean creates one goal for each required piece.
+---
+
+## How do you prove an `And` goal step by step?
+Tags: lean core beginner constructor and
+
+If the goal is:
+
+```lean
+⊢ P ∧ Q
+```
+
+write:
+
+```lean
+constructor
+· exact hp
+· exact hq
+```
+
+The first bullet proves `P`; the second proves `Q`.
+---
+
+## How do you prove an `Iff` goal step by step?
+Tags: lean core beginner constructor iff
+
+If the goal is:
+
+```lean
+⊢ P ↔ Q
+```
+
+write:
+
+```lean
+constructor
+· intro hp
+  -- prove Q
+· intro hq
+  -- prove P
+```
+
+An iff is two implications.
+---
+
+## When should you use `cases`?
+Tags: lean core beginner cases
+
+Use `cases` when you want to split a hypothesis or object by its constructors.
+
+For a disjunction:
+
+```lean
+h : P ∨ Q
+cases h with
+| inl hp => ...
+| inr hq => ...
+```
+
+For natural numbers:
+
+```lean
+cases n with
+| zero => ...
+| succ k => ...
+```
+---
+
+## When should you use `rcases`?
+Tags: lean core beginner rcases
+
+Use `rcases` when a hypothesis packages data you want to unpack immediately.
+
+```lean
+rcases h with ⟨hp, hq⟩
+rcases h with ⟨w, hw⟩
+rcases h with hleft | hright
+```
+
+Beginner rule: `rcases` is great for `And`, `Exists`, and `Or` hypotheses.
+---
+
+## How do you unpack a conjunction hypothesis?
+Tags: lean core beginner rcases and
+
+If you have:
+
+```lean
+h : P ∧ Q
+```
+
+write:
+
+```lean
+rcases h with ⟨hp, hq⟩
+```
+
+Now `hp : P` and `hq : Q`.
+---
+
+## How do you unpack an existential hypothesis?
+Tags: lean core beginner rcases exists
+
+If you have:
+
+```lean
+h : ∃ x, P x
+```
+
+write:
+
+```lean
+rcases h with ⟨x, hx⟩
+```
+
+Now `x` is the witness and `hx : P x` is the proof it works.
+---
+
+## How do you prove an existential goal?
+Tags: lean core beginner exists use
+
+If the goal is:
+
+```lean
+⊢ ∃ x, P x
+```
+
+choose the witness:
+
+```lean
+use candidate
+```
+
+Then Lean asks you to prove `P candidate`.
+---
+
+## When should you use `unfold`?
+Tags: lean core beginner unfold
+
+Use `unfold Name` when the goal or a hypothesis is hiding behind a definition and you need to see its body.
+
+```lean
+unfold IsUpperBound
+```
+
+Beginner warning: unfolding too much makes goals noisy. Prefer unfolding one relevant definition at a time.
+---
+
+## How do you unfold a definition inside a hypothesis?
+Tags: lean core beginner unfold hypotheses
+
+Use `unfold Name at h`.
+
+```lean
+h : IsUpperBound a s
+unfold IsUpperBound at h
+```
+
+Afterward, `h` may become something like:
+
+```lean
+h : ∀ x, x ∈ s → x ≤ a
+```
+---
+
+## When should you use `simp [DefinitionName]` instead of `unfold`?
+Tags: lean core beginner simp unfold
+
+Use:
+
+```lean
+simp [DefinitionName]
+```
+
+when unfolding the definition should be followed by routine cleanup.
+
+Use:
+
+```lean
+simp [DefinitionName] at h
+```
+
+to simplify a hypothesis.
+---
+
+## How do you rewrite the goal with an equality hypothesis?
+Tags: lean core beginner rewrite
+
+If you have:
+
+```lean
+h : a = b
+```
+
+then:
+
+```lean
+rw [h]
+```
+
+replaces `a` by `b` in the goal. Use `rw [← h]` to rewrite backward.
+---
+
+## How do you rewrite inside a hypothesis?
+Tags: lean core beginner rewrite hypotheses
+
+Use `at`.
+
+```lean
+rw [h] at hx
+```
+
+This rewrites inside hypothesis `hx` instead of the goal.
+
+Use:
+
+```lean
+rw [h] at *
+```
+
+to rewrite in the goal and all hypotheses, but use this carefully.
+---
+
+## What does `exact` mean in beginner terms?
+Tags: lean core beginner exact
+
+`exact h` says: "the thing named `h` is exactly a proof of the current goal."
+
+Example:
+
+```lean
+h : P
+⊢ P
+exact h
+```
+---
+
+## What does `apply` mean in beginner terms?
+Tags: lean core beginner apply
+
+`apply h` says: "use theorem or hypothesis `h`; now prove whatever inputs `h` still needs."
+
+Example:
+
+```lean
+h : P → Q
+⊢ Q
+apply h
+-- new goal: P
+```
+---
+
+## How do you prove a bound statement from an upper-bound hypothesis?
+Tags: lean core beginner bounds hypotheses
+
+If:
+
+```lean
+ha : IsUpperBound a s
+hx : x ∈ s
+```
+
+and `IsUpperBound a s` unfolds to `∀ x, x ∈ s → x ≤ a`, then:
+
+```lean
+have hxa : x ≤ a := ha x hx
+```
+
+If Lean does not see the unfolded shape, try:
+
+```lean
+unfold IsUpperBound at ha
+```
 ---
 
 ## How do `theorem`, `lemma`, and `example` differ?
