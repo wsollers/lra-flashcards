@@ -1,4 +1,4 @@
-const CACHE = "lra-flashcards-v10";
+const CACHE = "lra-flashcards-v11";
 const SHELL = [
   "./",
   "./index.html",
@@ -16,8 +16,27 @@ const SHELL = [
   "../cards/core/31-relations-functions-order.json",
   "../cards/core/32-well-founded-well-defined.json",
   "../cards/core/33-calculus-i.json",
+  "../cards/core/34-organic-chemistry-i.json",
   "../cards/lean/lean-core.json",
-  "../cards/lean/mathlib-analysis-algebra.json"
+  "../cards/lean/mathlib-analysis-algebra.json",
+  "../assets/organic/alkane.svg",
+  "../assets/organic/alkene.svg",
+  "../assets/organic/alkyne.svg",
+  "../assets/organic/arene.svg",
+  "../assets/organic/alcohol.svg",
+  "../assets/organic/ether.svg",
+  "../assets/organic/epoxide.svg",
+  "../assets/organic/peroxide.svg",
+  "../assets/organic/aldehyde.svg",
+  "../assets/organic/ketone.svg",
+  "../assets/organic/carboxylic-acid.svg",
+  "../assets/organic/ester.svg",
+  "../assets/organic/acid-chloride.svg",
+  "../assets/organic/amide.svg",
+  "../assets/organic/amine.svg",
+  "../assets/organic/nitrile.svg",
+  "../assets/organic/thiol.svg",
+  "../assets/organic/thioether.svg"
 ];
 
 self.addEventListener("install", event => {

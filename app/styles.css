@@ -75,6 +75,23 @@ select {
   font-size: clamp(1.2rem, 4vw, 1.8rem);
   line-height: 1.5;
 }
+.card-figure {
+  margin: 0 auto;
+  text-align: center;
+}
+.card-figure img {
+  width: min(100%, 360px);
+  max-height: 260px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: white;
+  padding: 12px;
+}
+.card-figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
 .answer { margin-top: 18px; }
 .hidden { display: none !important; }
 button {

@@ -44,6 +44,12 @@
       "file": "cards/core/33-calculus-i.json"
     },
     {
+      "id": "34-organic-chemistry-i",
+      "title": "Organic Chemistry I",
+      "track": "core",
+      "file": "cards/core/34-organic-chemistry-i.json"
+    },
+    {
       "id": "lean-core",
       "title": "Lean Core — Declarations, Types, Tactics, Modeling",
       "track": "lean",

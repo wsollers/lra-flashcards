@@ -58,6 +58,7 @@ Import approved batches rather than repeatedly re-importing the whole repository
 31. Relations, Functions, Order, Well-Ordering
 32. Well-Founded and Well-Defined
 33. Calculus I
+34. Organic Chemistry I
 
 ## Completeness convention
 

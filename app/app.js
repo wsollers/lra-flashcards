@@ -32,10 +32,11 @@ let session;
 let stats = loadStats();
 let currentDeck;
 
-function renderMathInto(element, text) {
-  element.textContent = "";
+function appendTextAndMath(element, text) {
+  if (!text) return;
   const parts = text.split(/(\$[^$]+\$)/g);
   for (const part of parts) {
+    if (!part) continue;
     if (part.startsWith("$") && part.endsWith("$") && window.katex) {
       const span = document.createElement("span");
       try {
@@ -46,6 +47,38 @@ function renderMathInto(element, text) {
       element.append(span);
     } else {
       element.append(document.createTextNode(part));
+    }
+  }
+}
+
+function appendImage(element, alt, src) {
+  const figure = document.createElement("figure");
+  figure.className = "card-figure";
+
+  const image = document.createElement("img");
+  image.src = src;
+  image.alt = alt;
+  image.loading = "lazy";
+  figure.append(image);
+
+  if (alt) {
+    const caption = document.createElement("figcaption");
+    caption.textContent = alt;
+    figure.append(caption);
+  }
+
+  element.append(figure);
+}
+
+function renderCardTextInto(element, text) {
+  element.textContent = "";
+  const parts = text.split(/(!\[[^\]]*]\([^)]+\))/g);
+  for (const part of parts) {
+    const image = part.match(/^!\[([^\]]*)]\(([^)]+)\)$/);
+    if (image) {
+      appendImage(element, image[1], image[2]);
+    } else {
+      appendTextAndMath(element, part);
     }
   }
 }
@@ -82,8 +115,8 @@ function showCurrent() {
   }
 
   const card = currentCard();
-  renderMathInto(els.front, card.front);
-  renderMathInto(els.back, card.back);
+  renderCardTextInto(els.front, card.front);
+  renderCardTextInto(els.back, card.back);
 
   els.answerBlock.classList.add("hidden");
   els.gradeButtons.classList.add("hidden");

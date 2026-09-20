@@ -1,0 +1,1028 @@
+[
+  {
+    "id": "organic-chemistry-i-001",
+    "type": "definition",
+    "front": "What prefix means 1 carbon?",
+    "back": "`meth-`."
+  },
+  {
+    "id": "organic-chemistry-i-002",
+    "type": "definition",
+    "front": "What prefix means 2 carbons?",
+    "back": "`eth-`."
+  },
+  {
+    "id": "organic-chemistry-i-003",
+    "type": "definition",
+    "front": "What prefix means 3 carbons?",
+    "back": "`prop-`."
+  },
+  {
+    "id": "organic-chemistry-i-004",
+    "type": "definition",
+    "front": "What prefix means 4 carbons?",
+    "back": "`but-`."
+  },
+  {
+    "id": "organic-chemistry-i-005",
+    "type": "definition",
+    "front": "What prefix means 5 carbons?",
+    "back": "`pent-`."
+  },
+  {
+    "id": "organic-chemistry-i-006",
+    "type": "definition",
+    "front": "What prefix means 6 carbons?",
+    "back": "`hex-`."
+  },
+  {
+    "id": "organic-chemistry-i-007",
+    "type": "definition",
+    "front": "What prefix means 7 carbons?",
+    "back": "`hept-`."
+  },
+  {
+    "id": "organic-chemistry-i-008",
+    "type": "definition",
+    "front": "What prefix means 8 carbons?",
+    "back": "`oct-`."
+  },
+  {
+    "id": "organic-chemistry-i-009",
+    "type": "definition",
+    "front": "What prefix means 9 carbons?",
+    "back": "`non-`."
+  },
+  {
+    "id": "organic-chemistry-i-010",
+    "type": "definition",
+    "front": "What prefix means 10 carbons?",
+    "back": "`dec-`."
+  },
+  {
+    "id": "organic-chemistry-i-011",
+    "type": "concept",
+    "front": "What does the root/prefix in an organic name usually tell you?",
+    "back": "The number of carbons in the parent chain."
+  },
+  {
+    "id": "organic-chemistry-i-012",
+    "type": "definition",
+    "front": "What does `cyclo-` mean in a name?",
+    "back": "The carbon chain forms a ring."
+  },
+  {
+    "id": "organic-chemistry-i-013",
+    "type": "concept",
+    "front": "What does `iso-` often suggest in common names?",
+    "back": "A branched structure, often with a methyl branch near the end."
+  },
+  {
+    "id": "organic-chemistry-i-014",
+    "type": "concept",
+    "front": "What does `tert-` or `t-` suggest in common names?",
+    "back": "A tertiary carbon center attached to three carbons."
+  },
+  {
+    "id": "organic-chemistry-i-015",
+    "type": "concept",
+    "front": "What suffix indicates an alkane?",
+    "back": "`-ane`."
+  },
+  {
+    "id": "organic-chemistry-i-016",
+    "type": "concept",
+    "front": "What suffix indicates an alkene?",
+    "back": "`-ene`."
+  },
+  {
+    "id": "organic-chemistry-i-017",
+    "type": "concept",
+    "front": "What suffix indicates an alkyne?",
+    "back": "`-yne`."
+  },
+  {
+    "id": "organic-chemistry-i-018",
+    "type": "concept",
+    "front": "What suffix indicates an alcohol?",
+    "back": "`-ol`."
+  },
+  {
+    "id": "organic-chemistry-i-019",
+    "type": "concept",
+    "front": "What suffix indicates an aldehyde?",
+    "back": "`-al`."
+  },
+  {
+    "id": "organic-chemistry-i-020",
+    "type": "concept",
+    "front": "What suffix indicates a ketone?",
+    "back": "`-one`."
+  },
+  {
+    "id": "organic-chemistry-i-021",
+    "type": "concept",
+    "front": "What suffix indicates a carboxylic acid?",
+    "back": "`-oic acid`."
+  },
+  {
+    "id": "organic-chemistry-i-022",
+    "type": "concept",
+    "front": "What suffix indicates an ester?",
+    "back": "`-oate`."
+  },
+  {
+    "id": "organic-chemistry-i-023",
+    "type": "concept",
+    "front": "What suffix indicates an amide?",
+    "back": "`-amide`."
+  },
+  {
+    "id": "organic-chemistry-i-024",
+    "type": "concept",
+    "front": "What suffix indicates an amine?",
+    "back": "`-amine`."
+  },
+  {
+    "id": "organic-chemistry-i-025",
+    "type": "concept",
+    "front": "What suffix indicates a nitrile?",
+    "back": "`-nitrile`."
+  },
+  {
+    "id": "organic-chemistry-i-026",
+    "type": "concept",
+    "front": "What suffix indicates a thiol?",
+    "back": "`-thiol`."
+  },
+  {
+    "id": "organic-chemistry-i-027",
+    "type": "definition",
+    "front": "What does `di-` mean in a name?",
+    "back": "Two of the named group or substituent."
+  },
+  {
+    "id": "organic-chemistry-i-028",
+    "type": "definition",
+    "front": "What does `tri-` mean in a name?",
+    "back": "Three of the named group or substituent."
+  },
+  {
+    "id": "organic-chemistry-i-029",
+    "type": "definition",
+    "front": "What does `tetra-` mean in a name?",
+    "back": "Four of the named group or substituent."
+  },
+  {
+    "id": "organic-chemistry-i-030",
+    "type": "definition",
+    "front": "What does `diene` mean?",
+    "back": "A molecule with two carbon-carbon double bonds."
+  },
+  {
+    "id": "organic-chemistry-i-031",
+    "type": "concept",
+    "front": "What does `yne` tell you about bonding?",
+    "back": "There is a carbon-carbon triple bond."
+  },
+  {
+    "id": "organic-chemistry-i-032",
+    "type": "concept",
+    "front": "What does `ene` tell you about bonding?",
+    "back": "There is a carbon-carbon double bond."
+  },
+  {
+    "id": "organic-chemistry-i-033",
+    "type": "definition",
+    "front": "What is the parent chain?",
+    "back": "The main carbon chain chosen as the base of the name."
+  },
+  {
+    "id": "organic-chemistry-i-034",
+    "type": "definition",
+    "front": "What is a substituent?",
+    "back": "A branch or group attached to the parent chain."
+  },
+  {
+    "id": "organic-chemistry-i-035",
+    "type": "concept",
+    "front": "What does a number/locant do in a name?",
+    "back": "It tells where a substituent, multiple bond, or functional group is located."
+  },
+  {
+    "id": "organic-chemistry-i-036",
+    "type": "definition",
+    "front": "What is the first major step in naming a simple organic molecule?",
+    "back": "Find the parent chain containing the highest-priority functional group or multiple bond."
+  },
+  {
+    "id": "organic-chemistry-i-037",
+    "type": "concept",
+    "front": "What do you do after finding the parent chain?",
+    "back": "Number the chain to give important groups and multiple bonds the lowest reasonable numbers."
+  },
+  {
+    "id": "organic-chemistry-i-038",
+    "type": "concept",
+    "front": "How are substituents listed in a name?",
+    "back": "Usually alphabetically, with locants showing their positions."
+  },
+  {
+    "id": "organic-chemistry-i-039",
+    "type": "concept",
+    "front": "Do `di-`, `tri-`, and `tetra-` count for alphabetizing substituents?",
+    "back": "Usually no; alphabetize by the substituent name itself."
+  },
+  {
+    "id": "organic-chemistry-i-040",
+    "type": "definition",
+    "front": "What does `N-` mean in names like `N-methylacetamide`?",
+    "back": "The substituent is attached to nitrogen."
+  },
+  {
+    "id": "organic-chemistry-i-041",
+    "type": "concept",
+    "front": "What does `sec-` suggest?",
+    "back": "Attachment through a secondary carbon."
+  },
+  {
+    "id": "organic-chemistry-i-042",
+    "type": "concept",
+    "front": "What does `neo-` suggest in common names?",
+    "back": "A highly branched neopentyl-like pattern."
+  },
+  {
+    "id": "organic-chemistry-i-043",
+    "type": "definition",
+    "front": "What is an alkane?",
+    "back": "A hydrocarbon with only single carbon-carbon bonds; suffix `-ane`."
+  },
+  {
+    "id": "organic-chemistry-i-044",
+    "type": "definition",
+    "front": "What is an alkene?",
+    "back": "A hydrocarbon containing a carbon-carbon double bond; suffix `-ene`."
+  },
+  {
+    "id": "organic-chemistry-i-045",
+    "type": "definition",
+    "front": "What is an alkyne?",
+    "back": "A hydrocarbon containing a carbon-carbon triple bond; suffix `-yne`."
+  },
+  {
+    "id": "organic-chemistry-i-046",
+    "type": "definition",
+    "front": "What is an arene?",
+    "back": "An aromatic ring system, commonly benzene-like."
+  },
+  {
+    "id": "organic-chemistry-i-047",
+    "type": "definition",
+    "front": "What is the characteristic feature of an alkane?",
+    "back": "Saturated C-C single bonds."
+  },
+  {
+    "id": "organic-chemistry-i-048",
+    "type": "definition",
+    "front": "What is the characteristic feature of an alkene?",
+    "back": "A C=C double bond."
+  },
+  {
+    "id": "organic-chemistry-i-049",
+    "type": "definition",
+    "front": "What is the characteristic feature of an alkyne?",
+    "back": "A C≡C triple bond."
+  },
+  {
+    "id": "organic-chemistry-i-050",
+    "type": "definition",
+    "front": "What is the characteristic feature of an arene?",
+    "back": "An aromatic ring with delocalized pi electrons."
+  },
+  {
+    "id": "organic-chemistry-i-051",
+    "type": "concept",
+    "front": "Which functional group has only C-C single bonds?",
+    "back": "Alkane."
+  },
+  {
+    "id": "organic-chemistry-i-052",
+    "type": "concept",
+    "front": "Which functional group has a C=C double bond?",
+    "back": "Alkene."
+  },
+  {
+    "id": "organic-chemistry-i-053",
+    "type": "concept",
+    "front": "Which functional group has a C≡C triple bond?",
+    "back": "Alkyne."
+  },
+  {
+    "id": "organic-chemistry-i-054",
+    "type": "concept",
+    "front": "Which functional group is benzene-like and aromatic?",
+    "back": "Arene."
+  },
+  {
+    "id": "organic-chemistry-i-055",
+    "type": "concept",
+    "front": "What functional group is shown? ![Alkane](../assets/organic/alkane.svg)",
+    "back": "Alkane."
+  },
+  {
+    "id": "organic-chemistry-i-056",
+    "type": "concept",
+    "front": "What functional group is shown? ![Alkene](../assets/organic/alkene.svg)",
+    "back": "Alkene."
+  },
+  {
+    "id": "organic-chemistry-i-057",
+    "type": "concept",
+    "front": "What functional group is shown? ![Alkyne](../assets/organic/alkyne.svg)",
+    "back": "Alkyne."
+  },
+  {
+    "id": "organic-chemistry-i-058",
+    "type": "concept",
+    "front": "What functional group is shown? ![Arene](../assets/organic/arene.svg)",
+    "back": "Arene."
+  },
+  {
+    "id": "organic-chemistry-i-059",
+    "type": "concept",
+    "front": "Show the alkane functional group pattern.",
+    "back": "![Alkane](../assets/organic/alkane.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-060",
+    "type": "concept",
+    "front": "Show the alkene functional group pattern.",
+    "back": "![Alkene](../assets/organic/alkene.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-061",
+    "type": "concept",
+    "front": "Show the alkyne functional group pattern.",
+    "back": "![Alkyne](../assets/organic/alkyne.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-062",
+    "type": "concept",
+    "front": "Show the arene functional group pattern.",
+    "back": "![Arene](../assets/organic/arene.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-063",
+    "type": "definition",
+    "front": "What is an alcohol?",
+    "back": "A compound with an `R-OH` hydroxyl group."
+  },
+  {
+    "id": "organic-chemistry-i-064",
+    "type": "definition",
+    "front": "What is the characteristic feature of an alcohol?",
+    "back": "An `-OH` group bonded to carbon."
+  },
+  {
+    "id": "organic-chemistry-i-065",
+    "type": "concept",
+    "front": "Which functional group has `R-OH`?",
+    "back": "Alcohol."
+  },
+  {
+    "id": "organic-chemistry-i-066",
+    "type": "definition",
+    "front": "What is an ether?",
+    "back": "A compound with oxygen between two carbon groups: `R-O-R`."
+  },
+  {
+    "id": "organic-chemistry-i-067",
+    "type": "definition",
+    "front": "What is the characteristic feature of an ether?",
+    "back": "An oxygen single-bonded to two carbon groups."
+  },
+  {
+    "id": "organic-chemistry-i-068",
+    "type": "concept",
+    "front": "Which functional group has `R-O-R`?",
+    "back": "Ether."
+  },
+  {
+    "id": "organic-chemistry-i-069",
+    "type": "definition",
+    "front": "What is an epoxide?",
+    "back": "A three-membered cyclic ether."
+  },
+  {
+    "id": "organic-chemistry-i-070",
+    "type": "definition",
+    "front": "What is the characteristic feature of an epoxide?",
+    "back": "Oxygen in a strained three-membered ring."
+  },
+  {
+    "id": "organic-chemistry-i-071",
+    "type": "concept",
+    "front": "Which functional group is a three-membered cyclic ether?",
+    "back": "Epoxide."
+  },
+  {
+    "id": "organic-chemistry-i-072",
+    "type": "definition",
+    "front": "What is a peroxide?",
+    "back": "A compound with an oxygen-oxygen single bond: `R-O-O-R`."
+  },
+  {
+    "id": "organic-chemistry-i-073",
+    "type": "definition",
+    "front": "What is the characteristic feature of a peroxide?",
+    "back": "An `O-O` single bond."
+  },
+  {
+    "id": "organic-chemistry-i-074",
+    "type": "concept",
+    "front": "Which functional group has `R-O-O-R`?",
+    "back": "Peroxide."
+  },
+  {
+    "id": "organic-chemistry-i-075",
+    "type": "concept",
+    "front": "What functional group is shown? ![Alcohol](../assets/organic/alcohol.svg)",
+    "back": "Alcohol."
+  },
+  {
+    "id": "organic-chemistry-i-076",
+    "type": "concept",
+    "front": "What functional group is shown? ![Ether](../assets/organic/ether.svg)",
+    "back": "Ether."
+  },
+  {
+    "id": "organic-chemistry-i-077",
+    "type": "concept",
+    "front": "What functional group is shown? ![Epoxide](../assets/organic/epoxide.svg)",
+    "back": "Epoxide."
+  },
+  {
+    "id": "organic-chemistry-i-078",
+    "type": "concept",
+    "front": "What functional group is shown? ![Peroxide](../assets/organic/peroxide.svg)",
+    "back": "Peroxide."
+  },
+  {
+    "id": "organic-chemistry-i-079",
+    "type": "concept",
+    "front": "Show the alcohol functional group pattern.",
+    "back": "![Alcohol](../assets/organic/alcohol.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-080",
+    "type": "concept",
+    "front": "Show the ether functional group pattern.",
+    "back": "![Ether](../assets/organic/ether.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-081",
+    "type": "concept",
+    "front": "Show the epoxide functional group pattern.",
+    "back": "![Epoxide](../assets/organic/epoxide.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-082",
+    "type": "concept",
+    "front": "Show the peroxide functional group pattern.",
+    "back": "![Peroxide](../assets/organic/peroxide.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-083",
+    "type": "definition",
+    "front": "What is a carbonyl group?",
+    "back": "A carbon double-bonded to oxygen: `C=O`."
+  },
+  {
+    "id": "organic-chemistry-i-084",
+    "type": "definition",
+    "front": "What is an aldehyde?",
+    "back": "A carbonyl with at least one hydrogen on the carbonyl carbon: `R-C(=O)-H`."
+  },
+  {
+    "id": "organic-chemistry-i-085",
+    "type": "definition",
+    "front": "What is the characteristic feature of an aldehyde?",
+    "back": "A terminal carbonyl bonded to hydrogen."
+  },
+  {
+    "id": "organic-chemistry-i-086",
+    "type": "concept",
+    "front": "Which functional group has `R-C(=O)-H`?",
+    "back": "Aldehyde."
+  },
+  {
+    "id": "organic-chemistry-i-087",
+    "type": "definition",
+    "front": "What is a ketone?",
+    "back": "A carbonyl carbon bonded to two carbon groups: `R-C(=O)-R`."
+  },
+  {
+    "id": "organic-chemistry-i-088",
+    "type": "definition",
+    "front": "What is the characteristic feature of a ketone?",
+    "back": "A carbonyl in the middle of a carbon chain, bonded to two carbons."
+  },
+  {
+    "id": "organic-chemistry-i-089",
+    "type": "concept",
+    "front": "Which functional group has `R-C(=O)-R`?",
+    "back": "Ketone."
+  },
+  {
+    "id": "organic-chemistry-i-090",
+    "type": "definition",
+    "front": "What is a carboxylic acid?",
+    "back": "A carbonyl attached to hydroxyl: `R-C(=O)-OH`."
+  },
+  {
+    "id": "organic-chemistry-i-091",
+    "type": "definition",
+    "front": "What is the characteristic feature of a carboxylic acid?",
+    "back": "The `-COOH` group."
+  },
+  {
+    "id": "organic-chemistry-i-092",
+    "type": "concept",
+    "front": "Which functional group has `R-C(=O)-OH`?",
+    "back": "Carboxylic acid."
+  },
+  {
+    "id": "organic-chemistry-i-093",
+    "type": "definition",
+    "front": "What is an ester?",
+    "back": "A carbonyl attached to an oxygen attached to carbon: `R-C(=O)-O-R`."
+  },
+  {
+    "id": "organic-chemistry-i-094",
+    "type": "definition",
+    "front": "What is the characteristic feature of an ester?",
+    "back": "`R-C(=O)-O-R`."
+  },
+  {
+    "id": "organic-chemistry-i-095",
+    "type": "concept",
+    "front": "Which functional group has `R-C(=O)-O-R`?",
+    "back": "Ester."
+  },
+  {
+    "id": "organic-chemistry-i-096",
+    "type": "definition",
+    "front": "What is an acid chloride?",
+    "back": "A carbonyl attached to chlorine: `R-C(=O)-Cl`."
+  },
+  {
+    "id": "organic-chemistry-i-097",
+    "type": "concept",
+    "front": "Which functional group has `R-C(=O)-Cl`?",
+    "back": "Acid chloride."
+  },
+  {
+    "id": "organic-chemistry-i-098",
+    "type": "definition",
+    "front": "What is an amide?",
+    "back": "A carbonyl attached to nitrogen: `R-C(=O)-N`."
+  },
+  {
+    "id": "organic-chemistry-i-099",
+    "type": "definition",
+    "front": "What is the characteristic feature of an amide?",
+    "back": "A carbonyl directly bonded to nitrogen."
+  },
+  {
+    "id": "organic-chemistry-i-100",
+    "type": "concept",
+    "front": "Which functional group has a carbonyl directly bonded to nitrogen?",
+    "back": "Amide."
+  },
+  {
+    "id": "organic-chemistry-i-101",
+    "type": "concept",
+    "front": "What functional group is shown? ![Aldehyde](../assets/organic/aldehyde.svg)",
+    "back": "Aldehyde."
+  },
+  {
+    "id": "organic-chemistry-i-102",
+    "type": "concept",
+    "front": "What functional group is shown? ![Ketone](../assets/organic/ketone.svg)",
+    "back": "Ketone."
+  },
+  {
+    "id": "organic-chemistry-i-103",
+    "type": "concept",
+    "front": "What functional group is shown? ![Carboxylic acid](../assets/organic/carboxylic-acid.svg)",
+    "back": "Carboxylic acid."
+  },
+  {
+    "id": "organic-chemistry-i-104",
+    "type": "concept",
+    "front": "What functional group is shown? ![Ester](../assets/organic/ester.svg)",
+    "back": "Ester."
+  },
+  {
+    "id": "organic-chemistry-i-105",
+    "type": "concept",
+    "front": "What functional group is shown? ![Acid chloride](../assets/organic/acid-chloride.svg)",
+    "back": "Acid chloride."
+  },
+  {
+    "id": "organic-chemistry-i-106",
+    "type": "concept",
+    "front": "What functional group is shown? ![Amide](../assets/organic/amide.svg)",
+    "back": "Amide."
+  },
+  {
+    "id": "organic-chemistry-i-107",
+    "type": "concept",
+    "front": "Show the aldehyde functional group pattern.",
+    "back": "![Aldehyde](../assets/organic/aldehyde.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-108",
+    "type": "concept",
+    "front": "Show the ketone functional group pattern.",
+    "back": "![Ketone](../assets/organic/ketone.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-109",
+    "type": "concept",
+    "front": "Show the carboxylic acid functional group pattern.",
+    "back": "![Carboxylic acid](../assets/organic/carboxylic-acid.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-110",
+    "type": "concept",
+    "front": "Show the ester functional group pattern.",
+    "back": "![Ester](../assets/organic/ester.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-111",
+    "type": "concept",
+    "front": "Show the acid chloride functional group pattern.",
+    "back": "![Acid chloride](../assets/organic/acid-chloride.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-112",
+    "type": "concept",
+    "front": "Show the amide functional group pattern.",
+    "back": "![Amide](../assets/organic/amide.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-113",
+    "type": "definition",
+    "front": "What is an amine?",
+    "back": "A nitrogen-containing group related to ammonia, often `R-NH2`, `R2NH`, or `R3N`."
+  },
+  {
+    "id": "organic-chemistry-i-114",
+    "type": "definition",
+    "front": "What is the characteristic feature of an amine?",
+    "back": "Nitrogen single-bonded to carbon and/or hydrogen, without an adjacent carbonyl."
+  },
+  {
+    "id": "organic-chemistry-i-115",
+    "type": "concept",
+    "front": "Which functional group has nitrogen single-bonded to carbon groups but no carbonyl?",
+    "back": "Amine."
+  },
+  {
+    "id": "organic-chemistry-i-116",
+    "type": "definition",
+    "front": "What is a nitrile?",
+    "back": "A carbon triple-bonded to nitrogen: `R-C≡N`."
+  },
+  {
+    "id": "organic-chemistry-i-117",
+    "type": "definition",
+    "front": "What is the characteristic feature of a nitrile?",
+    "back": "A `C≡N` triple bond."
+  },
+  {
+    "id": "organic-chemistry-i-118",
+    "type": "concept",
+    "front": "Which functional group has `R-C≡N`?",
+    "back": "Nitrile."
+  },
+  {
+    "id": "organic-chemistry-i-119",
+    "type": "definition",
+    "front": "What is an azide?",
+    "back": "A group with three nitrogens, commonly written `R-N3`."
+  },
+  {
+    "id": "organic-chemistry-i-120",
+    "type": "definition",
+    "front": "What is the characteristic feature of an azide?",
+    "back": "The `N3` group."
+  },
+  {
+    "id": "organic-chemistry-i-121",
+    "type": "concept",
+    "front": "Which functional group has `R-N3`?",
+    "back": "Azide."
+  },
+  {
+    "id": "organic-chemistry-i-122",
+    "type": "concept",
+    "front": "How do amines and amides differ?",
+    "back": "Amines have nitrogen without an adjacent carbonyl; amides have nitrogen directly attached to a carbonyl."
+  },
+  {
+    "id": "organic-chemistry-i-123",
+    "type": "concept",
+    "front": "How do nitriles and amines differ?",
+    "back": "Nitriles contain `C≡N`; amines have nitrogen single-bonded to carbon/hydrogen."
+  },
+  {
+    "id": "organic-chemistry-i-124",
+    "type": "concept",
+    "front": "What functional group is shown? ![Amine](../assets/organic/amine.svg)",
+    "back": "Amine."
+  },
+  {
+    "id": "organic-chemistry-i-125",
+    "type": "concept",
+    "front": "What functional group is shown? ![Nitrile](../assets/organic/nitrile.svg)",
+    "back": "Nitrile."
+  },
+  {
+    "id": "organic-chemistry-i-126",
+    "type": "concept",
+    "front": "Show the amine functional group pattern.",
+    "back": "![Amine](../assets/organic/amine.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-127",
+    "type": "concept",
+    "front": "Show the nitrile functional group pattern.",
+    "back": "![Nitrile](../assets/organic/nitrile.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-128",
+    "type": "definition",
+    "front": "What is a thiol?",
+    "back": "A sulfur analog of an alcohol: `R-SH`."
+  },
+  {
+    "id": "organic-chemistry-i-129",
+    "type": "definition",
+    "front": "What is the characteristic feature of a thiol?",
+    "back": "An `-SH` group."
+  },
+  {
+    "id": "organic-chemistry-i-130",
+    "type": "concept",
+    "front": "Which functional group has `R-SH`?",
+    "back": "Thiol."
+  },
+  {
+    "id": "organic-chemistry-i-131",
+    "type": "definition",
+    "front": "What is a thioether?",
+    "back": "A sulfur analog of an ether: `R-S-R`."
+  },
+  {
+    "id": "organic-chemistry-i-132",
+    "type": "definition",
+    "front": "What is the characteristic feature of a thioether?",
+    "back": "Sulfur single-bonded to two carbon groups."
+  },
+  {
+    "id": "organic-chemistry-i-133",
+    "type": "concept",
+    "front": "Which functional group has `R-S-R`?",
+    "back": "Thioether."
+  },
+  {
+    "id": "organic-chemistry-i-134",
+    "type": "concept",
+    "front": "How do alcohols and thiols differ?",
+    "back": "Alcohols have `R-OH`; thiols have `R-SH`."
+  },
+  {
+    "id": "organic-chemistry-i-135",
+    "type": "concept",
+    "front": "How do ethers and thioethers differ?",
+    "back": "Ethers have `R-O-R`; thioethers have `R-S-R`."
+  },
+  {
+    "id": "organic-chemistry-i-136",
+    "type": "concept",
+    "front": "What functional group is shown? ![Thiol](../assets/organic/thiol.svg)",
+    "back": "Thiol."
+  },
+  {
+    "id": "organic-chemistry-i-137",
+    "type": "concept",
+    "front": "What functional group is shown? ![Thioether](../assets/organic/thioether.svg)",
+    "back": "Thioether."
+  },
+  {
+    "id": "organic-chemistry-i-138",
+    "type": "concept",
+    "front": "Show the thiol functional group pattern.",
+    "back": "![Thiol](../assets/organic/thiol.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-139",
+    "type": "concept",
+    "front": "Show the thioether functional group pattern.",
+    "back": "![Thioether](../assets/organic/thioether.svg)"
+  },
+  {
+    "id": "organic-chemistry-i-140",
+    "type": "concept",
+    "front": "A functional group with a carbonyl bonded to hydrogen is what?",
+    "back": "Aldehyde."
+  },
+  {
+    "id": "organic-chemistry-i-141",
+    "type": "concept",
+    "front": "A functional group with a carbonyl bonded to two carbon groups is what?",
+    "back": "Ketone."
+  },
+  {
+    "id": "organic-chemistry-i-142",
+    "type": "concept",
+    "front": "A functional group with `-COOH` is what?",
+    "back": "Carboxylic acid."
+  },
+  {
+    "id": "organic-chemistry-i-143",
+    "type": "concept",
+    "front": "A functional group with a carbonyl bonded to `OR` is what?",
+    "back": "Ester."
+  },
+  {
+    "id": "organic-chemistry-i-144",
+    "type": "concept",
+    "front": "A functional group with a carbonyl bonded to nitrogen is what?",
+    "back": "Amide."
+  },
+  {
+    "id": "organic-chemistry-i-145",
+    "type": "concept",
+    "front": "A functional group with oxygen between two carbon groups is what?",
+    "back": "Ether."
+  },
+  {
+    "id": "organic-chemistry-i-146",
+    "type": "concept",
+    "front": "A functional group with `-OH` on carbon is what?",
+    "back": "Alcohol."
+  },
+  {
+    "id": "organic-chemistry-i-147",
+    "type": "concept",
+    "front": "A functional group with nitrogen single-bonded to carbon groups is what?",
+    "back": "Amine."
+  },
+  {
+    "id": "organic-chemistry-i-148",
+    "type": "concept",
+    "front": "A functional group with `C≡N` is what?",
+    "back": "Nitrile."
+  },
+  {
+    "id": "organic-chemistry-i-149",
+    "type": "concept",
+    "front": "A functional group with `-SH` is what?",
+    "back": "Thiol."
+  },
+  {
+    "id": "organic-chemistry-i-150",
+    "type": "concept",
+    "front": "A functional group with sulfur between two carbon groups is what?",
+    "back": "Thioether."
+  },
+  {
+    "id": "organic-chemistry-i-151",
+    "type": "concept",
+    "front": "A hydrocarbon with a double bond is what?",
+    "back": "Alkene."
+  },
+  {
+    "id": "organic-chemistry-i-152",
+    "type": "concept",
+    "front": "A hydrocarbon with a triple bond is what?",
+    "back": "Alkyne."
+  },
+  {
+    "id": "organic-chemistry-i-153",
+    "type": "concept",
+    "front": "A benzene-like aromatic ring is what?",
+    "back": "Arene."
+  },
+  {
+    "id": "organic-chemistry-i-154",
+    "type": "definition",
+    "front": "What is the key difference between aldehydes and ketones?",
+    "back": "Aldehydes have a carbonyl H; ketones have the carbonyl carbon bonded to two carbons."
+  },
+  {
+    "id": "organic-chemistry-i-155",
+    "type": "definition",
+    "front": "What is the key difference between esters and carboxylic acids?",
+    "back": "Esters have `-COOR`; carboxylic acids have `-COOH`."
+  },
+  {
+    "id": "organic-chemistry-i-156",
+    "type": "definition",
+    "front": "What is the key difference between amides and amines?",
+    "back": "Amides have a carbonyl attached to nitrogen; amines do not."
+  },
+  {
+    "id": "organic-chemistry-i-157",
+    "type": "definition",
+    "front": "What is the key difference between ethers and alcohols?",
+    "back": "Ethers have `R-O-R`; alcohols have `R-OH`."
+  },
+  {
+    "id": "organic-chemistry-i-158",
+    "type": "definition",
+    "front": "What is the key difference between thiols and alcohols?",
+    "back": "Thiols use sulfur, `R-SH`; alcohols use oxygen, `R-OH`."
+  },
+  {
+    "id": "organic-chemistry-i-159",
+    "type": "concept",
+    "front": "What functional group is in methanol?",
+    "back": "Alcohol."
+  },
+  {
+    "id": "organic-chemistry-i-160",
+    "type": "concept",
+    "front": "What functional group is in ethanol?",
+    "back": "Alcohol."
+  },
+  {
+    "id": "organic-chemistry-i-161",
+    "type": "concept",
+    "front": "What functional group is in propanone?",
+    "back": "Ketone."
+  },
+  {
+    "id": "organic-chemistry-i-162",
+    "type": "concept",
+    "front": "What functional group is in butanal?",
+    "back": "Aldehyde."
+  },
+  {
+    "id": "organic-chemistry-i-163",
+    "type": "concept",
+    "front": "What functional group is in ethanoic acid?",
+    "back": "Carboxylic acid."
+  },
+  {
+    "id": "organic-chemistry-i-164",
+    "type": "concept",
+    "front": "What functional group is in ethyl ethanoate?",
+    "back": "Ester."
+  },
+  {
+    "id": "organic-chemistry-i-165",
+    "type": "concept",
+    "front": "What functional group is in ethanamine?",
+    "back": "Amine."
+  },
+  {
+    "id": "organic-chemistry-i-166",
+    "type": "concept",
+    "front": "What functional group is in ethanenitrile?",
+    "back": "Nitrile."
+  },
+  {
+    "id": "organic-chemistry-i-167",
+    "type": "concept",
+    "front": "What functional group is in ethanethiol?",
+    "back": "Thiol."
+  },
+  {
+    "id": "organic-chemistry-i-168",
+    "type": "concept",
+    "front": "What suffix would you expect for butanone?",
+    "back": "`-one`, a ketone."
+  },
+  {
+    "id": "organic-chemistry-i-169",
+    "type": "concept",
+    "front": "What suffix would you expect for butanal?",
+    "back": "`-al`, an aldehyde."
+  },
+  {
+    "id": "organic-chemistry-i-170",
+    "type": "concept",
+    "front": "What suffix would you expect for butanol?",
+    "back": "`-ol`, an alcohol."
+  },
+  {
+    "id": "organic-chemistry-i-171",
+    "type": "concept",
+    "front": "What suffix would you expect for butanoic acid?",
+    "back": "`-oic acid`, a carboxylic acid."
+  }
+]
