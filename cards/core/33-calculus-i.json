@@ -1,0 +1,608 @@
+[
+  {
+    "id": "calculus-i-001",
+    "type": "definition",
+    "front": "What does `lim_{x→a} f(x) = L` mean?",
+    "back": "As `x` gets close to `a`, the values of `f(x)` get close to `L`."
+  },
+  {
+    "id": "calculus-i-002",
+    "type": "dependency",
+    "front": "Does `lim_{x→a} f(x)` depend on the value of `f(a)`?",
+    "back": "No. The limit depends on what happens near `a`, not necessarily at `a`."
+  },
+  {
+    "id": "calculus-i-003",
+    "type": "concept",
+    "front": "Can a limit exist if `f(a)` is undefined?",
+    "back": "Yes. A hole can have a limit if the graph approaches the same value from both sides."
+  },
+  {
+    "id": "calculus-i-004",
+    "type": "concept",
+    "front": "Can `lim_{x→a} f(x)` be different from `f(a)`?",
+    "back": "Yes. The function value at the point can be different from the value the graph approaches."
+  },
+  {
+    "id": "calculus-i-005",
+    "type": "definition",
+    "front": "What is a hole in a graph?",
+    "back": "A missing point where the graph may still approach a definite y-value."
+  },
+  {
+    "id": "calculus-i-006",
+    "type": "definition",
+    "front": "What is a removable discontinuity?",
+    "back": "A discontinuity caused by a hole or incorrect point value that could be fixed by redefining the function at one point."
+  },
+  {
+    "id": "calculus-i-007",
+    "type": "concept",
+    "front": "When does a two-sided limit exist?",
+    "back": "When the left-hand and right-hand limits both exist and are equal."
+  },
+  {
+    "id": "calculus-i-008",
+    "type": "concept",
+    "front": "When does a limit not exist from a graph?",
+    "back": "When the left and right sides approach different values, grow without bound, or oscillate without settling."
+  },
+  {
+    "id": "calculus-i-009",
+    "type": "definition",
+    "front": "What does `DNE` mean in a limit problem?",
+    "back": "The limit does not exist."
+  },
+  {
+    "id": "calculus-i-010",
+    "type": "definition",
+    "front": "What is the first question to ask in a limit problem?",
+    "back": "What is `x` approaching, and what does the function do near that value?"
+  },
+  {
+    "id": "calculus-i-011",
+    "type": "definition",
+    "front": "What does `lim_{x→a⁻} f(x)` mean?",
+    "back": "The limit as `x` approaches `a` from the left side, using values less than `a`."
+  },
+  {
+    "id": "calculus-i-012",
+    "type": "definition",
+    "front": "What does `lim_{x→a⁺} f(x)` mean?",
+    "back": "The limit as `x` approaches `a` from the right side, using values greater than `a`."
+  },
+  {
+    "id": "calculus-i-013",
+    "type": "proof",
+    "front": "How do one-sided limits determine a two-sided limit?",
+    "back": "The two-sided limit exists exactly when the left-hand and right-hand limits are equal."
+  },
+  {
+    "id": "calculus-i-014",
+    "type": "definition",
+    "front": "If the left-hand limit is `2` and the right-hand limit is `5`, what is the two-sided limit?",
+    "back": "It does not exist."
+  },
+  {
+    "id": "calculus-i-015",
+    "type": "definition",
+    "front": "If the left-hand limit and right-hand limit both equal `L`, what is the two-sided limit?",
+    "back": "`L`."
+  },
+  {
+    "id": "calculus-i-016",
+    "type": "concept",
+    "front": "How do you read a left-hand limit from a graph?",
+    "back": "Follow the graph toward the x-value from the left and see what y-value it approaches."
+  },
+  {
+    "id": "calculus-i-017",
+    "type": "concept",
+    "front": "How do you read a right-hand limit from a graph?",
+    "back": "Follow the graph toward the x-value from the right and see what y-value it approaches."
+  },
+  {
+    "id": "calculus-i-018",
+    "type": "proof",
+    "front": "Why are one-sided limits important for piecewise functions?",
+    "back": "Different formulas may apply on the left and right sides of the cutoff."
+  },
+  {
+    "id": "calculus-i-019",
+    "type": "concept",
+    "front": "What kind of discontinuity often has different one-sided limits?",
+    "back": "A jump discontinuity."
+  },
+  {
+    "id": "calculus-i-020",
+    "type": "concept",
+    "front": "At an endpoint of a domain, which limit usually matters?",
+    "back": "The one-sided limit from inside the domain."
+  },
+  {
+    "id": "calculus-i-021",
+    "type": "concept",
+    "front": "How do you estimate a limit from a table?",
+    "back": "Look at function values as `x` approaches the target from both sides."
+  },
+  {
+    "id": "calculus-i-022",
+    "type": "concept",
+    "front": "What should table values do if a limit appears to exist?",
+    "back": "They should approach the same y-value from the left and the right."
+  },
+  {
+    "id": "calculus-i-023",
+    "type": "definition",
+    "front": "What is a warning sign in a table that a limit may not exist?",
+    "back": "Left-side and right-side values approach different numbers."
+  },
+  {
+    "id": "calculus-i-024",
+    "type": "definition",
+    "front": "What does it mean if graph values grow upward without bound near `a`?",
+    "back": "The function may have an infinite limit or vertical asymptote near `a`."
+  },
+  {
+    "id": "calculus-i-025",
+    "type": "concept",
+    "front": "What does oscillation near a point suggest?",
+    "back": "The limit may not exist because the function does not settle toward one value."
+  },
+  {
+    "id": "calculus-i-026",
+    "type": "dependency",
+    "front": "How can a filled dot mislead you in a graph limit problem?",
+    "back": "The filled dot shows `f(a)`, but the limit depends on nearby graph behavior."
+  },
+  {
+    "id": "calculus-i-027",
+    "type": "concept",
+    "front": "How can an open circle help with a graph limit problem?",
+    "back": "It often shows the y-value the graph approaches even if the function is not defined there."
+  },
+  {
+    "id": "calculus-i-028",
+    "type": "concept",
+    "front": "What should you compare when reading a two-sided limit from a graph?",
+    "back": "The y-value approached from the left and the y-value approached from the right."
+  },
+  {
+    "id": "calculus-i-029",
+    "type": "definition",
+    "front": "What is direct substitution?",
+    "back": "Plugging the x-value into the function to evaluate the limit."
+  },
+  {
+    "id": "calculus-i-030",
+    "type": "concept",
+    "front": "When does direct substitution usually work?",
+    "back": "For polynomials and continuous functions, and for rational functions whose denominator is not zero at the target."
+  },
+  {
+    "id": "calculus-i-031",
+    "type": "proof",
+    "front": "What does direct substitution giving a real number usually mean?",
+    "back": "That number is the limit, assuming the function is continuous there or the limit laws apply."
+  },
+  {
+    "id": "calculus-i-032",
+    "type": "definition",
+    "front": "What does direct substitution giving `0/0` mean?",
+    "back": "The expression is indeterminate; more work is needed."
+  },
+  {
+    "id": "calculus-i-033",
+    "type": "concept",
+    "front": "What does direct substitution giving a nonzero number over `0` suggest?",
+    "back": "An infinite limit or vertical asymptote may be involved."
+  },
+  {
+    "id": "calculus-i-034",
+    "type": "definition",
+    "front": "What is the sum law for limits?",
+    "back": "The limit of a sum is the sum of the limits, when the individual limits exist."
+  },
+  {
+    "id": "calculus-i-035",
+    "type": "definition",
+    "front": "What is the product law for limits?",
+    "back": "The limit of a product is the product of the limits, when the individual limits exist."
+  },
+  {
+    "id": "calculus-i-036",
+    "type": "definition",
+    "front": "What is the quotient law for limits?",
+    "back": "The limit of a quotient is the quotient of the limits, provided the denominator limit is not zero."
+  },
+  {
+    "id": "calculus-i-037",
+    "type": "concept",
+    "front": "Why does the quotient law require denominator limit not zero?",
+    "back": "Division by zero is not defined and may lead to infinite behavior or no limit."
+  },
+  {
+    "id": "calculus-i-038",
+    "type": "concept",
+    "front": "How do powers work with limits?",
+    "back": "If `f(x) → L`, then powers like `(f(x))^n` usually approach `L^n`."
+  },
+  {
+    "id": "calculus-i-039",
+    "type": "concept",
+    "front": "How do roots work with limits?",
+    "back": "If the root function is defined and continuous at the limiting value, the limit of the root is the root of the limit."
+  },
+  {
+    "id": "calculus-i-040",
+    "type": "definition",
+    "front": "What does `0/0` tell you in a limit problem?",
+    "back": "The expression needs simplification; it does not mean the limit is zero or undefined automatically."
+  },
+  {
+    "id": "calculus-i-041",
+    "type": "concept",
+    "front": "What should you try first for a rational expression with `0/0`?",
+    "back": "Factor and cancel any common factor causing the zero denominator."
+  },
+  {
+    "id": "calculus-i-042",
+    "type": "proof",
+    "front": "Why is canceling allowed in a limit problem after factoring?",
+    "back": "Limits ignore the exact point `x = a`; canceling can reveal the behavior near the point."
+  },
+  {
+    "id": "calculus-i-043",
+    "type": "concept",
+    "front": "What must be true before canceling a factor?",
+    "back": "The factor must be common to numerator and denominator."
+  },
+  {
+    "id": "calculus-i-044",
+    "type": "concept",
+    "front": "What technique helps when the expression contains square roots?",
+    "back": "Rationalize using the conjugate."
+  },
+  {
+    "id": "calculus-i-045",
+    "type": "definition",
+    "front": "What is a conjugate?",
+    "back": "For `A + B`, the conjugate is `A - B`; for `A - B`, the conjugate is `A + B`."
+  },
+  {
+    "id": "calculus-i-046",
+    "type": "concept",
+    "front": "Why rationalize?",
+    "back": "Multiplying by the conjugate can remove radicals and reveal a cancelable factor."
+  },
+  {
+    "id": "calculus-i-047",
+    "type": "concept",
+    "front": "What technique helps with complex fractions?",
+    "back": "Combine terms using a common denominator, then simplify."
+  },
+  {
+    "id": "calculus-i-048",
+    "type": "concept",
+    "front": "What should you do after simplifying a `0/0` expression?",
+    "back": "Try direct substitution again."
+  },
+  {
+    "id": "calculus-i-049",
+    "type": "concept",
+    "front": "If simplification removes the zero denominator, what kind of discontinuity was likely present?",
+    "back": "A removable discontinuity."
+  },
+  {
+    "id": "calculus-i-050",
+    "type": "concept",
+    "front": "What does `lim_{x→∞} f(x)` ask?",
+    "back": "What y-value the function approaches as x grows without bound."
+  },
+  {
+    "id": "calculus-i-051",
+    "type": "concept",
+    "front": "What does `lim_{x→-∞} f(x)` ask?",
+    "back": "What y-value the function approaches as x becomes very large negative."
+  },
+  {
+    "id": "calculus-i-052",
+    "type": "definition",
+    "front": "What is a horizontal asymptote?",
+    "back": "A line `y = L` that the graph approaches as `x → ∞` or `x → -∞`."
+  },
+  {
+    "id": "calculus-i-053",
+    "type": "concept",
+    "front": "For rational functions, what do you compare for limits at infinity?",
+    "back": "The degrees of the numerator and denominator."
+  },
+  {
+    "id": "calculus-i-054",
+    "type": "definition",
+    "front": "If numerator degree is less than denominator degree, what is the horizontal limit?",
+    "back": "`0`."
+  },
+  {
+    "id": "calculus-i-055",
+    "type": "definition",
+    "front": "If numerator degree equals denominator degree, what is the horizontal limit?",
+    "back": "The ratio of leading coefficients."
+  },
+  {
+    "id": "calculus-i-056",
+    "type": "concept",
+    "front": "If numerator degree is greater than denominator degree, what happens?",
+    "back": "There is usually no finite horizontal limit; the function may grow without bound or have a slant/polynomial asymptote."
+  },
+  {
+    "id": "calculus-i-057",
+    "type": "concept",
+    "front": "What algebraic method helps with limits at infinity?",
+    "back": "Divide numerator and denominator by the highest power of `x` in the denominator."
+  },
+  {
+    "id": "calculus-i-058",
+    "type": "concept",
+    "front": "What happens to `1/x` as `x → ∞`?",
+    "back": "It approaches `0`."
+  },
+  {
+    "id": "calculus-i-059",
+    "type": "concept",
+    "front": "What happens to `1/x^n` as `x → ∞` for positive `n`?",
+    "back": "It approaches `0`."
+  },
+  {
+    "id": "calculus-i-060",
+    "type": "definition",
+    "front": "What does `lim_{x→a} f(x) = ∞` mean informally?",
+    "back": "The function values grow upward without bound as `x` approaches `a`."
+  },
+  {
+    "id": "calculus-i-061",
+    "type": "definition",
+    "front": "What does `lim_{x→a} f(x) = -∞` mean informally?",
+    "back": "The function values decrease without bound as `x` approaches `a`."
+  },
+  {
+    "id": "calculus-i-062",
+    "type": "concept",
+    "front": "Does an infinite limit count as an ordinary finite limit?",
+    "back": "No. It describes unbounded behavior, not approach to a real number."
+  },
+  {
+    "id": "calculus-i-063",
+    "type": "definition",
+    "front": "What is a vertical asymptote?",
+    "back": "A vertical line `x = a` where the function grows without bound near `a`."
+  },
+  {
+    "id": "calculus-i-064",
+    "type": "concept",
+    "front": "How do you find possible vertical asymptotes in a rational function?",
+    "back": "Set the denominator equal to zero after simplifying common factors."
+  },
+  {
+    "id": "calculus-i-065",
+    "type": "concept",
+    "front": "Why check one-sided behavior near a vertical asymptote?",
+    "back": "The function may go to `∞` on one side and `-∞` on the other."
+  },
+  {
+    "id": "calculus-i-066",
+    "type": "concept",
+    "front": "What tool helps determine signs near a vertical asymptote?",
+    "back": "A sign chart or test values on each side."
+  },
+  {
+    "id": "calculus-i-067",
+    "type": "definition",
+    "front": "If one side goes to `∞` and the other goes to `-∞`, what is the two-sided infinite behavior?",
+    "back": "The two-sided finite limit does not exist; the one-sided infinite limits differ."
+  },
+  {
+    "id": "calculus-i-068",
+    "type": "definition",
+    "front": "What is the most important basic trig limit?",
+    "back": "`lim_{x→0} sin(x)/x = 1`."
+  },
+  {
+    "id": "calculus-i-069",
+    "type": "definition",
+    "front": "What is `lim_{x→0} x/sin(x)`?",
+    "back": "`1`, since it is the reciprocal of a quantity approaching `1`."
+  },
+  {
+    "id": "calculus-i-070",
+    "type": "definition",
+    "front": "What is `lim_{x→0} (1 - cos x)/x`?",
+    "back": "`0`."
+  },
+  {
+    "id": "calculus-i-071",
+    "type": "proof",
+    "front": "What is a common technique for trig limits?",
+    "back": "Rewrite the expression to use `sin(x)/x` or known trig identities."
+  },
+  {
+    "id": "calculus-i-072",
+    "type": "concept",
+    "front": "What should you check about angle units in trig limit formulas?",
+    "back": "Standard trig limit formulas assume radians."
+  },
+  {
+    "id": "calculus-i-073",
+    "type": "concept",
+    "front": "How can substitution appear in trig limits?",
+    "back": "If `u → 0`, then `sin(u)/u → 1`."
+  },
+  {
+    "id": "calculus-i-074",
+    "type": "definition",
+    "front": "What is an example of trig-limit substitution?",
+    "back": "`lim_{x→0} sin(3x)/(3x) = 1`."
+  },
+  {
+    "id": "calculus-i-075",
+    "type": "proof",
+    "front": "How do you handle `sin(3x)/x` as `x→0`?",
+    "back": "Rewrite as `3 · sin(3x)/(3x)`, so the limit is `3`."
+  },
+  {
+    "id": "calculus-i-076",
+    "type": "theorem",
+    "front": "What does the Squeeze Theorem say?",
+    "back": "If `g(x) ≤ f(x) ≤ h(x)` and both outside functions approach `L`, then `f(x)` approaches `L`."
+  },
+  {
+    "id": "calculus-i-077",
+    "type": "theorem",
+    "front": "When is the Squeeze Theorem useful?",
+    "back": "When a function is trapped between two simpler functions with the same limit."
+  },
+  {
+    "id": "calculus-i-078",
+    "type": "definition",
+    "front": "What is the classic squeeze pattern with sine or cosine?",
+    "back": "Use that `-1 ≤ sin(anything) ≤ 1` or `-1 ≤ cos(anything) ≤ 1`."
+  },
+  {
+    "id": "calculus-i-079",
+    "type": "concept",
+    "front": "Why does `x sin(1/x)` go to `0` as `x→0`?",
+    "back": "It is trapped between `-x` and `x` in absolute size, and both approach `0`."
+  },
+  {
+    "id": "calculus-i-080",
+    "type": "definition",
+    "front": "What is the key phrase for recognizing squeeze problems?",
+    "back": "Bounded oscillation times something that goes to `0`."
+  },
+  {
+    "id": "calculus-i-081",
+    "type": "concept",
+    "front": "What must the two outside functions do in a squeeze problem?",
+    "back": "They must approach the same limit."
+  },
+  {
+    "id": "calculus-i-082",
+    "type": "definition",
+    "front": "What does it mean for a function to be continuous at `a`?",
+    "back": "`f(a)` is defined, `lim_{x→a} f(x)` exists, and the limit equals `f(a)`."
+  },
+  {
+    "id": "calculus-i-083",
+    "type": "definition",
+    "front": "What are the three continuity checks at a point?",
+    "back": "Function value exists, limit exists, and value equals limit."
+  },
+  {
+    "id": "calculus-i-084",
+    "type": "definition",
+    "front": "What is a removable discontinuity?",
+    "back": "A hole or incorrect point value that can be fixed by redefining one value."
+  },
+  {
+    "id": "calculus-i-085",
+    "type": "definition",
+    "front": "What is a jump discontinuity?",
+    "back": "Left and right limits exist but are different."
+  },
+  {
+    "id": "calculus-i-086",
+    "type": "definition",
+    "front": "What is an infinite discontinuity?",
+    "back": "The function grows without bound near the point, often with a vertical asymptote."
+  },
+  {
+    "id": "calculus-i-087",
+    "type": "definition",
+    "front": "What is continuity on an interval?",
+    "back": "The function is continuous at every point in the interval, with one-sided continuity at endpoints when needed."
+  },
+  {
+    "id": "calculus-i-088",
+    "type": "concept",
+    "front": "How do you check continuity of a piecewise function at a break point?",
+    "back": "Compare the left-hand limit, right-hand limit, and function value."
+  },
+  {
+    "id": "calculus-i-089",
+    "type": "concept",
+    "front": "How do you solve for a constant to make a piecewise function continuous?",
+    "back": "Set the left-hand expression and right-hand expression equal at the break point, including the defined value if needed."
+  },
+  {
+    "id": "calculus-i-090",
+    "type": "concept",
+    "front": "Why are polynomials continuous everywhere?",
+    "back": "Their limits equal their values at every real number."
+  },
+  {
+    "id": "calculus-i-091",
+    "type": "concept",
+    "front": "Where can rational functions fail to be continuous?",
+    "back": "Where the denominator is zero."
+  },
+  {
+    "id": "calculus-i-092",
+    "type": "definition",
+    "front": "What is the first step for most algebraic limit problems?",
+    "back": "Try direct substitution."
+  },
+  {
+    "id": "calculus-i-093",
+    "type": "concept",
+    "front": "If direct substitution gives a real number, what should you usually do?",
+    "back": "Use that number as the limit."
+  },
+  {
+    "id": "calculus-i-094",
+    "type": "concept",
+    "front": "If direct substitution gives `0/0`, what should you try?",
+    "back": "Factor and cancel, rationalize, use a common denominator, or use identities."
+  },
+  {
+    "id": "calculus-i-095",
+    "type": "concept",
+    "front": "If the problem is a rational limit at infinity, what should you compare?",
+    "back": "Degrees of numerator and denominator."
+  },
+  {
+    "id": "calculus-i-096",
+    "type": "concept",
+    "front": "If the problem involves a graph, what should you compare?",
+    "back": "Left-hand and right-hand behavior near the x-value."
+  },
+  {
+    "id": "calculus-i-097",
+    "type": "concept",
+    "front": "If the problem involves a table, what should you compare?",
+    "back": "Values approaching from below and above the target x-value."
+  },
+  {
+    "id": "calculus-i-098",
+    "type": "concept",
+    "front": "If the problem is piecewise at a cutoff, what should you compute?",
+    "back": "The left-hand limit, right-hand limit, and function value."
+  },
+  {
+    "id": "calculus-i-099",
+    "type": "concept",
+    "front": "If the denominator approaches zero but the numerator does not, what should you suspect?",
+    "back": "A vertical asymptote or infinite one-sided limit."
+  },
+  {
+    "id": "calculus-i-100",
+    "type": "theorem",
+    "front": "If you see a bounded trig function multiplied by something going to zero, what theorem might help?",
+    "back": "The Squeeze Theorem."
+  },
+  {
+    "id": "calculus-i-101",
+    "type": "definition",
+    "front": "What is the final habit after using an algebraic technique?",
+    "back": "Substitute again into the simplified expression to finish the limit."
+  }
+]

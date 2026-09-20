@@ -1,4 +1,4 @@
-const CACHE = "lra-flashcards-v9";
+const CACHE = "lra-flashcards-v10";
 const SHELL = [
   "./",
   "./index.html",
@@ -15,6 +15,7 @@ const SHELL = [
   "../cards/core/30-zfc-set-theory.json",
   "../cards/core/31-relations-functions-order.json",
   "../cards/core/32-well-founded-well-defined.json",
+  "../cards/core/33-calculus-i.json",
   "../cards/lean/lean-core.json",
   "../cards/lean/mathlib-analysis-algebra.json"
 ];

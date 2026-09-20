@@ -38,6 +38,12 @@
       "file": "cards/core/32-well-founded-well-defined.json"
     },
     {
+      "id": "33-calculus-i",
+      "title": "Calculus I",
+      "track": "core",
+      "file": "cards/core/33-calculus-i.json"
+    },
+    {
       "id": "lean-core",
       "title": "Lean Core — Declarations, Types, Tactics, Modeling",
       "track": "lean",
