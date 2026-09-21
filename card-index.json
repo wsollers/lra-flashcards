@@ -44,6 +44,12 @@
       "file": "cards/core/33-calculus-i.json"
     },
     {
+      "id": "36-calculus-1-continuity",
+      "title": "Calculus 1 - Continuity",
+      "track": "core",
+      "file": "cards/core/36-calculus-1-continuity.json"
+    },
+    {
       "id": "35-calculus-1-derivative",
       "title": "Calculus 1 Derivative",
       "track": "core",
@@ -69,3 +75,4 @@
     }
   ]
 }
+

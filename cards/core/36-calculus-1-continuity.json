@@ -1,0 +1,656 @@
+[
+  {
+    "id": "calculus-1-continuity-001",
+    "type": "definition",
+    "front": "What does it mean for a function to be continuous informally?",
+    "back": "You can draw the graph near the point without lifting your pencil."
+  },
+  {
+    "id": "calculus-1-continuity-002",
+    "type": "definition",
+    "front": "What is the main idea of continuity at a point?",
+    "back": "The function value matches the value the graph approaches."
+  },
+  {
+    "id": "calculus-1-continuity-003",
+    "type": "concept",
+    "front": "What three things must be true for `f` to be continuous at `x = a`?",
+    "back": "`f(a)` is defined, `lim_{x→a} f(x)` exists, and `lim_{x→a} f(x) = f(a)`."
+  },
+  {
+    "id": "calculus-1-continuity-004",
+    "type": "definition",
+    "front": "What is the first continuity check at `x = a`?",
+    "back": "Check that `f(a)` is defined."
+  },
+  {
+    "id": "calculus-1-continuity-005",
+    "type": "definition",
+    "front": "What is the second continuity check at `x = a`?",
+    "back": "Check that `lim_{x→a} f(x)` exists."
+  },
+  {
+    "id": "calculus-1-continuity-006",
+    "type": "definition",
+    "front": "What is the third continuity check at `x = a`?",
+    "back": "Check that the limit equals the function value: `lim_{x→a} f(x) = f(a)`."
+  },
+  {
+    "id": "calculus-1-continuity-007",
+    "type": "definition",
+    "front": "What does it mean if `f(a)` is undefined?",
+    "back": "The function is not continuous at `a`."
+  },
+  {
+    "id": "calculus-1-continuity-008",
+    "type": "definition",
+    "front": "What does it mean if the two-sided limit does not exist?",
+    "back": "The function is not continuous at `a`."
+  },
+  {
+    "id": "calculus-1-continuity-009",
+    "type": "definition",
+    "front": "What does it mean if the limit exists but is not equal to `f(a)`?",
+    "back": "The function is not continuous at `a`."
+  },
+  {
+    "id": "calculus-1-continuity-010",
+    "type": "definition",
+    "front": "What is the short formula for continuity at `a`?",
+    "back": "`lim_{x→a} f(x) = f(a)`."
+  },
+  {
+    "id": "calculus-1-continuity-011",
+    "type": "concept",
+    "front": "How do you identify continuity from a graph?",
+    "back": "Check whether the graph connects through the point without a hole, jump, or vertical blow-up."
+  },
+  {
+    "id": "calculus-1-continuity-012",
+    "type": "concept",
+    "front": "What does a filled dot show on a graph?",
+    "back": "The actual function value `f(a)`."
+  },
+  {
+    "id": "calculus-1-continuity-013",
+    "type": "concept",
+    "front": "What does an open circle show on a graph?",
+    "back": "A missing point or hole in the graph."
+  },
+  {
+    "id": "calculus-1-continuity-014",
+    "type": "concept",
+    "front": "Can a graph have a limit at a hole?",
+    "back": "Yes, if both sides approach the same y-value."
+  },
+  {
+    "id": "calculus-1-continuity-015",
+    "type": "concept",
+    "front": "Is a function continuous at a hole?",
+    "back": "No, because the function value is missing or does not match the limit."
+  },
+  {
+    "id": "calculus-1-continuity-016",
+    "type": "concept",
+    "front": "What graph feature suggests a jump discontinuity?",
+    "back": "The left and right pieces approach different y-values."
+  },
+  {
+    "id": "calculus-1-continuity-017",
+    "type": "concept",
+    "front": "What graph feature suggests an infinite discontinuity?",
+    "back": "The graph shoots upward or downward near a vertical line."
+  },
+  {
+    "id": "calculus-1-continuity-018",
+    "type": "concept",
+    "front": "What graph feature suggests oscillatory discontinuity?",
+    "back": "The graph wiggles infinitely without approaching one value."
+  },
+  {
+    "id": "calculus-1-continuity-019",
+    "type": "concept",
+    "front": "How do you check continuity at a graph endpoint?",
+    "back": "Use the one-sided limit from inside the domain and compare it to the endpoint value."
+  },
+  {
+    "id": "calculus-1-continuity-020",
+    "type": "concept",
+    "front": "What should you compare at a piecewise graph boundary?",
+    "back": "The left-hand limit, right-hand limit, and function value."
+  },
+  {
+    "id": "calculus-1-continuity-021",
+    "type": "concept",
+    "front": "How can a table suggest continuity at `a`?",
+    "back": "Values from the left and right approach the same number, and `f(a)` equals that number."
+  },
+  {
+    "id": "calculus-1-continuity-022",
+    "type": "concept",
+    "front": "What table behavior suggests a jump?",
+    "back": "Values from the left and right approach different numbers."
+  },
+  {
+    "id": "calculus-1-continuity-023",
+    "type": "concept",
+    "front": "What table behavior suggests a removable discontinuity?",
+    "back": "Values approach one number, but `f(a)` is missing or listed as a different number."
+  },
+  {
+    "id": "calculus-1-continuity-024",
+    "type": "definition",
+    "front": "For a formula, what is the first continuity move?",
+    "back": "Check whether the formula is defined at the point."
+  },
+  {
+    "id": "calculus-1-continuity-025",
+    "type": "concept",
+    "front": "When is direct substitution enough for continuity?",
+    "back": "When the function type is continuous at the point and substitution is allowed."
+  },
+  {
+    "id": "calculus-1-continuity-026",
+    "type": "concept",
+    "front": "Why are polynomials continuous everywhere?",
+    "back": "They are built from sums and products of powers of `x`, which are continuous for all real `x`."
+  },
+  {
+    "id": "calculus-1-continuity-027",
+    "type": "concept",
+    "front": "Where can rational functions fail to be continuous?",
+    "back": "Where the denominator equals zero."
+  },
+  {
+    "id": "calculus-1-continuity-028",
+    "type": "concept",
+    "front": "Where can square-root functions fail to be continuous?",
+    "back": "Where the expression inside the root is negative, or at domain endpoints depending on the question."
+  },
+  {
+    "id": "calculus-1-continuity-029",
+    "type": "concept",
+    "front": "Where can logarithmic functions fail to be continuous?",
+    "back": "Where the input to the logarithm is not positive."
+  },
+  {
+    "id": "calculus-1-continuity-030",
+    "type": "concept",
+    "front": "Where can trigonometric quotient functions fail to be continuous?",
+    "back": "Where a denominator is zero or the expression is outside its domain."
+  },
+  {
+    "id": "calculus-1-continuity-031",
+    "type": "definition",
+    "front": "What is right-continuity at `a`?",
+    "back": "`lim_{x→a⁺} f(x) = f(a)`."
+  },
+  {
+    "id": "calculus-1-continuity-032",
+    "type": "definition",
+    "front": "What is left-continuity at `a`?",
+    "back": "`lim_{x→a⁻} f(x) = f(a)`."
+  },
+  {
+    "id": "calculus-1-continuity-033",
+    "type": "concept",
+    "front": "Why is one-sided continuity important at endpoints?",
+    "back": "At an endpoint, the function may only be defined on one side."
+  },
+  {
+    "id": "calculus-1-continuity-034",
+    "type": "concept",
+    "front": "What continuity condition is used at the left endpoint of a closed interval?",
+    "back": "Right-continuity from inside the interval."
+  },
+  {
+    "id": "calculus-1-continuity-035",
+    "type": "concept",
+    "front": "What continuity condition is used at the right endpoint of a closed interval?",
+    "back": "Left-continuity from inside the interval."
+  },
+  {
+    "id": "calculus-1-continuity-036",
+    "type": "definition",
+    "front": "For continuity on `[a,b]`, what is required at interior points?",
+    "back": "Ordinary two-sided continuity."
+  },
+  {
+    "id": "calculus-1-continuity-037",
+    "type": "definition",
+    "front": "For continuity on `[a,b]`, what is required at endpoints?",
+    "back": "One-sided continuity from within the interval."
+  },
+  {
+    "id": "calculus-1-continuity-038",
+    "type": "concept",
+    "front": "When does a two-sided continuity check fail automatically?",
+    "back": "When the left-hand and right-hand limits are different."
+  },
+  {
+    "id": "calculus-1-continuity-039",
+    "type": "definition",
+    "front": "What is a discontinuity?",
+    "back": "A point where the function is not continuous."
+  },
+  {
+    "id": "calculus-1-continuity-040",
+    "type": "definition",
+    "front": "What is a removable discontinuity?",
+    "back": "A hole or wrong point value that could be fixed by redefining the function at that point."
+  },
+  {
+    "id": "calculus-1-continuity-041",
+    "type": "definition",
+    "front": "What is a jump discontinuity?",
+    "back": "A discontinuity where the left-hand and right-hand limits are finite but different."
+  },
+  {
+    "id": "calculus-1-continuity-042",
+    "type": "definition",
+    "front": "What is an infinite discontinuity?",
+    "back": "A discontinuity where the function grows without bound near the point."
+  },
+  {
+    "id": "calculus-1-continuity-043",
+    "type": "definition",
+    "front": "What is an oscillatory discontinuity?",
+    "back": "A discontinuity where the function keeps oscillating and does not approach one value."
+  },
+  {
+    "id": "calculus-1-continuity-044",
+    "type": "concept",
+    "front": "How do you recognize a removable discontinuity algebraically?",
+    "back": "A factor cancels, leaving a hole at the canceled value."
+  },
+  {
+    "id": "calculus-1-continuity-045",
+    "type": "concept",
+    "front": "How do you recognize an infinite discontinuity algebraically?",
+    "back": "The denominator approaches zero while the numerator does not also cancel to zero."
+  },
+  {
+    "id": "calculus-1-continuity-046",
+    "type": "concept",
+    "front": "Can a removable discontinuity have a two-sided limit?",
+    "back": "Yes."
+  },
+  {
+    "id": "calculus-1-continuity-047",
+    "type": "concept",
+    "front": "Can a jump discontinuity have a two-sided limit?",
+    "back": "No, because the one-sided limits differ."
+  },
+  {
+    "id": "calculus-1-continuity-048",
+    "type": "concept",
+    "front": "Can an infinite discontinuity have a finite two-sided limit?",
+    "back": "No."
+  },
+  {
+    "id": "calculus-1-continuity-049",
+    "type": "concept",
+    "front": "What type of discontinuity is caused by `sin(1/x)` near `0`?",
+    "back": "Oscillatory discontinuity."
+  },
+  {
+    "id": "calculus-1-continuity-050",
+    "type": "proof",
+    "front": "Why do piecewise functions need special continuity checks?",
+    "back": "Different formulas may apply on different sides of a boundary."
+  },
+  {
+    "id": "calculus-1-continuity-051",
+    "type": "concept",
+    "front": "What do you check at a piecewise boundary?",
+    "back": "Left-hand limit, right-hand limit, and the actual function value."
+  },
+  {
+    "id": "calculus-1-continuity-052",
+    "type": "concept",
+    "front": "What must be true for a piecewise function to be continuous at a boundary?",
+    "back": "Left limit, right limit, and function value must all be equal."
+  },
+  {
+    "id": "calculus-1-continuity-053",
+    "type": "concept",
+    "front": "How do you solve for a constant to make a piecewise function continuous?",
+    "back": "Set the relevant one-sided expressions equal at the boundary, then solve for the constant."
+  },
+  {
+    "id": "calculus-1-continuity-054",
+    "type": "concept",
+    "front": "If a piecewise function defines `f(a)` using the left formula, what still must be checked?",
+    "back": "The right-hand limit must match that same value."
+  },
+  {
+    "id": "calculus-1-continuity-055",
+    "type": "concept",
+    "front": "If left and right limits match but `f(a)` is different, what type of discontinuity is present?",
+    "back": "Removable discontinuity."
+  },
+  {
+    "id": "calculus-1-continuity-056",
+    "type": "concept",
+    "front": "If left and right limits do not match, can changing only `f(a)` make the function continuous?",
+    "back": "No."
+  },
+  {
+    "id": "calculus-1-continuity-057",
+    "type": "definition",
+    "front": "What is the usual workflow for piecewise continuity?",
+    "back": "Compute left limit, compute right limit, compute `f(a)`, compare all three."
+  },
+  {
+    "id": "calculus-1-continuity-058",
+    "type": "concept",
+    "front": "If `f` and `g` are continuous at `a`, is `f+g` continuous at `a`?",
+    "back": "Yes."
+  },
+  {
+    "id": "calculus-1-continuity-059",
+    "type": "concept",
+    "front": "If `f` and `g` are continuous at `a`, is `f-g` continuous at `a`?",
+    "back": "Yes."
+  },
+  {
+    "id": "calculus-1-continuity-060",
+    "type": "concept",
+    "front": "If `f` and `g` are continuous at `a`, is `fg` continuous at `a`?",
+    "back": "Yes."
+  },
+  {
+    "id": "calculus-1-continuity-061",
+    "type": "concept",
+    "front": "If `f` and `g` are continuous at `a`, when is `f/g` continuous at `a`?",
+    "back": "When `g(a) ≠ 0`."
+  },
+  {
+    "id": "calculus-1-continuity-062",
+    "type": "concept",
+    "front": "If `g` is continuous at `a` and `f` is continuous at `g(a)`, what about `f(g(x))`?",
+    "back": "The composition `f∘g` is continuous at `a`."
+  },
+  {
+    "id": "calculus-1-continuity-063",
+    "type": "concept",
+    "front": "Why is composition continuity useful?",
+    "back": "It lets you evaluate many limits by direct substitution."
+  },
+  {
+    "id": "calculus-1-continuity-064",
+    "type": "concept",
+    "front": "Are absolute value functions continuous?",
+    "back": "Yes, `|x|` is continuous everywhere."
+  },
+  {
+    "id": "calculus-1-continuity-065",
+    "type": "concept",
+    "front": "Are sine and cosine continuous everywhere?",
+    "back": "Yes."
+  },
+  {
+    "id": "calculus-1-continuity-066",
+    "type": "concept",
+    "front": "Is tangent continuous everywhere?",
+    "back": "No, tangent is discontinuous where `cos x = 0`."
+  },
+  {
+    "id": "calculus-1-continuity-067",
+    "type": "concept",
+    "front": "Are exponential functions continuous everywhere?",
+    "back": "Yes."
+  },
+  {
+    "id": "calculus-1-continuity-068",
+    "type": "concept",
+    "front": "Are logarithmic functions continuous everywhere?",
+    "back": "No, logs are continuous only on their positive domain."
+  },
+  {
+    "id": "calculus-1-continuity-069",
+    "type": "definition",
+    "front": "What does it mean for a function to be continuous on an open interval?",
+    "back": "It is continuous at every point in the interval."
+  },
+  {
+    "id": "calculus-1-continuity-070",
+    "type": "definition",
+    "front": "What does it mean for a function to be continuous on a closed interval `[a,b]`?",
+    "back": "It is continuous on `(a,b)`, right-continuous at `a`, and left-continuous at `b`."
+  },
+  {
+    "id": "calculus-1-continuity-071",
+    "type": "theorem",
+    "front": "Why do closed intervals matter in Calc 1 theorems?",
+    "back": "Theorems like IVT and EVT require continuity on a closed interval."
+  },
+  {
+    "id": "calculus-1-continuity-072",
+    "type": "definition",
+    "front": "What is a common interval notation for all real numbers?",
+    "back": "`(-∞, ∞)`."
+  },
+  {
+    "id": "calculus-1-continuity-073",
+    "type": "concept",
+    "front": "How do holes affect continuity on an interval?",
+    "back": "The function is not continuous on any interval that includes the hole."
+  },
+  {
+    "id": "calculus-1-continuity-074",
+    "type": "concept",
+    "front": "How do vertical asymptotes affect continuity on an interval?",
+    "back": "The function is not continuous on any interval that crosses the asymptote."
+  },
+  {
+    "id": "calculus-1-continuity-075",
+    "type": "concept",
+    "front": "How do domain restrictions affect continuity intervals?",
+    "back": "Continuity can only be considered where the function is defined."
+  },
+  {
+    "id": "calculus-1-continuity-076",
+    "type": "theorem",
+    "front": "What does the Intermediate Value Theorem say informally?",
+    "back": "A continuous function on `[a,b]` takes every y-value between `f(a)` and `f(b)`."
+  },
+  {
+    "id": "calculus-1-continuity-077",
+    "type": "theorem",
+    "front": "What are the hypotheses of the Intermediate Value Theorem?",
+    "back": "The function is continuous on the closed interval `[a,b]`."
+  },
+  {
+    "id": "calculus-1-continuity-078",
+    "type": "proof",
+    "front": "What does IVT let you prove?",
+    "back": "That some input exists where the function reaches a particular intermediate value."
+  },
+  {
+    "id": "calculus-1-continuity-079",
+    "type": "theorem",
+    "front": "Does IVT tell you where the input is exactly?",
+    "back": "No, it guarantees existence but not the exact location."
+  },
+  {
+    "id": "calculus-1-continuity-080",
+    "type": "concept",
+    "front": "Why does IVT fail without continuity?",
+    "back": "A jump or hole can skip over intermediate y-values."
+  },
+  {
+    "id": "calculus-1-continuity-081",
+    "type": "theorem",
+    "front": "How can IVT prove a root exists?",
+    "back": "If `f(a)` and `f(b)` have opposite signs, continuity guarantees some `c` with `f(c)=0`."
+  },
+  {
+    "id": "calculus-1-continuity-082",
+    "type": "concept",
+    "front": "What does a sign change across an interval suggest for a continuous function?",
+    "back": "There is at least one root in the interval."
+  },
+  {
+    "id": "calculus-1-continuity-083",
+    "type": "theorem",
+    "front": "Does IVT guarantee only one solution?",
+    "back": "No, it guarantees at least one solution."
+  },
+  {
+    "id": "calculus-1-continuity-084",
+    "type": "theorem",
+    "front": "What does the Extreme Value Theorem say?",
+    "back": "A continuous function on a closed interval has an absolute maximum and absolute minimum."
+  },
+  {
+    "id": "calculus-1-continuity-085",
+    "type": "definition",
+    "front": "What are the hypotheses of EVT?",
+    "back": "The function is continuous on a closed interval `[a,b]`."
+  },
+  {
+    "id": "calculus-1-continuity-086",
+    "type": "concept",
+    "front": "Does EVT require differentiability?",
+    "back": "No."
+  },
+  {
+    "id": "calculus-1-continuity-087",
+    "type": "theorem",
+    "front": "What does EVT guarantee?",
+    "back": "Absolute maximum and minimum values exist on the interval."
+  },
+  {
+    "id": "calculus-1-continuity-088",
+    "type": "theorem",
+    "front": "Does EVT tell you how to find the maximum and minimum?",
+    "back": "No, it guarantees they exist; derivative methods help find them later."
+  },
+  {
+    "id": "calculus-1-continuity-089",
+    "type": "concept",
+    "front": "Why can EVT fail on an open interval?",
+    "back": "The function may approach a value without ever attaining it."
+  },
+  {
+    "id": "calculus-1-continuity-090",
+    "type": "concept",
+    "front": "Why can EVT fail if the function is discontinuous?",
+    "back": "A hole or jump can remove the point where an extreme value would occur."
+  },
+  {
+    "id": "calculus-1-continuity-091",
+    "type": "definition",
+    "front": "What is the difference between local and absolute extrema?",
+    "back": "Local extrema compare nearby points; absolute extrema compare the whole domain or interval."
+  },
+  {
+    "id": "calculus-1-continuity-092",
+    "type": "concept",
+    "front": "If a function is differentiable at `a`, what must be true?",
+    "back": "It is continuous at `a`."
+  },
+  {
+    "id": "calculus-1-continuity-093",
+    "type": "concept",
+    "front": "If a function is continuous at `a`, must it be differentiable at `a`?",
+    "back": "No."
+  },
+  {
+    "id": "calculus-1-continuity-094",
+    "type": "definition",
+    "front": "What is an example of continuous but not differentiable?",
+    "back": "`f(x)=|x|` at `x=0`."
+  },
+  {
+    "id": "calculus-1-continuity-095",
+    "type": "concept",
+    "front": "Why is `|x|` not differentiable at `0`?",
+    "back": "The left and right slopes are different."
+  },
+  {
+    "id": "calculus-1-continuity-096",
+    "type": "concept",
+    "front": "Can a discontinuous function have a derivative at that point?",
+    "back": "No."
+  },
+  {
+    "id": "calculus-1-continuity-097",
+    "type": "concept",
+    "front": "What should you check before asking whether a derivative exists?",
+    "back": "Check continuity first."
+  },
+  {
+    "id": "calculus-1-continuity-098",
+    "type": "concept",
+    "front": "Does a corner break continuity?",
+    "back": "Not necessarily; a corner can be continuous but not differentiable."
+  },
+  {
+    "id": "calculus-1-continuity-099",
+    "type": "concept",
+    "front": "Does a hole break differentiability?",
+    "back": "Yes, because it breaks continuity."
+  },
+  {
+    "id": "calculus-1-continuity-100",
+    "type": "definition",
+    "front": "What is the continuity checklist at a point?",
+    "back": "Check `f(a)`, check the limit, then check whether they are equal."
+  },
+  {
+    "id": "calculus-1-continuity-101",
+    "type": "concept",
+    "front": "What should you do first for a formula continuity problem?",
+    "back": "Identify the point and check whether the formula is defined there."
+  },
+  {
+    "id": "calculus-1-continuity-102",
+    "type": "concept",
+    "front": "What should you do first for a graph continuity problem?",
+    "back": "Look for holes, jumps, asymptotes, and mismatched point values."
+  },
+  {
+    "id": "calculus-1-continuity-103",
+    "type": "concept",
+    "front": "What should you do first for a piecewise continuity problem?",
+    "back": "Check the boundary points where formulas change."
+  },
+  {
+    "id": "calculus-1-continuity-104",
+    "type": "concept",
+    "front": "If a denominator is zero at the point, what should you ask?",
+    "back": "Does a factor cancel, or is there a vertical asymptote?"
+  },
+  {
+    "id": "calculus-1-continuity-105",
+    "type": "concept",
+    "front": "If a factor cancels, what discontinuity is likely?",
+    "back": "Removable discontinuity."
+  },
+  {
+    "id": "calculus-1-continuity-106",
+    "type": "concept",
+    "front": "If no factor cancels and the denominator is zero, what discontinuity is likely?",
+    "back": "Infinite discontinuity or vertical asymptote."
+  },
+  {
+    "id": "calculus-1-continuity-107",
+    "type": "concept",
+    "front": "If left and right limits are different, what discontinuity is likely?",
+    "back": "Jump discontinuity."
+  },
+  {
+    "id": "calculus-1-continuity-108",
+    "type": "concept",
+    "front": "If the function wiggles without settling, what discontinuity is likely?",
+    "back": "Oscillatory discontinuity."
+  },
+  {
+    "id": "calculus-1-continuity-109",
+    "type": "definition",
+    "front": "What is the final exam habit for continuity questions?",
+    "back": "Always state which of the three continuity conditions fails or succeeds."
+  }
+]

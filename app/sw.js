@@ -1,4 +1,4 @@
-const CACHE = "lra-flashcards-v12";
+const CACHE = "lra-flashcards-v13";
 const SHELL = [
   "./",
   "./index.html",
@@ -66,3 +66,4 @@ self.addEventListener("fetch", event => {
       }).catch(() => caches.match(event.request))
   );
 });
+
