@@ -1,0 +1,824 @@
+[
+  {
+    "id": "calculus-1-derivative-001",
+    "type": "definition",
+    "front": "What is a derivative?",
+    "back": "The derivative measures the instantaneous rate of change of a function."
+  },
+  {
+    "id": "calculus-1-derivative-002",
+    "type": "definition",
+    "front": "What does `f'(a)` mean?",
+    "back": "The derivative of `f` at `x = a`, or the instantaneous rate of change at `a`."
+  },
+  {
+    "id": "calculus-1-derivative-003",
+    "type": "concept",
+    "front": "What does the derivative represent geometrically?",
+    "back": "The slope of the tangent line to the graph at a point."
+  },
+  {
+    "id": "calculus-1-derivative-004",
+    "type": "concept",
+    "front": "What does the derivative represent physically for position?",
+    "back": "Instantaneous velocity."
+  },
+  {
+    "id": "calculus-1-derivative-005",
+    "type": "concept",
+    "front": "What does the derivative represent physically for velocity?",
+    "back": "Instantaneous acceleration."
+  },
+  {
+    "id": "calculus-1-derivative-006",
+    "type": "definition",
+    "front": "What is the main idea behind a derivative?",
+    "back": "Start with slopes of secant lines, then take a limit as the two points come together."
+  },
+  {
+    "id": "calculus-1-derivative-007",
+    "type": "definition",
+    "front": "What is the difference between average rate of change and instantaneous rate of change?",
+    "back": "Average rate uses two separated points; instantaneous rate is the limiting rate at one point."
+  },
+  {
+    "id": "calculus-1-derivative-008",
+    "type": "concept",
+    "front": "What does `dy/dx` suggest?",
+    "back": "A rate of change of `y` with respect to `x`."
+  },
+  {
+    "id": "calculus-1-derivative-009",
+    "type": "definition",
+    "front": "What does `d/dx [f(x)]` mean?",
+    "back": "Differentiate the function `f(x)` with respect to `x`."
+  },
+  {
+    "id": "calculus-1-derivative-010",
+    "type": "definition",
+    "front": "What is a derivative function?",
+    "back": "A function `f'` that gives the derivative value at each point where the derivative exists."
+  },
+  {
+    "id": "calculus-1-derivative-011",
+    "type": "definition",
+    "front": "What is a secant line?",
+    "back": "A line through two points on a curve."
+  },
+  {
+    "id": "calculus-1-derivative-012",
+    "type": "definition",
+    "front": "What is the slope of the secant line through `(a, f(a))` and `(b, f(b))`?",
+    "back": "`(f(b) - f(a)) / (b - a)`."
+  },
+  {
+    "id": "calculus-1-derivative-013",
+    "type": "definition",
+    "front": "What is a tangent line?",
+    "back": "The line that best matches the curve's direction at a single point."
+  },
+  {
+    "id": "calculus-1-derivative-014",
+    "type": "concept",
+    "front": "How is a tangent line related to secant lines?",
+    "back": "It is the limiting position of secant lines as the second point approaches the first point."
+  },
+  {
+    "id": "calculus-1-derivative-015",
+    "type": "definition",
+    "front": "What is the slope of the tangent line at `x = a`?",
+    "back": "`f'(a)`, if the derivative exists."
+  },
+  {
+    "id": "calculus-1-derivative-016",
+    "type": "definition",
+    "front": "What is the equation of a tangent line at `x = a`?",
+    "back": "`y - f(a) = f'(a)(x - a)`."
+  },
+  {
+    "id": "calculus-1-derivative-017",
+    "type": "concept",
+    "front": "What do you need to write a tangent line equation?",
+    "back": "The point `(a, f(a))` and the slope `f'(a)`."
+  },
+  {
+    "id": "calculus-1-derivative-018",
+    "type": "definition",
+    "front": "What is a normal line?",
+    "back": "A line perpendicular to the tangent line at a point."
+  },
+  {
+    "id": "calculus-1-derivative-019",
+    "type": "definition",
+    "front": "If the tangent slope is `m`, what is the normal slope?",
+    "back": "`-1/m`, if `m` is nonzero."
+  },
+  {
+    "id": "calculus-1-derivative-020",
+    "type": "definition",
+    "front": "What does a horizontal tangent mean?",
+    "back": "The derivative is `0` at that point."
+  },
+  {
+    "id": "calculus-1-derivative-021",
+    "type": "definition",
+    "front": "What is the difference quotient based at `a`?",
+    "back": "`(f(a+h) - f(a)) / h`."
+  },
+  {
+    "id": "calculus-1-derivative-022",
+    "type": "compare",
+    "front": "What does `h` represent in the difference quotient?",
+    "back": "The horizontal change from `a` to `a+h`."
+  },
+  {
+    "id": "calculus-1-derivative-023",
+    "type": "compare",
+    "front": "Why must `h ≠ 0` in the difference quotient?",
+    "back": "Because the quotient divides by `h`."
+  },
+  {
+    "id": "calculus-1-derivative-024",
+    "type": "compare",
+    "front": "What does the difference quotient calculate before taking a limit?",
+    "back": "The slope of a secant line."
+  },
+  {
+    "id": "calculus-1-derivative-025",
+    "type": "concept",
+    "front": "What happens to the second point as `h → 0`?",
+    "back": "The point `a+h` moves toward `a`."
+  },
+  {
+    "id": "calculus-1-derivative-026",
+    "type": "definition",
+    "front": "What is a common first step when simplifying a difference quotient?",
+    "back": "Expand `f(a+h)`, subtract `f(a)`, then factor and cancel `h`."
+  },
+  {
+    "id": "calculus-1-derivative-027",
+    "type": "concept",
+    "front": "What should happen to the denominator `h` before substituting `h = 0`?",
+    "back": "The problematic factor should cancel or simplify away."
+  },
+  {
+    "id": "calculus-1-derivative-028",
+    "type": "compare",
+    "front": "What does a simplified difference quotient approach?",
+    "back": "The derivative value."
+  },
+  {
+    "id": "calculus-1-derivative-029",
+    "type": "definition",
+    "front": "What is the difference quotient for the derivative function at `x`?",
+    "back": "`(f(x+h) - f(x)) / h`."
+  },
+  {
+    "id": "calculus-1-derivative-030",
+    "type": "concept",
+    "front": "What does the derivative function definition look like?",
+    "back": "`f'(x) = lim_{h→0} (f(x+h) - f(x)) / h`."
+  },
+  {
+    "id": "calculus-1-derivative-031",
+    "type": "definition",
+    "front": "What is the limit definition of `f'(a)` using `h`?",
+    "back": "`f'(a) = lim_{h→0} (f(a+h) - f(a)) / h`."
+  },
+  {
+    "id": "calculus-1-derivative-032",
+    "type": "definition",
+    "front": "What is the limit definition of `f'(a)` using `x` approaching `a`?",
+    "back": "`f'(a) = lim_{x→a} (f(x) - f(a)) / (x - a)`."
+  },
+  {
+    "id": "calculus-1-derivative-033",
+    "type": "concept",
+    "front": "What must be true for `f'(a)` to exist?",
+    "back": "The derivative limit must exist as a finite two-sided limit."
+  },
+  {
+    "id": "calculus-1-derivative-034",
+    "type": "concept",
+    "front": "How do left and right derivative limits determine differentiability?",
+    "back": "The derivative exists only if the left-hand and right-hand derivative limits both exist and agree."
+  },
+  {
+    "id": "calculus-1-derivative-035",
+    "type": "definition",
+    "front": "What is the left-hand derivative at `a`?",
+    "back": "The limit of the difference quotient as the approach comes from the left side."
+  },
+  {
+    "id": "calculus-1-derivative-036",
+    "type": "definition",
+    "front": "What is the right-hand derivative at `a`?",
+    "back": "The limit of the difference quotient as the approach comes from the right side."
+  },
+  {
+    "id": "calculus-1-derivative-037",
+    "type": "concept",
+    "front": "What happens if the left and right derivative limits disagree?",
+    "back": "The derivative does not exist at that point."
+  },
+  {
+    "id": "calculus-1-derivative-038",
+    "type": "definition",
+    "front": "What does it mean when a derivative fails to exist?",
+    "back": "There is no single finite tangent slope at that point."
+  },
+  {
+    "id": "calculus-1-derivative-039",
+    "type": "example",
+    "front": "Can a function be continuous but not differentiable?",
+    "back": "Yes, for example at a corner or cusp."
+  },
+  {
+    "id": "calculus-1-derivative-040",
+    "type": "concept",
+    "front": "Can a function be differentiable but not continuous?",
+    "back": "No. Differentiability implies continuity."
+  },
+  {
+    "id": "calculus-1-derivative-041",
+    "type": "concept",
+    "front": "Why might a derivative not exist at a corner?",
+    "back": "The left and right tangent slopes are different."
+  },
+  {
+    "id": "calculus-1-derivative-042",
+    "type": "concept",
+    "front": "Why might a derivative not exist at a cusp?",
+    "back": "The slopes become unbounded or approach different infinite behavior."
+  },
+  {
+    "id": "calculus-1-derivative-043",
+    "type": "concept",
+    "front": "Why might a derivative not exist at a vertical tangent?",
+    "back": "The tangent slope is infinite or undefined."
+  },
+  {
+    "id": "calculus-1-derivative-044",
+    "type": "concept",
+    "front": "Why might a derivative not exist at a discontinuity?",
+    "back": "Differentiability requires continuity first."
+  },
+  {
+    "id": "calculus-1-derivative-045",
+    "type": "concept",
+    "front": "What graph feature often signals a derivative does not exist?",
+    "back": "Sharp corner, cusp, vertical tangent, jump, hole, or infinite discontinuity."
+  },
+  {
+    "id": "calculus-1-derivative-046",
+    "type": "definition",
+    "front": "Does a tangent line always mean the derivative exists?",
+    "back": "In Calc 1, the derivative exists when the tangent has a single finite slope."
+  },
+  {
+    "id": "calculus-1-derivative-047",
+    "type": "definition",
+    "front": "What is the derivative of `|x|` at `x = 0`?",
+    "back": "It does not exist because the left slope is `-1` and the right slope is `1`."
+  },
+  {
+    "id": "calculus-1-derivative-048",
+    "type": "definition",
+    "front": "What is the derivative behavior at a jump discontinuity?",
+    "back": "The derivative does not exist there."
+  },
+  {
+    "id": "calculus-1-derivative-049",
+    "type": "definition",
+    "front": "What is the derivative behavior at a removable discontinuity?",
+    "back": "The derivative does not exist at the hole because the function is not continuous there."
+  },
+  {
+    "id": "calculus-1-derivative-050",
+    "type": "definition",
+    "front": "What is the first thing to check before differentiability at a point?",
+    "back": "Check whether the function is continuous at that point."
+  },
+  {
+    "id": "calculus-1-derivative-051",
+    "type": "definition",
+    "front": "What is the derivative of a constant?",
+    "back": "`0`."
+  },
+  {
+    "id": "calculus-1-derivative-052",
+    "type": "definition",
+    "front": "What is the derivative of `x`?",
+    "back": "`1`."
+  },
+  {
+    "id": "calculus-1-derivative-053",
+    "type": "definition",
+    "front": "What is the power rule?",
+    "back": "`d/dx [x^n] = n x^{n-1}`."
+  },
+  {
+    "id": "calculus-1-derivative-054",
+    "type": "definition",
+    "front": "What is the constant multiple rule?",
+    "back": "`d/dx [c f(x)] = c f'(x)`."
+  },
+  {
+    "id": "calculus-1-derivative-055",
+    "type": "definition",
+    "front": "What is the sum rule?",
+    "back": "`d/dx [f(x) + g(x)] = f'(x) + g'(x)`."
+  },
+  {
+    "id": "calculus-1-derivative-056",
+    "type": "definition",
+    "front": "What is the difference rule?",
+    "back": "`d/dx [f(x) - g(x)] = f'(x) - g'(x)`."
+  },
+  {
+    "id": "calculus-1-derivative-057",
+    "type": "definition",
+    "front": "What is the product rule?",
+    "back": "`(fg)' = f'g + fg'`."
+  },
+  {
+    "id": "calculus-1-derivative-058",
+    "type": "definition",
+    "front": "What is the quotient rule?",
+    "back": "`(f/g)' = (f'g - fg') / g^2`, where `g ≠ 0`."
+  },
+  {
+    "id": "calculus-1-derivative-059",
+    "type": "definition",
+    "front": "What is the chain rule?",
+    "back": "The derivative of a composition is outside derivative times inside derivative."
+  },
+  {
+    "id": "calculus-1-derivative-060",
+    "type": "definition",
+    "front": "What is the chain rule notation for `f(g(x))`?",
+    "back": "`d/dx[f(g(x))] = f'(g(x)) g'(x)`."
+  },
+  {
+    "id": "calculus-1-derivative-061",
+    "type": "definition",
+    "front": "What is `d/dx [sin x]`?",
+    "back": "`cos x`."
+  },
+  {
+    "id": "calculus-1-derivative-062",
+    "type": "definition",
+    "front": "What is `d/dx [cos x]`?",
+    "back": "`-sin x`."
+  },
+  {
+    "id": "calculus-1-derivative-063",
+    "type": "definition",
+    "front": "What is `d/dx [tan x]`?",
+    "back": "`sec^2 x`."
+  },
+  {
+    "id": "calculus-1-derivative-064",
+    "type": "definition",
+    "front": "What is `d/dx [e^x]`?",
+    "back": "`e^x`."
+  },
+  {
+    "id": "calculus-1-derivative-065",
+    "type": "definition",
+    "front": "What is `d/dx [a^x]`?",
+    "back": "`a^x ln(a)`."
+  },
+  {
+    "id": "calculus-1-derivative-066",
+    "type": "definition",
+    "front": "What is `d/dx [ln x]`?",
+    "back": "`1/x`."
+  },
+  {
+    "id": "calculus-1-derivative-067",
+    "type": "definition",
+    "front": "What is `d/dx [log_a x]`?",
+    "back": "`1 / (x ln a)`."
+  },
+  {
+    "id": "calculus-1-derivative-068",
+    "type": "definition",
+    "front": "What is `d/dx [sqrt(x)]`?",
+    "back": "`1/(2 sqrt(x))`, for `x > 0`."
+  },
+  {
+    "id": "calculus-1-derivative-069",
+    "type": "definition",
+    "front": "What is `d/dx [1/x]`?",
+    "back": "`-1/x^2`."
+  },
+  {
+    "id": "calculus-1-derivative-070",
+    "type": "definition",
+    "front": "What is `d/dx [x^{-n}]` found by?",
+    "back": "The power rule, treating the exponent as negative."
+  },
+  {
+    "id": "calculus-1-derivative-071",
+    "type": "concept",
+    "front": "What does differentiability imply?",
+    "back": "Continuity."
+  },
+  {
+    "id": "calculus-1-derivative-072",
+    "type": "concept",
+    "front": "Does continuity imply differentiability?",
+    "back": "No."
+  },
+  {
+    "id": "calculus-1-derivative-073",
+    "type": "theorem",
+    "front": "What does Rolle's Theorem say informally?",
+    "back": "If a function is continuous on `[a,b]`, differentiable on `(a,b)`, and has equal endpoint values, then some interior point has derivative `0`."
+  },
+  {
+    "id": "calculus-1-derivative-074",
+    "type": "theorem",
+    "front": "What are the hypotheses of Rolle's Theorem?",
+    "back": "Continuous on `[a,b]`, differentiable on `(a,b)`, and `f(a) = f(b)`."
+  },
+  {
+    "id": "calculus-1-derivative-075",
+    "type": "theorem",
+    "front": "What is the conclusion of Rolle's Theorem?",
+    "back": "There exists `c` in `(a,b)` such that `f'(c) = 0`."
+  },
+  {
+    "id": "calculus-1-derivative-076",
+    "type": "theorem",
+    "front": "What does the Mean Value Theorem say informally?",
+    "back": "Somewhere, the instantaneous rate of change equals the average rate of change over the interval."
+  },
+  {
+    "id": "calculus-1-derivative-077",
+    "type": "theorem",
+    "front": "What are the hypotheses of the Mean Value Theorem?",
+    "back": "Continuous on `[a,b]` and differentiable on `(a,b)`."
+  },
+  {
+    "id": "calculus-1-derivative-078",
+    "type": "theorem",
+    "front": "What is the conclusion of the Mean Value Theorem?",
+    "back": "There exists `c` in `(a,b)` such that `f'(c) = (f(b)-f(a))/(b-a)`."
+  },
+  {
+    "id": "calculus-1-derivative-079",
+    "type": "theorem",
+    "front": "How is Rolle's Theorem related to the Mean Value Theorem?",
+    "back": "Rolle's Theorem is the special case where the average rate of change is `0`."
+  },
+  {
+    "id": "calculus-1-derivative-080",
+    "type": "theorem",
+    "front": "What does the Extreme Value Theorem say?",
+    "back": "A continuous function on a closed interval has an absolute maximum and absolute minimum."
+  },
+  {
+    "id": "calculus-1-derivative-081",
+    "type": "theorem",
+    "front": "What are the hypotheses of the Extreme Value Theorem?",
+    "back": "The function is continuous on a closed interval `[a,b]`."
+  },
+  {
+    "id": "calculus-1-derivative-082",
+    "type": "concept",
+    "front": "Does EVT require differentiability?",
+    "back": "No. It only requires continuity on a closed interval."
+  },
+  {
+    "id": "calculus-1-derivative-083",
+    "type": "theorem",
+    "front": "What is Fermat's theorem about local extrema?",
+    "back": "If `f` has a local extremum at an interior point and `f'` exists there, then `f'(c)=0`."
+  },
+  {
+    "id": "calculus-1-derivative-084",
+    "type": "theorem",
+    "front": "Why does Fermat's theorem matter?",
+    "back": "It explains why critical points are candidates for local maxima and minima."
+  },
+  {
+    "id": "calculus-1-derivative-085",
+    "type": "definition",
+    "front": "What is a critical number?",
+    "back": "A point in the domain where `f'(x)=0` or `f'(x)` does not exist."
+  },
+  {
+    "id": "calculus-1-derivative-086",
+    "type": "concept",
+    "front": "Why are critical numbers important?",
+    "back": "Local maxima and minima can occur at critical numbers."
+  },
+  {
+    "id": "calculus-1-derivative-087",
+    "type": "definition",
+    "front": "If `f'(x) > 0` on an interval, what is `f` doing?",
+    "back": "Increasing on that interval."
+  },
+  {
+    "id": "calculus-1-derivative-088",
+    "type": "definition",
+    "front": "If `f'(x) < 0` on an interval, what is `f` doing?",
+    "back": "Decreasing on that interval."
+  },
+  {
+    "id": "calculus-1-derivative-089",
+    "type": "definition",
+    "front": "What is the First Derivative Test?",
+    "back": "Use sign changes of `f'` around a critical number to classify local maxima and minima."
+  },
+  {
+    "id": "calculus-1-derivative-090",
+    "type": "concept",
+    "front": "What sign change gives a local maximum?",
+    "back": "`f'` changes from positive to negative."
+  },
+  {
+    "id": "calculus-1-derivative-091",
+    "type": "concept",
+    "front": "What sign change gives a local minimum?",
+    "back": "`f'` changes from negative to positive."
+  },
+  {
+    "id": "calculus-1-derivative-092",
+    "type": "concept",
+    "front": "What if `f'` does not change sign at a critical number?",
+    "back": "There may be no local extremum there."
+  },
+  {
+    "id": "calculus-1-derivative-093",
+    "type": "definition",
+    "front": "What is an absolute maximum?",
+    "back": "The greatest function value on the entire interval or domain considered."
+  },
+  {
+    "id": "calculus-1-derivative-094",
+    "type": "definition",
+    "front": "What is an absolute minimum?",
+    "back": "The smallest function value on the entire interval or domain considered."
+  },
+  {
+    "id": "calculus-1-derivative-095",
+    "type": "concept",
+    "front": "What candidates should you check for absolute extrema on a closed interval?",
+    "back": "Critical numbers inside the interval and the endpoints."
+  },
+  {
+    "id": "calculus-1-derivative-096",
+    "type": "concept",
+    "front": "What does the second derivative measure?",
+    "back": "How the first derivative is changing; it gives concavity information."
+  },
+  {
+    "id": "calculus-1-derivative-097",
+    "type": "definition",
+    "front": "If `f''(x) > 0`, what is the graph doing?",
+    "back": "Concave up."
+  },
+  {
+    "id": "calculus-1-derivative-098",
+    "type": "definition",
+    "front": "If `f''(x) < 0`, what is the graph doing?",
+    "back": "Concave down."
+  },
+  {
+    "id": "calculus-1-derivative-099",
+    "type": "definition",
+    "front": "What is an inflection point?",
+    "back": "A point where concavity changes."
+  },
+  {
+    "id": "calculus-1-derivative-100",
+    "type": "concept",
+    "front": "What does concave up look like?",
+    "back": "The graph bends upward like a cup."
+  },
+  {
+    "id": "calculus-1-derivative-101",
+    "type": "concept",
+    "front": "What does concave down look like?",
+    "back": "The graph bends downward like a cap."
+  },
+  {
+    "id": "calculus-1-derivative-102",
+    "type": "concept",
+    "front": "What does the Second Derivative Test classify?",
+    "back": "Local maxima and minima using the sign of `f''` at a critical point."
+  },
+  {
+    "id": "calculus-1-derivative-103",
+    "type": "concept",
+    "front": "If `f'(c)=0` and `f''(c)>0`, what happens?",
+    "back": "`f` has a local minimum at `c`."
+  },
+  {
+    "id": "calculus-1-derivative-104",
+    "type": "concept",
+    "front": "If `f'(c)=0` and `f''(c)<0`, what happens?",
+    "back": "`f` has a local maximum at `c`."
+  },
+  {
+    "id": "calculus-1-derivative-105",
+    "type": "concept",
+    "front": "If `f'(c)=0` and `f''(c)=0`, what does the Second Derivative Test say?",
+    "back": "The test is inconclusive."
+  },
+  {
+    "id": "calculus-1-derivative-106",
+    "type": "definition",
+    "front": "What is an optimization problem?",
+    "back": "A problem asking for a maximum or minimum value under given conditions."
+  },
+  {
+    "id": "calculus-1-derivative-107",
+    "type": "definition",
+    "front": "What is the usual optimization workflow?",
+    "back": "Define variables, write the target function, use constraints, differentiate, find critical points, and check candidates."
+  },
+  {
+    "id": "calculus-1-derivative-108",
+    "type": "definition",
+    "front": "What is related rates?",
+    "back": "Problems where quantities change with time and their rates are connected by an equation."
+  },
+  {
+    "id": "calculus-1-derivative-109",
+    "type": "definition",
+    "front": "What is the usual related-rates workflow?",
+    "back": "Draw/define variables, write an equation, differentiate with respect to time, substitute known values, solve for the unknown rate."
+  },
+  {
+    "id": "calculus-1-derivative-110",
+    "type": "concept",
+    "front": "Why do related-rates problems use implicit differentiation?",
+    "back": "Because multiple variables depend on time."
+  },
+  {
+    "id": "calculus-1-derivative-111",
+    "type": "definition",
+    "front": "What does `dy/dt` mean?",
+    "back": "The rate of change of `y` with respect to time."
+  },
+  {
+    "id": "calculus-1-derivative-112",
+    "type": "definition",
+    "front": "What does `dx/dt` mean?",
+    "back": "The rate of change of `x` with respect to time."
+  },
+  {
+    "id": "calculus-1-derivative-113",
+    "type": "concept",
+    "front": "What does linear approximation use?",
+    "back": "A tangent line to approximate function values near a point."
+  },
+  {
+    "id": "calculus-1-derivative-114",
+    "type": "definition",
+    "front": "What is the linearization formula at `x=a`?",
+    "back": "`L(x) = f(a) + f'(a)(x-a)`."
+  },
+  {
+    "id": "calculus-1-derivative-115",
+    "type": "concept",
+    "front": "Why is the derivative useful in graph sketching?",
+    "back": "It identifies increasing/decreasing behavior, extrema, and concavity."
+  },
+  {
+    "id": "calculus-1-derivative-116",
+    "type": "definition",
+    "front": "What is implicit differentiation?",
+    "back": "Differentiating an equation where `y` is treated as a function of `x`."
+  },
+  {
+    "id": "calculus-1-derivative-117",
+    "type": "concept",
+    "front": "When do you use implicit differentiation?",
+    "back": "When solving explicitly for `y` is hard or unnecessary."
+  },
+  {
+    "id": "calculus-1-derivative-118",
+    "type": "definition",
+    "front": "What are common notations for the derivative?",
+    "back": "`f'(x)`, `y'`, `dy/dx`, and `d/dx[f(x)]`."
+  },
+  {
+    "id": "calculus-1-derivative-119",
+    "type": "definition",
+    "front": "What does `f'(a)` mean compared with `f'(x)`?",
+    "back": "`f'(a)` is a number at one point; `f'(x)` is the derivative function."
+  },
+  {
+    "id": "calculus-1-derivative-120",
+    "type": "concept",
+    "front": "What does `dy/dx` emphasize?",
+    "back": "Rate of change of `y` with respect to `x`."
+  },
+  {
+    "id": "calculus-1-derivative-121",
+    "type": "concept",
+    "front": "What does `d/dx` emphasize?",
+    "back": "An operation: differentiate with respect to `x`."
+  },
+  {
+    "id": "calculus-1-derivative-122",
+    "type": "definition",
+    "front": "What does a positive derivative mean?",
+    "back": "The function is increasing locally."
+  },
+  {
+    "id": "calculus-1-derivative-123",
+    "type": "definition",
+    "front": "What does a negative derivative mean?",
+    "back": "The function is decreasing locally."
+  },
+  {
+    "id": "calculus-1-derivative-124",
+    "type": "definition",
+    "front": "What does a zero derivative mean?",
+    "back": "The tangent line is horizontal, though this does not always mean a max or min."
+  },
+  {
+    "id": "calculus-1-derivative-125",
+    "type": "definition",
+    "front": "What does a large derivative magnitude mean?",
+    "back": "The graph is changing steeply."
+  },
+  {
+    "id": "calculus-1-derivative-126",
+    "type": "concept",
+    "front": "What unit does a derivative have?",
+    "back": "Output units divided by input units."
+  },
+  {
+    "id": "calculus-1-derivative-127",
+    "type": "definition",
+    "front": "What is a good derivative interpretation sentence?",
+    "back": "\"For each 1-unit increase in the input, the output is changing at about `f'(x)` units at that instant.\""
+  },
+  {
+    "id": "calculus-1-derivative-128",
+    "type": "concept",
+    "front": "A function has a derivative at `a`. What must be true about continuity at `a`?",
+    "back": "The function must be continuous at `a`."
+  },
+  {
+    "id": "calculus-1-derivative-129",
+    "type": "concept",
+    "front": "A function is continuous at `a`. Must it be differentiable at `a`?",
+    "back": "No."
+  },
+  {
+    "id": "calculus-1-derivative-130",
+    "type": "concept",
+    "front": "A graph has a sharp corner at `a`. What usually happens to the derivative?",
+    "back": "It does not exist at `a`."
+  },
+  {
+    "id": "calculus-1-derivative-131",
+    "type": "concept",
+    "front": "A graph has a vertical tangent at `a`. What usually happens to the derivative?",
+    "back": "It does not exist as a finite derivative."
+  },
+  {
+    "id": "calculus-1-derivative-132",
+    "type": "definition",
+    "front": "A graph has a local maximum at an interior point and is differentiable there. What is the derivative?",
+    "back": "`0`."
+  },
+  {
+    "id": "calculus-1-derivative-133",
+    "type": "concept",
+    "front": "A graph changes from increasing to decreasing. What kind of point might be present?",
+    "back": "A local maximum."
+  },
+  {
+    "id": "calculus-1-derivative-134",
+    "type": "concept",
+    "front": "A graph changes from decreasing to increasing. What kind of point might be present?",
+    "back": "A local minimum."
+  },
+  {
+    "id": "calculus-1-derivative-135",
+    "type": "concept",
+    "front": "A graph changes concavity. What kind of point might be present?",
+    "back": "An inflection point."
+  },
+  {
+    "id": "calculus-1-derivative-136",
+    "type": "concept",
+    "front": "If `f'(x)` is increasing, what can you say about `f''(x)`?",
+    "back": "`f''(x)` is positive where that increasing behavior holds."
+  },
+  {
+    "id": "calculus-1-derivative-137",
+    "type": "concept",
+    "front": "If `f'(x)` is decreasing, what can you say about `f''(x)`?",
+    "back": "`f''(x)` is negative where that decreasing behavior holds."
+  }
+]

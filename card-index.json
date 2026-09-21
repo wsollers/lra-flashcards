@@ -39,9 +39,15 @@
     },
     {
       "id": "33-calculus-i",
-      "title": "Calculus I",
+      "title": "Calculus 1 - Limits",
       "track": "core",
       "file": "cards/core/33-calculus-i.json"
+    },
+    {
+      "id": "35-calculus-1-derivative",
+      "title": "Calculus 1 Derivative",
+      "track": "core",
+      "file": "cards/core/35-calculus-1-derivative.json"
     },
     {
       "id": "34-organic-chemistry-i",

@@ -57,8 +57,9 @@ Import approved batches rather than repeatedly re-importing the whole repository
 30. ZFC Set Theory
 31. Relations, Functions, Order, Well-Ordering
 32. Well-Founded and Well-Defined
-33. Calculus I
+33. Calculus 1 - Limits
 34. Organic Chemistry I
+35. Calculus 1 Derivative
 
 ## Completeness convention
 
