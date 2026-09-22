@@ -365,3 +365,28 @@ What suffix would you expect for butanol? >> `-ol`, an alcohol.
 
 What suffix would you expect for butanoic acid? >> `-oic acid`, a carboxylic acid.
 
+## K. Cyclohexane Axial And Equatorial Relationships
+
+In a 1,2-cis disubstituted cyclohexane, what axial/equatorial relationships are possible? >> `a,e` or `e,a`.
+
+In a 1,2-disubstituted cyclohexane, which cis/trans pattern has `a,e` or `e,a` relationships? >> 1,2-cis disubstituted.
+
+In a 1,2-trans disubstituted cyclohexane, what axial/equatorial relationships are possible? >> `a,a` or `e,e`.
+
+In a 1,2-disubstituted cyclohexane, which cis/trans pattern has `a,a` or `e,e` relationships? >> 1,2-trans disubstituted.
+
+In a 1,3-cis disubstituted cyclohexane, what axial/equatorial relationships are possible? >> `a,a` or `e,e`.
+
+In a 1,3-disubstituted cyclohexane, which cis/trans pattern has `a,a` or `e,e` relationships? >> 1,3-cis disubstituted.
+
+In a 1,3-trans disubstituted cyclohexane, what axial/equatorial relationships are possible? >> `a,e` or `e,a`.
+
+In a 1,3-disubstituted cyclohexane, which cis/trans pattern has `a,e` or `e,a` relationships? >> 1,3-trans disubstituted.
+
+In a 1,4-cis disubstituted cyclohexane, what axial/equatorial relationships are possible? >> `a,e` or `e,a`.
+
+In a 1,4-disubstituted cyclohexane, which cis/trans pattern has `a,e` or `e,a` relationships? >> 1,4-cis disubstituted.
+
+In a 1,4-trans disubstituted cyclohexane, what axial/equatorial relationships are possible? >> `a,a` or `e,e`.
+
+In a 1,4-disubstituted cyclohexane, which cis/trans pattern has `a,a` or `e,e` relationships? >> 1,4-trans disubstituted.

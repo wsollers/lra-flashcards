@@ -1024,5 +1024,77 @@
     "type": "concept",
     "front": "What suffix would you expect for butanoic acid?",
     "back": "`-oic acid`, a carboxylic acid."
+  },
+  {
+    "id": "organic-chemistry-i-172",
+    "type": "concept",
+    "front": "In a 1,2-cis disubstituted cyclohexane, what axial/equatorial relationships are possible?",
+    "back": "`a,e` or `e,a`."
+  },
+  {
+    "id": "organic-chemistry-i-173",
+    "type": "concept",
+    "front": "In a 1,2-disubstituted cyclohexane, which cis/trans pattern has `a,e` or `e,a` relationships?",
+    "back": "1,2-cis disubstituted."
+  },
+  {
+    "id": "organic-chemistry-i-174",
+    "type": "concept",
+    "front": "In a 1,2-trans disubstituted cyclohexane, what axial/equatorial relationships are possible?",
+    "back": "`a,a` or `e,e`."
+  },
+  {
+    "id": "organic-chemistry-i-175",
+    "type": "concept",
+    "front": "In a 1,2-disubstituted cyclohexane, which cis/trans pattern has `a,a` or `e,e` relationships?",
+    "back": "1,2-trans disubstituted."
+  },
+  {
+    "id": "organic-chemistry-i-176",
+    "type": "concept",
+    "front": "In a 1,3-cis disubstituted cyclohexane, what axial/equatorial relationships are possible?",
+    "back": "`a,a` or `e,e`."
+  },
+  {
+    "id": "organic-chemistry-i-177",
+    "type": "concept",
+    "front": "In a 1,3-disubstituted cyclohexane, which cis/trans pattern has `a,a` or `e,e` relationships?",
+    "back": "1,3-cis disubstituted."
+  },
+  {
+    "id": "organic-chemistry-i-178",
+    "type": "concept",
+    "front": "In a 1,3-trans disubstituted cyclohexane, what axial/equatorial relationships are possible?",
+    "back": "`a,e` or `e,a`."
+  },
+  {
+    "id": "organic-chemistry-i-179",
+    "type": "concept",
+    "front": "In a 1,3-disubstituted cyclohexane, which cis/trans pattern has `a,e` or `e,a` relationships?",
+    "back": "1,3-trans disubstituted."
+  },
+  {
+    "id": "organic-chemistry-i-180",
+    "type": "concept",
+    "front": "In a 1,4-cis disubstituted cyclohexane, what axial/equatorial relationships are possible?",
+    "back": "`a,e` or `e,a`."
+  },
+  {
+    "id": "organic-chemistry-i-181",
+    "type": "concept",
+    "front": "In a 1,4-disubstituted cyclohexane, which cis/trans pattern has `a,e` or `e,a` relationships?",
+    "back": "1,4-cis disubstituted."
+  },
+  {
+    "id": "organic-chemistry-i-182",
+    "type": "concept",
+    "front": "In a 1,4-trans disubstituted cyclohexane, what axial/equatorial relationships are possible?",
+    "back": "`a,a` or `e,e`."
+  },
+  {
+    "id": "organic-chemistry-i-183",
+    "type": "concept",
+    "front": "In a 1,4-disubstituted cyclohexane, which cis/trans pattern has `a,a` or `e,e` relationships?",
+    "back": "1,4-trans disubstituted."
   }
 ]
