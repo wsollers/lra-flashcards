@@ -1,0 +1,9 @@
+services:
+  lra-flashcards:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    command: python -m http.server 8000 --bind 0.0.0.0

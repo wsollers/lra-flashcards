@@ -1,0 +1,813 @@
+{
+  "id": "chapter-04-cycloalkanes-stereochemistry",
+  "title": "Organic Compounds: Cycloalkanes and Their Stereochemistry",
+  "source": {
+    "textbook": "OpenStax Organic Chemistry",
+    "chapter": 4,
+    "sections": ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9"],
+    "pdf_path": "C:/Users/wsoll/Downloads/organic-chemistry_-_WEB.pdf",
+    "pdf_pages_inspected": "123-146",
+    "notes": "Facts are paraphrased from Chapter 4 for flashcard and explorer use."
+  },
+  "learning_goals": [
+    "Name substituted cycloalkanes and decide when a ring or chain is the parent.",
+    "Recognize cis-trans stereoisomerism caused by restricted ring rotation.",
+    "Explain cycloalkane strain in terms of angle, torsional, and steric strain.",
+    "Compare conformations of cyclopropane, cyclobutane, cyclopentane, and cyclohexane.",
+    "Draw and interpret chair cyclohexane, including axial and equatorial positions.",
+    "Use ring flips to connect axial/equatorial positions without changing up/down stereochemistry.",
+    "Predict preferred chair conformations for mono- and disubstituted cyclohexanes.",
+    "Recognize fused and bridged polycyclic ring systems."
+  ],
+  "visual_requirements": [
+    {
+      "id": "vr-cycloalkane-polygons",
+      "kind": "static_structure_set",
+      "description": "Show skeletal polygon representations of cyclopropane, cyclobutane, cyclopentane, cyclohexane, and common substituted examples.",
+      "must_show": ["ring carbon count", "substituent locants", "cycloalkyl versus alkyl-substituted parent choice"],
+      "cards": ["c04-4-1-parent-choice", "c04-4-1-numbering", "c04-4-1-name-to-structure"]
+    },
+    {
+      "id": "vr-cis-trans-comparison",
+      "kind": "interactive_structure_compare",
+      "description": "Display matched ring structures with substituents on the same face or opposite faces and ask for cis/trans classification.",
+      "must_show": ["top and bottom ring faces", "wedge/dash or up/down labels", "noninterconversion without bond breaking"],
+      "cards": ["c04-4-2-cis-definition", "c04-4-2-trans-definition", "c04-4-2-identify"]
+    },
+    {
+      "id": "vr-strain-energy-diagram",
+      "kind": "chart",
+      "description": "Plot relative cycloalkane strain by ring size and annotate why small, medium, cyclohexane, and large rings differ.",
+      "must_show": ["cyclopropane high strain", "cyclobutane high strain", "cyclopentane moderate strain", "cyclohexane near strain-free", "large rings near strain-free"],
+      "cards": ["c04-4-3-strain-types", "c04-4-3-heat-combustion", "c04-4-3-baeyer-limits"]
+    },
+    {
+      "id": "vr-small-ring-conformations",
+      "kind": "static_and_newman_models",
+      "description": "Show cyclopropane, bent cyclobutane, and puckered cyclopentane with Newman-style views for eclipsing or nearly staggered bonds.",
+      "must_show": ["cyclopropane eclipsing C-H bonds", "cyclopropane bent bonds", "cyclobutane puckering", "cyclopentane envelope-like pucker"],
+      "cards": ["c04-4-4-cyclopropane", "c04-4-4-cyclobutane", "c04-4-4-cyclopentane"]
+    },
+    {
+      "id": "vr-chair-drawing-model",
+      "kind": "guided_drawing",
+      "description": "Stepwise chair cyclohexane drawing aid with the lower front bond and upper rear bond clearly distinguished.",
+      "must_show": ["parallel offset middle bonds", "one carbon above-right", "one carbon below-left", "front bond emphasis"],
+      "cards": ["c04-4-5-chair-definition", "c04-4-5-chair-drawing", "c04-4-5-chair-vs-twist-boat"]
+    },
+    {
+      "id": "vr-axial-equatorial-overlay",
+      "kind": "interactive_overlay",
+      "description": "Overlay axial and equatorial positions on chair cyclohexane, with toggles for top-face and bottom-face positions.",
+      "must_show": ["one axial and one equatorial bond per carbon", "axial bonds parallel to ring axis", "equatorial belt", "alternating up/down pattern"],
+      "cards": ["c04-4-6-axial-definition", "c04-4-6-equatorial-definition", "c04-4-6-up-down-vs-ax-eq"]
+    },
+    {
+      "id": "vr-ring-flip-animation",
+      "kind": "animation",
+      "description": "Animate a cyclohexane ring flip that keeps connectivity and up/down relationships while exchanging axial and equatorial positions.",
+      "must_show": ["end carbons fold in opposite directions", "axial becomes equatorial", "equatorial becomes axial", "up stays up and down stays down"],
+      "cards": ["c04-4-6-ring-flip", "c04-4-7-methylcyclohexane-equilibrium", "c04-4-8-ring-flip-stability"]
+    },
+    {
+      "id": "vr-monosubstituted-energy",
+      "kind": "energy_pair",
+      "description": "Compare axial and equatorial monosubstituted cyclohexanes with 1,3-diaxial contacts and A-value style energy penalties.",
+      "must_show": ["two 1,3-diaxial contacts for axial methyl", "equatorial substituent avoids those contacts", "larger substituents have larger axial penalties"],
+      "cards": ["c04-4-7-13-diaxial", "c04-4-7-a-values", "c04-4-7-tert-butyl"]
+    },
+    {
+      "id": "vr-disubstituted-relationship-grid",
+      "kind": "decision_grid",
+      "description": "A 1,2/1,3/1,4 cis-trans grid mapping each relationship to a,a/e,e or a,e/e,a chair possibilities.",
+      "must_show": ["1,2-cis a,e or e,a", "1,2-trans a,a or e,e", "1,3-cis a,a or e,e", "1,3-trans a,e or e,a", "1,4-cis a,e or e,a", "1,4-trans a,a or e,e"],
+      "cards": ["c04-4-8-relationship-table", "c04-4-8-cis-12", "c04-4-8-trans-12", "c04-4-8-most-stable"]
+    },
+    {
+      "id": "vr-polycyclic-recognition",
+      "kind": "structure_recognition",
+      "description": "Show fused and bridged bicyclic examples, including cis/trans decalin and norbornane, with bridgehead atoms highlighted.",
+      "must_show": ["shared bond in fused rings", "bridgehead atoms", "cis/trans ring fusion hydrogens", "bicyclo bridge counts"],
+      "cards": ["c04-4-9-decalin", "c04-4-9-ring-fusion", "c04-4-9-norbornane"]
+    }
+  ],
+  "sections": [
+    {
+      "section": "4.1",
+      "slug": "naming-cycloalkanes",
+      "title": "Naming Cycloalkanes",
+      "facts": [
+        {
+          "id": "f04-4-1-001",
+          "statement": "Cycloalkanes are saturated cyclic hydrocarbons.",
+          "details": "A simple cycloalkane ring is made from CH2 units and has the general formula CnH2n."
+        },
+        {
+          "id": "f04-4-1-002",
+          "statement": "The ring is usually the parent when it has at least as many carbons as any attached alkyl group.",
+          "details": "If a substituent chain has more carbons than the ring, the ring is named as a cycloalkyl substituent on an alkane parent."
+        },
+        {
+          "id": "f04-4-1-003",
+          "statement": "Number a substituted cycloalkane to give the first point of difference the lowest possible locant.",
+          "details": "Choose an attachment carbon as C1, then number around the ring to minimize the locants for the remaining substituents."
+        },
+        {
+          "id": "f04-4-1-004",
+          "statement": "Alphabetical order breaks ties when different substituents can receive the same locant set.",
+          "details": "Ignore multiplicative prefixes such as di- and tri- when applying alphabetical priority."
+        },
+        {
+          "id": "f04-4-1-005",
+          "statement": "Halogen substituents are numbered like alkyl substituents in cycloalkane names.",
+          "details": "A bromo, chloro, fluoro, or iodo group participates in the same lowest-locant and alphabetical tie-break rules."
+        }
+      ],
+      "candidate_cards": [
+        {
+          "id": "c04-4-1-cycloalkane-formula",
+          "type": "definition",
+          "front": "What is the general formula for a simple cycloalkane?",
+          "back": "CnH2n, because the saturated ring is built from CH2 units.",
+          "tags": ["chapter-04", "naming", "formula"]
+        },
+        {
+          "id": "c04-4-1-parent-choice",
+          "type": "rule_application",
+          "front": "When is a substituted ring named as an alkyl-substituted cycloalkane rather than a cycloalkyl-substituted alkane?",
+          "back": "Use the ring as parent when it has the same number of carbons as, or more carbons than, the largest attached chain.",
+          "visual_requirements": ["vr-cycloalkane-polygons"],
+          "tags": ["chapter-04", "naming", "parent-selection"]
+        },
+        {
+          "id": "c04-4-1-numbering",
+          "type": "procedure",
+          "front": "How do you number a cycloalkane with two or more substituents?",
+          "back": "Pick an attachment carbon as C1 and number around the ring to give the next substituent the lowest possible number, continuing to the first point of difference.",
+          "visual_requirements": ["vr-cycloalkane-polygons"],
+          "tags": ["chapter-04", "naming", "locants"]
+        },
+        {
+          "id": "c04-4-1-alphabetical-tie",
+          "type": "concept",
+          "front": "How is a numbering tie broken for different cycloalkane substituents?",
+          "back": "Use alphabetical order of substituent names, ignoring prefixes such as di- and tri-.",
+          "tags": ["chapter-04", "naming"]
+        },
+        {
+          "id": "c04-4-1-name-to-structure",
+          "type": "visual_problem",
+          "front": "Draw 1,3-dibromo-5-methylcyclohexane.",
+          "back": "Draw a cyclohexane ring and place bromo groups on C1 and C3 and a methyl group on C5.",
+          "visual_requirements": ["vr-cycloalkane-polygons"],
+          "tags": ["chapter-04", "naming", "drawing"]
+        }
+      ]
+    },
+    {
+      "section": "4.2",
+      "slug": "cis-trans-isomerism",
+      "title": "Cis-Trans Isomerism in Cycloalkanes",
+      "facts": [
+        {
+          "id": "f04-4-2-001",
+          "statement": "Ring bonds cannot freely rotate without breaking the ring.",
+          "details": "Restricted rotation lets substituted cycloalkanes preserve top-face and bottom-face relationships."
+        },
+        {
+          "id": "f04-4-2-002",
+          "statement": "A cis cycloalkane has relevant substituents on the same face of the ring.",
+          "details": "Both substituents point up or both point down relative to the ring."
+        },
+        {
+          "id": "f04-4-2-003",
+          "statement": "A trans cycloalkane has relevant substituents on opposite faces of the ring.",
+          "details": "One substituent points up and the other points down relative to the ring."
+        },
+        {
+          "id": "f04-4-2-004",
+          "statement": "Cis-trans cycloalkanes are stereoisomers.",
+          "details": "They have the same connectivity but different three-dimensional arrangements."
+        },
+        {
+          "id": "f04-4-2-005",
+          "statement": "Common small rings from C3 to C7 are conformationally restricted compared with open-chain alkanes.",
+          "details": "Very large rings are more flexible, but common small cycloalkanes keep their stereochemical relationships."
+        }
+      ],
+      "candidate_cards": [
+        {
+          "id": "c04-4-2-cis-definition",
+          "type": "definition",
+          "front": "What does cis mean for a disubstituted cycloalkane?",
+          "back": "The two substituents are on the same face of the ring.",
+          "visual_requirements": ["vr-cis-trans-comparison"],
+          "tags": ["chapter-04", "stereochemistry", "cis-trans"]
+        },
+        {
+          "id": "c04-4-2-trans-definition",
+          "type": "definition",
+          "front": "What does trans mean for a disubstituted cycloalkane?",
+          "back": "The two substituents are on opposite faces of the ring.",
+          "visual_requirements": ["vr-cis-trans-comparison"],
+          "tags": ["chapter-04", "stereochemistry", "cis-trans"]
+        },
+        {
+          "id": "c04-4-2-stereoisomer",
+          "type": "concept",
+          "front": "Why are cis- and trans-1,2-dimethylcyclopropane stereoisomers?",
+          "back": "They have the same atom connectivity but place the methyl groups on different faces of the ring.",
+          "tags": ["chapter-04", "stereochemistry"]
+        },
+        {
+          "id": "c04-4-2-no-interconversion",
+          "type": "concept",
+          "front": "Why does cis-1,2-dimethylcyclopropane not simply rotate into the trans isomer?",
+          "back": "Changing cis to trans would require breaking and reforming ring bonds.",
+          "tags": ["chapter-04", "ring-rotation"]
+        },
+        {
+          "id": "c04-4-2-identify",
+          "type": "visual_problem",
+          "front": "Given a cycloalkane with one substituent up and one substituent down, classify the relationship.",
+          "back": "The relationship is trans.",
+          "visual_requirements": ["vr-cis-trans-comparison"],
+          "tags": ["chapter-04", "visual", "cis-trans"]
+        }
+      ]
+    },
+    {
+      "section": "4.3",
+      "slug": "ring-strain",
+      "title": "Stability of Cycloalkanes: Ring Strain",
+      "facts": [
+        {
+          "id": "f04-4-3-001",
+          "statement": "Ring strain is extra molecular energy relative to a strain-free reference.",
+          "details": "Cycloalkane strain can be estimated from heats of combustion per CH2 unit."
+        },
+        {
+          "id": "f04-4-3-002",
+          "statement": "Higher heat of combustion indicates a higher-energy molecule.",
+          "details": "A strained molecule releases more heat when completely burned."
+        },
+        {
+          "id": "f04-4-3-003",
+          "statement": "Angle strain comes from bond angles being compressed or expanded away from the tetrahedral value.",
+          "details": "The ideal sp3 angle is about 109.5 degrees."
+        },
+        {
+          "id": "f04-4-3-004",
+          "statement": "Torsional strain comes from eclipsing interactions between bonds on adjacent atoms.",
+          "details": "Eclipsed C-H bonds in small rings are a major torsional strain source."
+        },
+        {
+          "id": "f04-4-3-005",
+          "statement": "Steric strain comes from nonbonded atoms or groups approaching too closely.",
+          "details": "Steric effects become important in conformational comparisons and medium rings."
+        },
+        {
+          "id": "f04-4-3-006",
+          "statement": "Baeyer's flat-ring assumption explains only part of cycloalkane stability.",
+          "details": "Most cycloalkanes are puckered rather than flat, so torsional and steric strain matter along with angle strain."
+        },
+        {
+          "id": "f04-4-3-007",
+          "statement": "Cyclohexane and very large rings are approximately strain-free.",
+          "details": "Cyclohexane avoids both angle and torsional strain by adopting a chair conformation."
+        }
+      ],
+      "candidate_cards": [
+        {
+          "id": "c04-4-3-strain-types",
+          "type": "comparison",
+          "front": "What are the three main contributors to cycloalkane strain?",
+          "back": "Angle strain, torsional strain, and steric strain.",
+          "visual_requirements": ["vr-strain-energy-diagram"],
+          "tags": ["chapter-04", "strain"]
+        },
+        {
+          "id": "c04-4-3-angle-strain",
+          "type": "definition",
+          "front": "What is angle strain?",
+          "back": "Energy cost from bond angles being forced away from the preferred tetrahedral angle.",
+          "tags": ["chapter-04", "strain"]
+        },
+        {
+          "id": "c04-4-3-torsional-strain",
+          "type": "definition",
+          "front": "What is torsional strain?",
+          "back": "Energy cost from eclipsing interactions between bonds on neighboring atoms.",
+          "tags": ["chapter-04", "strain"]
+        },
+        {
+          "id": "c04-4-3-steric-strain",
+          "type": "definition",
+          "front": "What is steric strain?",
+          "back": "Repulsion that occurs when nonbonded atoms or groups are forced too close together.",
+          "tags": ["chapter-04", "strain"]
+        },
+        {
+          "id": "c04-4-3-heat-combustion",
+          "type": "concept",
+          "front": "Why can heat of combustion be used to estimate cycloalkane strain?",
+          "back": "More strained cycloalkanes contain more energy and release more heat when burned.",
+          "visual_requirements": ["vr-strain-energy-diagram"],
+          "tags": ["chapter-04", "strain", "thermochemistry"]
+        },
+        {
+          "id": "c04-4-3-baeyer-limits",
+          "type": "concept",
+          "front": "Why does Baeyer's angle-strain theory fail for many cycloalkanes?",
+          "back": "It assumes rings are flat, but most rings pucker into three-dimensional conformations that reduce angle or torsional strain.",
+          "visual_requirements": ["vr-strain-energy-diagram"],
+          "tags": ["chapter-04", "strain", "history"]
+        }
+      ]
+    },
+    {
+      "section": "4.4",
+      "slug": "conformations-of-cycloalkanes",
+      "title": "Conformations of Cycloalkanes",
+      "facts": [
+        {
+          "id": "f04-4-4-001",
+          "statement": "Cyclopropane is highly strained because its C-C-C angles are about 60 degrees.",
+          "details": "It also has eclipsed neighboring C-H bonds."
+        },
+        {
+          "id": "f04-4-4-002",
+          "statement": "Cyclopropane uses bent bonds.",
+          "details": "The bonding orbitals overlap at an angle rather than pointing directly at one another, making the C-C bonds weaker than normal alkane C-C bonds."
+        },
+        {
+          "id": "f04-4-4-003",
+          "statement": "Cyclobutane puckers slightly.",
+          "details": "Puckering increases angle strain somewhat but reduces torsional strain enough to lower the overall energy."
+        },
+        {
+          "id": "f04-4-4-004",
+          "statement": "Cyclopentane puckers to relieve torsional strain.",
+          "details": "A common description has four carbons near one plane and the fifth carbon out of plane, so most neighboring C-H bonds are nearly staggered."
+        },
+        {
+          "id": "f04-4-4-005",
+          "statement": "Cyclopropane and cyclobutane have similar total strain energies.",
+          "details": "The chapter gives about 115 kJ/mol for cyclopropane and about 110 kJ/mol for cyclobutane."
+        }
+      ],
+      "candidate_cards": [
+        {
+          "id": "c04-4-4-cyclopropane",
+          "type": "concept",
+          "front": "Why is cyclopropane so strained?",
+          "back": "It has severe angle strain from 60 degree ring angles plus torsional strain from eclipsed C-H bonds.",
+          "visual_requirements": ["vr-small-ring-conformations"],
+          "tags": ["chapter-04", "conformation", "cyclopropane"]
+        },
+        {
+          "id": "c04-4-4-bent-bonds",
+          "type": "definition",
+          "front": "What are bent bonds in cyclopropane?",
+          "back": "C-C bonds formed by orbitals that overlap at an angle rather than pointing directly toward each other.",
+          "tags": ["chapter-04", "bonding", "cyclopropane"]
+        },
+        {
+          "id": "c04-4-4-cyclobutane",
+          "type": "concept",
+          "front": "Why is cyclobutane slightly folded instead of perfectly square and flat?",
+          "back": "Folding trades a little extra angle strain for less torsional strain.",
+          "visual_requirements": ["vr-small-ring-conformations"],
+          "tags": ["chapter-04", "conformation", "cyclobutane"]
+        },
+        {
+          "id": "c04-4-4-cyclopentane",
+          "type": "concept",
+          "front": "Why does cyclopentane pucker?",
+          "back": "A flat cyclopentane would have substantial torsional strain, so puckering makes neighboring C-H bonds more nearly staggered.",
+          "visual_requirements": ["vr-small-ring-conformations"],
+          "tags": ["chapter-04", "conformation", "cyclopentane"]
+        }
+      ]
+    },
+    {
+      "section": "4.5",
+      "slug": "conformations-of-cyclohexane",
+      "title": "Conformations of Cyclohexane",
+      "facts": [
+        {
+          "id": "f04-4-5-001",
+          "statement": "Cyclohexane adopts a chair conformation that is essentially strain-free.",
+          "details": "Its C-C-C angles are close to tetrahedral and neighboring C-H bonds are staggered."
+        },
+        {
+          "id": "f04-4-5-002",
+          "statement": "Chair cyclohexane can be drawn from two parallel offset bonds plus one carbon above and one carbon below.",
+          "details": "The upper and lower end bonds are parallel, and the lower front bond is often emphasized to show perspective."
+        },
+        {
+          "id": "f04-4-5-003",
+          "statement": "The twist-boat conformation is higher in energy than the chair.",
+          "details": "It is nearly free of angle strain but has torsional and steric strain; the chapter gives about 23 kJ/mol above the chair."
+        },
+        {
+          "id": "f04-4-5-004",
+          "statement": "Chair cyclohexane is the preferred baseline for conformational analysis of substituted cyclohexanes.",
+          "details": "Substituent stability is usually evaluated by comparing chair forms."
+        }
+      ],
+      "candidate_cards": [
+        {
+          "id": "c04-4-5-chair-definition",
+          "type": "definition",
+          "front": "What is the chair conformation of cyclohexane?",
+          "back": "A puckered six-membered ring conformation with near-tetrahedral bond angles and staggered neighboring C-H bonds.",
+          "visual_requirements": ["vr-chair-drawing-model"],
+          "tags": ["chapter-04", "cyclohexane", "chair"]
+        },
+        {
+          "id": "c04-4-5-why-strain-free",
+          "type": "concept",
+          "front": "Why is chair cyclohexane considered strain-free?",
+          "back": "It avoids significant angle strain and torsional strain by keeping bond angles near tetrahedral and adjacent C-H bonds staggered.",
+          "tags": ["chapter-04", "cyclohexane", "strain"]
+        },
+        {
+          "id": "c04-4-5-chair-drawing",
+          "type": "visual_problem",
+          "front": "What are the key steps for drawing a cyclohexane chair?",
+          "back": "Draw two parallel offset bonds, connect one end to a carbon above-right, connect the other end to a carbon below-left, and keep the end bonds parallel.",
+          "visual_requirements": ["vr-chair-drawing-model"],
+          "tags": ["chapter-04", "drawing", "chair"]
+        },
+        {
+          "id": "c04-4-5-chair-vs-twist-boat",
+          "type": "comparison",
+          "front": "Why is twist-boat cyclohexane less populated than chair cyclohexane?",
+          "back": "The twist-boat form has torsional and steric strain and is roughly 23 kJ/mol higher in energy.",
+          "visual_requirements": ["vr-chair-drawing-model"],
+          "tags": ["chapter-04", "cyclohexane", "conformation"]
+        }
+      ]
+    },
+    {
+      "section": "4.6",
+      "slug": "axial-equatorial-bonds",
+      "title": "Axial and Equatorial Bonds in Cyclohexane",
+      "facts": [
+        {
+          "id": "f04-4-6-001",
+          "statement": "Every carbon in chair cyclohexane has one axial and one equatorial bond.",
+          "details": "Axial and equatorial positions alternate around the top and bottom faces of the chair."
+        },
+        {
+          "id": "f04-4-6-002",
+          "statement": "Axial bonds are parallel to the ring axis.",
+          "details": "They point alternately up and down around the cyclohexane chair."
+        },
+        {
+          "id": "f04-4-6-003",
+          "statement": "Equatorial bonds lie around the rough equator of the ring.",
+          "details": "Each equatorial bond points outward from the ring and is neither purely vertical nor parallel to the ring axis."
+        },
+        {
+          "id": "f04-4-6-004",
+          "statement": "Cis/trans and axial/equatorial answer different questions.",
+          "details": "Cis/trans describes same face versus opposite face; axial/equatorial describes conformation-specific bond direction."
+        },
+        {
+          "id": "f04-4-6-005",
+          "statement": "A ring flip exchanges axial and equatorial positions.",
+          "details": "After a ring flip, axial substituents become equatorial and equatorial substituents become axial."
+        },
+        {
+          "id": "f04-4-6-006",
+          "statement": "A ring flip preserves up/down stereochemistry.",
+          "details": "A substituent that is up remains up after the flip even though its axial/equatorial label changes."
+        },
+        {
+          "id": "f04-4-6-007",
+          "statement": "Chair-chair interconversion is rapid at room temperature for simple cyclohexanes.",
+          "details": "The chapter gives an approximate barrier of 45 kJ/mol."
+        }
+      ],
+      "candidate_cards": [
+        {
+          "id": "c04-4-6-axial-definition",
+          "type": "definition",
+          "front": "What is an axial position in chair cyclohexane?",
+          "back": "A position parallel to the ring axis, pointing alternately up or down around the ring.",
+          "visual_requirements": ["vr-axial-equatorial-overlay"],
+          "tags": ["chapter-04", "cyclohexane", "axial"]
+        },
+        {
+          "id": "c04-4-6-equatorial-definition",
+          "type": "definition",
+          "front": "What is an equatorial position in chair cyclohexane?",
+          "back": "A position around the rough equator of the ring, pointing outward rather than parallel to the ring axis.",
+          "visual_requirements": ["vr-axial-equatorial-overlay"],
+          "tags": ["chapter-04", "cyclohexane", "equatorial"]
+        },
+        {
+          "id": "c04-4-6-one-of-each",
+          "type": "concept",
+          "front": "How many axial and equatorial positions does each chair cyclohexane carbon have?",
+          "back": "Each carbon has one axial position and one equatorial position.",
+          "tags": ["chapter-04", "cyclohexane"]
+        },
+        {
+          "id": "c04-4-6-up-down-vs-ax-eq",
+          "type": "distinction",
+          "front": "Does cis/trans mean the same thing as axial/equatorial in cyclohexane?",
+          "back": "No. Cis/trans describes same or opposite ring faces; axial/equatorial describes positions in a particular chair conformation.",
+          "visual_requirements": ["vr-axial-equatorial-overlay"],
+          "tags": ["chapter-04", "stereochemistry", "chair"]
+        },
+        {
+          "id": "c04-4-6-ring-flip",
+          "type": "concept",
+          "front": "What happens to axial and equatorial positions during a cyclohexane ring flip?",
+          "back": "Axial positions become equatorial and equatorial positions become axial, while up/down stereochemistry is retained.",
+          "visual_requirements": ["vr-ring-flip-animation"],
+          "tags": ["chapter-04", "ring-flip"]
+        }
+      ]
+    },
+    {
+      "section": "4.7",
+      "slug": "monosubstituted-cyclohexanes",
+      "title": "Conformations of Monosubstituted Cyclohexanes",
+      "facts": [
+        {
+          "id": "f04-4-7-001",
+          "statement": "A monosubstituted cyclohexane is usually more stable with the substituent equatorial.",
+          "details": "The axial conformation places the substituent near axial hydrogens on carbons three atoms away."
+        },
+        {
+          "id": "f04-4-7-002",
+          "statement": "Axial substituents create 1,3-diaxial interactions.",
+          "details": "For axial methylcyclohexane, the methyl group interacts with two axial hydrogens on the same side of the ring."
+        },
+        {
+          "id": "f04-4-7-003",
+          "statement": "The axial penalty for methylcyclohexane is about 7.6 kJ/mol.",
+          "details": "This corresponds to two gauche-butane-like interactions of about 3.8 kJ/mol each."
+        },
+        {
+          "id": "f04-4-7-004",
+          "statement": "About 95 percent of methylcyclohexane molecules have the methyl group equatorial at room temperature.",
+          "details": "The lower-energy equatorial conformation dominates the equilibrium."
+        },
+        {
+          "id": "f04-4-7-005",
+          "statement": "Larger substituents have larger axial penalties.",
+          "details": "The chapter's table lists small penalties for CN and halogens, moderate penalties for methyl and ethyl, and a large penalty for tert-butyl."
+        },
+        {
+          "id": "f04-4-7-006",
+          "statement": "An A-value can be treated as the energy preference for equatorial over axial placement.",
+          "details": "In this chapter's terms, it corresponds to the axial 1,3-diaxial strain penalty for a substituent."
+        }
+      ],
+      "a_values_from_chapter": [
+        { "substituent": "Cl or Br", "kJ_per_mol": 1.0, "kcal_per_mol": 0.25 },
+        { "substituent": "OH", "kJ_per_mol": 2.1, "kcal_per_mol": 0.5 },
+        { "substituent": "CH3", "kJ_per_mol": 3.8, "kcal_per_mol": 0.9 },
+        { "substituent": "CH2CH3", "kJ_per_mol": 4.0, "kcal_per_mol": 0.95 },
+        { "substituent": "CH(CH3)2", "kJ_per_mol": 4.6, "kcal_per_mol": 1.1 },
+        { "substituent": "C(CH3)3", "kJ_per_mol": 11.4, "kcal_per_mol": 2.7 },
+        { "substituent": "C6H5", "kJ_per_mol": 6.3, "kcal_per_mol": 1.5 },
+        { "substituent": "CO2H", "kJ_per_mol": 2.9, "kcal_per_mol": 0.7 },
+        { "substituent": "CN", "kJ_per_mol": 0.4, "kcal_per_mol": 0.1 }
+      ],
+      "candidate_cards": [
+        {
+          "id": "c04-4-7-equatorial-preference",
+          "type": "concept",
+          "front": "Which conformation is usually more stable for a monosubstituted cyclohexane: axial or equatorial?",
+          "back": "Equatorial, because it avoids the main 1,3-diaxial steric contacts caused by axial placement.",
+          "tags": ["chapter-04", "cyclohexane", "stability"]
+        },
+        {
+          "id": "c04-4-7-13-diaxial",
+          "type": "definition",
+          "front": "What is a 1,3-diaxial interaction?",
+          "back": "A steric interaction between an axial substituent and axial atoms or groups three carbons away on the same face of the cyclohexane ring.",
+          "visual_requirements": ["vr-monosubstituted-energy"],
+          "tags": ["chapter-04", "cyclohexane", "steric-strain"]
+        },
+        {
+          "id": "c04-4-7-methylcyclohexane-equilibrium",
+          "type": "quantitative",
+          "front": "What energy difference favors equatorial methylcyclohexane over axial methylcyclohexane?",
+          "back": "About 7.6 kJ/mol, roughly two 3.8 kJ/mol gauche-butane-like interactions.",
+          "visual_requirements": ["vr-ring-flip-animation", "vr-monosubstituted-energy"],
+          "tags": ["chapter-04", "cyclohexane", "energy"]
+        },
+        {
+          "id": "c04-4-7-a-values",
+          "type": "comparison",
+          "front": "Which has the larger axial penalty in cyclohexane: methyl or tert-butyl?",
+          "back": "tert-Butyl; the chapter's table lists about 11.4 kJ/mol for tert-butyl versus 3.8 kJ/mol for methyl.",
+          "visual_requirements": ["vr-monosubstituted-energy"],
+          "tags": ["chapter-04", "a-values", "stability"]
+        },
+        {
+          "id": "c04-4-7-tert-butyl",
+          "type": "concept",
+          "front": "Why is tert-butylcyclohexane especially strongly biased toward the equatorial conformation?",
+          "back": "The tert-butyl group is bulky, so its axial 1,3-diaxial penalty is much larger than that of smaller substituents.",
+          "visual_requirements": ["vr-monosubstituted-energy"],
+          "tags": ["chapter-04", "cyclohexane", "tert-butyl"]
+        }
+      ]
+    },
+    {
+      "section": "4.8",
+      "slug": "disubstituted-cyclohexanes",
+      "title": "Conformations of Disubstituted Cyclohexanes",
+      "facts": [
+        {
+          "id": "f04-4-8-001",
+          "statement": "Disubstituted cyclohexane stability depends on both substituents in each chair form.",
+          "details": "Compare the steric cost of every axial substituent and any additional gauche-like contacts."
+        },
+        {
+          "id": "f04-4-8-002",
+          "statement": "cis-1,2-disubstituted cyclohexanes have one axial and one equatorial substituent in each chair.",
+          "details": "A ring flip swaps which substituent is axial."
+        },
+        {
+          "id": "f04-4-8-003",
+          "statement": "trans-1,2-disubstituted cyclohexanes can be diaxial or diequatorial.",
+          "details": "The diequatorial chair is usually more stable when substituents are not both very small."
+        },
+        {
+          "id": "f04-4-8-004",
+          "statement": "cis-1,3-disubstituted cyclohexanes can be diaxial or diequatorial.",
+          "details": "The diequatorial chair is usually more stable."
+        },
+        {
+          "id": "f04-4-8-005",
+          "statement": "trans-1,3-disubstituted cyclohexanes have one axial and one equatorial substituent in each chair.",
+          "details": "A ring flip swaps which substituent is axial."
+        },
+        {
+          "id": "f04-4-8-006",
+          "statement": "cis-1,4-disubstituted cyclohexanes have one axial and one equatorial substituent in each chair.",
+          "details": "A ring flip swaps which substituent is axial."
+        },
+        {
+          "id": "f04-4-8-007",
+          "statement": "trans-1,4-disubstituted cyclohexanes can be diaxial or diequatorial.",
+          "details": "The diequatorial chair is usually more stable."
+        },
+        {
+          "id": "f04-4-8-008",
+          "statement": "The most stable chair usually places the largest substituent equatorial.",
+          "details": "For unequal substituents, compare A-values or axial penalties to choose the preferred conformer."
+        }
+      ],
+      "relationship_table": [
+        { "pattern": "1,2-cis", "possible_relationships": ["a,e", "e,a"] },
+        { "pattern": "1,2-trans", "possible_relationships": ["a,a", "e,e"] },
+        { "pattern": "1,3-cis", "possible_relationships": ["a,a", "e,e"] },
+        { "pattern": "1,3-trans", "possible_relationships": ["a,e", "e,a"] },
+        { "pattern": "1,4-cis", "possible_relationships": ["a,e", "e,a"] },
+        { "pattern": "1,4-trans", "possible_relationships": ["a,a", "e,e"] }
+      ],
+      "candidate_cards": [
+        {
+          "id": "c04-4-8-relationship-table",
+          "type": "table_recall",
+          "front": "Which disubstituted cyclohexane patterns can be diaxial or diequatorial?",
+          "back": "1,2-trans; 1,3-cis; and 1,4-trans.",
+          "visual_requirements": ["vr-disubstituted-relationship-grid"],
+          "tags": ["chapter-04", "cyclohexane", "disubstituted"]
+        },
+        {
+          "id": "c04-4-8-cis-12",
+          "type": "concept",
+          "front": "What axial/equatorial relationship is forced in a 1,2-cis disubstituted cyclohexane chair?",
+          "back": "One substituent is axial and the other is equatorial.",
+          "visual_requirements": ["vr-disubstituted-relationship-grid"],
+          "tags": ["chapter-04", "cyclohexane", "cis-trans"]
+        },
+        {
+          "id": "c04-4-8-trans-12",
+          "type": "concept",
+          "front": "What axial/equatorial relationships are possible for 1,2-trans disubstituted cyclohexane?",
+          "back": "Either both axial or both equatorial.",
+          "visual_requirements": ["vr-disubstituted-relationship-grid"],
+          "tags": ["chapter-04", "cyclohexane", "cis-trans"]
+        },
+        {
+          "id": "c04-4-8-most-stable",
+          "type": "problem",
+          "front": "Which chair is favored for cis-1-tert-butyl-4-chlorocyclohexane?",
+          "back": "The chair with tert-butyl equatorial and chlorine axial, because the axial penalty for tert-butyl is much larger than for chlorine.",
+          "visual_requirements": ["vr-disubstituted-relationship-grid", "vr-ring-flip-animation"],
+          "tags": ["chapter-04", "cyclohexane", "stability"]
+        },
+        {
+          "id": "c04-4-8-ring-flip-stability",
+          "type": "procedure",
+          "front": "How do you decide which disubstituted cyclohexane chair is more stable?",
+          "back": "Draw both ring-flipped chairs, keep cis/trans stereochemistry fixed, identify axial substituents, and choose the lower total axial penalty.",
+          "visual_requirements": ["vr-ring-flip-animation"],
+          "tags": ["chapter-04", "cyclohexane", "procedure"]
+        },
+        {
+          "id": "c04-4-8-glucose-mannose",
+          "type": "concept",
+          "front": "Why is a cyclohexane-like carbohydrate chair with all substituents equatorial especially stable?",
+          "back": "Equatorial substituents avoid the axial 1,3-diaxial interactions that raise conformational energy.",
+          "tags": ["chapter-04", "cyclohexane", "biomolecules"]
+        }
+      ]
+    },
+    {
+      "section": "4.9",
+      "slug": "polycyclic-molecules",
+      "title": "Conformations of Polycyclic Molecules",
+      "facts": [
+        {
+          "id": "f04-4-9-001",
+          "statement": "A polycyclic molecule contains two or more rings.",
+          "details": "Fused rings share a bond and the two atoms at that bond are bridgehead atoms."
+        },
+        {
+          "id": "f04-4-9-002",
+          "statement": "Decalin consists of two fused cyclohexane rings.",
+          "details": "It can exist as cis-decalin or trans-decalin depending on the relationship of the bridgehead hydrogens."
+        },
+        {
+          "id": "f04-4-9-003",
+          "statement": "Cis-decalin has bridgehead hydrogens on the same face of the fused ring system.",
+          "details": "Trans-decalin has the bridgehead hydrogens on opposite faces."
+        },
+        {
+          "id": "f04-4-9-004",
+          "statement": "Steroids contain fused ring systems that can be analyzed using cyclohexane conformational principles.",
+          "details": "The same cis/trans fusion and chair-substituent ideas apply to larger fused-ring frameworks."
+        },
+        {
+          "id": "f04-4-9-005",
+          "statement": "Norbornane is bicyclo[2.2.1]heptane.",
+          "details": "The name encodes seven total carbons and three bridges of 2, 2, and 1 carbon between the bridgeheads."
+        },
+        {
+          "id": "f04-4-9-006",
+          "statement": "Norbornane contains a conformationally locked boat-like cyclohexane unit.",
+          "details": "An extra CH2 bridge connects the relevant carbons and prevents ordinary cyclohexane chair behavior."
+        }
+      ],
+      "candidate_cards": [
+        {
+          "id": "c04-4-9-polycyclic",
+          "type": "definition",
+          "front": "What is a polycyclic molecule?",
+          "back": "A molecule containing two or more rings.",
+          "tags": ["chapter-04", "polycyclic"]
+        },
+        {
+          "id": "c04-4-9-decalin",
+          "type": "definition",
+          "front": "What is decalin?",
+          "back": "A fused bicyclic system made from two cyclohexane rings sharing a bond.",
+          "visual_requirements": ["vr-polycyclic-recognition"],
+          "tags": ["chapter-04", "polycyclic", "decalin"]
+        },
+        {
+          "id": "c04-4-9-ring-fusion",
+          "type": "visual_problem",
+          "front": "How do you distinguish cis- and trans-decalin?",
+          "back": "Compare the bridgehead hydrogens: same face is cis; opposite faces is trans.",
+          "visual_requirements": ["vr-polycyclic-recognition"],
+          "tags": ["chapter-04", "polycyclic", "cis-trans"]
+        },
+        {
+          "id": "c04-4-9-norbornane",
+          "type": "definition",
+          "front": "What does bicyclo[2.2.1]heptane mean for norbornane?",
+          "back": "It is a seven-carbon bicyclic molecule with three bridges containing 2, 2, and 1 carbons between the bridgeheads.",
+          "visual_requirements": ["vr-polycyclic-recognition"],
+          "tags": ["chapter-04", "polycyclic", "norbornane"]
+        },
+        {
+          "id": "c04-4-9-steroids",
+          "type": "concept",
+          "front": "Why do cyclohexane conformational rules matter for steroids?",
+          "back": "Steroids contain fused cyclohexane-like rings, so ring fusion and axial/equatorial relationships shape their three-dimensional structures.",
+          "tags": ["chapter-04", "polycyclic", "biomolecules"]
+        }
+      ]
+    }
+  ],
+  "integration_notes": [
+    "This checkout did not contain ochem/data/cards/chapter-02-polarity.json, scripts/build_ochem.py, or ochem/explorer/, so this file is structured as a source record for a future ochem pipeline integration pass.",
+    "The existing core deck already had a compact axial/equatorial relationship table; this source expands it with section context, stability reasoning, ring-flip behavior, A-value-style penalties, and visual rendering requirements.",
+    "Renderer assets needed before frontend integration include chair cyclohexane diagrams, ring-flip animation frames, cis/trans wedge-dash examples, small-ring conformation models, a strain-energy chart, and fused/bridged polycyclic recognition diagrams.",
+    "A-values are represented using the textbook's listed 1,3-diaxial strain penalties for monosubstituted cyclohexanes."
+  ]
+}

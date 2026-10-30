@@ -1,0 +1,431 @@
+{
+  "schema_version": 1,
+  "id": "legacy-organic-chemistry-i-batch-07",
+  "source": {
+    "file": "cards/core/34-organic-chemistry-i.json",
+    "legacy_range": "121-140",
+    "note": "Legacy Organic Chemistry I cards converted into ochem pipeline source records without changing the original question or answer meaning."
+  },
+  "cards": [
+    {
+      "legacy_id": "organic-chemistry-i-121",
+      "id": "legacy-organic-chemistry-i-121",
+      "front": "Which functional group has `R-N3`?",
+      "back": "Azide.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "azide", "nitrogen-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "azide",
+        "pattern": "R-N3",
+        "representative": "methyl azide",
+        "formula": "CH3N3",
+        "smiles": "CN=[N+]=[N-]"
+      },
+      "visual_requirements": ["Create or add an azide functional-group visual showing the R-N3 pattern."],
+      "decorations_needed": ["manual azide asset or generated structure visual"],
+      "explorer_target": "functional-group-recognition-r-n3-azide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-119 and 120; keep as reverse recognition from pattern to group. No existing assets/organic azide SVG was present."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-122",
+      "id": "legacy-organic-chemistry-i-122",
+      "front": "How do amines and amides differ?",
+      "back": "Amines have nitrogen without an adjacent carbonyl; amides have nitrogen directly attached to a carbonyl.",
+      "type": "concept",
+      "topic": "Functional-group comparison",
+      "tags": ["legacy", "functional-groups", "amine", "amide", "nitrogen-containing", "carbonyl", "comparison"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amine vs amide",
+        "pattern": "amine: N without adjacent carbonyl; amide: N attached to C=O",
+        "representative": "methylamine and ethanamide",
+        "formula": "CH5N and C2H5NO",
+        "smiles": "CN; CC(N)=O"
+      },
+      "visual_requirements": ["assets/organic/amine.svg", "assets/organic/amide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-comparison-amine-amide",
+      "merge_notes": "Related to legacy-organic-chemistry-i-080, 081, 082, 106, and 113-115; keep because it contrasts amine and amide directly."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-123",
+      "id": "legacy-organic-chemistry-i-123",
+      "front": "How do nitriles and amines differ?",
+      "back": "Nitriles contain `C≡N`; amines have nitrogen single-bonded to carbon/hydrogen.",
+      "type": "concept",
+      "topic": "Functional-group comparison",
+      "tags": ["legacy", "functional-groups", "nitrile", "amine", "nitrogen-containing", "triple-bond", "comparison"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "nitrile vs amine",
+        "pattern": "nitrile: C≡N; amine: nitrogen single-bonded to carbon/hydrogen",
+        "representative": "ethanenitrile and methylamine",
+        "formula": "C2H3N and CH5N",
+        "smiles": "CC#N; CN"
+      },
+      "visual_requirements": ["assets/organic/nitrile.svg", "assets/organic/amine.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-comparison-nitrile-amine",
+      "merge_notes": "Related to legacy-organic-chemistry-i-113-118; keep because it contrasts nitrile and amine directly."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-124",
+      "id": "legacy-organic-chemistry-i-124",
+      "front": "What functional group is shown? ![Amine](../assets/organic/amine.svg)",
+      "back": "Amine.",
+      "type": "concept",
+      "topic": "Functional-group image recognition",
+      "tags": ["legacy", "functional-groups", "amine", "nitrogen-containing", "recognition", "image-to-name"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amine",
+        "pattern": "R-NH2, R2NH, or R3N",
+        "representative": "methylamine",
+        "formula": "CH5N",
+        "smiles": "CN"
+      },
+      "visual_requirements": ["assets/organic/amine.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-image-recognition-amine",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-113, 114, and 115; keep because this is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-125",
+      "id": "legacy-organic-chemistry-i-125",
+      "front": "What functional group is shown? ![Nitrile](../assets/organic/nitrile.svg)",
+      "back": "Nitrile.",
+      "type": "concept",
+      "topic": "Functional-group image recognition",
+      "tags": ["legacy", "functional-groups", "nitrile", "nitrogen-containing", "triple-bond", "recognition", "image-to-name"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "nitrile",
+        "pattern": "R-C≡N",
+        "representative": "ethanenitrile",
+        "formula": "C2H3N",
+        "smiles": "CC#N"
+      },
+      "visual_requirements": ["assets/organic/nitrile.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-image-recognition-nitrile",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-116, 117, and 118; keep because this is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-126",
+      "id": "legacy-organic-chemistry-i-126",
+      "front": "Show the amine functional group pattern.",
+      "back": "![Amine](../assets/organic/amine.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "amine", "nitrogen-containing", "pattern-recall"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amine",
+        "pattern": "R-NH2, R2NH, or R3N",
+        "representative": "methylamine",
+        "formula": "CH5N",
+        "smiles": "CN"
+      },
+      "visual_requirements": ["assets/organic/amine.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-amine",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-113, 114, 115, and 124; keep because this asks for visual pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-127",
+      "id": "legacy-organic-chemistry-i-127",
+      "front": "Show the nitrile functional group pattern.",
+      "back": "![Nitrile](../assets/organic/nitrile.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "nitrile", "nitrogen-containing", "triple-bond", "pattern-recall"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "nitrile",
+        "pattern": "R-C≡N",
+        "representative": "ethanenitrile",
+        "formula": "C2H3N",
+        "smiles": "CC#N"
+      },
+      "visual_requirements": ["assets/organic/nitrile.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-nitrile",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-116, 117, 118, and 125; keep because this asks for visual pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-128",
+      "id": "legacy-organic-chemistry-i-128",
+      "front": "What is a thiol?",
+      "back": "A sulfur analog of an alcohol: `R-SH`.",
+      "type": "definition",
+      "topic": "Sulfur-containing functional groups",
+      "tags": ["legacy", "functional-groups", "thiol", "sulfur-containing", "alcohol-analog", "definition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "thiol",
+        "pattern": "R-SH",
+        "representative": "methanethiol",
+        "formula": "CH4S",
+        "smiles": "CS"
+      },
+      "visual_requirements": ["assets/organic/thiol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-thiol",
+      "merge_notes": "Related to legacy-organic-chemistry-i-129 and 130; keep because this card defines thiol as an alcohol sulfur analog."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-129",
+      "id": "legacy-organic-chemistry-i-129",
+      "front": "What is the characteristic feature of a thiol?",
+      "back": "An `-SH` group.",
+      "type": "definition",
+      "topic": "Sulfur-containing functional-group features",
+      "tags": ["legacy", "functional-groups", "thiol", "sulfur-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "thiol",
+        "pattern": "-SH group",
+        "representative": "methanethiol",
+        "formula": "CH4S",
+        "smiles": "CS"
+      },
+      "visual_requirements": ["assets/organic/thiol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-thiol",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-128 and related to legacy-organic-chemistry-i-130; keep because it preserves the characteristic-feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-130",
+      "id": "legacy-organic-chemistry-i-130",
+      "front": "Which functional group has `R-SH`?",
+      "back": "Thiol.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "thiol", "sulfur-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "thiol",
+        "pattern": "R-SH",
+        "representative": "methanethiol",
+        "formula": "CH4S",
+        "smiles": "CS"
+      },
+      "visual_requirements": ["assets/organic/thiol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-r-sh-thiol",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-128 and 129; keep as reverse recognition from pattern to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-131",
+      "id": "legacy-organic-chemistry-i-131",
+      "front": "What is a thioether?",
+      "back": "A sulfur analog of an ether: `R-S-R`.",
+      "type": "definition",
+      "topic": "Sulfur-containing functional groups",
+      "tags": ["legacy", "functional-groups", "thioether", "sulfur-containing", "ether-analog", "definition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "thioether",
+        "pattern": "R-S-R",
+        "representative": "dimethyl sulfide",
+        "formula": "C2H6S",
+        "smiles": "CSC"
+      },
+      "visual_requirements": ["assets/organic/thioether.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-thioether",
+      "merge_notes": "Related to legacy-organic-chemistry-i-132 and 133; keep because this card defines thioether as an ether sulfur analog."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-132",
+      "id": "legacy-organic-chemistry-i-132",
+      "front": "What is the characteristic feature of a thioether?",
+      "back": "Sulfur single-bonded to two carbon groups.",
+      "type": "definition",
+      "topic": "Sulfur-containing functional-group features",
+      "tags": ["legacy", "functional-groups", "thioether", "sulfur-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "thioether",
+        "pattern": "sulfur single-bonded to two carbon groups",
+        "representative": "dimethyl sulfide",
+        "formula": "C2H6S",
+        "smiles": "CSC"
+      },
+      "visual_requirements": ["assets/organic/thioether.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-thioether",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-131 and related to legacy-organic-chemistry-i-133; keep because it preserves the characteristic-feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-133",
+      "id": "legacy-organic-chemistry-i-133",
+      "front": "Which functional group has `R-S-R`?",
+      "back": "Thioether.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "thioether", "sulfur-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "thioether",
+        "pattern": "R-S-R",
+        "representative": "dimethyl sulfide",
+        "formula": "C2H6S",
+        "smiles": "CSC"
+      },
+      "visual_requirements": ["assets/organic/thioether.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-r-s-r-thioether",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-131 and 132; keep as reverse recognition from pattern to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-134",
+      "id": "legacy-organic-chemistry-i-134",
+      "front": "How do alcohols and thiols differ?",
+      "back": "Alcohols have `R-OH`; thiols have `R-SH`.",
+      "type": "concept",
+      "topic": "Functional-group comparison",
+      "tags": ["legacy", "functional-groups", "alcohol", "thiol", "oxygen-containing", "sulfur-containing", "comparison"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alcohol vs thiol",
+        "pattern": "alcohol: R-OH; thiol: R-SH",
+        "representative": "methanol and methanethiol",
+        "formula": "CH4O and CH4S",
+        "smiles": "CO; CS"
+      },
+      "visual_requirements": ["assets/organic/alcohol.svg", "assets/organic/thiol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-comparison-alcohol-thiol",
+      "merge_notes": "Related to alcohol and thiol inventory cards; keep because it directly contrasts oxygen and sulfur analogs."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-135",
+      "id": "legacy-organic-chemistry-i-135",
+      "front": "How do ethers and thioethers differ?",
+      "back": "Ethers have `R-O-R`; thioethers have `R-S-R`.",
+      "type": "concept",
+      "topic": "Functional-group comparison",
+      "tags": ["legacy", "functional-groups", "ether", "thioether", "oxygen-containing", "sulfur-containing", "comparison"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ether vs thioether",
+        "pattern": "ether: R-O-R; thioether: R-S-R",
+        "representative": "dimethyl ether and dimethyl sulfide",
+        "formula": "C2H6O and C2H6S",
+        "smiles": "COC; CSC"
+      },
+      "visual_requirements": ["assets/organic/ether.svg", "assets/organic/thioether.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-comparison-ether-thioether",
+      "merge_notes": "Related to ether and thioether inventory cards; keep because it directly contrasts oxygen and sulfur analogs."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-136",
+      "id": "legacy-organic-chemistry-i-136",
+      "front": "What functional group is shown? ![Thiol](../assets/organic/thiol.svg)",
+      "back": "Thiol.",
+      "type": "concept",
+      "topic": "Functional-group image recognition",
+      "tags": ["legacy", "functional-groups", "thiol", "sulfur-containing", "recognition", "image-to-name"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "thiol",
+        "pattern": "R-SH",
+        "representative": "methanethiol",
+        "formula": "CH4S",
+        "smiles": "CS"
+      },
+      "visual_requirements": ["assets/organic/thiol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-image-recognition-thiol",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-128, 129, and 130; keep because this is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-137",
+      "id": "legacy-organic-chemistry-i-137",
+      "front": "What functional group is shown? ![Thioether](../assets/organic/thioether.svg)",
+      "back": "Thioether.",
+      "type": "concept",
+      "topic": "Functional-group image recognition",
+      "tags": ["legacy", "functional-groups", "thioether", "sulfur-containing", "recognition", "image-to-name"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "thioether",
+        "pattern": "R-S-R",
+        "representative": "dimethyl sulfide",
+        "formula": "C2H6S",
+        "smiles": "CSC"
+      },
+      "visual_requirements": ["assets/organic/thioether.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-image-recognition-thioether",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-131, 132, and 133; keep because this is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-138",
+      "id": "legacy-organic-chemistry-i-138",
+      "front": "Show the thiol functional group pattern.",
+      "back": "![Thiol](../assets/organic/thiol.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "thiol", "sulfur-containing", "pattern-recall"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "thiol",
+        "pattern": "R-SH",
+        "representative": "methanethiol",
+        "formula": "CH4S",
+        "smiles": "CS"
+      },
+      "visual_requirements": ["assets/organic/thiol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-thiol",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-128, 129, 130, and 136; keep because this asks for visual pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-139",
+      "id": "legacy-organic-chemistry-i-139",
+      "front": "Show the thioether functional group pattern.",
+      "back": "![Thioether](../assets/organic/thioether.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "thioether", "sulfur-containing", "pattern-recall"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "thioether",
+        "pattern": "R-S-R",
+        "representative": "dimethyl sulfide",
+        "formula": "C2H6S",
+        "smiles": "CSC"
+      },
+      "visual_requirements": ["assets/organic/thioether.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-thioether",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-131, 132, 133, and 137; keep because this asks for visual pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-140",
+      "id": "legacy-organic-chemistry-i-140",
+      "front": "A functional group with a carbonyl bonded to hydrogen is what?",
+      "back": "Aldehyde.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "carbonyl", "aldehyde", "recognition", "terminal-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "aldehyde",
+        "pattern": "R-C(=O)-H",
+        "representative": "ethanal",
+        "formula": "C2H4O",
+        "smiles": "CC=O"
+      },
+      "visual_requirements": ["assets/organic/aldehyde.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-carbonyl-bonded-to-hydrogen-aldehyde",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-084, 085, 086, 101, and 107; keep as reverse recognition from feature to group."
+    }
+  ]
+}

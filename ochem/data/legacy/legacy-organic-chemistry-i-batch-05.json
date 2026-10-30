@@ -1,0 +1,431 @@
+{
+  "schema_version": 1,
+  "id": "legacy-organic-chemistry-i-batch-05",
+  "source": {
+    "file": "cards/core/34-organic-chemistry-i.json",
+    "legacy_range": "081-100",
+    "note": "Legacy Organic Chemistry I cards converted into ochem pipeline source records without changing the original question or answer meaning."
+  },
+  "cards": [
+    {
+      "legacy_id": "organic-chemistry-i-081",
+      "id": "legacy-organic-chemistry-i-081",
+      "front": "Show the epoxide functional group pattern.",
+      "back": "![Epoxide](../assets/organic/epoxide.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "epoxide", "pattern-recall", "cyclic-ether", "three-membered-ring"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "epoxide",
+        "pattern": "three-membered cyclic ether",
+        "representative": "oxirane",
+        "formula": "C2H4O",
+        "smiles": "C1CO1"
+      },
+      "visual_requirements": ["assets/organic/epoxide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-epoxide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-069, 070, 071, and 077; keep because this is name-to-pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-082",
+      "id": "legacy-organic-chemistry-i-082",
+      "front": "Show the peroxide functional group pattern.",
+      "back": "![Peroxide](../assets/organic/peroxide.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "peroxide", "pattern-recall", "oxygen-oxygen-bond"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "peroxide",
+        "pattern": "R-O-O-R",
+        "representative": "dimethyl peroxide",
+        "formula": "C2H6O2",
+        "smiles": "COOC"
+      },
+      "visual_requirements": ["assets/organic/peroxide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-peroxide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-072, 073, 074, and 078; keep because this is name-to-pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-083",
+      "id": "legacy-organic-chemistry-i-083",
+      "front": "What is a carbonyl group?",
+      "back": "A carbon double-bonded to oxygen: `C=O`.",
+      "type": "definition",
+      "topic": "Carbonyl functional groups",
+      "tags": ["legacy", "functional-groups", "carbonyl", "oxygen-containing", "double-bonds"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "carbonyl group",
+        "pattern": "C=O",
+        "representative": "formaldehyde carbonyl",
+        "formula": "CH2O",
+        "smiles": "C=O"
+      },
+      "visual_requirements": ["Show a generic carbonyl group, C=O, with the carbon and oxygen clearly labeled."],
+      "decorations_needed": ["manual generic carbonyl asset or C=O highlight"],
+      "explorer_target": "functional-group-definition-carbonyl",
+      "merge_notes": "Overlaps with existing Chapter 3 carbonyl-family inventory; keep because this card defines the carbonyl unit itself."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-084",
+      "id": "legacy-organic-chemistry-i-084",
+      "front": "What is an aldehyde?",
+      "back": "A carbonyl with at least one hydrogen on the carbonyl carbon: `R-C(=O)-H`.",
+      "type": "definition",
+      "topic": "Carbonyl functional groups",
+      "tags": ["legacy", "functional-groups", "carbonyl", "aldehyde", "oxygen-containing", "terminal-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "aldehyde",
+        "pattern": "R-C(=O)-H",
+        "representative": "ethanal",
+        "formula": "C2H4O",
+        "smiles": "CC=O"
+      },
+      "visual_requirements": ["assets/organic/aldehyde.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-aldehyde",
+      "merge_notes": "Related to legacy-organic-chemistry-i-019 and to existing Chapter 3 functional-group inventory; near-duplicate of legacy-organic-chemistry-i-085, 086, 101, 107, and 140; keep because this card states the class definition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-085",
+      "id": "legacy-organic-chemistry-i-085",
+      "front": "What is the characteristic feature of an aldehyde?",
+      "back": "A terminal carbonyl bonded to hydrogen.",
+      "type": "definition",
+      "topic": "Carbonyl functional-group features",
+      "tags": ["legacy", "functional-groups", "carbonyl", "aldehyde", "terminal-carbonyl", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "aldehyde",
+        "pattern": "terminal carbonyl bonded to hydrogen",
+        "representative": "ethanal",
+        "formula": "C2H4O",
+        "smiles": "CC=O"
+      },
+      "visual_requirements": ["assets/organic/aldehyde.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-aldehyde",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-084 and related to legacy-organic-chemistry-i-086, 101, 107, and 140; keep because it preserves the characteristic-feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-086",
+      "id": "legacy-organic-chemistry-i-086",
+      "front": "Which functional group has `R-C(=O)-H`?",
+      "back": "Aldehyde.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "carbonyl", "aldehyde", "recognition", "terminal-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "aldehyde",
+        "pattern": "R-C(=O)-H",
+        "representative": "ethanal",
+        "formula": "C2H4O",
+        "smiles": "CC=O"
+      },
+      "visual_requirements": ["assets/organic/aldehyde.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-r-c-o-h-aldehyde",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-084 and 085, and related to legacy-organic-chemistry-i-101, 107, and 140; keep as reverse recognition from pattern to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-087",
+      "id": "legacy-organic-chemistry-i-087",
+      "front": "What is a ketone?",
+      "back": "A carbonyl carbon bonded to two carbon groups: `R-C(=O)-R`.",
+      "type": "definition",
+      "topic": "Carbonyl functional groups",
+      "tags": ["legacy", "functional-groups", "carbonyl", "ketone", "oxygen-containing"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ketone",
+        "pattern": "R-C(=O)-R",
+        "representative": "propanone",
+        "formula": "C3H6O",
+        "smiles": "CC(=O)C"
+      },
+      "visual_requirements": ["assets/organic/ketone.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-ketone",
+      "merge_notes": "Related to legacy-organic-chemistry-i-020 and existing Chapter 3 functional-group inventory; near-duplicate of legacy-organic-chemistry-i-088, 089, 102, 108, and 141; keep because this card states the class definition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-088",
+      "id": "legacy-organic-chemistry-i-088",
+      "front": "What is the characteristic feature of a ketone?",
+      "back": "A carbonyl in the middle of a carbon chain, bonded to two carbons.",
+      "type": "definition",
+      "topic": "Carbonyl functional-group features",
+      "tags": ["legacy", "functional-groups", "carbonyl", "ketone", "recognition", "internal-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ketone",
+        "pattern": "internal carbonyl bonded to two carbons",
+        "representative": "propanone",
+        "formula": "C3H6O",
+        "smiles": "CC(=O)C"
+      },
+      "visual_requirements": ["assets/organic/ketone.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-ketone",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-087 and related to legacy-organic-chemistry-i-089, 102, 108, and 141; keep because it preserves the middle-of-chain feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-089",
+      "id": "legacy-organic-chemistry-i-089",
+      "front": "Which functional group has `R-C(=O)-R`?",
+      "back": "Ketone.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "carbonyl", "ketone", "recognition", "internal-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ketone",
+        "pattern": "R-C(=O)-R",
+        "representative": "propanone",
+        "formula": "C3H6O",
+        "smiles": "CC(=O)C"
+      },
+      "visual_requirements": ["assets/organic/ketone.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-r-c-o-r-ketone",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-087 and 088, and related to legacy-organic-chemistry-i-102, 108, and 141; keep as reverse recognition from pattern to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-090",
+      "id": "legacy-organic-chemistry-i-090",
+      "front": "What is a carboxylic acid?",
+      "back": "A carbonyl attached to hydroxyl: `R-C(=O)-OH`.",
+      "type": "definition",
+      "topic": "Carbonyl functional groups",
+      "tags": ["legacy", "functional-groups", "carbonyl", "carboxylic-acid", "oxygen-containing", "hydroxyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "carboxylic acid",
+        "pattern": "R-C(=O)-OH",
+        "representative": "ethanoic acid",
+        "formula": "C2H4O2",
+        "smiles": "CC(=O)O"
+      },
+      "visual_requirements": ["assets/organic/carboxylic-acid.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-carboxylic-acid",
+      "merge_notes": "Related to legacy-organic-chemistry-i-021 and existing Chapter 3 functional-group inventory; near-duplicate of legacy-organic-chemistry-i-091, 092, 103, 109, and 142; keep because this card states the class definition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-091",
+      "id": "legacy-organic-chemistry-i-091",
+      "front": "What is the characteristic feature of a carboxylic acid?",
+      "back": "The `-COOH` group.",
+      "type": "definition",
+      "topic": "Carbonyl functional-group features",
+      "tags": ["legacy", "functional-groups", "carbonyl", "carboxylic-acid", "recognition", "cooh"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "carboxylic acid",
+        "pattern": "-COOH",
+        "representative": "ethanoic acid",
+        "formula": "C2H4O2",
+        "smiles": "CC(=O)O"
+      },
+      "visual_requirements": ["assets/organic/carboxylic-acid.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-carboxylic-acid",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-090 and related to legacy-organic-chemistry-i-092, 103, 109, and 142; keep because it preserves the -COOH feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-092",
+      "id": "legacy-organic-chemistry-i-092",
+      "front": "Which functional group has `R-C(=O)-OH`?",
+      "back": "Carboxylic acid.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "carbonyl", "carboxylic-acid", "recognition", "cooh"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "carboxylic acid",
+        "pattern": "R-C(=O)-OH",
+        "representative": "ethanoic acid",
+        "formula": "C2H4O2",
+        "smiles": "CC(=O)O"
+      },
+      "visual_requirements": ["assets/organic/carboxylic-acid.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-r-c-o-oh-carboxylic-acid",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-090 and 091, and related to legacy-organic-chemistry-i-103, 109, and 142; keep as reverse recognition from pattern to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-093",
+      "id": "legacy-organic-chemistry-i-093",
+      "front": "What is an ester?",
+      "back": "A carbonyl attached to an oxygen attached to carbon: `R-C(=O)-O-R`.",
+      "type": "definition",
+      "topic": "Carbonyl functional groups",
+      "tags": ["legacy", "functional-groups", "carbonyl", "ester", "oxygen-containing"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ester",
+        "pattern": "R-C(=O)-O-R",
+        "representative": "methyl ethanoate",
+        "formula": "C3H6O2",
+        "smiles": "CC(=O)OC"
+      },
+      "visual_requirements": ["assets/organic/ester.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-ester",
+      "merge_notes": "Related to legacy-organic-chemistry-i-022 and existing Chapter 3 functional-group inventory; near-duplicate of legacy-organic-chemistry-i-094, 095, 104, 110, and 143; keep because this card states the class definition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-094",
+      "id": "legacy-organic-chemistry-i-094",
+      "front": "What is the characteristic feature of an ester?",
+      "back": "`R-C(=O)-O-R`.",
+      "type": "definition",
+      "topic": "Carbonyl functional-group features",
+      "tags": ["legacy", "functional-groups", "carbonyl", "ester", "recognition", "alkoxy-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ester",
+        "pattern": "R-C(=O)-O-R",
+        "representative": "methyl ethanoate",
+        "formula": "C3H6O2",
+        "smiles": "CC(=O)OC"
+      },
+      "visual_requirements": ["assets/organic/ester.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-ester",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-093 and related to legacy-organic-chemistry-i-095, 104, 110, and 143; keep because it preserves the characteristic-feature prompt."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-095",
+      "id": "legacy-organic-chemistry-i-095",
+      "front": "Which functional group has `R-C(=O)-O-R`?",
+      "back": "Ester.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "carbonyl", "ester", "recognition", "alkoxy-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ester",
+        "pattern": "R-C(=O)-O-R",
+        "representative": "methyl ethanoate",
+        "formula": "C3H6O2",
+        "smiles": "CC(=O)OC"
+      },
+      "visual_requirements": ["assets/organic/ester.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-r-c-o-o-r-ester",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-093 and 094, and related to legacy-organic-chemistry-i-104, 110, and 143; keep as reverse recognition from pattern to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-096",
+      "id": "legacy-organic-chemistry-i-096",
+      "front": "What is an acid chloride?",
+      "back": "A carbonyl attached to chlorine: `R-C(=O)-Cl`.",
+      "type": "definition",
+      "topic": "Carbonyl functional groups",
+      "tags": ["legacy", "functional-groups", "carbonyl", "acid-chloride", "acyl-halide", "chlorine"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "acid chloride",
+        "pattern": "R-C(=O)-Cl",
+        "representative": "ethanoyl chloride",
+        "formula": "C2H3ClO",
+        "smiles": "CC(=O)Cl"
+      },
+      "visual_requirements": ["assets/organic/acid-chloride.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-acid-chloride",
+      "merge_notes": "Related to existing Chapter 3 functional-group inventory and legacy-organic-chemistry-i-097, 105, and 111; keep as the direct acid chloride definition card."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-097",
+      "id": "legacy-organic-chemistry-i-097",
+      "front": "Which functional group has `R-C(=O)-Cl`?",
+      "back": "Acid chloride.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "carbonyl", "acid-chloride", "acyl-halide", "recognition", "chlorine"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "acid chloride",
+        "pattern": "R-C(=O)-Cl",
+        "representative": "ethanoyl chloride",
+        "formula": "C2H3ClO",
+        "smiles": "CC(=O)Cl"
+      },
+      "visual_requirements": ["assets/organic/acid-chloride.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-r-c-o-cl-acid-chloride",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-096 and related to legacy-organic-chemistry-i-105 and 111; keep as reverse recognition from pattern to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-098",
+      "id": "legacy-organic-chemistry-i-098",
+      "front": "What is an amide?",
+      "back": "A carbonyl attached to nitrogen: `R-C(=O)-N`.",
+      "type": "definition",
+      "topic": "Carbonyl functional groups",
+      "tags": ["legacy", "functional-groups", "carbonyl", "amide", "nitrogen-containing"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amide",
+        "pattern": "R-C(=O)-N",
+        "representative": "ethanamide",
+        "formula": "C2H5NO",
+        "smiles": "CC(=O)N"
+      },
+      "visual_requirements": ["assets/organic/amide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-amide",
+      "merge_notes": "Related to legacy-organic-chemistry-i-023 and 040 and existing Chapter 3 functional-group inventory; near-duplicate of legacy-organic-chemistry-i-099, 100, 106, 112, and 144; keep because this card states the class definition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-099",
+      "id": "legacy-organic-chemistry-i-099",
+      "front": "What is the characteristic feature of an amide?",
+      "back": "A carbonyl directly bonded to nitrogen.",
+      "type": "definition",
+      "topic": "Carbonyl functional-group features",
+      "tags": ["legacy", "functional-groups", "carbonyl", "amide", "nitrogen-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amide",
+        "pattern": "carbonyl directly bonded to nitrogen",
+        "representative": "ethanamide",
+        "formula": "C2H5NO",
+        "smiles": "CC(=O)N"
+      },
+      "visual_requirements": ["assets/organic/amide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-amide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-098 and related to legacy-organic-chemistry-i-100, 106, 112, and 144; keep because it preserves the characteristic-feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-100",
+      "id": "legacy-organic-chemistry-i-100",
+      "front": "Which functional group has a carbonyl directly bonded to nitrogen?",
+      "back": "Amide.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "carbonyl", "amide", "nitrogen-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amide",
+        "pattern": "carbonyl directly bonded to nitrogen",
+        "representative": "ethanamide",
+        "formula": "C2H5NO",
+        "smiles": "CC(=O)N"
+      },
+      "visual_requirements": ["assets/organic/amide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-carbonyl-nitrogen-amide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-098 and 099, and related to legacy-organic-chemistry-i-106, 112, and 144; keep as reverse recognition from feature to group."
+    }
+  ]
+}

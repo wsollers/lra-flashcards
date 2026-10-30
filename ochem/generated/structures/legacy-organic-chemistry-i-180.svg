@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="280" viewBox="0 0 520 280" role="img" aria-label="Disubstituted cyclohexane axial/equatorial relationships">
+  <rect width="520" height="280" rx="12" fill="#ffffff"/>
+  <line x1="245" y1="140" x2="365" y2="140" stroke="#334155" stroke-width="8" stroke-linecap="round"/>
+  <line x1="245" y1="140" x2="160" y2="74" stroke="#94a3b8" stroke-width="5" stroke-linecap="round"/>
+  <line x1="245" y1="140" x2="160" y2="206" stroke="#94a3b8" stroke-width="5" stroke-linecap="round"/>
+  <line x1="245" y1="140" x2="220" y2="230" stroke="#94a3b8" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="245" cy="140" r="32" fill="#111827"/>
+  <circle cx="365" cy="140" r="42" fill="#22c55e"/>
+  <circle cx="160" cy="74" r="20" fill="#e5e7eb" stroke="#94a3b8"/>
+  <circle cx="160" cy="206" r="20" fill="#e5e7eb" stroke="#94a3b8"/>
+  <circle cx="220" cy="230" r="20" fill="#e5e7eb" stroke="#94a3b8"/>
+  <text x="245" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">C</text>
+  <text x="365" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#052e16">Cl</text>
+  <text x="160" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#334155">H</text>
+  <text x="160" y="214" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#334155">H</text>
+  <text x="220" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#334155">H</text>
+  <text x="245" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#dc2626">δ+</text>
+  <text x="365" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#2563eb">δ−</text>
+  <path d="M272 56 H350" stroke="#7c3aed" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="311" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#4c1d95">dipole</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+</svg>

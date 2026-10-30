@@ -1,0 +1,431 @@
+{
+  "schema_version": 1,
+  "id": "legacy-organic-chemistry-i-batch-03",
+  "source": {
+    "file": "cards/core/34-organic-chemistry-i.json",
+    "legacy_range": "041-060",
+    "note": "Legacy Organic Chemistry I cards converted into ochem pipeline source records without changing the original question or answer meaning."
+  },
+  "cards": [
+    {
+      "legacy_id": "organic-chemistry-i-041",
+      "id": "legacy-organic-chemistry-i-041",
+      "front": "What does `sec-` suggest?",
+      "back": "Attachment through a secondary carbon.",
+      "type": "concept",
+      "topic": "Common substituent prefixes",
+      "tags": ["legacy", "nomenclature", "prefixes", "substituents", "common-names", "sec", "alkyl-groups"],
+      "chapter_guess": "3.3 Alkyl Groups",
+      "molecule": {
+        "name": "sec-butyl",
+        "pattern": "R attached through a secondary carbon",
+        "representative": "sec-butyl group",
+        "formula": "C4H9",
+        "smiles": "CCC(C)"
+      },
+      "visual_requirements": ["Show an alkyl substituent attachment point on a secondary carbon, such as sec-butyl."],
+      "decorations_needed": ["manual secondary-carbon attachment highlight"],
+      "explorer_target": "common-prefix-sec-secondary-attachment",
+      "merge_notes": "Overlaps with existing Chapter 3 alkyl-group source records where sec- and tert- describe attachment through secondary and tertiary carbons; keep as concise legacy prefix recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-042",
+      "id": "legacy-organic-chemistry-i-042",
+      "front": "What does `neo-` suggest in common names?",
+      "back": "A highly branched neopentyl-like pattern.",
+      "type": "concept",
+      "topic": "Common substituent prefixes",
+      "tags": ["legacy", "nomenclature", "prefixes", "substituents", "common-names", "neo", "branching"],
+      "chapter_guess": "3.3 Alkyl Groups",
+      "molecule": {
+        "name": "neopentyl-like pattern",
+        "pattern": "(CH3)3C-CH2-",
+        "representative": "neopentyl group",
+        "formula": "C5H11",
+        "smiles": "CC(C)(C)C"
+      },
+      "visual_requirements": ["Show a neopentyl-like highly branched carbon skeleton with the branching center emphasized."],
+      "decorations_needed": ["manual branched-pattern highlight"],
+      "explorer_target": "common-prefix-neo-neopentyl-pattern",
+      "merge_notes": "Related to existing Chapter 3 common alkyl-name coverage but no exact neo-prefix card found; keep as legacy common-name cue."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-043",
+      "id": "legacy-organic-chemistry-i-043",
+      "front": "What is an alkane?",
+      "back": "A hydrocarbon with only single carbon-carbon bonds; suffix `-ane`.",
+      "type": "definition",
+      "topic": "Hydrocarbon functional groups",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkane", "single-bonds", "suffixes"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkane",
+        "pattern": "C-C single bonds only",
+        "representative": "ethane",
+        "formula": "C2H6",
+        "smiles": "CC"
+      },
+      "visual_requirements": ["assets/organic/alkane.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-alkane",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-015, which asks for the suffix indicating an alkane, and related to legacy-organic-chemistry-i-047, 051, 055, and 059; keep because this card combines class definition and suffix."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-044",
+      "id": "legacy-organic-chemistry-i-044",
+      "front": "What is an alkene?",
+      "back": "A hydrocarbon containing a carbon-carbon double bond; suffix `-ene`.",
+      "type": "definition",
+      "topic": "Hydrocarbon functional groups",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkene", "double-bonds", "suffixes", "unsaturation"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkene",
+        "pattern": "C=C",
+        "representative": "ethene",
+        "formula": "C2H4",
+        "smiles": "C=C"
+      },
+      "visual_requirements": ["assets/organic/alkene.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-alkene",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-016 and legacy-organic-chemistry-i-032, and related to legacy-organic-chemistry-i-048, 052, 056, and 060; keep because this card states the class definition and suffix together."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-045",
+      "id": "legacy-organic-chemistry-i-045",
+      "front": "What is an alkyne?",
+      "back": "A hydrocarbon containing a carbon-carbon triple bond; suffix `-yne`.",
+      "type": "definition",
+      "topic": "Hydrocarbon functional groups",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkyne", "triple-bonds", "suffixes", "unsaturation"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkyne",
+        "pattern": "C#C",
+        "representative": "ethyne",
+        "formula": "C2H2",
+        "smiles": "C#C"
+      },
+      "visual_requirements": ["assets/organic/alkyne.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-alkyne",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-017 and legacy-organic-chemistry-i-031, and related to legacy-organic-chemistry-i-049, 053, and 057; keep because this card states the class definition and suffix together."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-046",
+      "id": "legacy-organic-chemistry-i-046",
+      "front": "What is an arene?",
+      "back": "An aromatic ring system, commonly benzene-like.",
+      "type": "definition",
+      "topic": "Hydrocarbon functional groups",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "arene", "aromaticity", "benzene"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "arene",
+        "pattern": "aromatic ring",
+        "representative": "benzene",
+        "formula": "C6H6",
+        "smiles": "c1ccccc1"
+      },
+      "visual_requirements": ["assets/organic/arene.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-arene",
+      "merge_notes": "Related to existing Chapter 3 functional-group inventory and to legacy-organic-chemistry-i-050, 054, and 058; keep as the direct arene definition card."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-047",
+      "id": "legacy-organic-chemistry-i-047",
+      "front": "What is the characteristic feature of an alkane?",
+      "back": "Saturated C-C single bonds.",
+      "type": "definition",
+      "topic": "Hydrocarbon functional-group features",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkane", "single-bonds", "saturation"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkane",
+        "pattern": "saturated C-C single bonds",
+        "representative": "ethane",
+        "formula": "C2H6",
+        "smiles": "CC"
+      },
+      "visual_requirements": ["assets/organic/alkane.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-alkane",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-043 and related to legacy-organic-chemistry-i-051, 055, and 059; keep because it preserves the characteristic-feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-048",
+      "id": "legacy-organic-chemistry-i-048",
+      "front": "What is the characteristic feature of an alkene?",
+      "back": "A C=C double bond.",
+      "type": "definition",
+      "topic": "Hydrocarbon functional-group features",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkene", "double-bonds", "unsaturation"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkene",
+        "pattern": "C=C",
+        "representative": "ethene",
+        "formula": "C2H4",
+        "smiles": "C=C"
+      },
+      "visual_requirements": ["assets/organic/alkene.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-alkene",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-044 and legacy-organic-chemistry-i-032, and related to legacy-organic-chemistry-i-052, 056, and 060; keep because it preserves the characteristic-feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-049",
+      "id": "legacy-organic-chemistry-i-049",
+      "front": "What is the characteristic feature of an alkyne?",
+      "back": "A C≡C triple bond.",
+      "type": "definition",
+      "topic": "Hydrocarbon functional-group features",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkyne", "triple-bonds", "unsaturation"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkyne",
+        "pattern": "C#C",
+        "representative": "ethyne",
+        "formula": "C2H2",
+        "smiles": "C#C"
+      },
+      "visual_requirements": ["assets/organic/alkyne.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-alkyne",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-045 and legacy-organic-chemistry-i-031, and related to legacy-organic-chemistry-i-053 and 057; keep because it preserves the characteristic-feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-050",
+      "id": "legacy-organic-chemistry-i-050",
+      "front": "What is the characteristic feature of an arene?",
+      "back": "An aromatic ring with delocalized pi electrons.",
+      "type": "definition",
+      "topic": "Hydrocarbon functional-group features",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "arene", "aromaticity", "benzene", "pi-electrons"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "arene",
+        "pattern": "aromatic ring with delocalized pi electrons",
+        "representative": "benzene",
+        "formula": "C6H6",
+        "smiles": "c1ccccc1"
+      },
+      "visual_requirements": ["assets/organic/arene.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-arene",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-046 and related to legacy-organic-chemistry-i-054 and 058; keep because it preserves the delocalized-pi-electron cue."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-051",
+      "id": "legacy-organic-chemistry-i-051",
+      "front": "Which functional group has only C-C single bonds?",
+      "back": "Alkane.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkane", "single-bonds", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkane",
+        "pattern": "C-C single bonds only",
+        "representative": "ethane",
+        "formula": "C2H6",
+        "smiles": "CC"
+      },
+      "visual_requirements": ["assets/organic/alkane.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-single-bonds-alkane",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-043 and 047, and related to legacy-organic-chemistry-i-055 and 059; keep as reverse recognition from feature to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-052",
+      "id": "legacy-organic-chemistry-i-052",
+      "front": "Which functional group has a C=C double bond?",
+      "back": "Alkene.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkene", "double-bonds", "recognition", "unsaturation"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkene",
+        "pattern": "C=C",
+        "representative": "ethene",
+        "formula": "C2H4",
+        "smiles": "C=C"
+      },
+      "visual_requirements": ["assets/organic/alkene.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-double-bond-alkene",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-044, 048, and 032, and related to legacy-organic-chemistry-i-056 and 060; keep as reverse recognition from feature to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-053",
+      "id": "legacy-organic-chemistry-i-053",
+      "front": "Which functional group has a C≡C triple bond?",
+      "back": "Alkyne.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkyne", "triple-bonds", "recognition", "unsaturation"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkyne",
+        "pattern": "C#C",
+        "representative": "ethyne",
+        "formula": "C2H2",
+        "smiles": "C#C"
+      },
+      "visual_requirements": ["assets/organic/alkyne.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-triple-bond-alkyne",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-045, 049, and 031, and related to legacy-organic-chemistry-i-057; keep as reverse recognition from feature to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-054",
+      "id": "legacy-organic-chemistry-i-054",
+      "front": "Which functional group is benzene-like and aromatic?",
+      "back": "Arene.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "arene", "aromaticity", "benzene", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "arene",
+        "pattern": "benzene-like aromatic ring",
+        "representative": "benzene",
+        "formula": "C6H6",
+        "smiles": "c1ccccc1"
+      },
+      "visual_requirements": ["assets/organic/arene.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-benzene-like-arene",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-046 and 050, and related to legacy-organic-chemistry-i-058; keep as reverse recognition from feature to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-055",
+      "id": "legacy-organic-chemistry-i-055",
+      "front": "What functional group is shown? ![Alkane](../assets/organic/alkane.svg)",
+      "back": "Alkane.",
+      "type": "concept",
+      "topic": "Functional-group visual recognition",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkane", "visual-recognition", "single-bonds"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkane",
+        "pattern": "C-C single bonds only",
+        "representative": "ethane",
+        "formula": "C2H6",
+        "smiles": "CC"
+      },
+      "visual_requirements": ["assets/organic/alkane.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-visual-recognition-alkane",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-043, 047, 051, and 059; keep because the prompt is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-056",
+      "id": "legacy-organic-chemistry-i-056",
+      "front": "What functional group is shown? ![Alkene](../assets/organic/alkene.svg)",
+      "back": "Alkene.",
+      "type": "concept",
+      "topic": "Functional-group visual recognition",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkene", "visual-recognition", "double-bonds", "unsaturation"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkene",
+        "pattern": "C=C",
+        "representative": "ethene",
+        "formula": "C2H4",
+        "smiles": "C=C"
+      },
+      "visual_requirements": ["assets/organic/alkene.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-visual-recognition-alkene",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-044, 048, 052, and 060; keep because the prompt is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-057",
+      "id": "legacy-organic-chemistry-i-057",
+      "front": "What functional group is shown? ![Alkyne](../assets/organic/alkyne.svg)",
+      "back": "Alkyne.",
+      "type": "concept",
+      "topic": "Functional-group visual recognition",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkyne", "visual-recognition", "triple-bonds", "unsaturation"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkyne",
+        "pattern": "C#C",
+        "representative": "ethyne",
+        "formula": "C2H2",
+        "smiles": "C#C"
+      },
+      "visual_requirements": ["assets/organic/alkyne.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-visual-recognition-alkyne",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-045, 049, and 053; keep because the prompt is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-058",
+      "id": "legacy-organic-chemistry-i-058",
+      "front": "What functional group is shown? ![Arene](../assets/organic/arene.svg)",
+      "back": "Arene.",
+      "type": "concept",
+      "topic": "Functional-group visual recognition",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "arene", "visual-recognition", "aromaticity", "benzene"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "arene",
+        "pattern": "aromatic ring",
+        "representative": "benzene",
+        "formula": "C6H6",
+        "smiles": "c1ccccc1"
+      },
+      "visual_requirements": ["assets/organic/arene.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-visual-recognition-arene",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-046, 050, and 054; keep because the prompt is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-059",
+      "id": "legacy-organic-chemistry-i-059",
+      "front": "Show the alkane functional group pattern.",
+      "back": "![Alkane](../assets/organic/alkane.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkane", "pattern-recall", "single-bonds"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkane",
+        "pattern": "C-C single bonds only",
+        "representative": "ethane",
+        "formula": "C2H6",
+        "smiles": "CC"
+      },
+      "visual_requirements": ["assets/organic/alkane.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-alkane",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-043, 047, 051, and 055; keep because this is name-to-pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-060",
+      "id": "legacy-organic-chemistry-i-060",
+      "front": "Show the alkene functional group pattern.",
+      "back": "![Alkene](../assets/organic/alkene.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkene", "pattern-recall", "double-bonds", "unsaturation"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkene",
+        "pattern": "C=C",
+        "representative": "ethene",
+        "formula": "C2H4",
+        "smiles": "C=C"
+      },
+      "visual_requirements": ["assets/organic/alkene.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-alkene",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-044, 048, 052, and 056; keep because this is name-to-pattern recall."
+    }
+  ]
+}

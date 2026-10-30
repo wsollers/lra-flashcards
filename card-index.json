@@ -62,6 +62,12 @@
       "file": "cards/core/34-organic-chemistry-i.json"
     },
     {
+      "id": "ochem-openstax-chapters-1-4",
+      "title": "Organic Chemistry Explorer — OpenStax Chapters 1-4",
+      "track": "ochem",
+      "file": "ochem/generated/cards.json"
+    },
+    {
       "id": "lean-core",
       "title": "Lean Core — Declarations, Types, Tactics, Modeling",
       "track": "lean",

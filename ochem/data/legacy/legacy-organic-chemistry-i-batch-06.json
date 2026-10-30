@@ -1,0 +1,431 @@
+{
+  "schema_version": 1,
+  "id": "legacy-organic-chemistry-i-batch-06",
+  "source": {
+    "file": "cards/core/34-organic-chemistry-i.json",
+    "legacy_range": "101-120",
+    "note": "Legacy Organic Chemistry I cards converted into ochem pipeline source records without changing the original question or answer meaning."
+  },
+  "cards": [
+    {
+      "legacy_id": "organic-chemistry-i-101",
+      "id": "legacy-organic-chemistry-i-101",
+      "front": "What functional group is shown? ![Aldehyde](../assets/organic/aldehyde.svg)",
+      "back": "Aldehyde.",
+      "type": "concept",
+      "topic": "Functional-group image recognition",
+      "tags": ["legacy", "functional-groups", "carbonyl", "aldehyde", "recognition", "image-to-name", "terminal-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "aldehyde",
+        "pattern": "R-C(=O)-H",
+        "representative": "ethanal",
+        "formula": "C2H4O",
+        "smiles": "CC=O"
+      },
+      "visual_requirements": ["assets/organic/aldehyde.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-image-recognition-aldehyde",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-084, 085, 086, and 107; keep because this is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-102",
+      "id": "legacy-organic-chemistry-i-102",
+      "front": "What functional group is shown? ![Ketone](../assets/organic/ketone.svg)",
+      "back": "Ketone.",
+      "type": "concept",
+      "topic": "Functional-group image recognition",
+      "tags": ["legacy", "functional-groups", "carbonyl", "ketone", "recognition", "image-to-name", "internal-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ketone",
+        "pattern": "R-C(=O)-R",
+        "representative": "propanone",
+        "formula": "C3H6O",
+        "smiles": "CC(=O)C"
+      },
+      "visual_requirements": ["assets/organic/ketone.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-image-recognition-ketone",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-087, 088, 089, and 108; keep because this is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-103",
+      "id": "legacy-organic-chemistry-i-103",
+      "front": "What functional group is shown? ![Carboxylic acid](../assets/organic/carboxylic-acid.svg)",
+      "back": "Carboxylic acid.",
+      "type": "concept",
+      "topic": "Functional-group image recognition",
+      "tags": ["legacy", "functional-groups", "carbonyl", "carboxylic-acid", "recognition", "image-to-name", "cooh"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "carboxylic acid",
+        "pattern": "R-C(=O)-OH",
+        "representative": "ethanoic acid",
+        "formula": "C2H4O2",
+        "smiles": "CC(=O)O"
+      },
+      "visual_requirements": ["assets/organic/carboxylic-acid.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-image-recognition-carboxylic-acid",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-090, 091, 092, and 109; keep because this is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-104",
+      "id": "legacy-organic-chemistry-i-104",
+      "front": "What functional group is shown? ![Ester](../assets/organic/ester.svg)",
+      "back": "Ester.",
+      "type": "concept",
+      "topic": "Functional-group image recognition",
+      "tags": ["legacy", "functional-groups", "carbonyl", "ester", "recognition", "image-to-name", "alkoxy-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ester",
+        "pattern": "R-C(=O)-O-R",
+        "representative": "methyl ethanoate",
+        "formula": "C3H6O2",
+        "smiles": "CC(=O)OC"
+      },
+      "visual_requirements": ["assets/organic/ester.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-image-recognition-ester",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-093, 094, 095, and 110; keep because this is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-105",
+      "id": "legacy-organic-chemistry-i-105",
+      "front": "What functional group is shown? ![Acid chloride](../assets/organic/acid-chloride.svg)",
+      "back": "Acid chloride.",
+      "type": "concept",
+      "topic": "Functional-group image recognition",
+      "tags": ["legacy", "functional-groups", "carbonyl", "acid-chloride", "acyl-halide", "recognition", "image-to-name", "chlorine"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "acid chloride",
+        "pattern": "R-C(=O)-Cl",
+        "representative": "ethanoyl chloride",
+        "formula": "C2H3ClO",
+        "smiles": "CC(=O)Cl"
+      },
+      "visual_requirements": ["assets/organic/acid-chloride.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-image-recognition-acid-chloride",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-096, 097, and 111; keep because this is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-106",
+      "id": "legacy-organic-chemistry-i-106",
+      "front": "What functional group is shown? ![Amide](../assets/organic/amide.svg)",
+      "back": "Amide.",
+      "type": "concept",
+      "topic": "Functional-group image recognition",
+      "tags": ["legacy", "functional-groups", "carbonyl", "amide", "nitrogen-containing", "recognition", "image-to-name"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amide",
+        "pattern": "R-C(=O)-N",
+        "representative": "ethanamide",
+        "formula": "C2H5NO",
+        "smiles": "CC(=O)N"
+      },
+      "visual_requirements": ["assets/organic/amide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-image-recognition-amide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-098, 099, 100, and 112; keep because this is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-107",
+      "id": "legacy-organic-chemistry-i-107",
+      "front": "Show the aldehyde functional group pattern.",
+      "back": "![Aldehyde](../assets/organic/aldehyde.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "carbonyl", "aldehyde", "pattern-recall", "terminal-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "aldehyde",
+        "pattern": "R-C(=O)-H",
+        "representative": "ethanal",
+        "formula": "C2H4O",
+        "smiles": "CC=O"
+      },
+      "visual_requirements": ["assets/organic/aldehyde.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-aldehyde",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-084, 085, 086, and 101; keep because this is name-to-pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-108",
+      "id": "legacy-organic-chemistry-i-108",
+      "front": "Show the ketone functional group pattern.",
+      "back": "![Ketone](../assets/organic/ketone.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "carbonyl", "ketone", "pattern-recall", "internal-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ketone",
+        "pattern": "R-C(=O)-R",
+        "representative": "propanone",
+        "formula": "C3H6O",
+        "smiles": "CC(=O)C"
+      },
+      "visual_requirements": ["assets/organic/ketone.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-ketone",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-087, 088, 089, and 102; keep because this is name-to-pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-109",
+      "id": "legacy-organic-chemistry-i-109",
+      "front": "Show the carboxylic acid functional group pattern.",
+      "back": "![Carboxylic acid](../assets/organic/carboxylic-acid.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "carbonyl", "carboxylic-acid", "pattern-recall", "cooh"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "carboxylic acid",
+        "pattern": "R-C(=O)-OH",
+        "representative": "ethanoic acid",
+        "formula": "C2H4O2",
+        "smiles": "CC(=O)O"
+      },
+      "visual_requirements": ["assets/organic/carboxylic-acid.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-carboxylic-acid",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-090, 091, 092, and 103; keep because this is name-to-pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-110",
+      "id": "legacy-organic-chemistry-i-110",
+      "front": "Show the ester functional group pattern.",
+      "back": "![Ester](../assets/organic/ester.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "carbonyl", "ester", "pattern-recall", "alkoxy-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ester",
+        "pattern": "R-C(=O)-O-R",
+        "representative": "methyl ethanoate",
+        "formula": "C3H6O2",
+        "smiles": "CC(=O)OC"
+      },
+      "visual_requirements": ["assets/organic/ester.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-ester",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-093, 094, 095, and 104; keep because this is name-to-pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-111",
+      "id": "legacy-organic-chemistry-i-111",
+      "front": "Show the acid chloride functional group pattern.",
+      "back": "![Acid chloride](../assets/organic/acid-chloride.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "carbonyl", "acid-chloride", "acyl-halide", "pattern-recall", "chlorine"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "acid chloride",
+        "pattern": "R-C(=O)-Cl",
+        "representative": "ethanoyl chloride",
+        "formula": "C2H3ClO",
+        "smiles": "CC(=O)Cl"
+      },
+      "visual_requirements": ["assets/organic/acid-chloride.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-acid-chloride",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-096, 097, and 105; keep because this is name-to-pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-112",
+      "id": "legacy-organic-chemistry-i-112",
+      "front": "Show the amide functional group pattern.",
+      "back": "![Amide](../assets/organic/amide.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "carbonyl", "amide", "nitrogen-containing", "pattern-recall"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amide",
+        "pattern": "R-C(=O)-N",
+        "representative": "ethanamide",
+        "formula": "C2H5NO",
+        "smiles": "CC(=O)N"
+      },
+      "visual_requirements": ["assets/organic/amide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-amide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-098, 099, 100, and 106; keep because this is name-to-pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-113",
+      "id": "legacy-organic-chemistry-i-113",
+      "front": "What is an amine?",
+      "back": "A nitrogen-containing group related to ammonia, often `R-NH2`, `R2NH`, or `R3N`.",
+      "type": "definition",
+      "topic": "Nitrogen-containing functional groups",
+      "tags": ["legacy", "functional-groups", "amine", "nitrogen-containing", "ammonia-derivative", "definition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amine",
+        "pattern": "R-NH2, R2NH, or R3N",
+        "representative": "methylamine",
+        "formula": "CH5N",
+        "smiles": "CN"
+      },
+      "visual_requirements": ["assets/organic/amine.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-amine",
+      "merge_notes": "Related to nitrogen-containing functional-group inventory cards; keep because this card defines amines as ammonia-related groups."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-114",
+      "id": "legacy-organic-chemistry-i-114",
+      "front": "What is the characteristic feature of an amine?",
+      "back": "Nitrogen single-bonded to carbon and/or hydrogen, without an adjacent carbonyl.",
+      "type": "definition",
+      "topic": "Nitrogen-containing functional-group features",
+      "tags": ["legacy", "functional-groups", "amine", "nitrogen-containing", "recognition", "no-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amine",
+        "pattern": "nitrogen single-bonded to carbon and/or hydrogen, without an adjacent carbonyl",
+        "representative": "methylamine",
+        "formula": "CH5N",
+        "smiles": "CN"
+      },
+      "visual_requirements": ["assets/organic/amine.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-amine",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-113 and 115; keep because it preserves the characteristic-feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-115",
+      "id": "legacy-organic-chemistry-i-115",
+      "front": "Which functional group has nitrogen single-bonded to carbon groups but no carbonyl?",
+      "back": "Amine.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "amine", "nitrogen-containing", "recognition", "no-carbonyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amine",
+        "pattern": "nitrogen single-bonded to carbon groups, no carbonyl",
+        "representative": "methylamine",
+        "formula": "CH5N",
+        "smiles": "CN"
+      },
+      "visual_requirements": ["assets/organic/amine.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-no-carbonyl-amine",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-113 and 114; keep as reverse recognition from feature to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-116",
+      "id": "legacy-organic-chemistry-i-116",
+      "front": "What is a nitrile?",
+      "back": "A carbon triple-bonded to nitrogen: `R-C≡N`.",
+      "type": "definition",
+      "topic": "Nitrogen-containing functional groups",
+      "tags": ["legacy", "functional-groups", "nitrile", "nitrogen-containing", "triple-bond", "definition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "nitrile",
+        "pattern": "R-C≡N",
+        "representative": "ethanenitrile",
+        "formula": "C2H3N",
+        "smiles": "CC#N"
+      },
+      "visual_requirements": ["assets/organic/nitrile.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-nitrile",
+      "merge_notes": "Related to legacy-organic-chemistry-i-117 and 118; keep because this card states the class definition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-117",
+      "id": "legacy-organic-chemistry-i-117",
+      "front": "What is the characteristic feature of a nitrile?",
+      "back": "A `C≡N` triple bond.",
+      "type": "definition",
+      "topic": "Nitrogen-containing functional-group features",
+      "tags": ["legacy", "functional-groups", "nitrile", "nitrogen-containing", "triple-bond", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "nitrile",
+        "pattern": "C≡N triple bond",
+        "representative": "ethanenitrile",
+        "formula": "C2H3N",
+        "smiles": "CC#N"
+      },
+      "visual_requirements": ["assets/organic/nitrile.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-nitrile",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-116 and related to legacy-organic-chemistry-i-118; keep because it preserves the characteristic-feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-118",
+      "id": "legacy-organic-chemistry-i-118",
+      "front": "Which functional group has `R-C≡N`?",
+      "back": "Nitrile.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "nitrile", "nitrogen-containing", "triple-bond", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "nitrile",
+        "pattern": "R-C≡N",
+        "representative": "ethanenitrile",
+        "formula": "C2H3N",
+        "smiles": "CC#N"
+      },
+      "visual_requirements": ["assets/organic/nitrile.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-r-c-n-nitrile",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-116 and 117; keep as reverse recognition from pattern to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-119",
+      "id": "legacy-organic-chemistry-i-119",
+      "front": "What is an azide?",
+      "back": "A group with three nitrogens, commonly written `R-N3`.",
+      "type": "definition",
+      "topic": "Nitrogen-containing functional groups",
+      "tags": ["legacy", "functional-groups", "azide", "nitrogen-containing", "definition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "azide",
+        "pattern": "R-N3",
+        "representative": "methyl azide",
+        "formula": "CH3N3",
+        "smiles": "CN=[N+]=[N-]"
+      },
+      "visual_requirements": ["Create or add an azide functional-group visual showing the R-N3 pattern."],
+      "decorations_needed": ["manual azide asset or generated structure visual"],
+      "explorer_target": "functional-group-definition-azide",
+      "merge_notes": "Related to legacy-organic-chemistry-i-120; no existing assets/organic azide SVG was present, so keep as a source record needing decoration."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-120",
+      "id": "legacy-organic-chemistry-i-120",
+      "front": "What is the characteristic feature of an azide?",
+      "back": "The `N3` group.",
+      "type": "definition",
+      "topic": "Nitrogen-containing functional-group features",
+      "tags": ["legacy", "functional-groups", "azide", "nitrogen-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "azide",
+        "pattern": "N3 group",
+        "representative": "methyl azide",
+        "formula": "CH3N3",
+        "smiles": "CN=[N+]=[N-]"
+      },
+      "visual_requirements": ["Create or add an azide functional-group visual showing the N3 group."],
+      "decorations_needed": ["manual azide asset or generated structure visual"],
+      "explorer_target": "functional-group-feature-azide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-119; keep because it preserves the characteristic-feature wording."
+    }
+  ]
+}

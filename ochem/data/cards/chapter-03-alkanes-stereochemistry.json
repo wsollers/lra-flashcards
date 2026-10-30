@@ -1,0 +1,788 @@
+{
+  "id": "openstax-organic-chemistry-3-alkanes-stereochemistry",
+  "source": {
+    "textbook": "OpenStax Organic Chemistry",
+    "chapter": 3,
+    "title": "Organic Compounds: Alkanes and Their Stereochemistry",
+    "sections": ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7"],
+    "pdf_path": "C:/Users/wsoll/Downloads/organic-chemistry_-_WEB.pdf",
+    "pdf_page_range_checked": "89-123",
+    "copyright_handling": "Facts are paraphrased into original source records; no long textbook passages are copied."
+  },
+  "pipeline_notes": {
+    "status": "source_records_for_explorer",
+    "intended_use": "Generate visual-first micro-problem flashcards for the organic chemistry explorer.",
+    "schema_note": "This worktree did not contain the referenced ochem schema, so this file is self-contained and section-scoped.",
+    "avoid_simple_deck_duplication": "The existing Organic Chemistry I deck already covers broad prefix and functional-group recall. These records emphasize richer structure recognition, naming decisions, and conformational reasoning."
+  },
+  "learning_goals": [
+    "Recognize common organic functional groups from patterns and examples.",
+    "Classify alkanes as saturated hydrocarbons and use CnH2n+2 for acyclic alkanes.",
+    "Distinguish constitutional isomers from alternate drawings of the same compound.",
+    "Name straight-chain and branched alkanes using parent chains, locants, substituents, and suffixes.",
+    "Recognize alkyl groups and classify carbons and hydrogens as primary, secondary, tertiary, or quaternary where applicable.",
+    "Relate alkane physical properties to molecular size, branching, and dispersion forces.",
+    "Interpret sawhorse and Newman projections for ethane, propane, butane, and substituted alkanes.",
+    "Compare staggered, eclipsed, anti, and gauche conformations using torsional and steric strain."
+  ],
+  "global_visual_requirements": [
+    {
+      "id": "vr-global-2d-skeletal",
+      "kind": "2d_skeletal_structure",
+      "purpose": "Render line-bond, condensed, and partially expanded structures for naming and isomer recognition.",
+      "requirements": [
+        "Support straight-chain, branched-chain, and substituent-highlighted alkane structures.",
+        "Allow atom or bond highlighting for parent-chain selection, branch points, and functional groups.",
+        "Include optional condensed formula labels only when the card asks for formula reasoning."
+      ]
+    },
+    {
+      "id": "vr-global-3d-rotatable",
+      "kind": "rotatable_3d_model",
+      "purpose": "Show free rotation around sigma bonds and let learners inspect conformers.",
+      "requirements": [
+        "Provide an axis marker for the C-C bond being viewed.",
+        "Support front/back carbon coloring that matches Newman projections.",
+        "Expose dihedral angle readout in degrees for conformation cards."
+      ]
+    },
+    {
+      "id": "vr-global-newman",
+      "kind": "newman_projection",
+      "purpose": "Generate Newman projections from a chosen viewing bond.",
+      "requirements": [
+        "Draw front-carbon bonds to the center and rear-carbon bonds to the circle edge.",
+        "Support staggered, eclipsed, anti, and gauche placements.",
+        "Allow substituent labels such as H, CH3, Cl, Br, Et, and generic R."
+      ]
+    },
+    {
+      "id": "vr-global-energy-diagram",
+      "kind": "conformation_energy_diagram",
+      "purpose": "Plot relative potential energy versus dihedral angle.",
+      "requirements": [
+        "Label 0, 60, 120, 180, 240, 300, and 360 degrees when relevant.",
+        "Mark staggered minima and eclipsed maxima.",
+        "Support quantitative annotations in kJ/mol and kcal/mol."
+      ]
+    },
+    {
+      "id": "vr-global-alkyl-templates",
+      "kind": "alkyl_group_template",
+      "purpose": "Render named alkyl substituents and their attachment points.",
+      "requirements": [
+        "Mark the free valence or attachment atom clearly.",
+        "Include common and systematic names where both are useful.",
+        "Differentiate primary, secondary, tertiary, and quaternary carbon environments visually."
+      ]
+    },
+    {
+      "id": "vr-global-functional-groups",
+      "kind": "functional_group_image",
+      "purpose": "Render generic functional group patterns and concrete molecule examples.",
+      "requirements": [
+        "Use R groups for generic patterns and real atoms for examples.",
+        "Highlight the atoms defining the functional group.",
+        "Support multiple functional groups in one molecule without ambiguous colors."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section": "3.1",
+      "title": "Functional Groups",
+      "facts": [
+        {
+          "id": "3-1-fact-001",
+          "statement": "A functional group is a recurring atom pattern inside a molecule that largely determines a family of chemical behavior.",
+          "tags": ["definition", "classification"]
+        },
+        {
+          "id": "3-1-fact-002",
+          "statement": "Molecules with the same functional group often react in related ways even when the rest of the molecule is very different.",
+          "tags": ["reactivity", "transfer"]
+        },
+        {
+          "id": "3-1-fact-003",
+          "statement": "Alkenes contain a carbon-carbon double bond; alkynes contain a carbon-carbon triple bond; arenes contain aromatic carbon-carbon bonding in a ring.",
+          "tags": ["multiple_bonds", "recognition"]
+        },
+        {
+          "id": "3-1-fact-004",
+          "statement": "Alkyl halides, alcohols, ethers, phosphates, amines, thiols, sulfides, and disulfides feature carbon singly bonded to an electronegative atom.",
+          "tags": ["heteroatom", "polarity"]
+        },
+        {
+          "id": "3-1-fact-005",
+          "statement": "A carbonyl group is a C=O unit. Aldehydes, ketones, carboxylic acids, esters, thioesters, amides, acid chlorides, and anhydrides differ by what is attached to the carbonyl carbon.",
+          "tags": ["carbonyl", "family_comparison"]
+        },
+        {
+          "id": "3-1-fact-006",
+          "statement": "In carbonyl groups, the carbonyl carbon is electron-poor relative to the oxygen, making the C=O bond strongly polarized.",
+          "tags": ["polarity", "carbonyl"]
+        }
+      ],
+      "functional_group_inventory": [
+        {"name": "alkene", "pattern": "C=C", "name_ending": "-ene", "example": "ethene", "visual": "vr-global-functional-groups"},
+        {"name": "alkyne", "pattern": "C#C", "name_ending": "-yne", "example": "ethyne", "visual": "vr-global-functional-groups"},
+        {"name": "arene", "pattern": "aromatic ring", "name_ending": null, "example": "benzene", "visual": "vr-global-functional-groups"},
+        {"name": "alkyl halide", "pattern": "R-X", "name_ending": null, "example": "chloromethane", "visual": "vr-global-functional-groups"},
+        {"name": "alcohol", "pattern": "R-OH", "name_ending": "-ol", "example": "methanol", "visual": "vr-global-functional-groups"},
+        {"name": "ether", "pattern": "R-O-R", "name_ending": "ether", "example": "dimethyl ether", "visual": "vr-global-functional-groups"},
+        {"name": "amine", "pattern": "R-NH2, R2NH, or R3N", "name_ending": "-amine", "example": "methylamine", "visual": "vr-global-functional-groups"},
+        {"name": "nitrile", "pattern": "R-C#N", "name_ending": "-nitrile", "example": "ethanenitrile", "visual": "vr-global-functional-groups"},
+        {"name": "thiol", "pattern": "R-SH", "name_ending": "-thiol", "example": "methanethiol", "visual": "vr-global-functional-groups"},
+        {"name": "sulfide", "pattern": "R-S-R", "name_ending": "sulfide", "example": "dimethyl sulfide", "visual": "vr-global-functional-groups"},
+        {"name": "aldehyde", "pattern": "R-CHO", "name_ending": "-al", "example": "ethanal", "visual": "vr-global-functional-groups"},
+        {"name": "ketone", "pattern": "R-C(=O)-R", "name_ending": "-one", "example": "propanone", "visual": "vr-global-functional-groups"},
+        {"name": "carboxylic acid", "pattern": "R-C(=O)-OH", "name_ending": "-oic acid", "example": "ethanoic acid", "visual": "vr-global-functional-groups"},
+        {"name": "ester", "pattern": "R-C(=O)-O-R", "name_ending": "-oate", "example": "methyl ethanoate", "visual": "vr-global-functional-groups"},
+        {"name": "amide", "pattern": "R-C(=O)-NH2", "name_ending": "-amide", "example": "ethanamide", "visual": "vr-global-functional-groups"},
+        {"name": "acid chloride", "pattern": "R-C(=O)-Cl", "name_ending": "-oyl chloride", "example": "ethanoyl chloride", "visual": "vr-global-functional-groups"}
+      ],
+      "candidate_cards": [
+        {
+          "id": "3-1-card-001",
+          "type": "functional_group_recognition",
+          "prompt": "Highlight the functional group in a molecule containing both an alkene and an alcohol.",
+          "answer": "Identify C=C as alkene and R-OH as alcohol.",
+          "visual_requirements": ["vr-global-functional-groups", "vr-global-2d-skeletal"],
+          "difficulty": "intro"
+        },
+        {
+          "id": "3-1-card-002",
+          "type": "functional_group_discrimination",
+          "prompt": "Choose whether the C=O compound is an aldehyde, ketone, ester, amide, or carboxylic acid.",
+          "answer_rule": "Classify by the atoms attached to the carbonyl carbon.",
+          "visual_requirements": ["vr-global-functional-groups"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-1-card-003",
+          "type": "pattern_to_name",
+          "prompt": "What functional group is represented by R-C#N?",
+          "answer": "Nitrile.",
+          "visual_requirements": ["vr-global-functional-groups"],
+          "difficulty": "intro"
+        },
+        {
+          "id": "3-1-card-004",
+          "type": "multi_group_scan",
+          "prompt": "Given a line structure, list every functional group present without naming the whole molecule.",
+          "answer_rule": "Return all highlighted group families and ignore alkyl skeleton details unless asked.",
+          "visual_requirements": ["vr-global-2d-skeletal", "vr-global-functional-groups"],
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "section": "3.2",
+      "title": "Alkanes and Alkane Isomers",
+      "facts": [
+        {
+          "id": "3-2-fact-001",
+          "statement": "Acyclic alkanes are saturated hydrocarbons: they contain only carbon and hydrogen and only single C-C and C-H bonds.",
+          "tags": ["alkane", "saturated", "hydrocarbon"]
+        },
+        {
+          "id": "3-2-fact-002",
+          "statement": "Acyclic alkanes follow the general formula CnH2n+2.",
+          "tags": ["formula", "alkane"]
+        },
+        {
+          "id": "3-2-fact-003",
+          "statement": "Methane, ethane, and propane each have only one carbon skeleton; formulas C4H10 and larger can have multiple constitutional isomers.",
+          "tags": ["isomer_count", "carbon_skeleton"]
+        },
+        {
+          "id": "3-2-fact-004",
+          "statement": "Straight-chain alkanes have all carbons connected in one unbranched row; branched-chain alkanes contain side branches from the longest chain.",
+          "tags": ["straight_chain", "branched_chain"]
+        },
+        {
+          "id": "3-2-fact-005",
+          "statement": "Constitutional isomers have the same molecular formula but different atom connectivity.",
+          "tags": ["constitutional_isomer", "definition"]
+        },
+        {
+          "id": "3-2-fact-006",
+          "statement": "The number of alkane constitutional isomers grows rapidly with carbon count: C6H14 has 5, C7H16 has 9, C8H18 has 18, C9H20 has 35, and C10H22 has 75.",
+          "tags": ["isomer_count", "reference_values"]
+        },
+        {
+          "id": "3-2-fact-007",
+          "statement": "Different drawings can represent the same alkane when atom connectivity is unchanged; rotation and drawing orientation do not create constitutional isomers.",
+          "tags": ["same_compound", "drawing_interpretation"]
+        }
+      ],
+      "straight_chain_alkanes": [
+        {"carbons": 1, "name": "methane", "formula": "CH4", "prefix": "meth"},
+        {"carbons": 2, "name": "ethane", "formula": "C2H6", "prefix": "eth"},
+        {"carbons": 3, "name": "propane", "formula": "C3H8", "prefix": "prop"},
+        {"carbons": 4, "name": "butane", "formula": "C4H10", "prefix": "but"},
+        {"carbons": 5, "name": "pentane", "formula": "C5H12", "prefix": "pent"},
+        {"carbons": 6, "name": "hexane", "formula": "C6H14", "prefix": "hex"},
+        {"carbons": 7, "name": "heptane", "formula": "C7H16", "prefix": "hept"},
+        {"carbons": 8, "name": "octane", "formula": "C8H18", "prefix": "oct"},
+        {"carbons": 9, "name": "nonane", "formula": "C9H20", "prefix": "non"},
+        {"carbons": 10, "name": "decane", "formula": "C10H22", "prefix": "dec"},
+        {"carbons": 11, "name": "undecane", "formula": "C11H24", "prefix": "undec"},
+        {"carbons": 12, "name": "dodecane", "formula": "C12H26", "prefix": "dodec"}
+      ],
+      "isomer_count_reference": [
+        {"formula": "C6H14", "count": 5},
+        {"formula": "C7H16", "count": 9},
+        {"formula": "C8H18", "count": 18},
+        {"formula": "C9H20", "count": 35},
+        {"formula": "C10H22", "count": 75},
+        {"formula": "C15H32", "count": 4347},
+        {"formula": "C20H42", "count": 366319},
+        {"formula": "C30H62", "count": 4111846763}
+      ],
+      "candidate_cards": [
+        {
+          "id": "3-2-card-001",
+          "type": "formula_to_family",
+          "prompt": "Does C7H16 fit the formula for an acyclic alkane?",
+          "answer": "Yes. For n = 7, CnH2n+2 gives C7H16.",
+          "difficulty": "intro"
+        },
+        {
+          "id": "3-2-card-002",
+          "type": "isomer_recognition",
+          "prompt": "Decide whether two drawings of C4H10 show the same connectivity or constitutional isomers.",
+          "answer_rule": "Butane and 2-methylpropane are constitutional isomers; rotated or bent drawings of n-butane are the same compound.",
+          "visual_requirements": ["vr-global-2d-skeletal"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-2-card-003",
+          "type": "isomer_count",
+          "prompt": "How many constitutional isomers does C6H14 have?",
+          "answer": "Five.",
+          "visual_requirements": ["vr-global-2d-skeletal"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-2-card-004",
+          "type": "same_or_different",
+          "prompt": "Given two condensed formulas and two line drawings, group representations that show the same alkane.",
+          "answer_rule": "Compare atom connectivity, not drawing direction or chain bending.",
+          "visual_requirements": ["vr-global-2d-skeletal"],
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "section": "3.3",
+      "title": "Alkyl Groups",
+      "facts": [
+        {
+          "id": "3-3-fact-001",
+          "statement": "An alkyl group is the substituent fragment obtained conceptually by removing one hydrogen from an alkane.",
+          "tags": ["alkyl_group", "definition"]
+        },
+        {
+          "id": "3-3-fact-002",
+          "statement": "Alkyl group names usually replace the parent alkane ending -ane with -yl.",
+          "tags": ["nomenclature", "alkyl_group"]
+        },
+        {
+          "id": "3-3-fact-003",
+          "statement": "R is a generic symbol for an unspecified organic group, often read as the rest of the molecule.",
+          "tags": ["R_group", "notation"]
+        },
+        {
+          "id": "3-3-fact-004",
+          "statement": "A primary carbon is bonded to one other carbon; secondary to two; tertiary to three; quaternary to four.",
+          "tags": ["carbon_classification", "primary_secondary_tertiary"]
+        },
+        {
+          "id": "3-3-fact-005",
+          "statement": "Hydrogens are classified by the type of carbon they are attached to; there is no quaternary hydrogen because a quaternary carbon has no C-H bond.",
+          "tags": ["hydrogen_classification"]
+        },
+        {
+          "id": "3-3-fact-006",
+          "statement": "The prefixes sec- and tert- describe attachment through secondary and tertiary carbons in common alkyl group names.",
+          "tags": ["common_names", "sec_tert"]
+        }
+      ],
+      "alkyl_groups": [
+        {"name": "methyl", "abbreviation": "Me", "pattern": "-CH3", "parent_alkane": "methane", "attachment_carbon_class": "primary", "visual": "vr-global-alkyl-templates"},
+        {"name": "ethyl", "abbreviation": "Et", "pattern": "-CH2CH3", "parent_alkane": "ethane", "attachment_carbon_class": "primary", "visual": "vr-global-alkyl-templates"},
+        {"name": "propyl", "abbreviation": "Pr", "pattern": "-CH2CH2CH3", "parent_alkane": "propane", "attachment_carbon_class": "primary", "visual": "vr-global-alkyl-templates"},
+        {"name": "isopropyl", "systematic_substituent_name": "1-methylethyl", "pattern": "-CH(CH3)2", "parent_alkane": "propane", "attachment_carbon_class": "secondary", "visual": "vr-global-alkyl-templates"},
+        {"name": "butyl", "abbreviation": "Bu", "pattern": "-CH2CH2CH2CH3", "parent_alkane": "butane", "attachment_carbon_class": "primary", "visual": "vr-global-alkyl-templates"},
+        {"name": "sec-butyl", "systematic_substituent_name": "1-methylpropyl", "pattern": "-CH(CH3)CH2CH3", "parent_alkane": "butane", "attachment_carbon_class": "secondary", "visual": "vr-global-alkyl-templates"},
+        {"name": "isobutyl", "systematic_substituent_name": "2-methylpropyl", "pattern": "-CH2CH(CH3)2", "parent_alkane": "2-methylpropane", "attachment_carbon_class": "primary", "visual": "vr-global-alkyl-templates"},
+        {"name": "tert-butyl", "systematic_substituent_name": "1,1-dimethylethyl", "pattern": "-C(CH3)3", "parent_alkane": "2-methylpropane", "attachment_carbon_class": "tertiary", "visual": "vr-global-alkyl-templates"},
+        {"name": "pentyl", "also_called": "amyl", "pattern": "-CH2CH2CH2CH2CH3", "parent_alkane": "pentane", "attachment_carbon_class": "primary", "visual": "vr-global-alkyl-templates"}
+      ],
+      "candidate_cards": [
+        {
+          "id": "3-3-card-001",
+          "type": "substituent_naming",
+          "prompt": "Name the alkyl group formed by removing one H from methane.",
+          "answer": "Methyl, -CH3.",
+          "visual_requirements": ["vr-global-alkyl-templates"],
+          "difficulty": "intro"
+        },
+        {
+          "id": "3-3-card-002",
+          "type": "carbon_classification",
+          "prompt": "Classify the highlighted carbon as primary, secondary, tertiary, or quaternary.",
+          "answer_rule": "Count directly attached carbon atoms, not hydrogens.",
+          "visual_requirements": ["vr-global-2d-skeletal"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-3-card-003",
+          "type": "hydrogen_classification",
+          "prompt": "Classify the highlighted H atoms as primary, secondary, or tertiary.",
+          "answer_rule": "Use the class of the carbon bearing each hydrogen.",
+          "visual_requirements": ["vr-global-2d-skeletal"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-3-card-004",
+          "type": "common_vs_systematic_substituent",
+          "prompt": "Match isopropyl, sec-butyl, isobutyl, and tert-butyl to structures with marked attachment points.",
+          "answer_rule": "Use the attachment carbon and branching pattern.",
+          "visual_requirements": ["vr-global-alkyl-templates"],
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "section": "3.4",
+      "title": "Naming Alkanes",
+      "facts": [
+        {
+          "id": "3-4-fact-001",
+          "statement": "An IUPAC alkane name combines a parent chain, substituent prefixes, locants, and the -ane suffix.",
+          "tags": ["IUPAC", "name_parts"]
+        },
+        {
+          "id": "3-4-fact-002",
+          "statement": "The parent hydrocarbon is the longest continuous carbon chain; the drawn zigzag may need to be followed around corners.",
+          "tags": ["parent_chain", "longest_chain"]
+        },
+        {
+          "id": "3-4-fact-003",
+          "statement": "If two chains of equal length are possible, choose the chain with more branch points as the parent.",
+          "tags": ["parent_chain", "tie_breaker"]
+        },
+        {
+          "id": "3-4-fact-004",
+          "statement": "Number the parent chain from the end that gives the first branch the lower locant; if tied, compare the next branch point.",
+          "tags": ["numbering", "locants"]
+        },
+        {
+          "id": "3-4-fact-005",
+          "statement": "Every substituent receives a locant; two substituents on the same carbon receive the same locant.",
+          "tags": ["substituents", "locants"]
+        },
+        {
+          "id": "3-4-fact-006",
+          "statement": "Use di-, tri-, tetra-, and related prefixes for repeated identical substituents, but ignore those multiplier prefixes when alphabetizing.",
+          "tags": ["alphabetizing", "multipliers"]
+        },
+        {
+          "id": "3-4-fact-007",
+          "statement": "Use commas between numbers and hyphens between numbers and words; the final alkane name is written as one word.",
+          "tags": ["formatting", "IUPAC"]
+        },
+        {
+          "id": "3-4-fact-008",
+          "statement": "A branched substituent can be named as its own substituent, numbered from the attachment point, and placed in parentheses in the full molecule name.",
+          "tags": ["branched_substituent", "advanced_naming"]
+        },
+        {
+          "id": "3-4-fact-009",
+          "statement": "Common substituent names such as isopropyl, isobutyl, sec-butyl, and tert-butyl are accepted in many contexts.",
+          "tags": ["common_names"]
+        },
+        {
+          "id": "3-4-fact-010",
+          "statement": "For alphabetizing common substituents, iso is treated as part of the name; sec- and tert- are not.",
+          "tags": ["alphabetizing", "common_names"]
+        }
+      ],
+      "naming_algorithm": [
+        "Find the longest continuous carbon chain and assign the corresponding alkane parent name.",
+        "If equal-length parent chains are possible, select the one with more substituents.",
+        "Number from the end nearer the first substituent; use the next point of difference if the first comparison ties.",
+        "Name each substituent and assign its locant.",
+        "Use multipliers for repeated substituents and include one locant per substituent.",
+        "Alphabetize substituent names, ignoring di-, tri-, tetra-, sec-, and tert-, but counting iso.",
+        "Write the final name as one word, with commas between locants and hyphens between locants and words.",
+        "For a branched substituent, number it from the attachment point and put its name in parentheses."
+      ],
+      "example_prompts": [
+        {
+          "id": "3-4-example-001",
+          "name": "3-isopropyl-2-methylhexane",
+          "tasks": ["draw_parent_hexane", "place_methyl_at_2", "place_isopropyl_at_3", "complete_hydrogens"],
+          "visual": "vr-global-2d-skeletal"
+        },
+        {
+          "id": "3-4-example-002",
+          "name": "2,2,4-trimethylpentane",
+          "common_context": "isooctane",
+          "tasks": ["identify_parent_pentane", "place_two_methyl_groups_at_2", "place_one_methyl_group_at_4"],
+          "visual": "vr-global-2d-skeletal"
+        }
+      ],
+      "candidate_cards": [
+        {
+          "id": "3-4-card-001",
+          "type": "parent_chain_selection",
+          "prompt": "Select the correct parent chain in a branched alkane where the longest path turns a corner.",
+          "answer_rule": "Choose the longest continuous carbon chain, not the longest horizontal segment.",
+          "visual_requirements": ["vr-global-2d-skeletal"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-4-card-002",
+          "type": "structure_to_name",
+          "prompt": "Give the IUPAC name for a highlighted branched alkane.",
+          "answer_rule": "Apply parent-chain selection, numbering, substituent naming, alphabetizing, and punctuation.",
+          "visual_requirements": ["vr-global-2d-skeletal"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-4-card-003",
+          "type": "name_to_structure",
+          "prompt": "Draw 4-ethyl-2,2-dimethylhexane.",
+          "answer_rule": "Start from hexane, place two methyl groups at C2, place ethyl at C4, then verify carbon valence.",
+          "visual_requirements": ["vr-global-2d-skeletal"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-4-card-004",
+          "type": "incorrect_name_diagnosis",
+          "prompt": "Explain why a proposed alkane name violates IUPAC rules.",
+          "answer_rule": "Check longest parent chain, lowest locants, alphabetizing, and substituent naming.",
+          "visual_requirements": ["vr-global-2d-skeletal"],
+          "difficulty": "challenge"
+        },
+        {
+          "id": "3-4-card-005",
+          "type": "branched_substituent_naming",
+          "prompt": "Name a molecule containing a 2-methylpropyl substituent on a longer parent chain.",
+          "answer_rule": "Name the branched substituent from its attachment point and place it in parentheses if using systematic substituent form.",
+          "visual_requirements": ["vr-global-2d-skeletal", "vr-global-alkyl-templates"],
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "section": "3.5",
+      "title": "Properties of Alkanes",
+      "facts": [
+        {
+          "id": "3-5-fact-001",
+          "statement": "Alkanes are often chemically inert toward many laboratory reagents and are sometimes called paraffins.",
+          "tags": ["properties", "reactivity"]
+        },
+        {
+          "id": "3-5-fact-002",
+          "statement": "Alkanes can burn in oxygen to form carbon dioxide and water while releasing substantial heat.",
+          "tags": ["combustion", "reaction"]
+        },
+        {
+          "id": "3-5-fact-003",
+          "statement": "Methane can undergo chlorine substitution under ultraviolet light to give chlorinated methane products.",
+          "tags": ["halogenation_preview", "reaction"]
+        },
+        {
+          "id": "3-5-fact-004",
+          "statement": "Straight-chain alkane boiling and melting points generally rise as carbon count and molecular weight rise because dispersion forces increase.",
+          "tags": ["boiling_point", "dispersion_forces"]
+        },
+        {
+          "id": "3-5-fact-005",
+          "statement": "More highly branched alkane isomers usually boil lower than less branched isomers because compact shapes have less surface contact and weaker dispersion attractions.",
+          "tags": ["branching", "boiling_point"]
+        }
+      ],
+      "property_comparisons": [
+        {
+          "id": "3-5-prop-001",
+          "set": "C5H12 isomers",
+          "order_high_to_low_boiling_point": ["pentane", "2-methylbutane", "2,2-dimethylpropane"],
+          "reason": "Branching makes the molecules more compact and reduces dispersion-force contact."
+        },
+        {
+          "id": "3-5-prop-002",
+          "set": "C8H18 examples",
+          "order_high_to_low_boiling_point": ["octane", "2,2,4-trimethylpentane"],
+          "reason": "The branched isomer has lower surface area."
+        }
+      ],
+      "candidate_cards": [
+        {
+          "id": "3-5-card-001",
+          "type": "property_trend",
+          "prompt": "Which should boil higher: pentane or octane?",
+          "answer": "Octane, because the larger molecule has stronger dispersion forces.",
+          "difficulty": "intro"
+        },
+        {
+          "id": "3-5-card-002",
+          "type": "branching_boiling_point",
+          "prompt": "Rank pentane, isopentane, and neopentane by boiling point.",
+          "answer": "pentane > isopentane > neopentane.",
+          "visual_requirements": ["vr-global-2d-skeletal"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-5-card-003",
+          "type": "reaction_like_notation",
+          "prompt": "Complete the combustion products of an alkane.",
+          "answer_rule": "Combustion of a hydrocarbon gives CO2 and H2O when oxygen is sufficient.",
+          "difficulty": "core"
+        }
+      ]
+    },
+    {
+      "section": "3.6",
+      "title": "Conformations of Ethane",
+      "facts": [
+        {
+          "id": "3-6-fact-001",
+          "statement": "Stereochemistry studies the three-dimensional arrangement of atoms in molecules.",
+          "tags": ["stereochemistry", "definition"]
+        },
+        {
+          "id": "3-6-fact-002",
+          "statement": "Rotation around an open-chain carbon-carbon sigma bond is possible because sigma bonds are cylindrically symmetric.",
+          "tags": ["sigma_bond", "rotation"]
+        },
+        {
+          "id": "3-6-fact-003",
+          "statement": "Conformations are different spatial arrangements produced by rotation around single bonds; conformers often interconvert rapidly.",
+          "tags": ["conformation", "conformer"]
+        },
+        {
+          "id": "3-6-fact-004",
+          "statement": "A sawhorse representation views a C-C bond at an oblique angle; a Newman projection views directly down the C-C bond axis.",
+          "tags": ["sawhorse", "Newman_projection"]
+        },
+        {
+          "id": "3-6-fact-005",
+          "statement": "In a Newman projection, bonds on the front carbon meet at the center, while bonds on the rear carbon attach to the edge of the circle.",
+          "tags": ["Newman_projection", "visual_rule"]
+        },
+        {
+          "id": "3-6-fact-006",
+          "statement": "Ethane's staggered conformation places C-H bonds as far apart as possible and is lower in energy than the eclipsed conformation.",
+          "tags": ["ethane", "staggered", "eclipsed"]
+        },
+        {
+          "id": "3-6-fact-007",
+          "statement": "Ethane's eclipsed conformation is about 12 kJ/mol (2.9 kcal/mol) higher in energy than staggered ethane.",
+          "tags": ["ethane", "energy_barrier"]
+        },
+        {
+          "id": "3-6-fact-008",
+          "statement": "The extra energy of an eclipsed conformation is torsional strain; in ethane, each H/H eclipsing interaction contributes about 4.0 kJ/mol (1.0 kcal/mol).",
+          "tags": ["torsional_strain", "energy_cost"]
+        },
+        {
+          "id": "3-6-fact-009",
+          "statement": "A dihedral angle describes the angle between bonds on adjacent atoms when viewed along the bond connecting them.",
+          "tags": ["dihedral_angle", "Newman_projection"]
+        }
+      ],
+      "candidate_cards": [
+        {
+          "id": "3-6-card-001",
+          "type": "conformational_terminology",
+          "prompt": "Identify whether a Newman projection of ethane is staggered or eclipsed.",
+          "answer_rule": "Staggered bonds alternate around the circle; eclipsed bonds line up front-to-back.",
+          "visual_requirements": ["vr-global-newman"],
+          "difficulty": "intro"
+        },
+        {
+          "id": "3-6-card-002",
+          "type": "newman_projection_interpretation",
+          "prompt": "Label the front and rear carbon substituents in a Newman projection.",
+          "answer_rule": "Front-carbon bonds meet at the center; rear-carbon bonds start from the circle.",
+          "visual_requirements": ["vr-global-newman", "vr-global-3d-rotatable"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-6-card-003",
+          "type": "energy_comparison",
+          "prompt": "Which ethane conformer is lower in energy, staggered or eclipsed, and by about how much?",
+          "answer": "Staggered ethane is lower by about 12 kJ/mol (2.9 kcal/mol).",
+          "visual_requirements": ["vr-global-newman", "vr-global-energy-diagram"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-6-card-004",
+          "type": "energy_diagram_reading",
+          "prompt": "On an ethane rotation-energy diagram, identify maxima and minima.",
+          "answer_rule": "Eclipsed conformations are maxima; staggered conformations are minima.",
+          "visual_requirements": ["vr-global-energy-diagram", "vr-global-newman"],
+          "difficulty": "core"
+        }
+      ]
+    },
+    {
+      "section": "3.7",
+      "title": "Conformations of Other Alkanes",
+      "facts": [
+        {
+          "id": "3-7-fact-001",
+          "statement": "Propane has a slightly larger rotational barrier than ethane because an eclipsed H/CH3 interaction is more costly than an eclipsed H/H interaction.",
+          "tags": ["propane", "torsional_strain"]
+        },
+        {
+          "id": "3-7-fact-002",
+          "statement": "The propane rotational barrier is about 14 kJ/mol (3.4 kcal/mol).",
+          "tags": ["propane", "energy_barrier"]
+        },
+        {
+          "id": "3-7-fact-003",
+          "statement": "An eclipsed H/CH3 interaction contributes about 6.0 kJ/mol (1.4 kcal/mol).",
+          "tags": ["interaction_energy", "H_CH3"]
+        },
+        {
+          "id": "3-7-fact-004",
+          "statement": "In butane, the anti conformation has the two methyl groups 180 degrees apart and is the lowest-energy staggered conformer.",
+          "tags": ["butane", "anti"]
+        },
+        {
+          "id": "3-7-fact-005",
+          "statement": "In butane, a gauche conformation is staggered but places the two methyl groups 60 degrees apart; it is higher in energy than anti because of steric strain.",
+          "tags": ["butane", "gauche", "steric_strain"]
+        },
+        {
+          "id": "3-7-fact-006",
+          "statement": "Steric strain is repulsion caused when atoms or groups are forced too close in space.",
+          "tags": ["steric_strain", "definition"]
+        },
+        {
+          "id": "3-7-fact-007",
+          "statement": "In butane, gauche is about 3.8 kJ/mol (0.9 kcal/mol) higher in energy than anti.",
+          "tags": ["butane", "gauche_energy"]
+        },
+        {
+          "id": "3-7-fact-008",
+          "statement": "The eclipsed butane conformer with two CH3/H eclipsing interactions and one H/H eclipsing interaction is about 16 kJ/mol above anti.",
+          "tags": ["butane", "eclipsed_energy"]
+        },
+        {
+          "id": "3-7-fact-009",
+          "statement": "The fully eclipsed butane conformer with CH3/CH3 eclipsing is about 19 kJ/mol above anti.",
+          "tags": ["butane", "highest_energy"]
+        },
+        {
+          "id": "3-7-fact-010",
+          "statement": "Larger alkanes are most stable when C-C bonds are staggered and large substituents are anti to one another where possible.",
+          "tags": ["general_rule", "higher_alkanes"]
+        },
+        {
+          "id": "3-7-fact-011",
+          "statement": "Room-temperature single-bond rotation means many conformers interconvert, but lower-energy conformers make up a larger fraction at any instant.",
+          "tags": ["conformer_population", "equilibrium"]
+        }
+      ],
+      "interaction_energy_reference": [
+        {"interaction": "H/H eclipsed", "main_cause": "torsional strain", "kJ_per_mol": 4.0, "kcal_per_mol": 1.0},
+        {"interaction": "H/CH3 eclipsed", "main_cause": "mostly torsional strain", "kJ_per_mol": 6.0, "kcal_per_mol": 1.4},
+        {"interaction": "CH3/CH3 eclipsed", "main_cause": "torsional and steric strain", "kJ_per_mol": 11.0, "kcal_per_mol": 2.6},
+        {"interaction": "CH3/CH3 gauche", "main_cause": "steric strain", "kJ_per_mol": 3.8, "kcal_per_mol": 0.9}
+      ],
+      "butane_rotation_profile": [
+        {"dihedral_degrees": 180, "label": "anti", "class": "staggered", "relative_energy_kJ_per_mol": 0.0, "notes": "Methyl groups opposite; global minimum."},
+        {"dihedral_degrees": 120, "label": "eclipsed", "class": "eclipsed", "relative_energy_kJ_per_mol": 16.0, "notes": "Two CH3/H eclipsing interactions and one H/H eclipsing interaction."},
+        {"dihedral_degrees": 60, "label": "gauche", "class": "staggered", "relative_energy_kJ_per_mol": 3.8, "notes": "Methyl groups 60 degrees apart; local minimum."},
+        {"dihedral_degrees": 0, "label": "fully eclipsed", "class": "eclipsed", "relative_energy_kJ_per_mol": 19.0, "notes": "Methyl groups eclipse each other; highest-energy point."},
+        {"dihedral_degrees": 300, "label": "gauche", "class": "staggered", "relative_energy_kJ_per_mol": 3.8, "notes": "Mirror-related gauche conformer."},
+        {"dihedral_degrees": 240, "label": "eclipsed", "class": "eclipsed", "relative_energy_kJ_per_mol": 16.0, "notes": "Second CH3/H eclipsed maximum."}
+      ],
+      "candidate_cards": [
+        {
+          "id": "3-7-card-001",
+          "type": "staggered_eclipsed_comparison",
+          "prompt": "For propane, identify why the eclipsed conformer is higher in energy than the staggered conformer.",
+          "answer": "It contains eclipsing interactions, including one H/CH3 interaction, producing torsional strain.",
+          "visual_requirements": ["vr-global-newman"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-7-card-002",
+          "type": "anti_gauche_butane",
+          "prompt": "Classify a butane Newman projection as anti, gauche, or eclipsed.",
+          "answer_rule": "Anti has CH3 groups 180 degrees apart; gauche has them 60 degrees apart; eclipsed has front and rear bonds aligned.",
+          "visual_requirements": ["vr-global-newman", "vr-global-3d-rotatable"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-7-card-003",
+          "type": "energy_strain_calculation",
+          "prompt": "Calculate the strain energy of an eclipsed butane conformer with two H/CH3 eclipsing interactions and one H/H eclipsing interaction.",
+          "answer": "2(6.0) + 4.0 = 16 kJ/mol.",
+          "visual_requirements": ["vr-global-newman"],
+          "difficulty": "core"
+        },
+        {
+          "id": "3-7-card-004",
+          "type": "energy_diagram_construction",
+          "prompt": "Place anti, gauche, CH3/H eclipsed, and CH3/CH3 eclipsed butane conformations on an energy diagram.",
+          "answer_rule": "Anti is the lowest minimum, gauche minima are at +3.8 kJ/mol, CH3/H eclipsed maxima are near +16 kJ/mol, and CH3/CH3 eclipsed is near +19 kJ/mol.",
+          "visual_requirements": ["vr-global-energy-diagram", "vr-global-newman"],
+          "difficulty": "challenge"
+        },
+        {
+          "id": "3-7-card-005",
+          "type": "most_stable_conformation",
+          "prompt": "Draw the most stable Newman projection along a specified bond of a substituted alkane.",
+          "answer_rule": "Choose a staggered arrangement and place the largest substituents anti when possible.",
+          "visual_requirements": ["vr-global-newman", "vr-global-3d-rotatable"],
+          "difficulty": "challenge"
+        },
+        {
+          "id": "3-7-card-006",
+          "type": "least_stable_conformation",
+          "prompt": "Draw the least stable Newman projection along a specified bond of a substituted alkane.",
+          "answer_rule": "Look for an eclipsed arrangement that places the largest substituents directly aligned.",
+          "visual_requirements": ["vr-global-newman", "vr-global-3d-rotatable"],
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ],
+  "integration_todo": [
+    {
+      "id": "todo-001",
+      "area": "schema",
+      "note": "Map this source format to the explorer builder once the local ochem schema is available."
+    },
+    {
+      "id": "todo-002",
+      "area": "visual_assets",
+      "note": "Add renderers for parent-chain highlighting, alkyl attachment points, and Newman projections before turning these records into live cards."
+    },
+    {
+      "id": "todo-003",
+      "area": "3d",
+      "note": "Use rotatable models for ethane, propane, butane, 1-chloropropane, 2-methylpropane, 2-methylbutane, 2,3-dimethylbutane, and decane-like anti zigzags."
+    },
+    {
+      "id": "todo-004",
+      "area": "card_generation",
+      "note": "Generate variants by randomizing highlighted atoms, viewing bonds, parent-chain candidates, and substituent placements."
+    },
+    {
+      "id": "todo-005",
+      "area": "validation",
+      "note": "Add schema validation when the explorer schema is present; for now this file is validated as JSON only."
+    }
+  ]
+}

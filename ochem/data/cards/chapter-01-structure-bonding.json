@@ -1,0 +1,734 @@
+{
+  "schema_version": 1,
+  "id": "ochem-openstax-chapter-01-structure-bonding",
+  "title": "Structure and Bonding",
+  "source": {
+    "textbook": "OpenStax Organic Chemistry",
+    "file": "C:/Users/wsoll/Downloads/organic-chemistry_-_WEB.pdf",
+    "chapter": 1,
+    "chapter_title": "Structure and Bonding",
+    "sections": "1.1-1.12",
+    "pdf_pages_reviewed": "25-45",
+    "note": "Facts are paraphrased from the Chapter 1 source text for flashcard and explorer use."
+  },
+  "chapter_goals": [
+    "Connect atomic structure and electron configuration to ordinary organic bonding patterns.",
+    "Use valence bond hybridization to predict molecular geometry around carbon and common heteroatoms.",
+    "Distinguish sigma, pi, bonding molecular orbital, and antibonding molecular orbital descriptions.",
+    "Translate among Lewis, line-bond, condensed, and skeletal organic structures."
+  ],
+  "visual_requirements": [
+    {
+      "id": "vis-methane-tetrahedral-109-5",
+      "description": "Methane with four equivalent C-H bonds arranged tetrahedrally and annotated 109.5 deg H-C-H angles."
+    },
+    {
+      "id": "vis-sp3-hybrid-composite",
+      "description": "One s orbital plus three p orbitals combining into four directional sp3 hybrid orbitals aimed at a tetrahedron."
+    },
+    {
+      "id": "vis-ethane-sigma-rotation",
+      "description": "Ethane showing sp3-sp3 sigma overlap for the C-C bond, six C-H sigma bonds, and free rotation around the C-C sigma bond."
+    },
+    {
+      "id": "vis-ethylene-pi-trigonal-planar",
+      "description": "Ethylene with planar sp2 geometry, 120 deg approximate bond angles, one sigma bond, and one pi bond above and below the C-C axis."
+    },
+    {
+      "id": "vis-acetylene-linear",
+      "description": "Acetylene with linear sp geometry, 180 deg H-C-C angles, one sigma bond, and two perpendicular pi bonds."
+    },
+    {
+      "id": "vis-mo-bonding-antibonding",
+      "description": "Molecular orbital diagram contrasting additive bonding and subtractive antibonding combinations for H2 and pi orbitals."
+    },
+    {
+      "id": "vis-line-angle-conventions",
+      "description": "Line-angle drawing guide showing implied carbons at line ends/intersections, omitted carbon-bound hydrogens, and displayed heteroatoms."
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "1.1",
+      "title": "Atomic Structure: The Nucleus",
+      "focus": "Atomic particles, isotope notation, atomic weight, and organic-scale distances.",
+      "facts": [
+        "An atom has a dense positively charged nucleus surrounded by electrons at a comparatively large distance.",
+        "The nucleus contains positively charged protons and neutral neutrons; a neutral atom has equal numbers of protons and electrons.",
+        "The nucleus is tiny compared with the atom but contains essentially all of the atom's mass.",
+        "Atomic number Z counts protons; mass number A counts protons plus neutrons.",
+        "Isotopes of an element have the same atomic number but different mass numbers because they contain different numbers of neutrons.",
+        "Atomic weight is the abundance-weighted average mass of naturally occurring isotopes, reported in unified atomic mass units or daltons.",
+        "Typical atomic diameters are about 2 x 10^-10 m, or about 200 pm; 1 angstrom equals 100 pm."
+      ],
+      "candidate_cards": [
+        {
+          "id": "ochem-ch01-001",
+          "type": "vocabulary",
+          "front": "What does atomic number Z count?",
+          "back": "Atomic number Z counts the number of protons in the nucleus; in a neutral atom it also equals the number of electrons.",
+          "tags": ["atomic-structure", "nucleus"]
+        },
+        {
+          "id": "ochem-ch01-002",
+          "type": "fact-recall",
+          "front": "How do isotopes of the same element differ?",
+          "back": "They have the same number of protons but different numbers of neutrons, so they have different mass numbers.",
+          "tags": ["atomic-structure", "isotopes"]
+        },
+        {
+          "id": "ochem-ch01-003",
+          "type": "reverse",
+          "front": "Same Z, different A.",
+          "back": "This describes isotopes: atoms of the same element with different mass numbers.",
+          "tags": ["atomic-structure", "isotopes"]
+        },
+        {
+          "id": "ochem-ch01-004",
+          "type": "micro-problem",
+          "front": "Carbon-13 has atomic number 6. How many neutrons does it contain?",
+          "back": "7 neutrons, because A = protons + neutrons, so 13 = 6 + neutrons.",
+          "tags": ["atomic-structure", "isotopes"]
+        },
+        {
+          "id": "ochem-ch01-005",
+          "type": "fact-recall",
+          "front": "What does atomic weight average over?",
+          "back": "It averages the masses of naturally occurring isotopes according to their natural abundances.",
+          "tags": ["atomic-structure", "atomic-weight"]
+        }
+      ]
+    },
+    {
+      "section_id": "1.2",
+      "title": "Atomic Structure: Orbitals",
+      "focus": "Wave functions, orbital shapes, shells, nodes, and p-orbital phase.",
+      "facts": [
+        "A wave function, or orbital, describes where an electron is likely to be found around a nucleus.",
+        "The square of the wave function corresponds to electron probability density.",
+        "Orbitals are often drawn as regions containing most of the electron probability rather than as hard-edged objects.",
+        "An s orbital is spherical; a p orbital is dumbbell-shaped; most d orbitals are four-lobed.",
+        "Electron shells increase in size and energy as they get farther from the nucleus.",
+        "Each orbital can hold up to two electrons.",
+        "The first shell has one 1s orbital and holds 2 electrons; the second shell has 2s plus three 2p orbitals and holds 8 electrons.",
+        "The three p orbitals in a shell are mutually perpendicular and are commonly labeled px, py, and pz.",
+        "A p orbital has a node between its two lobes, and the two lobes have opposite algebraic signs in the wave function."
+      ],
+      "candidate_cards": [
+        {
+          "id": "ochem-ch01-006",
+          "type": "vocabulary",
+          "front": "In quantum terms, what is an orbital?",
+          "back": "An orbital is a wave function used to describe the region where an electron is likely to be found.",
+          "tags": ["orbitals", "wave-function"]
+        },
+        {
+          "id": "ochem-ch01-007",
+          "type": "fact-recall",
+          "front": "What is the shape of an s orbital?",
+          "back": "An s orbital is spherical around the nucleus.",
+          "tags": ["orbitals", "shapes"]
+        },
+        {
+          "id": "ochem-ch01-008",
+          "type": "fact-recall",
+          "front": "What is the shape of a p orbital?",
+          "back": "A p orbital is dumbbell-shaped, with two lobes separated by a node.",
+          "tags": ["orbitals", "shapes"]
+        },
+        {
+          "id": "ochem-ch01-009",
+          "type": "comparison",
+          "front": "Compare the first and second electron shells by orbital contents and capacity.",
+          "back": "The first shell has one 1s orbital and holds 2 electrons. The second shell has one 2s and three 2p orbitals and holds 8 electrons.",
+          "tags": ["orbitals", "electron-shells"]
+        },
+        {
+          "id": "ochem-ch01-010",
+          "type": "image-prompt",
+          "front": "Diagram prompt: show the three 2p orbitals and the key feature that separates each pair of lobes.",
+          "back": "Draw px, py, and pz as mutually perpendicular dumbbells, each with a nodal plane between lobes and opposite signs on the two lobes.",
+          "visual_requirements": ["vis-mo-bonding-antibonding"],
+          "tags": ["orbitals", "nodes", "visual"]
+        }
+      ]
+    },
+    {
+      "section_id": "1.3",
+      "title": "Atomic Structure: Electron Configurations",
+      "focus": "Ground-state configurations and the three filling rules.",
+      "facts": [
+        "A ground-state electron configuration lists the occupied orbitals for the lowest-energy arrangement of an atom's electrons.",
+        "The Aufbau principle says electrons fill lower-energy orbitals before higher-energy orbitals.",
+        "The Pauli exclusion principle says an orbital can hold two electrons only if their spins are opposite.",
+        "Hund's rule says equal-energy empty orbitals receive one electron each with parallel spins before pairing begins.",
+        "Orbital superscripts indicate how many electrons occupy that orbital or subshell.",
+        "Carbon's ground-state valence pattern has four valence electrons, conventionally represented as 2s2 2p2."
+      ],
+      "candidate_cards": [
+        {
+          "id": "ochem-ch01-011",
+          "type": "vocabulary",
+          "front": "What is a ground-state electron configuration?",
+          "back": "It is the lowest-energy arrangement of an atom's electrons among available orbitals.",
+          "tags": ["electron-configuration"]
+        },
+        {
+          "id": "ochem-ch01-012",
+          "type": "fact-recall",
+          "front": "What does the Aufbau principle say?",
+          "back": "Electrons occupy lower-energy orbitals before higher-energy orbitals.",
+          "tags": ["electron-configuration", "aufbau"]
+        },
+        {
+          "id": "ochem-ch01-013",
+          "type": "fact-recall",
+          "front": "What does the Pauli exclusion principle say about one orbital?",
+          "back": "One orbital can hold at most two electrons, and if two are present they must have opposite spins.",
+          "tags": ["electron-configuration", "pauli"]
+        },
+        {
+          "id": "ochem-ch01-014",
+          "type": "fact-recall",
+          "front": "What does Hund's rule say about equal-energy orbitals?",
+          "back": "Place one electron in each equal-energy orbital with parallel spins before pairing electrons.",
+          "tags": ["electron-configuration", "hund"]
+        },
+        {
+          "id": "ochem-ch01-015",
+          "type": "micro-problem",
+          "front": "Using normal valences, how many valence electrons does carbon bring to organic bonding?",
+          "back": "Carbon brings four valence electrons.",
+          "tags": ["electron-configuration", "carbon"]
+        }
+      ]
+    },
+    {
+      "section_id": "1.4",
+      "title": "Development of Chemical Bonding Theory",
+      "focus": "Tetravalent carbon, three-dimensional carbon geometry, ionic and covalent bonding, Lewis and Kekule structures.",
+      "facts": [
+        "Carbon is tetravalent in stable organic compounds and can bond to itself to form chains and rings.",
+        "Tetrahedral carbon places four substituents toward the corners of a tetrahedron with carbon at the center.",
+        "Solid wedge/dash conventions encode three-dimensional geometry: ordinary lines are in the page, wedges project forward, and dashed bonds project backward.",
+        "Bond formation releases energy because the bonded product is lower in energy than the separated atoms.",
+        "Bond breaking absorbs energy.",
+        "Main-group atoms often react to reach a noble-gas-like valence shell.",
+        "Ionic bonds result from electrostatic attraction between oppositely charged ions.",
+        "Covalent bonds result from sharing electron pairs between atoms; a neutral covalently bonded collection of atoms is a molecule.",
+        "Lewis structures show valence electrons as dots; line-bond, or Kekule, structures show each shared pair as a line.",
+        "Common neutral valences: H and halogens form 1 bond, O forms 2, N forms 3, C forms 4."
+      ],
+      "candidate_cards": [
+        {
+          "id": "ochem-ch01-016",
+          "type": "vocabulary",
+          "front": "What does tetravalent mean for carbon?",
+          "back": "A tetravalent carbon forms four covalent bonds in a stable neutral organic structure.",
+          "tags": ["bonding-theory", "carbon"]
+        },
+        {
+          "id": "ochem-ch01-017",
+          "type": "fact-recall",
+          "front": "What do wedge and dash bonds show?",
+          "back": "They show 3D orientation: a wedge points toward the viewer and a dashed bond points away from the viewer.",
+          "tags": ["bonding-theory", "drawing"]
+        },
+        {
+          "id": "ochem-ch01-018",
+          "type": "comparison",
+          "front": "How do ionic and covalent bonds differ?",
+          "back": "Ionic bonds are attractions between ions with opposite charges; covalent bonds share electron pairs between atoms.",
+          "tags": ["bonding-theory", "ionic", "covalent"]
+        },
+        {
+          "id": "ochem-ch01-019",
+          "type": "fact-recall",
+          "front": "Does forming a bond release or absorb energy?",
+          "back": "Bond formation releases energy; bond breaking absorbs energy.",
+          "tags": ["bonding-theory", "energy"]
+        },
+        {
+          "id": "ochem-ch01-020",
+          "type": "micro-problem",
+          "front": "Predict the typical number of covalent bonds for neutral C, N, O, H, and Cl.",
+          "back": "C forms 4, N forms 3, O forms 2, H forms 1, and Cl forms 1.",
+          "tags": ["bonding-theory", "valence"]
+        },
+        {
+          "id": "ochem-ch01-021",
+          "type": "reverse",
+          "front": "A structure where each covalent electron pair is drawn as a line.",
+          "back": "That is a line-bond or Kekule structure.",
+          "tags": ["bonding-theory", "drawing"]
+        }
+      ]
+    },
+    {
+      "section_id": "1.5",
+      "title": "Describing Chemical Bonds: Valence Bond Theory",
+      "focus": "Orbital overlap, sigma bonds, bond strength, and bond length.",
+      "facts": [
+        "Valence bond theory describes a covalent bond as overlap between singly occupied orbitals on two atoms.",
+        "The paired electrons in overlapping orbitals are attracted to both nuclei.",
+        "A sigma bond forms by head-on overlap along the internuclear axis.",
+        "A sigma bond has cylindrical symmetry around the line connecting the nuclei.",
+        "Bond strength is the energy needed to break a bond homolytically into separated atoms or fragments.",
+        "The H-H bond strength is about 436 kJ/mol and the H-H bond length is about 74 pm.",
+        "Bond length is the internuclear distance at minimum energy."
+      ],
+      "candidate_cards": [
+        {
+          "id": "ochem-ch01-022",
+          "type": "vocabulary",
+          "front": "In valence bond theory, when does a covalent bond form?",
+          "back": "When singly occupied orbitals on two atoms overlap and the paired electrons are attracted to both nuclei.",
+          "tags": ["valence-bond-theory"]
+        },
+        {
+          "id": "ochem-ch01-023",
+          "type": "vocabulary",
+          "front": "What is a sigma bond?",
+          "back": "A sigma bond is formed by head-on orbital overlap along the line connecting two nuclei.",
+          "tags": ["valence-bond-theory", "sigma-bonds"]
+        },
+        {
+          "id": "ochem-ch01-024",
+          "type": "fact-recall",
+          "front": "What spatial symmetry does a sigma bond have?",
+          "back": "It has cylindrical symmetry around the internuclear axis.",
+          "tags": ["valence-bond-theory", "sigma-bonds"]
+        },
+        {
+          "id": "ochem-ch01-025",
+          "type": "comparison",
+          "front": "Distinguish bond strength from bond length.",
+          "back": "Bond strength is the energy needed to break the bond; bond length is the equilibrium distance between the bonded nuclei.",
+          "tags": ["valence-bond-theory", "bond-properties"]
+        }
+      ]
+    },
+    {
+      "section_id": "1.6",
+      "title": "sp3 Hybrid Orbitals and the Structure of Methane",
+      "focus": "sp3 hybridization, tetrahedral methane, and 109.5 degree bond angles.",
+      "molecule": {
+        "name": "methane",
+        "formula": "CH4",
+        "central_atom_hybridization": "sp3",
+        "geometry": "tetrahedral",
+        "ideal_bond_angle_degrees": 109.5
+      },
+      "facts": [
+        "Hybridization combines atomic orbitals on the same atom into new directional hybrid orbitals.",
+        "One s orbital plus three p orbitals form four equivalent sp3 hybrid orbitals.",
+        "The superscript in sp3 indicates that three p orbitals participate in the hybrid set.",
+        "The four sp3 orbitals point toward the corners of a tetrahedron.",
+        "sp3 orbitals are directional and asymmetric, so their larger lobes overlap effectively with other orbitals.",
+        "Methane has four equivalent C-H sigma bonds formed by overlap of carbon sp3 orbitals with hydrogen 1s orbitals.",
+        "Methane's H-C-H angle is 109.5 degrees.",
+        "Methane C-H bonds are about 109 pm long and about 439 kJ/mol strong."
+      ],
+      "candidate_cards": [
+        {
+          "id": "ochem-ch01-026",
+          "type": "vocabulary",
+          "front": "What atomic orbitals combine to make four sp3 hybrids?",
+          "back": "One s orbital and three p orbitals combine to form four equivalent sp3 hybrid orbitals.",
+          "tags": ["hybridization", "sp3", "methane"]
+        },
+        {
+          "id": "ochem-ch01-027",
+          "type": "fact-recall",
+          "front": "What geometry and bond angle are associated with sp3 carbon in methane?",
+          "back": "Tetrahedral geometry with ideal H-C-H angles of 109.5 degrees.",
+          "visual_requirements": ["vis-methane-tetrahedral-109-5"],
+          "tags": ["hybridization", "sp3", "methane", "geometry"]
+        },
+        {
+          "id": "ochem-ch01-028",
+          "type": "image-prompt",
+          "front": "Diagram prompt: show how methane gets four equivalent C-H bonds.",
+          "back": "Show carbon with four sp3 hybrid orbitals pointing tetrahedrally, each overlapping with a hydrogen 1s orbital to make a C-H sigma bond.",
+          "visual_requirements": ["vis-methane-tetrahedral-109-5", "vis-sp3-hybrid-composite"],
+          "tags": ["hybridization", "sp3", "visual"]
+        },
+        {
+          "id": "ochem-ch01-029",
+          "type": "reverse",
+          "front": "Four equivalent directional hybrids arranged toward the corners of a tetrahedron.",
+          "back": "This describes sp3 hybrid orbitals.",
+          "tags": ["hybridization", "sp3"]
+        },
+        {
+          "id": "ochem-ch01-030",
+          "type": "micro-problem",
+          "front": "A carbon has four single bonds and no pi bonds. What hybridization should you expect?",
+          "back": "sp3, with approximately tetrahedral geometry.",
+          "tags": ["hybridization", "sp3", "geometry"]
+        }
+      ]
+    },
+    {
+      "section_id": "1.7",
+      "title": "sp3 Hybrid Orbitals and the Structure of Ethane",
+      "focus": "sp3-sp3 sigma bonding in carbon chains.",
+      "molecule": {
+        "name": "ethane",
+        "formula": "C2H6",
+        "carbon_hybridization": "sp3",
+        "key_bond": "C-C sigma bond",
+        "c_c_bond_length_pm": 153,
+        "c_c_bond_strength_kj_per_mol": 377
+      },
+      "facts": [
+        "Ethane is the simplest molecule containing a carbon-carbon bond.",
+        "The C-C bond in ethane forms by head-on overlap of an sp3 hybrid orbital from each carbon.",
+        "The remaining three sp3 orbitals on each carbon overlap with hydrogen 1s orbitals to make six C-H sigma bonds.",
+        "Ethane bond angles are near the tetrahedral value of 109.5 degrees.",
+        "The ethane C-C single bond is about 153 pm long and about 377 kJ/mol strong.",
+        "Rotation is possible around a simple C-C sigma bond because head-on overlap is cylindrically symmetric."
+      ],
+      "candidate_cards": [
+        {
+          "id": "ochem-ch01-031",
+          "type": "fact-recall",
+          "front": "How is the C-C bond in ethane formed?",
+          "back": "By head-on sigma overlap of one sp3 hybrid orbital from each carbon.",
+          "visual_requirements": ["vis-ethane-sigma-rotation"],
+          "tags": ["hybridization", "sp3", "ethane", "sigma-bonds"]
+        },
+        {
+          "id": "ochem-ch01-032",
+          "type": "comparison",
+          "front": "How are the carbon orbitals in methane and ethane similar?",
+          "back": "Both use sp3 hybrid orbitals and have approximately tetrahedral bond angles around carbon.",
+          "tags": ["hybridization", "sp3", "methane", "ethane"]
+        },
+        {
+          "id": "ochem-ch01-033",
+          "type": "image-prompt",
+          "front": "Diagram prompt: show the sigma-bond framework of ethane.",
+          "back": "Show an sp3-sp3 C-C sigma bond plus six C-H sigma bonds from carbon sp3 orbitals overlapping hydrogen 1s orbitals.",
+          "visual_requirements": ["vis-ethane-sigma-rotation"],
+          "tags": ["hybridization", "ethane", "visual"]
+        },
+        {
+          "id": "ochem-ch01-034",
+          "type": "micro-problem",
+          "front": "Predict the approximate bond angle around each carbon in propane, CH3CH2CH3.",
+          "back": "Each carbon is sp3-hybridized, so the angles are approximately tetrahedral, near 109.5 degrees.",
+          "tags": ["hybridization", "sp3", "alkanes"]
+        }
+      ]
+    },
+    {
+      "section_id": "1.8",
+      "title": "sp2 Hybrid Orbitals and the Structure of Ethylene",
+      "focus": "Double bonds, trigonal planar geometry, and pi bonding.",
+      "molecule": {
+        "name": "ethylene",
+        "formula": "C2H4",
+        "carbon_hybridization": "sp2",
+        "geometry": "trigonal planar",
+        "ideal_bond_angle_degrees": 120,
+        "c_c_bond_length_pm": 134,
+        "c_c_bond_strength_kj_per_mol": 728
+      },
+      "facts": [
+        "A carbon-carbon double bond shares two electron pairs.",
+        "One s orbital plus two p orbitals form three sp2 hybrid orbitals, leaving one unhybridized p orbital.",
+        "The three sp2 orbitals lie in a plane about 120 degrees apart.",
+        "In ethylene, the two carbons form a sigma bond by sp2-sp2 head-on overlap.",
+        "The unhybridized p orbitals on adjacent carbons overlap sideways to form a pi bond.",
+        "The pi bond places electron density above and below the internuclear axis.",
+        "Ethylene is planar, with bond angles close to 120 degrees.",
+        "The C-C double bond in ethylene is shorter and stronger than the C-C single bond in ethane.",
+        "A double bond is less than twice as strong as a single bond because pi overlap is weaker than sigma overlap."
+      ],
+      "candidate_cards": [
+        {
+          "id": "ochem-ch01-035",
+          "type": "vocabulary",
+          "front": "What orbitals form an sp2 hybrid set?",
+          "back": "One s orbital and two p orbitals form three sp2 hybrids, leaving one p orbital unhybridized.",
+          "tags": ["hybridization", "sp2", "ethylene"]
+        },
+        {
+          "id": "ochem-ch01-036",
+          "type": "fact-recall",
+          "front": "What two parts make up the C-C double bond in ethylene?",
+          "back": "One sp2-sp2 sigma bond and one pi bond from sideways overlap of unhybridized p orbitals.",
+          "visual_requirements": ["vis-ethylene-pi-trigonal-planar"],
+          "tags": ["hybridization", "sp2", "pi-bonds"]
+        },
+        {
+          "id": "ochem-ch01-037",
+          "type": "comparison",
+          "front": "Compare ethane's C-C bond with ethylene's C-C bond.",
+          "back": "Ethane has a longer, weaker C-C single sigma bond. Ethylene has a shorter, stronger C-C double bond made from one sigma bond plus one pi bond.",
+          "tags": ["ethane", "ethylene", "bond-properties"]
+        },
+        {
+          "id": "ochem-ch01-038",
+          "type": "image-prompt",
+          "front": "Diagram prompt: show the pi bond in ethylene.",
+          "back": "Draw planar sp2 carbons with the sigma bond on the C-C axis and p orbitals overlapping above and below the plane to make a pi bond.",
+          "visual_requirements": ["vis-ethylene-pi-trigonal-planar"],
+          "tags": ["hybridization", "sp2", "visual"]
+        },
+        {
+          "id": "ochem-ch01-039",
+          "type": "micro-problem",
+          "front": "A carbon participates in one double bond and two single bonds. What hybridization and approximate geometry should you expect?",
+          "back": "sp2 hybridization with trigonal planar geometry and angles near 120 degrees.",
+          "tags": ["hybridization", "sp2", "geometry"]
+        }
+      ]
+    },
+    {
+      "section_id": "1.9",
+      "title": "sp Hybrid Orbitals and the Structure of Acetylene",
+      "focus": "Triple bonds, linear geometry, and two perpendicular pi bonds.",
+      "molecule": {
+        "name": "acetylene",
+        "formula": "C2H2",
+        "carbon_hybridization": "sp",
+        "geometry": "linear",
+        "ideal_bond_angle_degrees": 180,
+        "c_c_bond_length_pm": 120,
+        "c_c_bond_strength_kj_per_mol": 965
+      },
+      "facts": [
+        "A carbon-carbon triple bond shares three electron pairs.",
+        "One s orbital plus one p orbital form two sp hybrid orbitals, leaving two unhybridized p orbitals.",
+        "The two sp orbitals point 180 degrees apart.",
+        "In acetylene, sp-sp head-on overlap forms one C-C sigma bond.",
+        "Two perpendicular pairs of unhybridized p orbitals overlap sideways to form two pi bonds.",
+        "Acetylene is linear with H-C-C angles of 180 degrees.",
+        "The C-C triple bond is shorter and stronger than carbon-carbon single and double bonds."
+      ],
+      "candidate_cards": [
+        {
+          "id": "ochem-ch01-040",
+          "type": "vocabulary",
+          "front": "What orbitals form an sp hybrid set?",
+          "back": "One s orbital and one p orbital form two sp hybrids, leaving two p orbitals unhybridized.",
+          "tags": ["hybridization", "sp", "acetylene"]
+        },
+        {
+          "id": "ochem-ch01-041",
+          "type": "fact-recall",
+          "front": "What makes up the C-C triple bond in acetylene?",
+          "back": "One sp-sp sigma bond plus two perpendicular pi bonds from sideways p-p overlap.",
+          "visual_requirements": ["vis-acetylene-linear"],
+          "tags": ["hybridization", "sp", "pi-bonds"]
+        },
+        {
+          "id": "ochem-ch01-042",
+          "type": "fact-recall",
+          "front": "What geometry and bond angle are associated with sp carbon in acetylene?",
+          "back": "Linear geometry with 180 degree bond angles.",
+          "visual_requirements": ["vis-acetylene-linear"],
+          "tags": ["hybridization", "sp", "geometry"]
+        },
+        {
+          "id": "ochem-ch01-043",
+          "type": "comparison",
+          "front": "Order C-C single, double, and triple bonds by length and strength.",
+          "back": "Length decreases and strength increases from single to double to triple: single is longest/weakest, triple is shortest/strongest.",
+          "tags": ["bond-properties", "alkanes", "alkenes", "alkynes"]
+        },
+        {
+          "id": "ochem-ch01-044",
+          "type": "micro-problem",
+          "front": "A carbon participates in one triple bond and one single bond. What hybridization should you expect?",
+          "back": "sp hybridization, with a linear arrangement around that carbon.",
+          "tags": ["hybridization", "sp", "geometry"]
+        }
+      ]
+    },
+    {
+      "section_id": "1.10",
+      "title": "Hybridization of Nitrogen, Oxygen, Phosphorus, and Sulfur",
+      "focus": "Hybridization and lone pairs on common heteroatoms.",
+      "facts": [
+        "Hybridization is used to describe bonding in heteroatoms as well as carbon.",
+        "A neutral amine nitrogen is often described as sp3-hybridized, with three sigma bonds and one lone pair.",
+        "The lone pair on sp3 nitrogen occupies one of the four tetrahedral orbital directions and strongly affects reactivity.",
+        "An alcohol or ether oxygen is often described as sp3-hybridized, with two sigma bonds and two lone pairs.",
+        "Methanol has a C-O-H angle close to tetrahedral.",
+        "Phosphorus and sulfur are third-row analogs of nitrogen and oxygen, but they can form expanded-valence compounds.",
+        "Organophosphate phosphorus bonded to four oxygens is commonly treated as approximately sp3 with O-P-O angles near tetrahedral.",
+        "Thiols and sulfides can be described with approximate sp3 hybridization at sulfur, though their angles may deviate noticeably from 109.5 degrees."
+      ],
+      "candidate_cards": [
+        {
+          "id": "ochem-ch01-045",
+          "type": "fact-recall",
+          "front": "How is a neutral amine nitrogen commonly hybridized?",
+          "back": "It is commonly described as sp3, with three bonding orbitals and one lone-pair orbital.",
+          "tags": ["heteroatoms", "hybridization", "nitrogen"]
+        },
+        {
+          "id": "ochem-ch01-046",
+          "type": "fact-recall",
+          "front": "How is an alcohol or ether oxygen commonly hybridized?",
+          "back": "It is commonly described as sp3, with two sigma bonds and two lone pairs.",
+          "tags": ["heteroatoms", "hybridization", "oxygen"]
+        },
+        {
+          "id": "ochem-ch01-047",
+          "type": "comparison",
+          "front": "Compare sp3 nitrogen in an amine with sp3 oxygen in an alcohol.",
+          "back": "Amine nitrogen usually has three bonds and one lone pair; alcohol oxygen usually has two bonds and two lone pairs.",
+          "tags": ["heteroatoms", "nitrogen", "oxygen", "lone-pairs"]
+        },
+        {
+          "id": "ochem-ch01-048",
+          "type": "micro-problem",
+          "front": "In CH3NH2, how many lone pairs are on nitrogen, and what hybridization is expected?",
+          "back": "Nitrogen has one lone pair and is expected to be approximately sp3-hybridized.",
+          "tags": ["heteroatoms", "nitrogen", "micro-problem"]
+        },
+        {
+          "id": "ochem-ch01-049",
+          "type": "micro-problem",
+          "front": "In CH3OH, how many lone pairs are on oxygen, and what hybridization is expected?",
+          "back": "Oxygen has two lone pairs and is expected to be approximately sp3-hybridized.",
+          "tags": ["heteroatoms", "oxygen", "micro-problem"]
+        }
+      ]
+    },
+    {
+      "section_id": "1.11",
+      "title": "Describing Chemical Bonds: Molecular Orbital Theory",
+      "focus": "Molecular orbitals, bonding and antibonding combinations, and pi MO descriptions.",
+      "facts": [
+        "Molecular orbital theory forms orbitals for the whole molecule by combining atomic orbitals mathematically.",
+        "A molecular orbital has a size, shape, and energy, just as an atomic orbital does.",
+        "Combining two atomic orbitals gives two molecular orbitals: one lower-energy bonding orbital and one higher-energy antibonding orbital.",
+        "An additive combination concentrates electron density between nuclei and is bonding.",
+        "A subtractive combination creates a node between nuclei and is antibonding.",
+        "For H2, two 1s atomic orbitals combine to give filled sigma bonding and empty sigma antibonding molecular orbitals.",
+        "For ethylene, sideways p-orbital combinations produce pi bonding and pi antibonding molecular orbitals.",
+        "Same-sign p lobes combine to make a lower-energy pi bonding MO; opposite-sign lobes combine to make a higher-energy pi antibonding MO.",
+        "MO theory is especially useful for pi systems involving more than one double bond."
+      ],
+      "candidate_cards": [
+        {
+          "id": "ochem-ch01-050",
+          "type": "vocabulary",
+          "front": "What is a molecular orbital?",
+          "back": "A molecular orbital is an orbital that belongs to the molecule as a whole and describes where electrons are likely to be found in that molecule.",
+          "tags": ["molecular-orbital-theory"]
+        },
+        {
+          "id": "ochem-ch01-051",
+          "type": "comparison",
+          "front": "Compare bonding and antibonding molecular orbitals.",
+          "back": "A bonding MO is lower in energy and has electron density between nuclei; an antibonding MO is higher in energy and has a node between nuclei.",
+          "visual_requirements": ["vis-mo-bonding-antibonding"],
+          "tags": ["molecular-orbital-theory", "bonding", "antibonding"]
+        },
+        {
+          "id": "ochem-ch01-052",
+          "type": "fact-recall",
+          "front": "What does an additive orbital combination produce?",
+          "back": "A lower-energy bonding molecular orbital with electron density between the nuclei.",
+          "tags": ["molecular-orbital-theory"]
+        },
+        {
+          "id": "ochem-ch01-053",
+          "type": "fact-recall",
+          "front": "What does a subtractive orbital combination produce?",
+          "back": "A higher-energy antibonding molecular orbital with a node between the nuclei.",
+          "tags": ["molecular-orbital-theory"]
+        },
+        {
+          "id": "ochem-ch01-054",
+          "type": "image-prompt",
+          "front": "Diagram prompt: show pi bonding and pi antibonding MOs for ethylene.",
+          "back": "Show same-sign p lobes combining into a filled lower-energy pi bonding MO, and opposite-sign lobes combining into an empty higher-energy pi antibonding MO with a node between carbons.",
+          "visual_requirements": ["vis-mo-bonding-antibonding", "vis-ethylene-pi-trigonal-planar"],
+          "tags": ["molecular-orbital-theory", "pi-bonds", "visual"]
+        }
+      ]
+    },
+    {
+      "section_id": "1.12",
+      "title": "Drawing Chemical Structures",
+      "focus": "Condensed structures, skeletal structures, implied atoms, and formula counting.",
+      "facts": [
+        "A line between atoms represents the two electrons in a covalent bond.",
+        "Condensed structures omit many C-H and C-C single bond lines; groups such as CH3, CH2, and CH imply how many hydrogens are attached.",
+        "Parentheses can group repeated substituents, as in (CH3)2 attached to one atom.",
+        "In skeletal structures, carbon atoms are normally implied at every line end and line intersection.",
+        "Hydrogens bonded to carbon are normally omitted in skeletal structures and supplied mentally to give carbon valence 4.",
+        "Atoms other than carbon and hydrogen are normally shown explicitly.",
+        "Hydrogens attached to heteroatoms are shown explicitly.",
+        "A line end normally represents CH3, a two-way vertex CH2, a three-way vertex CH, and a four-way vertex carbon with no hydrogens, unless multiple bonds or heteroatoms alter the count."
+      ],
+      "candidate_cards": [
+        {
+          "id": "ochem-ch01-055",
+          "type": "vocabulary",
+          "front": "What is a condensed structure?",
+          "back": "A shorthand structure where many C-H and C-C single bonds are not drawn but are implied by groups such as CH3, CH2, and CH.",
+          "tags": ["drawing-structures", "condensed-structures"]
+        },
+        {
+          "id": "ochem-ch01-056",
+          "type": "fact-recall",
+          "front": "In a skeletal structure, where are carbon atoms implied?",
+          "back": "At each line end and at each line intersection, unless an atom is explicitly shown.",
+          "visual_requirements": ["vis-line-angle-conventions"],
+          "tags": ["drawing-structures", "skeletal-structures"]
+        },
+        {
+          "id": "ochem-ch01-057",
+          "type": "fact-recall",
+          "front": "Which atoms are usually shown explicitly in skeletal structures?",
+          "back": "Atoms other than carbon and hydrogen are shown; hydrogens on heteroatoms are also shown.",
+          "tags": ["drawing-structures", "skeletal-structures"]
+        },
+        {
+          "id": "ochem-ch01-058",
+          "type": "reverse",
+          "front": "A skeletal vertex with two single bonds and no charge or heteroatom label.",
+          "back": "It represents a carbon bearing two hydrogens, CH2.",
+          "visual_requirements": ["vis-line-angle-conventions"],
+          "tags": ["drawing-structures", "implicit-hydrogens"]
+        },
+        {
+          "id": "ochem-ch01-059",
+          "type": "micro-problem",
+          "front": "In a simple alkane skeletal drawing, how many hydrogens are on a line-end carbon?",
+          "back": "Three hydrogens, so the line-end carbon is CH3.",
+          "tags": ["drawing-structures", "implicit-hydrogens"]
+        },
+        {
+          "id": "ochem-ch01-060",
+          "type": "micro-problem",
+          "front": "In a simple alkane skeletal drawing, how many hydrogens are on a four-way carbon vertex?",
+          "back": "None; four bonds already fill carbon's usual valence.",
+          "tags": ["drawing-structures", "implicit-hydrogens"]
+        },
+        {
+          "id": "ochem-ch01-061",
+          "type": "image-prompt",
+          "front": "Diagram prompt: teach line-angle conventions with one compact example.",
+          "back": "Show a skeletal chain and annotate line ends as CH3, two-way vertices as CH2, three-way vertices as CH, heteroatoms as explicit, and omitted carbon-bound hydrogens as implied.",
+          "visual_requirements": ["vis-line-angle-conventions"],
+          "tags": ["drawing-structures", "visual"]
+        }
+      ]
+    }
+  ],
+  "integration_notes": [
+    "This file is a source/explorer record, not a flattened app deck. A later build pass can flatten sections[*].candidate_cards into review cards.",
+    "The current worktree does not include scripts/build_ochem.py or ochem/explorer; no builder changes were made.",
+    "Visual asset generation should prioritize the seven top-level visual_requirements before adding decorative molecule artwork.",
+    "The organic app deck currently supports front/back strings and inline markdown images; this richer source format will need a small adapter before it appears in the PWA."
+  ]
+}

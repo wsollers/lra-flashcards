@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Organic Chemistry Explorer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/mhchem.min.js"></script>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar" aria-label="Chemistry topics">
+      <div class="brand">
+        <span class="brand-mark">OC</span>
+        <div>
+          <h1>Organic Chemistry Explorer</h1>
+          <p>Chapters 1-4 pipeline preview</p>
+        </div>
+      </div>
+      <label class="search-label" for="searchInput">Search</label>
+      <input id="searchInput" type="search" placeholder="polarity, sp3, dipole">
+      <nav id="cardList" class="card-list"></nav>
+    </aside>
+
+    <section class="workspace">
+      <header class="workspace-head">
+        <div>
+          <p id="sectionLabel" class="eyebrow"></p>
+          <h2 id="cardTitle"></h2>
+        </div>
+        <div class="mode-tabs" role="tablist" aria-label="Study mode">
+          <button class="mode-button active" data-mode="explore">Explore</button>
+          <button class="mode-button" data-mode="flashcard">Flashcard</button>
+        </div>
+      </header>
+
+      <section id="exploreMode" class="layout-grid">
+        <article class="canvas-panel">
+          <div class="panel-head">
+            <span>3D structure</span>
+            <span id="geometryLabel"></span>
+          </div>
+          <div class="view-control">
+            <label for="representationSelect">View</label>
+            <select id="representationSelect"></select>
+          </div>
+          <div id="quickControls" class="quick-controls" aria-label="View controls"></div>
+          <canvas id="moleculeCanvas" width="760" height="520" aria-label="Rotatable molecule canvas"></canvas>
+          <div class="canvas-tools">
+            <button id="resetViewButton">Reset View</button>
+            <div class="tool-group" aria-label="Canvas interaction">
+              <button id="rotateToolButton" class="tool-toggle active" type="button">Rotate</button>
+              <button id="panToolButton" class="tool-toggle" type="button">Pan</button>
+            </div>
+            <span id="dragHint">Drag to rotate</span>
+          </div>
+          <p id="viewExplanation" class="view-explanation"></p>
+        </article>
+
+        <article class="facts-panel">
+          <div class="panel-head">
+            <span>Facts and formulas</span>
+            <span id="tagLabel"></span>
+          </div>
+          <div class="static-structure">
+            <img id="structureImage" alt="">
+          </div>
+          <div id="formulaList" class="formula-list"></div>
+          <div id="reactionList" class="reaction-list"></div>
+          <ul id="factList" class="fact-list"></ul>
+        </article>
+      </section>
+
+      <section id="flashcardMode" class="flashcard-panel hidden">
+        <article class="study-card">
+          <div class="card-face">
+            <p class="eyebrow">Question</p>
+            <p id="frontText" class="question-text"></p>
+          </div>
+          <div class="card-face answer-face">
+            <p class="eyebrow">Answer</p>
+            <p id="backText"></p>
+          </div>
+          <div id="promptList" class="prompt-list"></div>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

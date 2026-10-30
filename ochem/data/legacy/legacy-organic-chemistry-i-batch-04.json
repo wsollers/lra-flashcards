@@ -1,0 +1,431 @@
+{
+  "schema_version": 1,
+  "id": "legacy-organic-chemistry-i-batch-04",
+  "source": {
+    "file": "cards/core/34-organic-chemistry-i.json",
+    "legacy_range": "061-080",
+    "note": "Legacy Organic Chemistry I cards converted into ochem pipeline source records without changing the original question or answer meaning."
+  },
+  "cards": [
+    {
+      "legacy_id": "organic-chemistry-i-061",
+      "id": "legacy-organic-chemistry-i-061",
+      "front": "Show the alkyne functional group pattern.",
+      "back": "![Alkyne](../assets/organic/alkyne.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "alkyne", "pattern-recall", "triple-bonds", "unsaturation"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkyne",
+        "pattern": "C#C",
+        "representative": "ethyne",
+        "formula": "C2H2",
+        "smiles": "C#C"
+      },
+      "visual_requirements": ["assets/organic/alkyne.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-alkyne",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-045, 049, 053, and 057; keep because this is name-to-pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-062",
+      "id": "legacy-organic-chemistry-i-062",
+      "front": "Show the arene functional group pattern.",
+      "back": "![Arene](../assets/organic/arene.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "hydrocarbons", "arene", "pattern-recall", "aromaticity", "benzene"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "arene",
+        "pattern": "aromatic ring",
+        "representative": "benzene",
+        "formula": "C6H6",
+        "smiles": "c1ccccc1"
+      },
+      "visual_requirements": ["assets/organic/arene.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-arene",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-046, 050, 054, and 058; keep because this is name-to-pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-063",
+      "id": "legacy-organic-chemistry-i-063",
+      "front": "What is an alcohol?",
+      "back": "A compound with an `R-OH` hydroxyl group.",
+      "type": "definition",
+      "topic": "Oxygen-containing functional groups",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "alcohol", "hydroxyl", "suffixes"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alcohol",
+        "pattern": "R-OH",
+        "representative": "methanol",
+        "formula": "CH4O",
+        "smiles": "CO"
+      },
+      "visual_requirements": ["assets/organic/alcohol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-alcohol",
+      "merge_notes": "Related to legacy-organic-chemistry-i-018, which asks for the alcohol suffix, and to legacy-organic-chemistry-i-064, 065, 075, and 079; keep because this card states the class definition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-064",
+      "id": "legacy-organic-chemistry-i-064",
+      "front": "What is the characteristic feature of an alcohol?",
+      "back": "An `-OH` group bonded to carbon.",
+      "type": "definition",
+      "topic": "Oxygen-containing functional-group features",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "alcohol", "hydroxyl", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alcohol",
+        "pattern": "R-OH",
+        "representative": "methanol",
+        "formula": "CH4O",
+        "smiles": "CO"
+      },
+      "visual_requirements": ["assets/organic/alcohol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-alcohol",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-063 and related to legacy-organic-chemistry-i-018, 065, 075, and 079; keep because it preserves the characteristic-feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-065",
+      "id": "legacy-organic-chemistry-i-065",
+      "front": "Which functional group has `R-OH`?",
+      "back": "Alcohol.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "alcohol", "hydroxyl", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alcohol",
+        "pattern": "R-OH",
+        "representative": "methanol",
+        "formula": "CH4O",
+        "smiles": "CO"
+      },
+      "visual_requirements": ["assets/organic/alcohol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-r-oh-alcohol",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-063 and 064, and related to legacy-organic-chemistry-i-075 and 079; keep as reverse recognition from pattern to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-066",
+      "id": "legacy-organic-chemistry-i-066",
+      "front": "What is an ether?",
+      "back": "A compound with oxygen between two carbon groups: `R-O-R`.",
+      "type": "definition",
+      "topic": "Oxygen-containing functional groups",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "ether", "single-bonds"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ether",
+        "pattern": "R-O-R",
+        "representative": "dimethyl ether",
+        "formula": "C2H6O",
+        "smiles": "COC"
+      },
+      "visual_requirements": ["assets/organic/ether.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-ether",
+      "merge_notes": "Related to existing Chapter 3 functional-group inventory and to legacy-organic-chemistry-i-067, 068, 076, and 080; keep because this card states the class definition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-067",
+      "id": "legacy-organic-chemistry-i-067",
+      "front": "What is the characteristic feature of an ether?",
+      "back": "An oxygen single-bonded to two carbon groups.",
+      "type": "definition",
+      "topic": "Oxygen-containing functional-group features",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "ether", "single-bonds", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ether",
+        "pattern": "R-O-R",
+        "representative": "dimethyl ether",
+        "formula": "C2H6O",
+        "smiles": "COC"
+      },
+      "visual_requirements": ["assets/organic/ether.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-ether",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-066 and related to legacy-organic-chemistry-i-068, 076, and 080; keep because it preserves the characteristic-feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-068",
+      "id": "legacy-organic-chemistry-i-068",
+      "front": "Which functional group has `R-O-R`?",
+      "back": "Ether.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "ether", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ether",
+        "pattern": "R-O-R",
+        "representative": "dimethyl ether",
+        "formula": "C2H6O",
+        "smiles": "COC"
+      },
+      "visual_requirements": ["assets/organic/ether.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-r-o-r-ether",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-066 and 067, and related to legacy-organic-chemistry-i-076 and 080; keep as reverse recognition from pattern to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-069",
+      "id": "legacy-organic-chemistry-i-069",
+      "front": "What is an epoxide?",
+      "back": "A three-membered cyclic ether.",
+      "type": "definition",
+      "topic": "Oxygen-containing functional groups",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "epoxide", "cyclic-ether", "three-membered-ring", "ring-strain"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "epoxide",
+        "pattern": "three-membered cyclic ether",
+        "representative": "oxirane",
+        "formula": "C2H4O",
+        "smiles": "C1CO1"
+      },
+      "visual_requirements": ["assets/organic/epoxide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-epoxide",
+      "merge_notes": "Related to legacy-organic-chemistry-i-070, 071, and 077; keep as the direct epoxide definition card."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-070",
+      "id": "legacy-organic-chemistry-i-070",
+      "front": "What is the characteristic feature of an epoxide?",
+      "back": "Oxygen in a strained three-membered ring.",
+      "type": "definition",
+      "topic": "Oxygen-containing functional-group features",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "epoxide", "cyclic-ether", "three-membered-ring", "ring-strain", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "epoxide",
+        "pattern": "oxygen in a strained three-membered ring",
+        "representative": "oxirane",
+        "formula": "C2H4O",
+        "smiles": "C1CO1"
+      },
+      "visual_requirements": ["assets/organic/epoxide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-epoxide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-069 and related to legacy-organic-chemistry-i-071 and 077; keep because it preserves the strained-ring feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-071",
+      "id": "legacy-organic-chemistry-i-071",
+      "front": "Which functional group is a three-membered cyclic ether?",
+      "back": "Epoxide.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "epoxide", "cyclic-ether", "three-membered-ring", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "epoxide",
+        "pattern": "three-membered cyclic ether",
+        "representative": "oxirane",
+        "formula": "C2H4O",
+        "smiles": "C1CO1"
+      },
+      "visual_requirements": ["assets/organic/epoxide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-three-membered-cyclic-ether-epoxide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-069 and 070, and related to legacy-organic-chemistry-i-077; keep as reverse recognition from feature to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-072",
+      "id": "legacy-organic-chemistry-i-072",
+      "front": "What is a peroxide?",
+      "back": "A compound with an oxygen-oxygen single bond: `R-O-O-R`.",
+      "type": "definition",
+      "topic": "Oxygen-containing functional groups",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "peroxide", "oxygen-oxygen-bond"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "peroxide",
+        "pattern": "R-O-O-R",
+        "representative": "dimethyl peroxide",
+        "formula": "C2H6O2",
+        "smiles": "COOC"
+      },
+      "visual_requirements": ["assets/organic/peroxide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-definition-peroxide",
+      "merge_notes": "Related to legacy-organic-chemistry-i-073, 074, and 078; keep as the direct peroxide definition card."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-073",
+      "id": "legacy-organic-chemistry-i-073",
+      "front": "What is the characteristic feature of a peroxide?",
+      "back": "An `O-O` single bond.",
+      "type": "definition",
+      "topic": "Oxygen-containing functional-group features",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "peroxide", "oxygen-oxygen-bond", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "peroxide",
+        "pattern": "O-O single bond",
+        "representative": "dimethyl peroxide",
+        "formula": "C2H6O2",
+        "smiles": "COOC"
+      },
+      "visual_requirements": ["assets/organic/peroxide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-feature-peroxide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-072 and related to legacy-organic-chemistry-i-074 and 078; keep because it preserves the characteristic-feature wording."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-074",
+      "id": "legacy-organic-chemistry-i-074",
+      "front": "Which functional group has `R-O-O-R`?",
+      "back": "Peroxide.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "peroxide", "oxygen-oxygen-bond", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "peroxide",
+        "pattern": "R-O-O-R",
+        "representative": "dimethyl peroxide",
+        "formula": "C2H6O2",
+        "smiles": "COOC"
+      },
+      "visual_requirements": ["assets/organic/peroxide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-r-o-o-r-peroxide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-072 and 073, and related to legacy-organic-chemistry-i-078; keep as reverse recognition from pattern to group."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-075",
+      "id": "legacy-organic-chemistry-i-075",
+      "front": "What functional group is shown? ![Alcohol](../assets/organic/alcohol.svg)",
+      "back": "Alcohol.",
+      "type": "concept",
+      "topic": "Functional-group visual recognition",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "alcohol", "visual-recognition", "hydroxyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alcohol",
+        "pattern": "R-OH",
+        "representative": "methanol",
+        "formula": "CH4O",
+        "smiles": "CO"
+      },
+      "visual_requirements": ["assets/organic/alcohol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-visual-recognition-alcohol",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-063, 064, 065, and 079; keep because the prompt is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-076",
+      "id": "legacy-organic-chemistry-i-076",
+      "front": "What functional group is shown? ![Ether](../assets/organic/ether.svg)",
+      "back": "Ether.",
+      "type": "concept",
+      "topic": "Functional-group visual recognition",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "ether", "visual-recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ether",
+        "pattern": "R-O-R",
+        "representative": "dimethyl ether",
+        "formula": "C2H6O",
+        "smiles": "COC"
+      },
+      "visual_requirements": ["assets/organic/ether.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-visual-recognition-ether",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-066, 067, 068, and 080; keep because the prompt is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-077",
+      "id": "legacy-organic-chemistry-i-077",
+      "front": "What functional group is shown? ![Epoxide](../assets/organic/epoxide.svg)",
+      "back": "Epoxide.",
+      "type": "concept",
+      "topic": "Functional-group visual recognition",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "epoxide", "visual-recognition", "cyclic-ether", "three-membered-ring"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "epoxide",
+        "pattern": "three-membered cyclic ether",
+        "representative": "oxirane",
+        "formula": "C2H4O",
+        "smiles": "C1CO1"
+      },
+      "visual_requirements": ["assets/organic/epoxide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-visual-recognition-epoxide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-069, 070, and 071; keep because the prompt is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-078",
+      "id": "legacy-organic-chemistry-i-078",
+      "front": "What functional group is shown? ![Peroxide](../assets/organic/peroxide.svg)",
+      "back": "Peroxide.",
+      "type": "concept",
+      "topic": "Functional-group visual recognition",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "peroxide", "visual-recognition", "oxygen-oxygen-bond"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "peroxide",
+        "pattern": "R-O-O-R",
+        "representative": "dimethyl peroxide",
+        "formula": "C2H6O2",
+        "smiles": "COOC"
+      },
+      "visual_requirements": ["assets/organic/peroxide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-visual-recognition-peroxide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-072, 073, and 074; keep because the prompt is image-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-079",
+      "id": "legacy-organic-chemistry-i-079",
+      "front": "Show the alcohol functional group pattern.",
+      "back": "![Alcohol](../assets/organic/alcohol.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "alcohol", "pattern-recall", "hydroxyl"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alcohol",
+        "pattern": "R-OH",
+        "representative": "methanol",
+        "formula": "CH4O",
+        "smiles": "CO"
+      },
+      "visual_requirements": ["assets/organic/alcohol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-alcohol",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-063, 064, 065, and 075; keep because this is name-to-pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-080",
+      "id": "legacy-organic-chemistry-i-080",
+      "front": "Show the ether functional group pattern.",
+      "back": "![Ether](../assets/organic/ether.svg)",
+      "type": "concept",
+      "topic": "Functional-group pattern recall",
+      "tags": ["legacy", "functional-groups", "oxygen-containing", "ether", "pattern-recall"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ether",
+        "pattern": "R-O-R",
+        "representative": "dimethyl ether",
+        "formula": "C2H6O",
+        "smiles": "COC"
+      },
+      "visual_requirements": ["assets/organic/ether.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-pattern-recall-ether",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-066, 067, 068, and 076; keep because this is name-to-pattern recall."
+    }
+  ]
+}

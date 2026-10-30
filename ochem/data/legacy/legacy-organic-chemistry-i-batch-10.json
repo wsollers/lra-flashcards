@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "id": "legacy-organic-chemistry-i-batch-10",
+  "source": {
+    "file": "cards/core/34-organic-chemistry-i.json",
+    "legacy_range": "181-183",
+    "note": "Legacy Organic Chemistry I cards converted into ochem pipeline source records without changing the original question or answer meaning."
+  },
+  "cards": [
+    {
+      "legacy_id": "organic-chemistry-i-181",
+      "id": "legacy-organic-chemistry-i-181",
+      "front": "In a 1,4-disubstituted cyclohexane, which cis/trans pattern has `a,e` or `e,a` relationships?",
+      "back": "1,4-cis disubstituted.",
+      "type": "concept",
+      "topic": "Disubstituted cyclohexane axial/equatorial relationships",
+      "tags": ["legacy", "chapter-04", "cyclohexane", "disubstituted", "cis-trans", "axial-equatorial", "1-4-cis"],
+      "chapter_guess": "4.8 Disubstituted Cyclohexanes",
+      "molecule": {
+        "name": "1,4-cis disubstituted cyclohexane",
+        "pattern": "1,4 a,e or e,a means cis"
+      },
+      "visual_requirements": ["vr-disubstituted-relationship-grid"],
+      "decorations_needed": ["decision grid or chair pair showing 1,4 a,e/e,a as cis"],
+      "explorer_target": "disubstituted-cyclohexane-1-4-ae-ea-cis",
+      "merge_notes": "Reverse-direction near-duplicate of legacy-organic-chemistry-i-180 and related to c04-4-8-relationship-table; keep because it asks pattern-to-relationship recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-182",
+      "id": "legacy-organic-chemistry-i-182",
+      "front": "In a 1,4-trans disubstituted cyclohexane, what axial/equatorial relationships are possible?",
+      "back": "`a,a` or `e,e`.",
+      "type": "concept",
+      "topic": "Disubstituted cyclohexane axial/equatorial relationships",
+      "tags": ["legacy", "chapter-04", "cyclohexane", "disubstituted", "cis-trans", "axial-equatorial", "1-4-trans"],
+      "chapter_guess": "4.8 Disubstituted Cyclohexanes",
+      "molecule": {
+        "name": "1,4-trans disubstituted cyclohexane",
+        "pattern": "1,4-trans: a,a or e,e"
+      },
+      "visual_requirements": ["vr-disubstituted-relationship-grid"],
+      "decorations_needed": ["decision grid or chair pair showing 1,4-trans as diaxial or diequatorial"],
+      "explorer_target": "disubstituted-cyclohexane-1-4-trans-aa-ee",
+      "merge_notes": "Related to c04-4-8-relationship-table and paired with legacy-organic-chemistry-i-183; keep because it asks relationship-to-pattern recall."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-183",
+      "id": "legacy-organic-chemistry-i-183",
+      "front": "In a 1,4-disubstituted cyclohexane, which cis/trans pattern has `a,a` or `e,e` relationships?",
+      "back": "1,4-trans disubstituted.",
+      "type": "concept",
+      "topic": "Disubstituted cyclohexane axial/equatorial relationships",
+      "tags": ["legacy", "chapter-04", "cyclohexane", "disubstituted", "cis-trans", "axial-equatorial", "1-4-trans"],
+      "chapter_guess": "4.8 Disubstituted Cyclohexanes",
+      "molecule": {
+        "name": "1,4-trans disubstituted cyclohexane",
+        "pattern": "1,4 a,a or e,e means trans"
+      },
+      "visual_requirements": ["vr-disubstituted-relationship-grid"],
+      "decorations_needed": ["decision grid or chair pair showing 1,4 a,a/e,e as trans"],
+      "explorer_target": "disubstituted-cyclohexane-1-4-aa-ee-trans",
+      "merge_notes": "Reverse-direction near-duplicate of legacy-organic-chemistry-i-182 and related to c04-4-8-relationship-table; keep because it asks pattern-to-relationship recall."
+    }
+  ]
+}

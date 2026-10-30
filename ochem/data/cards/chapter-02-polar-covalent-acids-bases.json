@@ -1,0 +1,918 @@
+{
+  "schema_version": 1,
+  "deck_id": "ochem-chapter-02-polar-covalent-acids-bases",
+  "title": "Chapter 2: Polar Covalent Bonds; Acids and Bases",
+  "source": {
+    "textbook": "OpenStax Organic Chemistry",
+    "chapter": 2,
+    "chapter_title": "Polar Covalent Bonds; Acids and Bases",
+    "sections": [
+      "2.1 Polar Covalent Bonds and Electronegativity",
+      "2.2 Polar Covalent Bonds and Dipole Moments",
+      "2.3 Formal Charges",
+      "2.4 Resonance",
+      "2.5 Rules for Resonance Forms",
+      "2.6 Drawing Resonance Forms",
+      "2.7 Acids and Bases: The Bronsted-Lowry Definition",
+      "2.8 Acid and Base Strength",
+      "2.9 Predicting Acid-Base Reactions from pKa Values",
+      "2.10 Organic Acids and Organic Bases",
+      "2.11 Acids and Bases: The Lewis Definition",
+      "2.12 Noncovalent Interactions between Molecules"
+    ],
+    "pdf_path": "C:\\Users\\wsoll\\Downloads\\organic-chemistry_-_WEB.pdf",
+    "pdf_pages_inspected": "55-89"
+  },
+  "relationship_to_existing_cards": {
+    "note": "This is a comprehensive Chapter 2 explorer source file. The existing cards/core/34-organic-chemistry-i.json file is a front/back review deck focused mostly on naming and functional group recognition. This file uses namespaced IDs and richer structured fields for generated explorer views and visual card rendering."
+  },
+  "global_visual_notes": [
+    "Use crossed bond-dipole arrows with the positive tail at the electron-poor end and the arrowhead toward the electron-rich end.",
+    "Use electrostatic potential coloring consistently: red/orange for electron-rich or delta- regions, blue for electron-poor or delta+ regions, and neutral green/yellow as a transition.",
+    "For resonance, draw a double-headed resonance arrow between complete structures and curved arrows for electron-pair movement.",
+    "For formal charge problems, show lone pairs where needed and mark formal charges directly on the atom that bears them.",
+    "For acid-base mechanisms, use curved arrows from electron pair donors toward H or another Lewis-acidic atom, and from breaking bonds toward the atom receiving the electron pair."
+  ],
+  "cards": [
+    {
+      "id": "ochem-ch02-001",
+      "section": "2.1",
+      "type": "concept",
+      "topic": "electronegativity",
+      "prompt": "What makes a covalent bond polar rather than purely covalent?",
+      "answer": {
+        "core": "A covalent bond is polar when the bonding electrons are shared unequally because one bonded atom attracts them more strongly.",
+        "key_terms": ["polar covalent bond", "electronegativity", "partial charge"],
+        "common_trap": "Do not treat most bonds as either fully ionic or fully nonpolar; many lie between those extremes."
+      },
+      "visual_requirements": ["bond polarity continuum", "delta+ and delta- labels"]
+    },
+    {
+      "id": "ochem-ch02-002",
+      "section": "2.1",
+      "type": "definition",
+      "topic": "electronegativity",
+      "prompt": "Define electronegativity in the context of a covalent bond.",
+      "answer": {
+        "core": "Electronegativity is an atom's tendency to attract the shared electrons in a covalent bond.",
+        "relative_scale": "Fluorine is highest on the common scale; electropositive metals such as cesium are very low."
+      }
+    },
+    {
+      "id": "ochem-ch02-003",
+      "section": "2.1",
+      "type": "ordering",
+      "topic": "electronegativity",
+      "prompt": "Rank these atoms by typical electronegativity in organic chemistry: C, H, N, O, F, Li.",
+      "answer": {
+        "highest_to_lowest": ["F", "O", "N", "C", "H", "Li"],
+        "notes": "C and H are close enough that C-H bonds are usually treated as only weakly polar; C-Li is polarized toward carbon."
+      },
+      "visual_requirements": ["periodic trend cue", "relative electronegativity ladder"]
+    },
+    {
+      "id": "ochem-ch02-004",
+      "section": "2.1",
+      "type": "micro_problem",
+      "topic": "partial charges",
+      "prompt": "Assign delta+ and delta- in a C-O bond.",
+      "answer": {
+        "delta_positive": "C",
+        "delta_negative": "O",
+        "reason": "Oxygen is more electronegative than carbon, so the bonding electrons are drawn toward oxygen."
+      },
+      "visual_requirements": ["C delta+ label", "O delta- label", "bond dipole arrow from C toward O"]
+    },
+    {
+      "id": "ochem-ch02-005",
+      "section": "2.1",
+      "type": "micro_problem",
+      "topic": "partial charges",
+      "prompt": "Assign delta+ and delta- in a C-Li bond.",
+      "answer": {
+        "delta_positive": "Li",
+        "delta_negative": "C",
+        "reason": "Carbon is more electronegative than lithium, so the bond is polarized toward carbon."
+      },
+      "visual_requirements": ["Li delta+ label", "C delta- label", "bond dipole arrow from Li toward C"]
+    },
+    {
+      "id": "ochem-ch02-006",
+      "section": "2.1",
+      "type": "concept",
+      "topic": "bond dipole arrows",
+      "prompt": "In the crossed-arrow convention for bond polarity, where do the tail and head point?",
+      "answer": {
+        "tail": "The crossed tail marks the electron-poor, partially positive end.",
+        "head": "The arrowhead points toward the electron-rich, partially negative end.",
+        "memory_check": "Electrons are displaced in the direction of the arrow."
+      },
+      "visual_requirements": ["crossed dipole arrow", "delta+ at tail", "delta- at arrowhead"]
+    },
+    {
+      "id": "ochem-ch02-007",
+      "section": "2.1",
+      "type": "interpretation",
+      "topic": "electrostatic potential maps",
+      "prompt": "How should red and blue regions be interpreted on an electrostatic potential map?",
+      "answer": {
+        "red": "Electron-rich; often associated with partial negative charge or lone-pair density.",
+        "blue": "Electron-poor; often associated with partial positive charge.",
+        "use": "The map quickly highlights likely electron-rich and electron-poor reactive sites."
+      },
+      "visual_requirements": ["color-gradient legend", "red electron-rich label", "blue electron-poor label"]
+    },
+    {
+      "id": "ochem-ch02-008",
+      "section": "2.1",
+      "type": "concept",
+      "topic": "inductive effects",
+      "prompt": "What is an inductive effect?",
+      "answer": {
+        "core": "An inductive effect is a shift of sigma-bond electron density caused by electronegativity differences in nearby atoms or groups.",
+        "withdrawers": ["O", "N", "halogens"],
+        "donors": ["Li", "Mg", "many metal substituents"]
+      },
+      "visual_requirements": ["sigma-bond polarization arrows"]
+    },
+    {
+      "id": "ochem-ch02-009",
+      "section": "2.2",
+      "type": "definition",
+      "topic": "dipole moments",
+      "prompt": "What does a molecular dipole moment measure?",
+      "answer": {
+        "core": "A dipole moment measures net molecular polarity from separated positive and negative charge centers.",
+        "formula": "mu = Q x r",
+        "unit": "debye (D)"
+      }
+    },
+    {
+      "id": "ochem-ch02-010",
+      "section": "2.2",
+      "type": "concept",
+      "topic": "molecular polarity",
+      "prompt": "How do bond dipoles combine to give a molecular dipole?",
+      "answer": {
+        "core": "Bond dipoles and lone-pair contributions add as vectors; the molecule is polar if the vector sum is nonzero.",
+        "consequence": "A molecule can have polar bonds but no net dipole if the vectors cancel by symmetry."
+      },
+      "visual_requirements": ["bond dipole vectors", "net dipole vector", "vector cancellation example"]
+    },
+    {
+      "id": "ochem-ch02-011",
+      "section": "2.2",
+      "type": "comparison",
+      "topic": "symmetry cancellation",
+      "prompt": "Why is CO2 nonpolar even though each C=O bond is polar?",
+      "answer": {
+        "core": "CO2 is linear, so the two equal C=O bond dipoles point in opposite directions and cancel.",
+        "contrast": "A bent molecule with similar bonds, such as H2O, has a net dipole because the vectors do not cancel."
+      },
+      "visual_requirements": ["linear CO2", "opposing C=O dipole arrows", "zero net dipole label"]
+    },
+    {
+      "id": "ochem-ch02-012",
+      "section": "2.2",
+      "type": "comparison",
+      "topic": "symmetry cancellation",
+      "prompt": "Why do methane, ethane, benzene, and carbon dioxide have zero dipole moments?",
+      "answer": {
+        "core": "Their shapes are sufficiently symmetrical that individual bond polarities and lone-pair contributions cancel.",
+        "common_trap": "Zero dipole does not require every bond to be nonpolar; cancellation can also produce zero net polarity."
+      },
+      "visual_requirements": ["symmetry axes or cancellation arrows"]
+    },
+    {
+      "id": "ochem-ch02-013",
+      "section": "2.2",
+      "type": "micro_problem",
+      "topic": "dipole direction",
+      "prompt": "Predict the general dipole direction in methylamine, CH3NH2.",
+      "answer": {
+        "direction": "From the methyl group toward nitrogen and its lone pair.",
+        "reason": "Nitrogen is more electronegative than carbon and contributes lone-pair electron density."
+      },
+      "visual_requirements": ["3D methylamine sketch", "N lone pair", "net dipole arrow toward N"]
+    },
+    {
+      "id": "ochem-ch02-014",
+      "section": "2.2",
+      "type": "micro_problem",
+      "topic": "molecular polarity",
+      "prompt": "Which molecule is more likely to show a net dipole: trans-1,2-dichloroethylene or cis-1,2-dichloroethylene?",
+      "answer": {
+        "polar": "cis-1,2-dichloroethylene",
+        "less_polar_or_nonpolar": "trans-1,2-dichloroethylene",
+        "reason": "In the cis isomer the C-Cl dipoles reinforce; in the trans isomer they largely oppose and cancel."
+      },
+      "visual_requirements": ["cis/trans alkene pair", "C-Cl dipole arrows", "net dipole comparison"]
+    },
+    {
+      "id": "ochem-ch02-015",
+      "section": "2.3",
+      "type": "definition",
+      "topic": "formal charge",
+      "prompt": "What is formal charge used for?",
+      "answer": {
+        "core": "Formal charge is an electron-bookkeeping tool that assigns apparent charge to atoms in a Lewis or line-bond structure.",
+        "caution": "A formal charge is not always the same as the actual partial charge distribution."
+      }
+    },
+    {
+      "id": "ochem-ch02-016",
+      "section": "2.3",
+      "type": "formula",
+      "topic": "formal charge",
+      "prompt": "State the formal charge calculation for an atom in a molecule.",
+      "answer": {
+        "formula": "formal charge = valence electrons in neutral atom - nonbonding electrons - 1/2(bonding electrons)",
+        "equivalent": "formal charge = valence electrons - electrons owned by the atom in the structure"
+      }
+    },
+    {
+      "id": "ochem-ch02-017",
+      "section": "2.3",
+      "type": "micro_problem",
+      "topic": "formal charge",
+      "prompt": "What is the formal charge on nitrogen with four single bonds and no lone pair?",
+      "answer": {
+        "atom": "N",
+        "bonds": 4,
+        "nonbonding_electrons": 0,
+        "formal_charge": "+1",
+        "example": "ammonium, R4N+"
+      },
+      "visual_requirements": ["N with four bonds", "+ charge label"]
+    },
+    {
+      "id": "ochem-ch02-018",
+      "section": "2.3",
+      "type": "micro_problem",
+      "topic": "formal charge",
+      "prompt": "What is the formal charge on oxygen with one single bond and three lone pairs?",
+      "answer": {
+        "atom": "O",
+        "bonds": 1,
+        "nonbonding_electrons": 6,
+        "formal_charge": "-1",
+        "example": "alkoxide or hydroxide oxygen"
+      },
+      "visual_requirements": ["O with one bond", "three lone pairs", "- charge label"]
+    },
+    {
+      "id": "ochem-ch02-019",
+      "section": "2.3",
+      "type": "micro_problem",
+      "topic": "formal charge",
+      "prompt": "In dimethyl sulfoxide drawn as (CH3)2S+-O-, where are the formal charges?",
+      "answer": {
+        "positive": "S",
+        "negative": "O",
+        "reason": "Sulfur is drawn with more bonding than neutral divalent sulfur; oxygen is drawn with one bond and excess nonbonding electrons."
+      },
+      "visual_requirements": ["DMSO structure", "S+ label", "O- label", "electrostatic map cue"]
+    },
+    {
+      "id": "ochem-ch02-020",
+      "section": "2.3",
+      "type": "micro_problem",
+      "topic": "formal charge",
+      "prompt": "Assign the formal charge on carbon with three single bonds and an empty p orbital.",
+      "answer": {
+        "formal_charge": "+1",
+        "name": "carbocation",
+        "electron_count": "Carbon owns three bonding electrons and has one fewer electron than neutral carbon."
+      },
+      "visual_requirements": ["trivalent carbon", "empty p orbital", "+ charge label"]
+    },
+    {
+      "id": "ochem-ch02-021",
+      "section": "2.3",
+      "type": "micro_problem",
+      "topic": "formal charge",
+      "prompt": "Assign the formal charge on carbon with three bonds and one lone pair.",
+      "answer": {
+        "formal_charge": "-1",
+        "name": "carbanion",
+        "electron_count": "Carbon owns three bonding electrons plus two lone-pair electrons, one more than neutral carbon."
+      },
+      "visual_requirements": ["trivalent carbon", "lone pair", "- charge label"]
+    },
+    {
+      "id": "ochem-ch02-022",
+      "section": "2.4",
+      "type": "definition",
+      "topic": "resonance",
+      "prompt": "What are resonance forms?",
+      "answer": {
+        "core": "Resonance forms are different valid Lewis or line-bond drawings that have the same atom positions and connectivity but different placement of pi or nonbonding electrons.",
+        "relationship": "They are connected with a double-headed resonance arrow."
+      },
+      "visual_requirements": ["two complete structures", "double-headed resonance arrow"]
+    },
+    {
+      "id": "ochem-ch02-023",
+      "section": "2.4",
+      "type": "concept",
+      "topic": "resonance hybrid",
+      "prompt": "Does acetate switch back and forth between its two resonance forms?",
+      "answer": {
+        "core": "No. Acetate has one real resonance-hybrid structure; the individual resonance forms are drawings used to represent electron delocalization.",
+        "evidence": "The two C-O bonds are equivalent and intermediate between typical single and double C-O bond lengths."
+      },
+      "visual_requirements": ["acetate resonance forms", "hybrid with shared negative charge"]
+    },
+    {
+      "id": "ochem-ch02-024",
+      "section": "2.4",
+      "type": "micro_problem",
+      "topic": "resonance",
+      "prompt": "In acetate, what changes between the two major resonance forms?",
+      "answer": {
+        "changes": ["location of the C=O pi bond", "which oxygen is drawn with the negative formal charge"],
+        "unchanged": ["atom positions", "sigma-bond connectivity", "overall charge"]
+      },
+      "visual_requirements": ["acetate form A", "acetate form B", "curved arrows from lone pair and pi bond"]
+    },
+    {
+      "id": "ochem-ch02-025",
+      "section": "2.5",
+      "type": "rule",
+      "topic": "resonance rules",
+      "prompt": "Rule 1 for resonance: what is real, and what is imaginary?",
+      "answer": {
+        "real": "The resonance hybrid is the real structure.",
+        "imaginary": "Individual resonance forms are bookkeeping drawings, not rapidly interconverting molecules."
+      }
+    },
+    {
+      "id": "ochem-ch02-026",
+      "section": "2.5",
+      "type": "rule",
+      "topic": "resonance rules",
+      "prompt": "Rule 2 for resonance: what can move and what cannot?",
+      "answer": {
+        "can_move": "Pi electrons, lone pairs, single electrons, or empty p-orbital placement in compatible systems.",
+        "cannot_move": "Atoms, sigma-bond skeleton, and atom hybridizations should not change between valid resonance forms."
+      },
+      "visual_requirements": ["curved arrows showing electron movement only"]
+    },
+    {
+      "id": "ochem-ch02-027",
+      "section": "2.5",
+      "type": "rule",
+      "topic": "resonance stability",
+      "prompt": "When two resonance forms are not equivalent, which contributes more to the hybrid?",
+      "answer": {
+        "core": "The more stable resonance form contributes more.",
+        "stability_cues": ["full octets", "less charge separation", "negative charge on more electronegative atoms", "positive charge on less electronegative atoms when unavoidable"]
+      }
+    },
+    {
+      "id": "ochem-ch02-028",
+      "section": "2.5",
+      "type": "rule",
+      "topic": "resonance validity",
+      "prompt": "Why is a second-row atom with five bonds usually an invalid resonance form?",
+      "answer": {
+        "core": "Second-row main-group atoms such as C, N, and O cannot exceed an octet in ordinary organic resonance drawings.",
+        "example": "A resonance form of acetate with carbon bearing five bonds would put ten electrons around carbon, so it is invalid."
+      },
+      "visual_requirements": ["invalid five-bond carbon", "octet violation marker"]
+    },
+    {
+      "id": "ochem-ch02-029",
+      "section": "2.5",
+      "type": "concept",
+      "topic": "resonance stabilization",
+      "prompt": "How does resonance affect stability?",
+      "answer": {
+        "core": "Resonance delocalizes electrons over more atoms, usually lowering energy and stabilizing the species.",
+        "rule_of_thumb": "More important resonance contributors generally mean more stabilization, if the forms are valid."
+      }
+    },
+    {
+      "id": "ochem-ch02-030",
+      "section": "2.6",
+      "type": "pattern",
+      "topic": "drawing resonance forms",
+      "prompt": "What three-atom pattern often signals possible resonance?",
+      "answer": {
+        "pattern": "A three-atom sequence with adjacent p orbitals, often a multiple bond next to a lone pair, radical, positive charge, negative charge, or empty p orbital.",
+        "movement": "The multiple bond and electron-rich/electron-poor feature can shift from one end of the three-atom system to the other."
+      },
+      "visual_requirements": ["generic X=Y-Z* pattern", "resonance arrow", "curved arrows"]
+    },
+    {
+      "id": "ochem-ch02-031",
+      "section": "2.6",
+      "type": "micro_problem",
+      "topic": "resonance forms",
+      "prompt": "How many equivalent resonance forms does carbonate, CO3^2-, have?",
+      "answer": {
+        "count": 3,
+        "reason": "Any one of the three oxygens can be drawn as the double-bonded oxygen while the other two bear negative formal charges."
+      },
+      "visual_requirements": ["three carbonate resonance forms", "formal charges on oxygens", "double-headed arrows"]
+    },
+    {
+      "id": "ochem-ch02-032",
+      "section": "2.6",
+      "type": "micro_problem",
+      "topic": "resonance arrows",
+      "prompt": "For an allyl cation, H2C=CH-CH2+, what electron movement gives the second resonance form?",
+      "answer": {
+        "curved_arrow": "Move the pi electrons from the C=C bond toward the cationic end to form a new C=C bond.",
+        "result": "The positive charge appears at the opposite terminal carbon.",
+        "unchanged": "The three-carbon sigma skeleton remains the same."
+      },
+      "visual_requirements": ["allyl cation forms", "curved arrow from pi bond", "terminal positive charge labels"]
+    },
+    {
+      "id": "ochem-ch02-033",
+      "section": "2.7",
+      "type": "definition",
+      "topic": "Bronsted-Lowry acids and bases",
+      "prompt": "Define a Bronsted-Lowry acid and base.",
+      "answer": {
+        "acid": "A Bronsted-Lowry acid donates H+.",
+        "base": "A Bronsted-Lowry base accepts H+.",
+        "note": "The proton H+ is the hydrogen nucleus after loss of its valence electron."
+      }
+    },
+    {
+      "id": "ochem-ch02-034",
+      "section": "2.7",
+      "type": "reaction",
+      "topic": "conjugate acid-base pairs",
+      "prompt": "Identify the acid, base, conjugate acid, and conjugate base in HCl reacting with water.",
+      "answer": {
+        "reaction_latex": "\\ce{HCl + H2O <=> Cl- + H3O+}",
+        "acid": "HCl",
+        "base": "H2O",
+        "conjugate_base": "Cl-",
+        "conjugate_acid": "H3O+"
+      },
+      "visual_requirements": ["curved arrow from water lone pair to H", "H-Cl bond electrons to Cl"]
+    },
+    {
+      "id": "ochem-ch02-035",
+      "section": "2.7",
+      "type": "concept",
+      "topic": "amphoteric behavior",
+      "prompt": "How can water act as either an acid or a base?",
+      "answer": {
+        "as_base": "Water accepts H+ from a stronger acid to form H3O+.",
+        "as_acid": "Water donates H+ to a stronger base to form HO-.",
+        "principle": "Its role depends on the reaction partner."
+      }
+    },
+    {
+      "id": "ochem-ch02-036",
+      "section": "2.8",
+      "type": "definition",
+      "topic": "acid strength",
+      "prompt": "What does Ka measure for an acid HA in water?",
+      "answer": {
+        "core": "Ka measures the equilibrium tendency of HA to donate H+ to water and form A- and H3O+.",
+        "larger_Ka": "stronger acid",
+        "smaller_Ka": "weaker acid"
+      }
+    },
+    {
+      "id": "ochem-ch02-037",
+      "section": "2.8",
+      "type": "formula",
+      "topic": "pKa",
+      "prompt": "How are pKa and Ka related?",
+      "answer": {
+        "formula": "pKa = -log10(Ka)",
+        "inverse": "Ka = 10^(-pKa)",
+        "interpretation": "Lower pKa means stronger acid; higher pKa means weaker acid."
+      }
+    },
+    {
+      "id": "ochem-ch02-038",
+      "section": "2.8",
+      "type": "comparison",
+      "topic": "acid-base strength",
+      "prompt": "What is the relationship between acid strength and conjugate-base strength?",
+      "answer": {
+        "core": "A stronger acid has a weaker conjugate base; a weaker acid has a stronger conjugate base.",
+        "example": "HCl is a strong acid, so Cl- is a weak base; water is a weak acid, so HO- is a much stronger base."
+      }
+    },
+    {
+      "id": "ochem-ch02-039",
+      "section": "2.8",
+      "type": "reference",
+      "topic": "common pKa values",
+      "prompt": "Recall rough pKa values for common acids in Chapter 2.",
+      "answer": {
+        "values": [
+          {"acid": "HCl", "pKa": "-7"},
+          {"acid": "HNO3", "pKa": "-1.3"},
+          {"acid": "H3PO4", "pKa": "2.16"},
+          {"acid": "CH3CO2H", "pKa": "4.76"},
+          {"acid": "HCN", "pKa": "9.31"},
+          {"acid": "H2O", "pKa": "15.74"},
+          {"acid": "CH3CH2OH", "pKa": "16"}
+        ],
+        "use": "Use approximate values to compare acid strength and predict acid-base direction."
+      }
+    },
+    {
+      "id": "ochem-ch02-040",
+      "section": "2.8",
+      "type": "micro_problem",
+      "topic": "pKa comparison",
+      "prompt": "Phenylalanine has pKa 1.83 and tryptophan has pKa 2.83. Which is the stronger acid?",
+      "answer": {
+        "stronger_acid": "phenylalanine",
+        "reason": "The lower pKa corresponds to the stronger acid."
+      }
+    },
+    {
+      "id": "ochem-ch02-041",
+      "section": "2.9",
+      "type": "rule",
+      "topic": "acid-base prediction",
+      "prompt": "What pKa rule predicts the favored direction of an acid-base reaction?",
+      "answer": {
+        "core": "Equilibrium favors formation of the weaker acid and weaker base.",
+        "pKa_version": "The proton is transferred from the lower-pKa acid to the base whose conjugate acid has the higher pKa."
+      }
+    },
+    {
+      "id": "ochem-ch02-042",
+      "section": "2.9",
+      "type": "reaction",
+      "topic": "acid-base prediction",
+      "prompt": "Will hydroxide deprotonate acetic acid to a significant extent?",
+      "answer": {
+        "reaction_latex": "\\ce{CH3CO2H + HO- -> CH3CO2- + H2O}",
+        "starting_acid_pKa": "CH3CO2H, pKa 4.76",
+        "product_acid_pKa": "H2O, pKa 15.74",
+        "favored": "yes, strongly toward products",
+        "reason": "The reaction forms the weaker acid with the higher pKa."
+      },
+      "visual_requirements": ["curved arrow from HO- lone pair to acidic H", "O-H bond electrons to carboxylate oxygen"]
+    },
+    {
+      "id": "ochem-ch02-043",
+      "section": "2.9",
+      "type": "reaction",
+      "topic": "acid-base prediction",
+      "prompt": "Will hydroxide significantly deprotonate acetylene?",
+      "answer": {
+        "reaction_latex": "\\ce{HC#CH + HO- <=> HC#C- + H2O}",
+        "starting_acid_pKa": "acetylene, about 25",
+        "product_acid_pKa": "water, 15.74",
+        "favored": "no, not as written",
+        "reason": "The reaction would convert a weaker acid into a stronger acid; the acetylide anion is a stronger base than hydroxide."
+      },
+      "visual_requirements": ["equilibrium arrow favoring reactants", "pKa labels above acids"]
+    },
+    {
+      "id": "ochem-ch02-044",
+      "section": "2.9",
+      "type": "calculation",
+      "topic": "pKa to Ka",
+      "prompt": "Estimate Ka for acetic acid when pKa = 4.76.",
+      "answer": {
+        "setup": "Ka = 10^(-4.76)",
+        "result": "about 1.7 x 10^-5",
+        "skill": "Use the inverse log relationship between pKa and Ka."
+      }
+    },
+    {
+      "id": "ochem-ch02-045",
+      "section": "2.9",
+      "type": "reaction",
+      "topic": "multiline acid-base reasoning",
+      "prompt": "Use pKa values to explain why amide ion deprotonates ethanol.",
+      "answer": {
+        "reaction_latex": "\\begin{aligned}\\ce{CH3CH2OH + NH2- &-> CH3CH2O- + NH3}\\\\\\ce{acid && conjugate acid}\\end{aligned}",
+        "starting_acid_pKa": "ethanol, about 16",
+        "product_acid_pKa": "ammonia, about 36",
+        "favored": "products",
+        "reason": "The products contain the weaker acid, ammonia, and the weaker base, ethoxide, relative to amide."
+      },
+      "visual_requirements": ["multiline mhchem reaction", "pKa annotations", "curved arrows for proton transfer"]
+    },
+    {
+      "id": "ochem-ch02-046",
+      "section": "2.10",
+      "type": "concept",
+      "topic": "organic acids",
+      "prompt": "What structural features make common organic molecules acidic?",
+      "answer": {
+        "features": ["a positively polarized H bonded to electronegative O", "a C-H bond next to a carbonyl or other pi system that stabilizes the conjugate base"],
+        "examples": ["methanol", "acetic acid", "acetone at the alpha carbon"]
+      },
+      "visual_requirements": ["highlight acidic hydrogens", "electrostatic blue H regions"]
+    },
+    {
+      "id": "ochem-ch02-047",
+      "section": "2.10",
+      "type": "comparison",
+      "topic": "organic acids",
+      "prompt": "Why is acetic acid more acidic than methanol?",
+      "answer": {
+        "core": "Both place negative charge on oxygen after deprotonation, but acetate is additionally stabilized by resonance over two oxygens.",
+        "contrast": "Methoxide localizes its negative charge on one oxygen."
+      },
+      "visual_requirements": ["methoxide structure", "two acetate resonance forms", "negative charge delocalization"]
+    },
+    {
+      "id": "ochem-ch02-048",
+      "section": "2.10",
+      "type": "concept",
+      "topic": "carboxylic acids",
+      "prompt": "What is the typical ionization state of many carboxylic acids near cellular pH?",
+      "answer": {
+        "core": "At around pH 7.3, many carboxylic acids are mostly deprotonated as carboxylate anions, RCO2-.",
+        "reason": "Their pKa values are often near 4-5, well below physiological pH."
+      },
+      "visual_requirements": ["carboxylic acid to carboxylate transformation"]
+    },
+    {
+      "id": "ochem-ch02-049",
+      "section": "2.10",
+      "type": "concept",
+      "topic": "organic bases",
+      "prompt": "What structural feature characterizes many organic bases?",
+      "answer": {
+        "core": "Organic bases often contain an atom, commonly N or O, with a lone pair that can bond to H+.",
+        "examples": ["amines", "alcohol oxygens under strongly acidic conditions", "carbonyl oxygens under acidic conditions"]
+      },
+      "visual_requirements": ["lone-pair highlighting", "basic site labels"]
+    },
+    {
+      "id": "ochem-ch02-050",
+      "section": "2.10",
+      "type": "concept",
+      "topic": "zwitterions",
+      "prompt": "Why can amino acids exist as zwitterions?",
+      "answer": {
+        "core": "Amino acids contain both an acidic carboxylic acid group and a basic amine group, allowing internal proton transfer.",
+        "result": "The common zwitterion has an ammonium group and a carboxylate group in the same molecule."
+      },
+      "visual_requirements": ["neutral amino acid", "zwitterion", "internal proton transfer arrow"]
+    },
+    {
+      "id": "ochem-ch02-051",
+      "section": "2.11",
+      "type": "definition",
+      "topic": "Lewis acids and bases",
+      "prompt": "Define a Lewis acid and Lewis base.",
+      "answer": {
+        "Lewis_acid": "An electron-pair acceptor.",
+        "Lewis_base": "An electron-pair donor.",
+        "scope": "This definition includes Bronsted proton transfer but also many reactions without proton transfer."
+      }
+    },
+    {
+      "id": "ochem-ch02-052",
+      "section": "2.11",
+      "type": "concept",
+      "topic": "Lewis acids",
+      "prompt": "What kinds of species often act as Lewis acids?",
+      "answer": {
+        "classes": ["H+ or polarized H-X bonds", "metal cations such as Mg2+", "electron-deficient group 3A compounds such as BF3 and AlCl3", "transition-metal halides such as TiCl4, FeCl3, ZnCl2, SnCl4"],
+        "shared_feature": "They have an empty or low-energy orbital that can accept an electron pair."
+      }
+    },
+    {
+      "id": "ochem-ch02-053",
+      "section": "2.11",
+      "type": "reaction",
+      "topic": "Lewis acid-base arrows",
+      "prompt": "Describe the Lewis acid-base reaction between dimethyl ether and BF3.",
+      "answer": {
+        "reaction_latex": "\\ce{(CH3)2O: + BF3 -> (CH3)2O->BF3}",
+        "Lewis_base": "dimethyl ether oxygen",
+        "Lewis_acid": "boron in BF3",
+        "curved_arrow": "From an oxygen lone pair to boron."
+      },
+      "visual_requirements": ["ether lone pair", "vacant boron orbital", "curved arrow O to B", "new O-B bond"]
+    },
+    {
+      "id": "ochem-ch02-054",
+      "section": "2.11",
+      "type": "micro_problem",
+      "topic": "Lewis bases",
+      "prompt": "Show how acetaldehyde can act as a Lewis base toward H+.",
+      "answer": {
+        "basic_site": "carbonyl oxygen",
+        "curved_arrow": "From an oxygen lone pair to H+.",
+        "product": "protonated acetaldehyde, with positive formal charge on oxygen."
+      },
+      "visual_requirements": ["acetaldehyde carbonyl", "O lone pair", "curved arrow to H+", "O-H bond and O+ label"]
+    },
+    {
+      "id": "ochem-ch02-055",
+      "section": "2.11",
+      "type": "concept",
+      "topic": "multiple basic sites",
+      "prompt": "Why can carboxylic acids, esters, and amides have more than one possible Lewis-basic site?",
+      "answer": {
+        "core": "They contain multiple heteroatoms or resonance-connected atoms with lone pairs, so more than one atom can donate an electron pair.",
+        "selectivity": "The observed protonation site is usually the one that gives the more stable conjugate acid, often helped by resonance."
+      },
+      "visual_requirements": ["two possible protonation sites", "major/minor protonated forms"]
+    },
+    {
+      "id": "ochem-ch02-056",
+      "section": "2.12",
+      "type": "definition",
+      "topic": "noncovalent interactions",
+      "prompt": "What are noncovalent interactions?",
+      "answer": {
+        "core": "They are attractions or repulsions between molecules or between distant parts of a molecule that do not require forming a new covalent bond.",
+        "major_types": ["dipole-dipole forces", "dispersion forces", "hydrogen bonds"],
+        "synonyms": ["intermolecular forces", "van der Waals forces in broad usage"]
+      }
+    },
+    {
+      "id": "ochem-ch02-057",
+      "section": "2.12",
+      "type": "concept",
+      "topic": "dipole-dipole forces",
+      "prompt": "When are dipole-dipole interactions attractive versus repulsive?",
+      "answer": {
+        "attractive": "When opposite partial charges are near each other.",
+        "repulsive": "When like partial charges are forced near each other.",
+        "energetic_preference": "Attractive orientations are lower in energy and therefore favored."
+      },
+      "visual_requirements": ["two polar molecules", "attractive head-to-tail orientation", "repulsive like-charge orientation"]
+    },
+    {
+      "id": "ochem-ch02-058",
+      "section": "2.12",
+      "type": "concept",
+      "topic": "dispersion forces",
+      "prompt": "What causes dispersion forces?",
+      "answer": {
+        "core": "Momentary uneven electron distributions create temporary dipoles that induce complementary dipoles in neighboring molecules.",
+        "scope": "They occur between all neighboring molecules, including nonpolar molecules.",
+        "importance": "Cumulative dispersion can make larger nonpolar molecules liquids or solids."
+      },
+      "visual_requirements": ["temporary dipole", "induced dipole", "nonpolar molecule pair"]
+    },
+    {
+      "id": "ochem-ch02-059",
+      "section": "2.12",
+      "type": "definition",
+      "topic": "hydrogen bonding",
+      "prompt": "What is a hydrogen bond in this chapter's organic chemistry context?",
+      "answer": {
+        "core": "A hydrogen bond is an attractive interaction between a hydrogen attached to electronegative O or N and a lone pair on another O or N.",
+        "interpretation": "It is a strong, directional dipole-dipole interaction involving polarized O-H or N-H bonds."
+      },
+      "visual_requirements": ["O-H donor", "O or N acceptor lone pair", "dashed hydrogen bond", "delta+ H label"]
+    },
+    {
+      "id": "ochem-ch02-060",
+      "section": "2.12",
+      "type": "concept",
+      "topic": "hydrogen bonding consequences",
+      "prompt": "Why are hydrogen bonds especially important in biological molecules?",
+      "answer": {
+        "core": "They help determine molecular shape and association, including enzyme structure and DNA base pairing.",
+        "water": "They also help explain why water is liquid at ordinary temperatures."
+      },
+      "visual_requirements": ["hydrogen-bond network cue", "biomolecule interaction cue"]
+    },
+    {
+      "id": "ochem-ch02-061",
+      "section": "2.12",
+      "type": "comparison",
+      "topic": "hydrophilic and hydrophobic",
+      "prompt": "How do hydrophilic and hydrophobic substances differ?",
+      "answer": {
+        "hydrophilic": "Water-attracted; often contains polar groups or groups that can hydrogen-bond, such as multiple OH groups.",
+        "hydrophobic": "Not strongly attracted to water; often dominated by nonpolar hydrocarbon structure.",
+        "example_contrast": "Sugar is hydrophilic; vegetable oil is hydrophobic."
+      },
+      "visual_requirements": ["water interaction icons", "OH-rich molecule vs hydrocarbon"]
+    },
+    {
+      "id": "ochem-ch02-062",
+      "section": "2.1-2.2",
+      "type": "visual_prompt",
+      "topic": "polarity maps",
+      "prompt": "Given methanol, ask the learner to mark partial charges, bond dipoles, and electrostatic map colors.",
+      "answer": {
+        "partial_charges": "O is delta-; the C attached to O and the O-H hydrogen are relatively delta+.",
+        "bond_dipoles": ["C-O points toward O", "O-H points toward O"],
+        "map_colors": "O-rich region should be red/orange; electron-poor hydrogens and adjacent carbon should trend blue/green."
+      },
+      "visual_requirements": ["methanol structure", "C-O and O-H dipole arrows", "delta labels", "red-to-blue electrostatic overlay"]
+    },
+    {
+      "id": "ochem-ch02-063",
+      "section": "2.1-2.2",
+      "type": "visual_prompt",
+      "topic": "polarity maps",
+      "prompt": "Given methyllithium, ask the learner to interpret why the carbon side is electron-rich.",
+      "answer": {
+        "partial_charges": "Li is delta+; carbon is delta-.",
+        "reason": "Carbon is much more electronegative than lithium.",
+        "map_colors": "Lithium should appear blue/electron-poor; the carbon end should appear red/electron-rich."
+      },
+      "visual_requirements": ["methyllithium structure", "C-Li dipole arrow toward C", "electrostatic red carbon and blue lithium"]
+    },
+    {
+      "id": "ochem-ch02-064",
+      "section": "2.3-2.6",
+      "type": "integrated_problem",
+      "topic": "formal charge and resonance",
+      "prompt": "For acetate, combine formal charge assignment and resonance reasoning.",
+      "answer": {
+        "tasks": ["draw both major resonance forms", "mark the negative formal charge on the singly bonded oxygen in each form", "show curved arrows that interconvert the forms", "state that the real ion is a resonance hybrid"],
+        "key_conclusion": "The negative charge is delocalized over both oxygens."
+      },
+      "visual_requirements": ["two acetate forms", "formal charge labels", "curved arrows", "resonance hybrid with equivalent C-O bonds"]
+    },
+    {
+      "id": "ochem-ch02-065",
+      "section": "2.7-2.9",
+      "type": "integrated_problem",
+      "topic": "acid-base direction",
+      "prompt": "Predict the favored direction for acetic acid plus methoxide.",
+      "answer": {
+        "reaction_latex": "\\ce{CH3CO2H + CH3O- -> CH3CO2- + CH3OH}",
+        "starting_acid_pKa": "acetic acid, 4.76",
+        "product_acid_pKa": "methanol, about 16",
+        "favored": "products",
+        "reason": "The reaction moves from the stronger acid to the weaker acid."
+      },
+      "visual_requirements": ["proton transfer arrows", "pKa labels", "equilibrium favoring products"]
+    },
+    {
+      "id": "ochem-ch02-066",
+      "section": "2.10-2.11",
+      "type": "integrated_problem",
+      "topic": "organic bases and Lewis arrows",
+      "prompt": "Classify methylamine as an organic base and show its Lewis reaction with H+.",
+      "answer": {
+        "basic_site": "nitrogen lone pair",
+        "reaction_latex": "\\ce{CH3NH2 + H+ -> CH3NH3+}",
+        "curved_arrow": "From the nitrogen lone pair to H+.",
+        "product_charge": "Nitrogen bears the positive formal charge in methylammonium."
+      },
+      "visual_requirements": ["methylamine lone pair", "curved arrow to proton", "methylammonium N+ label"]
+    },
+    {
+      "id": "ochem-ch02-067",
+      "section": "2.11",
+      "type": "reaction",
+      "topic": "Lewis acid-base classification",
+      "prompt": "Classify each partner in \\ce{MgBr2 + HO- -> MgBr2(OH)-}-type coordination.",
+      "answer": {
+        "Lewis_acid": "Mg2+ center in magnesium bromide",
+        "Lewis_base": "hydroxide oxygen",
+        "reason": "The metal center accepts electron density; hydroxide donates an oxygen lone pair."
+      },
+      "visual_requirements": ["Mg center", "hydroxide lone pair", "curved arrow O to Mg"]
+    },
+    {
+      "id": "ochem-ch02-068",
+      "section": "2.12",
+      "type": "integrated_problem",
+      "topic": "noncovalent interactions",
+      "prompt": "Choose the dominant noncovalent interaction: 1-propanol has a higher boiling point than methane.",
+      "answer": {
+        "dominant_interaction": "hydrogen bonding, with additional dipole and dispersion contributions",
+        "reason": "1-Propanol contains an O-H group that can donate and accept hydrogen bonds; methane is nonpolar and only has dispersion forces."
+      },
+      "visual_requirements": ["two propanol molecules hydrogen-bonded", "methane dispersion-only contrast"]
+    },
+    {
+      "id": "ochem-ch02-069",
+      "section": "2.12",
+      "type": "integrated_problem",
+      "topic": "solubility and interactions",
+      "prompt": "Why does acetic acid dissolve in water better than in a nonpolar hydrocarbon solvent?",
+      "answer": {
+        "core": "Acetic acid is polar and can hydrogen-bond with water; it is also partly ionized under basic or neutral conditions. Nonpolar hydrocarbons cannot provide comparable stabilizing interactions.",
+        "interactions": ["hydrogen bonding", "dipole interactions", "possible ion-dipole stabilization for acetate"]
+      },
+      "visual_requirements": ["acetic acid-water hydrogen bonds", "nonpolar solvent contrast"]
+    },
+    {
+      "id": "ochem-ch02-070",
+      "section": "2.1-2.12",
+      "type": "synthesis",
+      "topic": "reactivity map",
+      "prompt": "How do polarity, formal charge, resonance, and acid-base ideas connect in Chapter 2?",
+      "answer": {
+        "core": "Electronegativity creates polarized bonds and electron-rich/electron-poor sites; formal charge tracks electron bookkeeping; resonance explains delocalization and stability; acid-base reactions move electron pairs and protons toward more stable products.",
+        "practical_use": "Together these ideas predict where molecules attract, donate, accept, deprotonate, protonate, and stabilize charge."
+      },
+      "visual_requirements": ["concept map linking EN, polarity, charge, resonance, acid-base, noncovalent interactions"]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-const CACHE = "lra-flashcards-v13";
+const CACHE = "lra-flashcards-v14";
 const SHELL = [
   "./",
   "./index.html",
@@ -16,8 +16,13 @@ const SHELL = [
   "../cards/core/31-relations-functions-order.json",
   "../cards/core/32-well-founded-well-defined.json",
   "../cards/core/33-calculus-i.json",
+  "../cards/core/36-calculus-1-continuity.json",
   "../cards/core/35-calculus-1-derivative.json",
   "../cards/core/34-organic-chemistry-i.json",
+  "../ochem/generated/cards.json",
+  "../ochem/explorer/index.html",
+  "../ochem/explorer/styles.css",
+  "../ochem/explorer/app.js",
   "../cards/lean/lean-core.json",
   "../cards/lean/mathlib-analysis-algebra.json",
   "../assets/organic/alkane.svg",

@@ -1,0 +1,431 @@
+{
+  "schema_version": 1,
+  "id": "legacy-organic-chemistry-i-batch-08",
+  "source": {
+    "file": "cards/core/34-organic-chemistry-i.json",
+    "legacy_range": "141-160",
+    "note": "Legacy Organic Chemistry I cards converted into ochem pipeline source records without changing the original question or answer meaning."
+  },
+  "cards": [
+    {
+      "legacy_id": "organic-chemistry-i-141",
+      "id": "legacy-organic-chemistry-i-141",
+      "front": "A functional group with a carbonyl bonded to two carbon groups is what?",
+      "back": "Ketone.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "ketone", "carbonyl", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ketone",
+        "pattern": "R-C(=O)-R",
+        "representative": "propanone",
+        "formula": "C3H6O",
+        "smiles": "CC(=O)C"
+      },
+      "visual_requirements": ["assets/organic/ketone.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-carbonyl-bonded-to-two-carbon-groups-ketone",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-087, 088, 089, 102, and 109; keep as feature-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-142",
+      "id": "legacy-organic-chemistry-i-142",
+      "front": "A functional group with `-COOH` is what?",
+      "back": "Carboxylic acid.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "carboxylic-acid", "carbonyl", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "carboxylic acid",
+        "pattern": "R-C(=O)-OH",
+        "representative": "ethanoic acid",
+        "formula": "C2H4O2",
+        "smiles": "CC(=O)O"
+      },
+      "visual_requirements": ["assets/organic/carboxylic-acid.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-cooh-carboxylic-acid",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-090, 091, 092, 103, and 110; keep as compact pattern-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-143",
+      "id": "legacy-organic-chemistry-i-143",
+      "front": "A functional group with a carbonyl bonded to `OR` is what?",
+      "back": "Ester.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "ester", "carbonyl", "oxygen-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ester",
+        "pattern": "R-C(=O)-OR",
+        "representative": "methyl ethanoate",
+        "formula": "C3H6O2",
+        "smiles": "CC(=O)OC"
+      },
+      "visual_requirements": ["assets/organic/ester.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-carbonyl-bonded-to-or-ester",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-093, 094, 095, 104, and 111; keep as feature-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-144",
+      "id": "legacy-organic-chemistry-i-144",
+      "front": "A functional group with a carbonyl bonded to nitrogen is what?",
+      "back": "Amide.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "amide", "carbonyl", "nitrogen-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amide",
+        "pattern": "R-C(=O)-N",
+        "representative": "ethanamide",
+        "formula": "C2H5NO",
+        "smiles": "CC(N)=O"
+      },
+      "visual_requirements": ["assets/organic/amide.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-carbonyl-bonded-to-nitrogen-amide",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-098, 099, 100, 106, 113, 114, 115, and 122; keep as feature-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-145",
+      "id": "legacy-organic-chemistry-i-145",
+      "front": "A functional group with oxygen between two carbon groups is what?",
+      "back": "Ether.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "ether", "oxygen-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ether",
+        "pattern": "R-O-R",
+        "representative": "dimethyl ether",
+        "formula": "C2H6O",
+        "smiles": "COC"
+      },
+      "visual_requirements": ["assets/organic/ether.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-oxygen-between-two-carbon-groups-ether",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-066, 067, 068, 076, 135, and 157; keep as feature-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-146",
+      "id": "legacy-organic-chemistry-i-146",
+      "front": "A functional group with `-OH` on carbon is what?",
+      "back": "Alcohol.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "alcohol", "oxygen-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alcohol",
+        "pattern": "R-OH",
+        "representative": "methanol",
+        "formula": "CH4O",
+        "smiles": "CO"
+      },
+      "visual_requirements": ["assets/organic/alcohol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-oh-on-carbon-alcohol",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-063, 064, 065, 075, 134, 157, 158, 159, and 160; keep as pattern-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-147",
+      "id": "legacy-organic-chemistry-i-147",
+      "front": "A functional group with nitrogen single-bonded to carbon groups is what?",
+      "back": "Amine.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "amine", "nitrogen-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amine",
+        "pattern": "R-NH2, R2NH, or R3N",
+        "representative": "methylamine",
+        "formula": "CH5N",
+        "smiles": "CN"
+      },
+      "visual_requirements": ["assets/organic/amine.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-nitrogen-single-bonded-to-carbon-groups-amine",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-113, 114, 115, 122, 123, and 156; keep as feature-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-148",
+      "id": "legacy-organic-chemistry-i-148",
+      "front": "A functional group with `C≡N` is what?",
+      "back": "Nitrile.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "nitrile", "nitrogen-containing", "triple-bond", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "nitrile",
+        "pattern": "R-C≡N",
+        "representative": "ethanenitrile",
+        "formula": "C2H3N",
+        "smiles": "CC#N"
+      },
+      "visual_requirements": ["assets/organic/nitrile.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-c-n-nitrile",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-116, 117, 118, 123, 125, and 127; keep as compact pattern-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-149",
+      "id": "legacy-organic-chemistry-i-149",
+      "front": "A functional group with `-SH` is what?",
+      "back": "Thiol.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "thiol", "sulfur-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "thiol",
+        "pattern": "R-SH",
+        "representative": "methanethiol",
+        "formula": "CH4S",
+        "smiles": "CS"
+      },
+      "visual_requirements": ["assets/organic/thiol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-sh-thiol",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-128, 129, 130, 134, 136, 138, and 158; keep as compact pattern-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-150",
+      "id": "legacy-organic-chemistry-i-150",
+      "front": "A functional group with sulfur between two carbon groups is what?",
+      "back": "Thioether.",
+      "type": "concept",
+      "topic": "Functional-group recognition",
+      "tags": ["legacy", "functional-groups", "thioether", "sulfur-containing", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "thioether",
+        "pattern": "R-S-R",
+        "representative": "dimethyl sulfide",
+        "formula": "C2H6S",
+        "smiles": "CSC"
+      },
+      "visual_requirements": ["assets/organic/thioether.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-sulfur-between-two-carbon-groups-thioether",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-131, 132, 133, 135, 137, and 139; keep as feature-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-151",
+      "id": "legacy-organic-chemistry-i-151",
+      "front": "A hydrocarbon with a double bond is what?",
+      "back": "Alkene.",
+      "type": "concept",
+      "topic": "Hydrocarbon functional-group recognition",
+      "tags": ["legacy", "functional-groups", "alkene", "hydrocarbon", "double-bond", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkene",
+        "pattern": "C=C",
+        "representative": "ethene",
+        "formula": "C2H4",
+        "smiles": "C=C"
+      },
+      "visual_requirements": ["assets/organic/alkene.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-hydrocarbon-double-bond-alkene",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-049, 050, 051, 056, 057, and 069; keep as feature-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-152",
+      "id": "legacy-organic-chemistry-i-152",
+      "front": "A hydrocarbon with a triple bond is what?",
+      "back": "Alkyne.",
+      "type": "concept",
+      "topic": "Hydrocarbon functional-group recognition",
+      "tags": ["legacy", "functional-groups", "alkyne", "hydrocarbon", "triple-bond", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "alkyne",
+        "pattern": "C≡C",
+        "representative": "ethyne",
+        "formula": "C2H2",
+        "smiles": "C#C"
+      },
+      "visual_requirements": ["assets/organic/alkyne.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-hydrocarbon-triple-bond-alkyne",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-052, 053, 054, 058, 059, and 070; keep as feature-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-153",
+      "id": "legacy-organic-chemistry-i-153",
+      "front": "A benzene-like aromatic ring is what?",
+      "back": "Arene.",
+      "type": "concept",
+      "topic": "Aromatic functional-group recognition",
+      "tags": ["legacy", "functional-groups", "arene", "aromatic", "benzene", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "arene",
+        "pattern": "benzene-like aromatic ring",
+        "representative": "benzene",
+        "formula": "C6H6",
+        "smiles": "c1ccccc1"
+      },
+      "visual_requirements": ["assets/organic/arene.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-recognition-benzene-like-aromatic-ring-arene",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-055, 060, 061, and 071; keep as feature-to-name recognition."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-154",
+      "id": "legacy-organic-chemistry-i-154",
+      "front": "What is the key difference between aldehydes and ketones?",
+      "back": "Aldehydes have a carbonyl H; ketones have the carbonyl carbon bonded to two carbons.",
+      "type": "definition",
+      "topic": "Functional-group comparison",
+      "tags": ["legacy", "functional-groups", "aldehyde", "ketone", "carbonyl", "comparison"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "aldehyde vs ketone",
+        "pattern": "aldehyde: R-C(=O)-H; ketone: R-C(=O)-R",
+        "representative": "ethanal and propanone",
+        "formula": "C2H4O and C3H6O",
+        "smiles": "CC=O; CC(=O)C"
+      },
+      "visual_requirements": ["assets/organic/aldehyde.svg", "assets/organic/ketone.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-comparison-aldehyde-ketone",
+      "merge_notes": "Related to legacy-organic-chemistry-i-084-089, 101-102, 107, 109, 140, and 141; keep because it contrasts aldehyde and ketone directly."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-155",
+      "id": "legacy-organic-chemistry-i-155",
+      "front": "What is the key difference between esters and carboxylic acids?",
+      "back": "Esters have `-COOR`; carboxylic acids have `-COOH`.",
+      "type": "definition",
+      "topic": "Functional-group comparison",
+      "tags": ["legacy", "functional-groups", "ester", "carboxylic-acid", "carbonyl", "oxygen-containing", "comparison"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ester vs carboxylic acid",
+        "pattern": "ester: R-C(=O)-OR; carboxylic acid: R-C(=O)-OH",
+        "representative": "methyl ethanoate and ethanoic acid",
+        "formula": "C3H6O2 and C2H4O2",
+        "smiles": "CC(=O)OC; CC(=O)O"
+      },
+      "visual_requirements": ["assets/organic/ester.svg", "assets/organic/carboxylic-acid.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-comparison-ester-carboxylic-acid",
+      "merge_notes": "Related to legacy-organic-chemistry-i-090-095, 103-104, 110-111, 142, and 143; keep because it contrasts ester and carboxylic acid directly."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-156",
+      "id": "legacy-organic-chemistry-i-156",
+      "front": "What is the key difference between amides and amines?",
+      "back": "Amides have a carbonyl attached to nitrogen; amines do not.",
+      "type": "definition",
+      "topic": "Functional-group comparison",
+      "tags": ["legacy", "functional-groups", "amide", "amine", "carbonyl", "nitrogen-containing", "comparison"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "amide vs amine",
+        "pattern": "amide: R-C(=O)-N; amine: nitrogen without adjacent carbonyl",
+        "representative": "ethanamide and methylamine",
+        "formula": "C2H5NO and CH5N",
+        "smiles": "CC(N)=O; CN"
+      },
+      "visual_requirements": ["assets/organic/amide.svg", "assets/organic/amine.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-comparison-amide-amine",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-122 and related to legacy-organic-chemistry-i-098-100, 113-115, 144, and 147; keep because this wording asks for the key difference."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-157",
+      "id": "legacy-organic-chemistry-i-157",
+      "front": "What is the key difference between ethers and alcohols?",
+      "back": "Ethers have `R-O-R`; alcohols have `R-OH`.",
+      "type": "definition",
+      "topic": "Functional-group comparison",
+      "tags": ["legacy", "functional-groups", "ether", "alcohol", "oxygen-containing", "comparison"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ether vs alcohol",
+        "pattern": "ether: R-O-R; alcohol: R-OH",
+        "representative": "dimethyl ether and methanol",
+        "formula": "C2H6O and CH4O",
+        "smiles": "COC; CO"
+      },
+      "visual_requirements": ["assets/organic/ether.svg", "assets/organic/alcohol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-comparison-ether-alcohol",
+      "merge_notes": "Related to legacy-organic-chemistry-i-063-068, 075-076, 134-135, 145, and 146; keep because it contrasts ether and alcohol directly."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-158",
+      "id": "legacy-organic-chemistry-i-158",
+      "front": "What is the key difference between thiols and alcohols?",
+      "back": "Thiols use sulfur, `R-SH`; alcohols use oxygen, `R-OH`.",
+      "type": "definition",
+      "topic": "Functional-group comparison",
+      "tags": ["legacy", "functional-groups", "thiol", "alcohol", "sulfur-containing", "oxygen-containing", "comparison"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "thiol vs alcohol",
+        "pattern": "thiol: R-SH; alcohol: R-OH",
+        "representative": "methanethiol and methanol",
+        "formula": "CH4S and CH4O",
+        "smiles": "CS; CO"
+      },
+      "visual_requirements": ["assets/organic/thiol.svg", "assets/organic/alcohol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-comparison-thiol-alcohol",
+      "merge_notes": "Near-duplicate of legacy-organic-chemistry-i-134 and related to legacy-organic-chemistry-i-128-130, 146, and 149; keep because this wording emphasizes sulfur versus oxygen."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-159",
+      "id": "legacy-organic-chemistry-i-159",
+      "front": "What functional group is in methanol?",
+      "back": "Alcohol.",
+      "type": "concept",
+      "topic": "Functional-group identification in molecules",
+      "tags": ["legacy", "functional-groups", "alcohol", "methanol", "molecule-to-group", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "methanol",
+        "pattern": "CH3OH",
+        "representative": "methanol",
+        "formula": "CH4O",
+        "smiles": "CO"
+      },
+      "visual_requirements": ["assets/organic/alcohol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-identification-methanol-alcohol",
+      "merge_notes": "Related to legacy-organic-chemistry-i-063-065, 075, 134, 146, 157, 158, and 160; keep because it identifies the functional group in a named molecule."
+    },
+    {
+      "legacy_id": "organic-chemistry-i-160",
+      "id": "legacy-organic-chemistry-i-160",
+      "front": "What functional group is in ethanol?",
+      "back": "Alcohol.",
+      "type": "concept",
+      "topic": "Functional-group identification in molecules",
+      "tags": ["legacy", "functional-groups", "alcohol", "ethanol", "molecule-to-group", "recognition"],
+      "chapter_guess": "3.1 Functional Groups",
+      "molecule": {
+        "name": "ethanol",
+        "pattern": "CH3CH2OH",
+        "representative": "ethanol",
+        "formula": "C2H6O",
+        "smiles": "CCO"
+      },
+      "visual_requirements": ["assets/organic/alcohol.svg"],
+      "decorations_needed": [],
+      "explorer_target": "functional-group-identification-ethanol-alcohol",
+      "merge_notes": "Related to legacy-organic-chemistry-i-063-065, 075, 134, 146, 157, 158, and 159; keep because it identifies the functional group in a named molecule."
+    }
+  ]
+}

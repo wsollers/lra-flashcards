@@ -45,6 +45,11 @@
         </div>
       </article>
 
+      <div id="exploreActions" class="explore-actions hidden">
+        <button id="exploreCurrentButton" class="secondary" type="button">Explore This Card</button>
+        <div id="relatedExploreLinks" class="related-explore-links" aria-label="Related explorer views"></div>
+      </div>
+
       <button id="showAnswerButton" class="primary wide">Show Answer</button>
 
       <div id="gradeButtons" class="grade-buttons hidden">
@@ -66,6 +71,14 @@
       </div>
       <div id="statsContent"></div>
       <button id="resetStatsButton" class="danger">Reset All Stats</button>
+    </dialog>
+
+    <dialog id="explorerDialog" class="explorer-dialog" aria-label="Organic chemistry explorer">
+      <div class="dialog-head">
+        <h2 id="explorerDialogTitle">Organic Chemistry Explorer</h2>
+        <button id="closeExplorerButton" class="secondary" type="button">X</button>
+      </div>
+      <iframe id="explorerFrame" title="Organic chemistry explorer"></iframe>
     </dialog>
   </main>
 

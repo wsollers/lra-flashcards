@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "cards": [
+    {
+      "id": "ch2-chloromethane-polarity-sp3",
+      "chapter": 2,
+      "section": "2.1-2.2",
+      "title": "Chloromethane Polarity And sp3 Geometry",
+      "type": "explorer-card",
+      "topic": "electronegativity and partial charges",
+      "tags": [
+        "chapter-2",
+        "electronegativity",
+        "partial-charges",
+        "dipoles",
+        "sp3",
+        "3d"
+      ],
+      "front": "In chloromethane, which atom carries δ−, which atom carries δ+, and why is the molecule polar?",
+      "back": "Chlorine is more electronegative than carbon, so Cl is δ− and the carbon bonded to Cl is δ+. The C-Cl bond dipole is not canceled by the C-H bonds, so chloromethane has a net molecular dipole toward chlorine.",
+      "molecule": {
+        "name": "Chloromethane",
+        "formula": "CH3Cl",
+        "smiles": "CCl",
+        "geometry": "tetrahedral at carbon",
+        "hybridization": "sp3",
+        "bond_angle": "about 109.5°",
+        "atoms": [
+          {
+            "id": "C1",
+            "element": "C",
+            "label": "C δ+",
+            "charge": "delta-positive",
+            "electronegativity": 2.55,
+            "position": [0.0, 0.0, 0.0]
+          },
+          {
+            "id": "Cl1",
+            "element": "Cl",
+            "label": "Cl δ−",
+            "charge": "delta-negative",
+            "electronegativity": 3.16,
+            "position": [1.75, 0.0, 0.0]
+          },
+          {
+            "id": "H1",
+            "element": "H",
+            "label": "H δ+",
+            "charge": "slight-positive",
+            "electronegativity": 2.2,
+            "position": [-0.62, 1.0, 0.72]
+          },
+          {
+            "id": "H2",
+            "element": "H",
+            "label": "H δ+",
+            "charge": "slight-positive",
+            "electronegativity": 2.2,
+            "position": [-0.62, -1.0, 0.72]
+          },
+          {
+            "id": "H3",
+            "element": "H",
+            "label": "H δ+",
+            "charge": "slight-positive",
+            "electronegativity": 2.2,
+            "position": [-0.62, 0.0, -1.16]
+          }
+        ],
+        "bonds": [
+          ["C1", "Cl1"],
+          ["C1", "H1"],
+          ["C1", "H2"],
+          ["C1", "H3"]
+        ],
+        "dipole": {
+          "from": [0.05, 0.0, 0.0],
+          "to": [1.45, 0.0, 0.0],
+          "label": "net dipole toward Cl"
+        }
+      },
+      "representations": [
+        {
+          "id": "regular-ball-stick",
+          "label": "Regular ball-and-stick",
+          "explanation": "A clean CPK-style molecular model with standard atom colors and uncluttered bonds. Drag to rotate or switch to Pan to move the model in the frame."
+        },
+        {
+          "id": "skeletal",
+          "label": "Skeletal / line structure",
+          "explanation": "A line-style representation of the same connectivity. Drag to rotate the line model or pan it around the stage."
+        },
+        {
+          "id": "ball-stick",
+          "label": "Labeled polarity model",
+          "explanation": "Uses standard CPK-style colors with δ+/δ− and net dipole annotations. The labels are educational overlays, separate from chemical bond lines."
+        },
+        {
+          "id": "polarity-cloud",
+          "label": "Electronegativity cloud",
+          "explanation": "Shows a schematic electron-density surface. Blue marks electron-rich/δ− regions near electronegative chlorine; red marks electron-poor/δ+ regions near carbon and hydrogens."
+        },
+        {
+          "id": "line-wedge",
+          "label": "Rotatable line/wedge structure",
+          "explanation": "Shows the same tetrahedral connectivity using line notation with solid and dashed wedges so front/back relationships are easier to see."
+        },
+        {
+          "id": "orbital-overlap",
+          "label": "σ orbital overlap",
+          "explanation": "Shows a schematic C(sp3)-Cl overlap along the bond axis. Opposite colors mark orbital phase, not charge."
+        },
+        {
+          "id": "energy-diagram",
+          "label": "σ / σ* energy diagram",
+          "explanation": "Shows how a filled bonding σ orbital is lower in energy than the parent orbitals, while the antibonding σ* orbital is higher."
+        },
+        {
+          "id": "chirality",
+          "label": "Chirality comparison",
+          "explanation": "Compares a pair of mirror-image tetrahedral centers. This sample uses four different substituents to make enantiomers visible."
+        }
+      ],
+      "facts": [
+        "Electronegativity increases from left to right across a row and generally decreases down a group.",
+        "A bond dipole points toward the more electronegative atom.",
+        "Partial negative charge, δ−, appears on the more electronegative end of a polar bond.",
+        "Carbon is less electronegative than chlorine, so the C-Cl bond is polarized Cδ+-Clδ−.",
+        "The C-Cl sigma bond can be pictured as overlap between a carbon sp3 orbital and a chlorine valence orbital along the internuclear axis.",
+        "A molecule can contain polar bonds but have no net dipole if the bond dipoles cancel by symmetry."
+      ],
+      "formulas": [
+        {
+          "label": "Bond polarity",
+          "latex": "\\ce{C^{\\delta+}-Cl^{\\delta-}}"
+        },
+        {
+          "label": "Acid-base style notation example",
+          "latex": "\\ce{A-H + B: <=> A^- + H-B^+}"
+        }
+      ],
+      "reactions": [
+        {
+          "label": "Multiline reaction card pattern",
+          "lines": [
+            "\\ce{CH3Cl ->[polar C-Cl bond] CH3^{\\delta+}-Cl^{\\delta-}}",
+            "\\ce{Nu^- + CH3Cl -> CH3Nu + Cl^-}"
+          ]
+        }
+      ],
+      "prompts": [
+        {
+          "kind": "fact",
+          "question": "Which atom is more electronegative in C-Cl?",
+          "answer": "Chlorine."
+        },
+        {
+          "kind": "partial-charge",
+          "question": "Assign δ+ and δ− for the C-Cl bond.",
+          "answer": "C is δ+ and Cl is δ−."
+        },
+        {
+          "kind": "structure",
+          "question": "What geometry does the carbon have?",
+          "answer": "Tetrahedral, with approximately 109.5° bond angles."
+        }
+      ]
+    }
+  ]
+}

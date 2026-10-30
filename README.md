@@ -106,6 +106,30 @@ http://localhost:8000/app/
 
 Do not open `index.html` directly with a `file://` URL because the app loads JSON card files with `fetch()`.
 
+### Run with Docker
+
+The repository includes a chemistry-ready Docker image with Python, Node.js,
+RDKit, Open Babel, Poppler, Cairo, and SVG helpers. Use it for local review and
+for future molecule/diagram generation scripts.
+
+Build and start the app:
+
+```bash
+docker compose up --build
+```
+
+Then open:
+
+```text
+http://localhost:8000/app/
+```
+
+Run a script inside the container:
+
+```bash
+docker compose run --rm lra-flashcards python scripts/generate_organic_assets.py
+```
+
 ### Deploy on GitHub Pages
 
 The repository includes `.github/workflows/pages.yml`, which deploys the static
